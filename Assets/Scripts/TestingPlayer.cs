@@ -27,6 +27,8 @@ public class TestingPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         chara.transform.position = new Vector3(xpos, ypos, -1);
+        map.mapposx = mapposx;
+        map.mapposy = mapposy;
 
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {

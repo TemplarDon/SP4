@@ -4,6 +4,8 @@ using System.Collections;
 public class LevelGenerate : MonoBehaviour {
 
     public TestingPlayer tester;
+    public int mapposx;
+    public int mapposy;
     public GameObject prefab;
     public Sprite tile_grass, tile_stone, tile_spike, tile_rock, tile_water;
     public int[,] mapgrid;
@@ -174,7 +176,8 @@ public class LevelGenerate : MonoBehaviour {
          * 6 STEP
          */
 
-        checkPossibleLoc(tester.mapposx, tester.mapposy, 6, 5);
+        //checkPossibleLoc(tester.mapposx, tester.mapposy, 6, 5);
+        checkPossibleLoc(mapposx, mapposy, 3, 3);
         //Debug.Log(tester.mapposy);
 
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
@@ -262,29 +265,29 @@ public class LevelGenerate : MonoBehaviour {
 
     void checkPossibleLoc(int i, int j, int type, int range)
     {
-        switch(type)
+        int leftC = 0;
+        int rightC = xsize - 1;
+        int upC = 0;
+        int downC = ysize - 1;
+        if (range > 0)
+        {
+            leftC = i - range;
+            rightC = i + range;
+            upC = j - range;
+            downC = j + range;
+            if (leftC < 0)
+                leftC = 0;
+            if (rightC > xsize - 1)
+                rightC = xsize - 1;
+            if (upC < 0)
+                upC = 0;
+            if (downC > ysize - 1)
+                downC = ysize - 1;
+        }
+        switch (type)
         {
             case 1:
                 {
-                    int leftC = 0;
-                    int rightC = xsize - 1;
-                    int upC = 0;
-                    int downC = ysize - 1;
-                    if (range > 0)
-                    {
-                        leftC = i - range;
-                        rightC = i + range;
-                        upC = j - range;
-                        downC = j + range;
-                        if (leftC < 0)
-                            leftC = 0;
-                        if (rightC > xsize - 1)
-                            rightC = xsize - 1;
-                        if (upC < 0)
-                            upC = 0;
-                        if (downC > ysize - 1)
-                            downC = ysize - 1;
-                    }
                     for (int i2 = i; i2 <= rightC; i2++)
                     {
                         if (mapgrid[i2, j] < 4)
@@ -336,25 +339,6 @@ public class LevelGenerate : MonoBehaviour {
                 break;
             case 2:
                 {
-                    int leftC = 0;
-                    int rightC = xsize - 1;
-                    int upC = 0;
-                    int downC = ysize - 1;
-                    if (range > 0)
-                    {
-                        leftC = i - range;
-                        rightC = i + range;
-                        upC = j - range;
-                        downC = j + range;
-                        if (leftC < 0)
-                            leftC = 0;
-                        if (rightC > xsize - 1)
-                            rightC = xsize - 1;
-                        if (upC < 0)
-                            upC = 0;
-                        if (downC > ysize - 1)
-                            downC = ysize - 1;
-                    }
                     for (int i2 = i, j2 = j; i2 <= rightC && j2 >= upC; i2++, j2--)
                     {
                         if (mapgrid[i2, j2] < 4)
@@ -406,26 +390,21 @@ public class LevelGenerate : MonoBehaviour {
                 break;
             case 3:
                 {
-                    int leftC = 0;
-                    int rightC = xsize - 1;
-                    int upC = 0;
-                    int downC = ysize - 1;
-                    if (range > 0)
+                    checkPossibleLocStep(i, j, (range + 1) * 2 + 1);
+                    for(int j2 = 0; j2 < ysize; j2++)
                     {
-                        leftC = i - range;
-                        rightC = i + range;
-                        upC = j - range;
-                        downC = j + range;
-                        if (leftC < 0)
-                            leftC = 0;
-                        if (rightC > xsize - 1)
-                            rightC = xsize - 1;
-                        if (upC < 0)
-                            upC = 0;
-                        if (downC > ysize - 1)
-                            downC = ysize - 1;
+                        for(int i2 = 0; i2 < xsize; i2++)
+                        {
+                            if (mapcheck[i2, j2] == true && mapgrid[i2, j2] < 4 && ((i2 > rightC || i2 < leftC) || (j2 < upC || j2 > downC)))
+                            {
+                                mapcheck[i2, j2] = false;
+                            }
+                        }
                     }
-
+                }
+                break;
+            case 5:
+                {
                     for (int i2 = i, j2 = j; i2 <= rightC && j2 >= upC; i2++, j2--)
                     {
                         if (mapgrid[i2, j2] < 4)
@@ -524,7 +503,9 @@ public class LevelGenerate : MonoBehaviour {
                 }
                 break;
             case 6:
-                checkPossibleLocStep(i, j, range + 1);
+                {
+                    checkPossibleLocStep(i, j, range + 1);
+                }
                 break;
         }
         
@@ -576,7 +557,6 @@ public class LevelGenerate : MonoBehaviour {
         checkPossibleLocStep(i, j - 1, step - 1);
         checkPossibleLocStep(i + 1, j, step - 1);
         checkPossibleLocStep(i - 1, j, step - 1);
-
     }
 
     // Used by pathfinding
@@ -600,4 +580,36 @@ public class LevelGenerate : MonoBehaviour {
         return new Vector3(0,0,0);
     }
 
+    void removeSight(int i, int j, int direction)
+    {
+        bool cleaningDone = false;
+        int x = i;
+        int y = j;
+        int counter = 0;
+        while (!cleaningDone)
+        {
+            cleaningDone = true;
+            if (x >= 0 && x < xsize && y >= 0 && y < ysize)
+            {
+                counter++;
+                switch (direction)
+                {
+                    case 1:
+                        {
+                            y--;
+                            x = i - counter;
+                            while (x < i + counter)
+                            {
+                                x++;
+                                if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                {
+                                    mapcheck[x, y] = false;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        }
+    }
 }
