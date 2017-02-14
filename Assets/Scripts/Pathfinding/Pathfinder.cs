@@ -3,7 +3,8 @@ using System.Collections;
 
 using System.Collections.Generic;
 
-public class Pathfinder : MonoBehaviour {
+public class Pathfinder : MonoBehaviour
+{
 
     public GameObject MapObject;
     private LevelGenerate theLevel;
@@ -21,8 +22,9 @@ public class Pathfinder : MonoBehaviour {
     // Translating Var
     private int currIdx = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         theLevel = MapObject.GetComponent<LevelGenerate>();
 
         // Fill up NodeList
@@ -36,19 +38,20 @@ public class Pathfinder : MonoBehaviour {
             }
         }
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
 
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void FindAStarPath(Vector3 dest)
     {
         m_Destination = dest;
         b_PathFound = false;
 
-        CurrentNode =  GetNode(this.transform.position);
+        CurrentNode = GetNode(this.transform.position);
 
         List<Node> Neighbours = new List<Node>();
 
@@ -56,7 +59,7 @@ public class Pathfinder : MonoBehaviour {
         {
             ClosedList.Add(CurrentNode);
 
-            if (ValidateNode(GetNode(this.transform.position + new Vector3(0, 1, 0)))) 
+            if (ValidateNode(GetNode(this.transform.position + new Vector3(0, 1, 0))))
             {
                 OpenList.Add(GetNode(this.transform.position + new Vector3(0, 1, 0)));
             }
@@ -92,7 +95,7 @@ public class Pathfinder : MonoBehaviour {
         // Get neighbour with lowest F value ()
 
         // Get that neighbour's neighbours, set that neighbour as the curr node
-        
+
         // Repeat
 
         // Closed list will be the path to follow
@@ -144,7 +147,7 @@ public class Pathfinder : MonoBehaviour {
         if (checkNode == null)
             return false;
 
-        if (checkNode.TileCost != - 1 && !ClosedList.Contains(checkNode))
+        if (checkNode.TileCost != -1 && !ClosedList.Contains(checkNode))
         {
             return true;
         }

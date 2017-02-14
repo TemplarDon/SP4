@@ -3,6 +3,11 @@ using System.Collections;
 
 public class BaseCharacter : MonoBehaviour {
 
+    // Handle to map
+    public LevelGenerate theLevel;
+    Vector3 pos;
+    
+
     // Managers
     public Inventory theInventory = new Inventory();
     public int InventorySizeColumns = 5;
@@ -45,6 +50,7 @@ public class BaseCharacter : MonoBehaviour {
     {
         // Switch current controlled character to this one
         GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter = this.gameObject;
+        Debug.Log("Selected.");
     }
 
     public void SetCharacterDestination(Vector3 dest)
@@ -55,5 +61,30 @@ public class BaseCharacter : MonoBehaviour {
     public void SetToMove(bool status)
     {
         b_ShouldMove = status;
+    }
+
+    void ConstrainToGrid()
+    {
+        //if (xpos < 1)
+        //{
+        //    mapposx++;
+        //    xpos = 1;
+        //}
+        //else if (xpos > map.xsize)
+        //{
+        //    mapposx--;
+        //    xpos = map.xsize;
+        //}
+
+        //if (ypos > -1)
+        //{
+        //    mapposy++;
+        //    ypos = -1;
+        //}
+        //else if (ypos < -map.ysize)
+        //{
+        //    mapposy--;
+        //    ypos = -map.ysize;
+        //}
     }
 }
