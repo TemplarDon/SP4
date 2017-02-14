@@ -319,4 +319,25 @@ public class LevelGenerate : MonoBehaviour {
         }
     }
 
+    // Used by pathfinding
+    public int GetTileCost(int x, int y)
+    {
+        switch (mapgrid[x, y])
+        {
+            case 1: return 1;
+            case 2: return 1;
+            case 3: return 2;
+            case 4: return -1;
+            case 5: return -1;
+        }
+
+        return 0;
+    }
+
+    // Used by pathfinding
+    public Vector3 GetTilePos(int x_idx, int y_idx)
+    {
+        return new Vector3(0,0,0);
+    }
+
 }

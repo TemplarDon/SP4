@@ -26,18 +26,18 @@ public class BaseCharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        theInventory.Init(InventorySizeColumns, InventorySizeRows);
+        //theInventory.Init(InventorySizeColumns, InventorySizeRows);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         
         // Test Code
-        if (b_ShouldMove)
-        {
-            Vector3 dir = ((m_Destination - transform.position).normalized) * Time.deltaTime * 10;
-            transform.Translate(dir.x, dir.y, 0);   
-        }
+        //if (b_ShouldMove)
+        //{
+        //    Vector3 dir = ((m_Destination - transform.position).normalized) * Time.deltaTime * 10;
+        //    transform.Translate(dir.x, dir.y, 0);   
+        //}
         
 	}
 
