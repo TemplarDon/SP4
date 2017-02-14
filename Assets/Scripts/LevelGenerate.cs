@@ -10,10 +10,19 @@ public class LevelGenerate : MonoBehaviour {
     public Sprite tile_grass, tile_stone, tile_spike, tile_rock, tile_water;
     public int[,] mapgrid;
     private bool[,] mapcheck;
-    private Vector3[,] mappositions;
+    public Vector3[,] mappositions;
     public int xsize;
     public int ysize;
     public GameObject possibleLoc;
+
+    private bool dragging;
+    private int dragtimer;
+    private Vector3 dragStart;
+    private Vector3 dragChange;
+    private Vector3 dragSave;
+
+    public float dragSpeed = 2;
+    private Vector3 dragOrigin;
 
     /* List of tiles:
      * 1 [NORMAL] Grass Tile
@@ -25,15 +34,18 @@ public class LevelGenerate : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        xsize = Random.Range(7, 14);
-        ysize = Random.Range(6, 11);
-        //xsize = 6;
-        //ysize = 6;
+        //xsize = 1;
+        //ysize = 1;
+        xsize = Random.Range(17, 24);
+        ysize = Random.Range(16, 21);
+        
         mapgrid = new int[xsize, ysize];
         mapcheck = new bool[xsize, ysize];
         mappositions = new Vector3[xsize, ysize];
 
         prefab = GameObject.Find("Tile");
+        dragging = false;
+        dragtimer = 10;
 
         bool mapConfirmed = false;
 
@@ -171,14 +183,42 @@ public class LevelGenerate : MonoBehaviour {
          * 1 PLUS-CROSS
          * 2 X-CROSS
          * 3 SQUARE
-         * 4 DIAMOND
+         * --------
          * 5 QUEEN ( PLUS-X-CROSS )
          * 6 STEP
+         * 7 BLIND STEP
          */
 
         //checkPossibleLoc(tester.mapposx, tester.mapposy, 6, 5);
-        checkPossibleLoc(mapposx, mapposy, 3, 3);
+        checkPossibleLoc(mapposx, mapposy, 7, 9);
         //Debug.Log(tester.mapposy);
+
+        //if (Input.GetMouseButton(0))
+        //{
+        //    dragtimer--;
+        //    if(dragtimer < 0)
+        //    {
+        //        dragging = true;
+        //        Debug.Log("DRAGGING");
+        //        dragChange = Input.mousePosition - dragStart;
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("TAPPING");
+        //        dragStart = Input.mousePosition;
+        //        dragChange = new Vector3(0, 0, 0);
+        //    }
+        //}
+        //else if(dragtimer != 10)
+        //{
+        //    dragtimer = 10;
+        //    if(dragging == true)
+        //    {
+        //        dragStart += dragChange;
+        //    }
+        //    dragging = false;
+        //    Debug.Log("RELEASE");
+        //}
 
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
         foreach (GameObject obj in allObjects)
@@ -390,7 +430,10 @@ public class LevelGenerate : MonoBehaviour {
                 break;
             case 3:
                 {
-                    checkPossibleLocStep(i, j, (range + 1) * 2 + 1);
+                    checkPossibleLocBlindStep(i, j, (range + 1) * 2 + 1, 1);
+                    checkPossibleLocBlindStep(i, j, (range + 1) * 2 + 1, 2);
+                    checkPossibleLocBlindStep(i, j, (range + 1) * 2 + 1, 3);
+                    checkPossibleLocBlindStep(i, j, (range + 1) * 2 + 1, 4);
                     for(int j2 = 0; j2 < ysize; j2++)
                     {
                         for(int i2 = 0; i2 < xsize; i2++)
@@ -398,6 +441,47 @@ public class LevelGenerate : MonoBehaviour {
                             if (mapcheck[i2, j2] == true && mapgrid[i2, j2] < 4 && ((i2 > rightC || i2 < leftC) || (j2 < upC || j2 > downC)))
                             {
                                 mapcheck[i2, j2] = false;
+                            }
+                            else if(mapgrid[i2, j2] >= 4)
+                            {
+                                if(i2 == i)
+                                {
+                                    if(j2 > j)
+                                    {
+                                        removeSight(i2, j2, 2);
+                                    }
+                                    else if(j2 < j)
+                                    {
+                                        removeSight(i2, j2, 1);
+                                    }
+                                }
+                                if (j2 == j)
+                                {
+                                    if (i2 > i)
+                                    {
+                                        removeSight(i2, j2, 4);
+                                    }
+                                    else if (i2 < i)
+                                    {
+                                        removeSight(i2, j2, 3);
+                                    }
+                                }
+                                if(i2 > i && j2 < j)
+                                {
+                                    removeSight(i2, j2, 5);
+                                }
+                                else if (i2 < i && j2 < j)
+                                {
+                                    removeSight(i2, j2, 6);
+                                }
+                                else if (i2 < i && j2 > j)
+                                {
+                                    removeSight(i2, j2, 7);
+                                }
+                                else if (i2 > i && j2 > j)
+                                {
+                                    removeSight(i2, j2, 8);
+                                }
                             }
                         }
                     }
@@ -507,6 +591,95 @@ public class LevelGenerate : MonoBehaviour {
                     checkPossibleLocStep(i, j, range + 1);
                 }
                 break;
+            case 7:
+                {
+                    checkPossibleLocBlindStep(i, j, range + 1, 1);
+                    checkPossibleLocBlindStep(i, j, range + 1, 2);
+                    checkPossibleLocBlindStep(i, j, range + 1, 3);
+                    checkPossibleLocBlindStep(i, j, range + 1, 4);
+                    for (int j2 = 0; j2 < ysize; j2++)
+                    {
+                        for (int i2 = 0; i2 < xsize; i2++)
+                        {
+                            if (mapgrid[i2, j2] >= 4)
+                            {
+                                if (i2 == i)
+                                {
+                                    if (j2 > j)
+                                    {
+                                        removeSight(i2, j2, 2);
+                                    }
+                                    else if (j2 < j)
+                                    {
+                                        removeSight(i2, j2, 1);
+                                    }
+                                }
+                                if (j2 == j)
+                                {
+                                    if (i2 > i)
+                                    {
+                                        removeSight(i2, j2, 4);
+                                    }
+                                    else if (i2 < i)
+                                    {
+                                        removeSight(i2, j2, 3);
+                                    }
+                                }
+                                if (i2 > i && j2 < j && (i2 - i) == (j - j2))
+                                {
+                                    removeSight(i2, j2, 5);
+                                }
+                                else if (i2 < i && j2 < j && (i - i2) == (j -j2))
+                                {
+                                    removeSight(i2, j2, 6);
+                                }
+                                else if (i2 < i && j2 > j && (i - i2) == (j2 - j))
+                                {
+                                    removeSight(i2, j2, 7);
+                                }
+                                else if (i2 > i && j2 > j && (i2 - i) == (j2 - j))
+                                {
+                                    removeSight(i2, j2, 8);
+                                }
+                                else if(i2 > i && j2 < j && (j - j2) > (i2 - i))
+                                {
+                                    removeSight(i2, j2, 11);
+                                }
+                                else if (i2 < i && j2 < j && (j - j2) > (i - i2))
+                                {
+                                    removeSight(i2, j2, 12);
+                                }
+                                else if (i2 > i && j2 > j && (j2 - j) > (i2 - i))
+                                {
+                                    removeSight(i2, j2, 13);
+                                }
+                                else if (i2 < i && j2 > j && (j2 - j) > (i - i2))
+                                {
+                                    removeSight(i2, j2, 14);
+                                }
+
+
+                                else if (i2 < i && j2 < j && (j - j2) < (i - i2))
+                                {
+                                    removeSight(i2, j2, 15);
+                                }
+                                else if (i2 < i && j2 > j && (j2 - j) < (i - i2))
+                                {
+                                    removeSight(i2, j2, 16);
+                                }
+                                else if (i2 > i && j2 < j && (j - j2) < (i2 - i))
+                                {
+                                    removeSight(i2, j2, 17);
+                                }
+                                else if (i2 > i && j2 > j && (j2 - j) < (i2 - i))
+                                {
+                                    removeSight(i2, j2, 18);
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
         }
         
     }
@@ -559,6 +732,68 @@ public class LevelGenerate : MonoBehaviour {
         checkPossibleLocStep(i - 1, j, step - 1);
     }
 
+    void checkPossibleLocBlindStep(int i, int j, int step, int direction)
+    {
+        if (step <= 0)
+        {
+            return;
+        }
+
+        if (i < 0)
+        {
+            return;
+        }
+        else if (i >= xsize)
+        {
+            return;
+        }
+
+        if (j < 0)
+        {
+            return;
+        }
+        else if (j >= ysize)
+        {
+            return;
+        }
+
+        if (mapgrid[i, j] >= 4)
+        {
+            return;
+        }
+
+        //if (mapcheck[i,j] == true)
+        //{
+        //    return;
+        //}
+
+        mapcheck[i, j] = true;
+
+        switch(direction)
+        {
+            case 1:
+                checkPossibleLocBlindStep(i, j - 1, step - 1, direction); // UP
+                checkPossibleLocBlindStep(i + 1, j, step - 1, direction); // RIGHT
+                break;
+            case 2:
+                checkPossibleLocBlindStep(i, j - 1, step - 1, direction); // UP
+                checkPossibleLocBlindStep(i - 1, j, step - 1, direction); // LEFT
+                break;
+            case 3:
+                checkPossibleLocBlindStep(i, j + 1, step - 1, direction); // DOWN
+                checkPossibleLocBlindStep(i + 1, j, step - 1, direction); // RIGHT
+                break;
+            case 4:
+                checkPossibleLocBlindStep(i, j + 1, step - 1, direction); // DOWN
+                checkPossibleLocBlindStep(i - 1, j, step - 1, direction); // LEFT
+                break;
+        }
+        //checkPossibleLocStep(i, j + 1, step - 1); // DOWN
+        //checkPossibleLocStep(i, j - 1, step - 1); // UP
+        //checkPossibleLocStep(i + 1, j, step - 1); // RIGHT
+        //checkPossibleLocStep(i - 1, j, step - 1); // LEFT
+    }
+
     // Used by pathfinding
     public int GetTileCost(int x, int y)
     {
@@ -589,26 +824,327 @@ public class LevelGenerate : MonoBehaviour {
         while (!cleaningDone)
         {
             cleaningDone = true;
-            if (x >= 0 && x < xsize && y >= 0 && y < ysize)
+            counter++;
+            switch (direction)
             {
-                counter++;
-                switch (direction)
-                {
-                    case 1:
+                case 1:
+                    {
+                        y--;
+                        if (y >= 0)
                         {
-                            y--;
-                            x = i - counter;
+                            x = i - counter - 1;
                             while (x < i + counter)
                             {
                                 x++;
-                                if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                if (x >= 0 && x < xsize)
                                 {
-                                    mapcheck[x, y] = false;
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
                                 }
                             }
                         }
-                        break;
-                }
+                    }
+                    break;
+                case 2:
+                    {
+                        y++;
+                        if (y < ysize)
+                        {
+                            x = i - counter - 1;
+                            while (x < i + counter)
+                            {
+                                x++;
+                                if (x >= 0 && x < xsize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    {
+                        x--;
+                        if (x >= 0)
+                        {
+                            y = j - counter - 1;
+                            while (y < j + counter)
+                            {
+                                y++;
+                                if (y >= 0 && y < ysize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 4:
+                    {
+                        x++;
+                        if (x < xsize)
+                        {
+                            y = j - counter - 1;
+                            while (y < j + counter)
+                            {
+                                y++;
+                                if (y >= 0 && y < ysize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 5:
+                    {
+                        for (int j3 = j; j3 >= 0; j3--)
+                        {
+                            for (int i3 = i; i3 < xsize; i3++)
+                            {
+                                if (mapgrid[i3, j3] < 4)
+                                {
+                                    mapcheck[i3, j3] = false;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 6:
+                    {
+                        for (int j3 = j; j3 >= 0; j3--)
+                        {
+                            for (int i3 = i; i3 >= 0; i3--)
+                            {
+                                if (mapgrid[i3, j3] < 4)
+                                {
+                                    mapcheck[i3, j3] = false;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 7:
+                    {
+                        for (int j3 = j; j3 < ysize; j3++)
+                        {
+                            for (int i3 = i; i3 >= 0; i3--)
+                            {
+                                if (mapgrid[i3, j3] < 4)
+                                {
+                                    mapcheck[i3, j3] = false;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 8:
+                    {
+                        for (int j3 = j; j3 < ysize; j3++)
+                        {
+                            for (int i3 = i; i3 < xsize; i3++)
+                            {
+                                if (mapgrid[i3, j3] < 4)
+                                {
+                                    mapcheck[i3, j3] = false;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 9:
+                    {
+                        
+                    }
+                    break;
+                case 10:
+                    {
+
+                    }
+                    break;
+                case 11:
+                    {
+                        y--;
+                        if (y >= 0)
+                        {
+                            x = i - 1;
+                            while (x < i + counter)
+                            {
+                                x++;
+                                if (x >= 0 && x < xsize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 12:
+                    {
+                        y--;
+                        if (y >= 0)
+                        {
+                            x = i - counter - 1;
+                            while (x < i)
+                            {
+                                x++;
+                                if (x >= 0 && x < xsize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 13:
+                    {
+                        y++;
+                        if (y < ysize)
+                        {
+                            x = i - 1;
+                            while (x < i + counter)
+                            {
+                                x++;
+                                if (x >= 0 && x < xsize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 14:
+                    {
+                        y++;
+                        if (y < ysize)
+                        {
+                            x = i - counter - 1;
+                            while (x < i)
+                            {
+                                x++;
+                                if (x >= 0 && x < xsize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 15:
+                    {
+                        x--;
+                        if (x >= 0)
+                        {
+                            y = j - counter - 1;
+                            while (y < j)
+                            {
+                                y++;
+                                if (y >= 0 && y < ysize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 16:
+                    {
+                        x--;
+                        if (x >= 0)
+                        {
+                            y = j - 1;
+                            while (y < j + counter)
+                            {
+                                y++;
+                                if (y >= 0 && y < ysize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 17:
+                    {
+                        x++;
+                        if (x < xsize)
+                        {
+                            y = j - counter - 1;
+                            while (y < j)
+                            {
+                                y++;
+                                if (y >= 0 && y < ysize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 18:
+                    {
+                        x++;
+                        if (x < xsize)
+                        {
+                            y = j - 1;
+                            while (y < j + counter)
+                            {
+                                y++;
+                                if (y >= 0 && y < ysize)
+                                {
+                                    if (mapcheck[x, y] == true && mapgrid[x, y] < 4)
+                                    {
+                                        mapcheck[x, y] = false;
+                                        cleaningDone = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
             }
         }
     }
