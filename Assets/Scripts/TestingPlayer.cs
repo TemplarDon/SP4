@@ -16,8 +16,8 @@ public class TestingPlayer : MonoBehaviour {
         xpos = 1;
         ypos = -1;
 
-        xpos = (int)this.transform.position.x;
-        ypos = (int)this.transform.position.y;
+        //xpos = (int)this.transform.position.x;
+        //ypos = (int)this.transform.position.y;
 
         mapposx = 0;
         mapposy = 0;
