@@ -15,6 +15,10 @@ public class TestingPlayer : MonoBehaviour {
 	void Start () {
         xpos = 1;
         ypos = -1;
+
+        xpos = (int)this.transform.position.x;
+        ypos = (int)this.transform.position.y;
+
         mapposx = 0;
         mapposy = 0;
         //map = GameObject.Find("LevelGeneration");

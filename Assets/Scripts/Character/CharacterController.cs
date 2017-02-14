@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour {
         {
             CurrentControlledCharacter.GetComponent<BaseCharacter>().SetToMove(true);
             CurrentControlledCharacter.GetComponent<BaseCharacter>().SetCharacterDestination(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+            Debug.Log("MOUSE DOWN");
         }
 
 	}
