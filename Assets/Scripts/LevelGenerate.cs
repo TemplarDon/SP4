@@ -169,9 +169,12 @@ public class LevelGenerate : MonoBehaviour {
          * 1 PLUS-CROSS
          * 2 X-CROSS
          * 3 SQUARE
+         * 4 DIAMOND
+         * 5 QUEEN ( PLUS-X-CROSS )
+         * 6 STEP
          */
 
-        checkPossibleLoc(tester.mapposx, tester.mapposy);
+        checkPossibleLoc(tester.mapposx, tester.mapposy, 6, 5);
         //Debug.Log(tester.mapposy);
 
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
@@ -257,60 +260,323 @@ public class LevelGenerate : MonoBehaviour {
         return true;
     }
 
-    void checkPossibleLoc(int i, int j)
+    void checkPossibleLoc(int i, int j, int type, int range)
     {
-        for (int i2 = i; i2 < xsize; i2++)
+        switch(type)
         {
-            if(mapgrid[i2, j] < 4)
-            {
-                mapcheck[i2, j] = true;
-            }
-            else
-            {
-                break;
-            }
-        }
+            case 1:
+                {
+                    int leftC = 0;
+                    int rightC = xsize - 1;
+                    int upC = 0;
+                    int downC = ysize - 1;
+                    if (range > 0)
+                    {
+                        leftC = i - range;
+                        rightC = i + range;
+                        upC = j - range;
+                        downC = j + range;
+                        if (leftC < 0)
+                            leftC = 0;
+                        if (rightC > xsize - 1)
+                            rightC = xsize - 1;
+                        if (upC < 0)
+                            upC = 0;
+                        if (downC > ysize - 1)
+                            downC = ysize - 1;
+                    }
+                    for (int i2 = i; i2 <= rightC; i2++)
+                    {
+                        if (mapgrid[i2, j] < 4)
+                        {
+                            mapcheck[i2, j] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
 
-        for (int i3 = i; i3 >= 0; i3--)
-        {
-            if (mapgrid[i3, j] < 4)
-            {
-                mapcheck[i3, j] = true;
-            }
-            else
-            {
-                break;
-            }
-        }
+                    for (int i3 = i; i3 >= leftC; i3--)
+                    {
+                        if (mapgrid[i3, j] < 4)
+                        {
+                            mapcheck[i3, j] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
 
-        for (int j2 = j; j2 < ysize; j2++)
-        {
-            if (mapgrid[i, j2] < 4)
-            {
-                mapcheck[i, j2] = true;
-            }
-            else
-            {
-                break;
-            }
-        }
+                    for (int j2 = j; j2 <= downC; j2++)
+                    {
+                        if (mapgrid[i, j2] < 4)
+                        {
+                            mapcheck[i, j2] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
 
-        for (int j3 = j; j3 >= 0; j3--)
-        {
-            if (mapgrid[i, j3] < 4)
-            {
-                mapcheck[i, j3] = true;
-            }
-            else
-            {
+                    for (int j3 = j; j3 >= upC; j3--)
+                    {
+                        if (mapgrid[i, j3] < 4)
+                        {
+                            mapcheck[i, j3] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
                 break;
-            }
+            case 2:
+                {
+                    int leftC = 0;
+                    int rightC = xsize - 1;
+                    int upC = 0;
+                    int downC = ysize - 1;
+                    if (range > 0)
+                    {
+                        leftC = i - range;
+                        rightC = i + range;
+                        upC = j - range;
+                        downC = j + range;
+                        if (leftC < 0)
+                            leftC = 0;
+                        if (rightC > xsize - 1)
+                            rightC = xsize - 1;
+                        if (upC < 0)
+                            upC = 0;
+                        if (downC > ysize - 1)
+                            downC = ysize - 1;
+                    }
+                    for (int i2 = i, j2 = j; i2 <= rightC && j2 >= upC; i2++, j2--)
+                    {
+                        if (mapgrid[i2, j2] < 4)
+                        {
+                            mapcheck[i2, j2] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i3 = i, j3 = j; i3 <= rightC && j3 <= downC; i3++, j3++)
+                    {
+                        if (mapgrid[i3, j3] < 4)
+                        {
+                            mapcheck[i3, j3] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i4 = i, j4 = j; i4 >= leftC && j4 >= upC; i4--, j4--)
+                    {
+                        if (mapgrid[i4, j4] < 4)
+                        {
+                            mapcheck[i4, j4] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i5 = i, j5 = j; i5 >= leftC && j5 <= downC; i5--, j5++)
+                    {
+                        if (mapgrid[i5, j5] < 4)
+                        {
+                            mapcheck[i5, j5] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                {
+                    int leftC = 0;
+                    int rightC = xsize - 1;
+                    int upC = 0;
+                    int downC = ysize - 1;
+                    if (range > 0)
+                    {
+                        leftC = i - range;
+                        rightC = i + range;
+                        upC = j - range;
+                        downC = j + range;
+                        if (leftC < 0)
+                            leftC = 0;
+                        if (rightC > xsize - 1)
+                            rightC = xsize - 1;
+                        if (upC < 0)
+                            upC = 0;
+                        if (downC > ysize - 1)
+                            downC = ysize - 1;
+                    }
+
+                    for (int i2 = i, j2 = j; i2 <= rightC && j2 >= upC; i2++, j2--)
+                    {
+                        if (mapgrid[i2, j2] < 4)
+                        {
+                            mapcheck[i2, j2] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i3 = i, j3 = j; i3 <= rightC && j3 <= downC; i3++, j3++)
+                    {
+                        if (mapgrid[i3, j3] < 4)
+                        {
+                            mapcheck[i3, j3] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i4 = i, j4 = j; i4 >= leftC && j4 >= upC; i4--, j4--)
+                    {
+                        if (mapgrid[i4, j4] < 4)
+                        {
+                            mapcheck[i4, j4] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i5 = i, j5 = j; i5 >= leftC && j5 <= downC; i5--, j5++)
+                    {
+                        if (mapgrid[i5, j5] < 4)
+                        {
+                            mapcheck[i5, j5] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i2 = i; i2 <= rightC; i2++)
+                    {
+                        if (mapgrid[i2, j] < 4)
+                        {
+                            mapcheck[i2, j] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int i3 = i; i3 >= leftC; i3--)
+                    {
+                        if (mapgrid[i3, j] < 4)
+                        {
+                            mapcheck[i3, j] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int j2 = j; j2 <= downC; j2++)
+                    {
+                        if (mapgrid[i, j2] < 4)
+                        {
+                            mapcheck[i, j2] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    for (int j3 = j; j3 >= upC; j3--)
+                    {
+                        if (mapgrid[i, j3] < 4)
+                        {
+                            mapcheck[i, j3] = true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 6:
+                checkPossibleLocStep(i, j, range + 1);
+                break;
         }
+        
     }
 
     Vector3 getTilePos(int i, int j)
     {
         return mappositions[i, j];
+    }
+
+    void checkPossibleLocStep(int i, int j, int step)
+    {
+        if(step <= 0)
+        {
+            return;
+        }
+
+        if(i < 0)
+        {
+            return;
+        }
+        else if(i >= xsize)
+        {
+            return;
+        }
+
+        if (j < 0)
+        {
+            return;
+        }
+        else if (j >= ysize)
+        {
+            return;
+        }
+
+        if(mapgrid[i,j] >= 4)
+        {
+            return;
+        }
+
+        //if (mapcheck[i,j] == true)
+        //{
+        //    return;
+        //}
+
+        mapcheck[i, j] = true;
+
+        checkPossibleLocStep(i, j + 1, step - 1);
+        checkPossibleLocStep(i, j - 1, step - 1);
+        checkPossibleLocStep(i + 1, j, step - 1);
+        checkPossibleLocStep(i - 1, j, step - 1);
+
     }
 
 }
