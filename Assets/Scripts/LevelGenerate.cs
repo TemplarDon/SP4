@@ -24,7 +24,9 @@ public class LevelGenerate : MonoBehaviour {
     */
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
+        Debug.Log("Level Generated");
+
         xsize = Random.Range(7, 14);
         ysize = Random.Range(6, 11);
         //xsize = 6;
@@ -577,7 +579,7 @@ public class LevelGenerate : MonoBehaviour {
     // Used by pathfinding
     public Vector3 GetTilePos(int x_idx, int y_idx)
     {
-        return new Vector3(0,0,0);
+        return mappositions[x_idx, y_idx];
     }
 
     void removeSight(int i, int j, int direction)

@@ -5,7 +5,7 @@ public class BaseCharacter : MonoBehaviour {
 
     // Handle to map
     public LevelGenerate theLevel;
-    Vector3 pos;
+    public Vector3 pos;
     
 
     // Managers
@@ -32,30 +32,34 @@ public class BaseCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //theInventory.Init(InventorySizeColumns, InventorySizeRows);
+
+        pos.x = (int)this.transform.position.x;
+        pos.y = (int)this.transform.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        
-        // Test Code
-        //if (b_ShouldMove)
-        //{
-        //    Vector3 dir = ((m_Destination - transform.position).normalized) * Time.deltaTime * 10;
-        //    transform.Translate(dir.x, dir.y, 0);   
-        //}
-        
+
+        ConstrainToGrid();
+        this.transform.position = pos;
+
+        if (b_ShouldMove)
+        {
+            //Debug.Log("Trying to follow path.");
+            this.GetComponent<Pathfinder>().FollowPath();
+        }    
 	}
 
     void OnMouseDown()
     {
         // Switch current controlled character to this one
         GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter = this.gameObject;
-        Debug.Log("Selected.");
     }
 
     public void SetCharacterDestination(Vector3 dest)
     {
         m_Destination = dest;
+        this.GetComponent<Pathfinder>().FindPath(m_Destination);
     }
 
     public void SetToMove(bool status)
@@ -65,26 +69,22 @@ public class BaseCharacter : MonoBehaviour {
 
     void ConstrainToGrid()
     {
-        //if (xpos < 1)
-        //{
-        //    mapposx++;
-        //    xpos = 1;
-        //}
-        //else if (xpos > map.xsize)
-        //{
-        //    mapposx--;
-        //    xpos = map.xsize;
-        //}
+        if (pos.x < 1)
+        {
+            pos.x = 1;
+        }
+        else if (pos.x > theLevel.xsize)
+        {
+            pos.x = theLevel.xsize;
+        }
 
-        //if (ypos > -1)
-        //{
-        //    mapposy++;
-        //    ypos = -1;
-        //}
-        //else if (ypos < -map.ysize)
-        //{
-        //    mapposy--;
-        //    ypos = -map.ysize;
-        //}
+        if (pos.y > -1)
+        {
+            pos.y = -1;
+        }
+        else if (pos.y < -theLevel.ysize)
+        {
+            pos.y = -theLevel.ysize;
+        }
     }
 }
