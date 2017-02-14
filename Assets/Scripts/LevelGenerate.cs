@@ -8,6 +8,7 @@ public class LevelGenerate : MonoBehaviour {
     public Sprite tile_grass, tile_stone, tile_spike, tile_rock, tile_water;
     public int[,] mapgrid;
     private bool[,] mapcheck;
+    private Vector3[,] mappositions;
     public int xsize;
     public int ysize;
     public GameObject possibleLoc;
@@ -23,11 +24,14 @@ public class LevelGenerate : MonoBehaviour {
     // Use this for initialization
     void Start () {
         xsize = Random.Range(7, 14);
-        ysize = Random.Range(5, 7);
+        ysize = Random.Range(6, 11);
         //xsize = 6;
         //ysize = 6;
         mapgrid = new int[xsize, ysize];
         mapcheck = new bool[xsize, ysize];
+        mappositions = new Vector3[xsize, ysize];
+
+        prefab = GameObject.Find("Tile");
 
         bool mapConfirmed = false;
 
@@ -120,62 +124,13 @@ public class LevelGenerate : MonoBehaviour {
                     }
                 }
             }
-            clearMapCheck();
-            mapConfirmed = true;
-        }
-    }
-	
-	// Update is called once per frame
-	void Update () {
 
-        clearMapCheck();
-
-        checkPossibleLoc(tester.mapposx, tester.mapposy);
-        Debug.Log(tester.mapposy);
-
-        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
-        foreach (GameObject obj in allObjects)
-        {
-            if(obj.name == "CurrentLoc(Clone)" || obj.name == "Tile(Clone)")
-                Destroy(obj);
-        }
-
-        if (xsize % 2 == 0)
-        {
             for (int j = 0; j < ysize; j++)
             {
                 for (int i = 0; i < xsize; i++)
                 {
-                    switch(mapgrid[i,j])
-                    {
-                        case 1:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_grass;
-                            break;
-                        case 2:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_stone;
-                            break;
-                        case 3:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_spike;
-                            break;
-                        case 4:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_rock;
-                            break;
-                        case 5:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_water;
-                            break;
-                    }
-                    Instantiate(prefab, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), 0), Quaternion.identity);
-                    if(mapcheck[i,j] == true && mapgrid[i,j] < 4)
-                        Instantiate(possibleLoc, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), -1), Quaternion.identity);
-                }
-            }
-        }
-        else
-        {
-            for (int j = 0; j < ysize; j++)
-            {
-                for (int i = 0; i < xsize; i++)
-                {
+                    mappositions[i, j] = new Vector3(i * 1.0f + prefab.GetComponent<SpriteRenderer>().bounds.size.x, (j * -1.0f) - prefab.GetComponent<SpriteRenderer>().bounds.size.y, 0);
+
                     switch (mapgrid[i, j])
                     {
                         case 1:
@@ -194,10 +149,44 @@ public class LevelGenerate : MonoBehaviour {
                             prefab.GetComponent<SpriteRenderer>().sprite = tile_water;
                             break;
                     }
-                    Instantiate(prefab, new Vector3(i * 1.0f - ((xsize / 2) + 1) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), 0), Quaternion.identity);
-                    if (mapcheck[i, j] == true && mapgrid[i, j] < 4)
-                        Instantiate(possibleLoc, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), -1), Quaternion.identity);
+                    //Instantiate(prefab, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), 0), Quaternion.identity);
+                    Instantiate(prefab, mappositions[i,j], Quaternion.identity);
+
                 }
+            }
+
+            clearMapCheck();
+            mapConfirmed = true;
+        }
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
+        clearMapCheck();
+
+        /* POSSIBLE MOVE PATTERNS
+         * 1 PLUS-CROSS
+         * 2 X-CROSS
+         * 3 SQUARE
+         */
+
+        checkPossibleLoc(tester.mapposx, tester.mapposy);
+        //Debug.Log(tester.mapposy);
+
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
+        foreach (GameObject obj in allObjects)
+        {
+            if(obj.name == "CurrentLoc(Clone)" || obj.name == "Tile(Clone)")
+                Destroy(obj);
+        }
+
+        for (int j = 0; j < ysize; j++)
+        {
+            for (int i = 0; i < xsize; i++)
+            {
+                if (mapcheck[i,j] == true && mapgrid[i,j] < 4)
+                   Instantiate(possibleLoc, mappositions[i,j], Quaternion.identity);
             }
         }
     }
@@ -317,6 +306,11 @@ public class LevelGenerate : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    Vector3 getTilePos(int i, int j)
+    {
+        return mappositions[i, j];
     }
 
 }

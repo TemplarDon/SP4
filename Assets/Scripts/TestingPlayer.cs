@@ -13,22 +13,16 @@ public class TestingPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        xpos = 0;
-        ypos = 0;
-        mapposx = -1;
-        mapposy = -1;
+        xpos = 1;
+        ypos = -1;
+        mapposx = 0;
+        mapposy = 0;
         //map = GameObject.Find("LevelGeneration");
     }
 	
 	// Update is called once per frame
 	void Update () {
         chara.transform.position = new Vector3(xpos, ypos, -1);
-        
-        if(mapposx == -1 && mapposy == -1)
-        {
-            mapposx = map.xsize - map.xsize / 2;
-            mapposy = map.ysize - 2;
-        }
 
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -51,59 +45,26 @@ public class TestingPlayer : MonoBehaviour {
             mapposx++;
         }
 
-        if(map.xsize % 2 == 0)
+        if (xpos < 1)
         {
-            if (xpos < -map.xsize / 2)
-            {
-                mapposx++;
-                xpos = -map.xsize / 2;
-            }
-            else if (xpos > map.xsize / 2 - 1)
-            {
-                mapposx--;
-                xpos = map.xsize / 2 - 1;
-            }
+            mapposx++;
+            xpos = 1;
         }
-        else
+        else if (xpos > map.xsize)
         {
-            if (xpos < -map.xsize / 2 - 1)
-            {
-                mapposx++;
-                xpos = -map.xsize / 2 - 1;
-            }
-            else if (xpos > map.xsize / 2 - 1)
-            {
-                mapposx--;
-                xpos = map.xsize / 2 - 1;
-            }
+            mapposx--;
+            xpos = map.xsize;
         }
         
-        if(map.ysize % 2 == 0)
+        if (ypos > -1)
         {
-            if (ypos < -map.ysize / 2 + 2)
-            {
-                mapposy--;
-                ypos = -map.ysize / 2 + 2;
-            }
-            else if (ypos > map.ysize / 2 + 1)
-            {
-                mapposy++;
-                ypos = map.ysize / 2 + 1;
-            }
+            mapposy++;
+            ypos = -1;
         }
-        else
+        else if (ypos < -map.ysize)
         {
-            if (ypos < -map.ysize / 2 + 1)
-            {
-                mapposy--;
-                ypos = -map.ysize / 2 + 1;
-            }
-            else if (ypos > map.ysize / 2 + 1)
-            {
-                mapposy++;
-                ypos = map.ysize / 2 + 1;
-            }
+            mapposy--;
+            ypos = -map.ysize;
         }
-        
     }
 }
