@@ -227,9 +227,38 @@ public class Pathfinder : MonoBehaviour
                 {
                     currIdx = Path.Count - 1;
                     b_PathFound = false;
-                    this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
-                    this.GetComponent<BaseCharacter>().pos.y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
+
                     currIdx = 0;
+                }
+                this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
+                this.GetComponent<BaseCharacter>().pos.y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
+
+                int player_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
+                int player_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
+
+                int node_x = Mathf.RoundToInt(Path[currIdx].m_pos.x);
+                int node_y = Mathf.RoundToInt(Path[currIdx].m_pos.y);
+
+
+                if (node_x < player_x && node_y == player_y)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationLeft");
+                }
+                else if (node_x > player_x && node_y == player_y)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationRight");
+                }
+                else if (node_y < player_y && node_x == player_x)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationDown");
+                }
+                else if (node_y > player_y && node_x == player_x)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationUp");
+                }
+                else
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationIdle");
                 }
             }
 
