@@ -33,12 +33,13 @@ public class LevelGenerate : MonoBehaviour {
     */
 
     // Use this for initialization
-    void Start () {
-        //xsize = 1;
-        //ysize = 1;
+    void Awake () {
+        Debug.Log("Level Generated");
+
         xsize = Random.Range(17, 24);
         ysize = Random.Range(16, 21);
-        
+        //xsize = 6;
+        //ysize = 6;
         mapgrid = new int[xsize, ysize];
         mapcheck = new bool[xsize, ysize];
         mappositions = new Vector3[xsize, ysize];
@@ -784,7 +785,7 @@ public class LevelGenerate : MonoBehaviour {
     // Used by pathfinding
     public Vector3 GetTilePos(int x_idx, int y_idx)
     {
-        return new Vector3(0,0,0);
+        return mappositions[x_idx, y_idx];
     }
 
     void removeSight(int i, int j, int direction)

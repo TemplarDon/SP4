@@ -5,10 +5,8 @@ using System.Collections.Generic;
 
 public class Pathfinder : MonoBehaviour
 {
-
-    public GameObject MapObject;
-    private LevelGenerate theLevel;
-    private List<List<Node>> NodeList = new List<List<Node>>();
+    public LevelGenerate theLevel;
+    private List<List<Node>> NodeList;
 
     List<Node> OpenList = new List<Node>();
     List<Node> ClosedList = new List<Node>();
@@ -17,27 +15,40 @@ public class Pathfinder : MonoBehaviour
 
     // Pathfinding Var
     private bool b_PathFound = false;
-    private Node CurrentNode;
+    private Node CurrentNode = null;
+
+    private int CurrentItr = 0;
+    private int ForceStop = 5;
 
     // Translating Var
     private int currIdx = 0;
+    //private Vector3 OFFSET = new Vector3(0.5f, -0.5f, 0f);
+    private Vector3 OFFSET = new Vector3(0, -0, 0);
 
     // Use this for initialization
     void Start()
     {
-        theLevel = MapObject.GetComponent<LevelGenerate>();
+        //Debug.Log(theLevel.xsize + " " + theLevel.ysize);
+
+        NodeList = new List<List<Node>>();
 
         // Fill up NodeList
-        for (int y = 0; y < theLevel.ysize; ++y)
+        for (int row = 0; row < theLevel.ysize; ++row)
         {
-            for (int x = 0; x < theLevel.xsize; ++x)
+            NodeList.Add(new List<Node>());
+            for (int col = 0; col < theLevel.xsize; ++col)
             {
+                //Debug.Log("Row: " + row + " Col: " + col);
+
                 Node toAdd = new Node();
-                toAdd.Init(theLevel.GetTileCost(x, y), x, y);
-                NodeList[y][x] = toAdd;
+                toAdd.Init(theLevel.GetTileCost(col, row), theLevel.GetTilePos(col, row));
+                NodeList[row].Add(toAdd);
+                //NodeList[y][x] = toAdd;
+
+                //Debug.Log("Creating");
             }
         }
-
+        //Debug.Log("TestPathfinder");
     }
 
     // Update is called once per frame
@@ -46,46 +57,102 @@ public class Pathfinder : MonoBehaviour
 
     }
 
-    public void FindAStarPath(Vector3 dest)
+    public void FindPath(Vector3 dest)
     {
-        m_Destination = dest;
-        b_PathFound = false;
+        //Debug.Log("Path Status: " + b_PathFound.ToString());
 
-        CurrentNode = GetNode(this.transform.position);
+        m_Destination.x = Mathf.RoundToInt(dest.x);
+        m_Destination.y = Mathf.RoundToInt(dest.y);
 
-        List<Node> Neighbours = new List<Node>();
+        if (!ValidateNode(GetNode(m_Destination)))
+        {
+            Debug.Log("Invalid destination");
+            return;
+        }
+
+        //Debug.Log("Clearing lists...");
+
+        OpenList.Clear();
+        ClosedList.Clear();
+
+        for (int row = 0; row < theLevel.ysize; ++row)
+        {
+            for (int col = 0; col < theLevel.xsize; ++col)
+            {
+                NodeList[row][col].ParentNode = null;
+                NodeList[row][col].AccCost = 0;
+            }
+
+        }
+
+        if (!ValidateNode(CurrentNode = GetNode(this.transform.position)))
+        {
+            Debug.Log("Current Pos has an error");
+            return;
+        }
+
+        List<Node> NeighbourList = new List<Node>();
 
         while (!b_PathFound)
         {
+            Debug.Log("Dist to destination: " + (CurrentNode.m_pos - m_Destination).magnitude.ToString());
+            if ((CurrentNode.m_pos - m_Destination).magnitude < 1.05)
+            {
+                b_PathFound = true;
+                Debug.Log("Path to destination: " + m_Destination.ToString() + " found.");
+            }
+
+
+            //Debug.Log("Adding to closed list: " + CurrentNode.m_pos.ToString());
             ClosedList.Add(CurrentNode);
 
-            if (ValidateNode(GetNode(this.transform.position + new Vector3(0, 1, 0))))
+
+
+            if (ValidateNode(GetNode(CurrentNode.m_pos + new Vector3(0, 1, 0))))
             {
-                OpenList.Add(GetNode(this.transform.position + new Vector3(0, 1, 0)));
+                OpenList.Add(GetNode(CurrentNode.m_pos + new Vector3(0, 1, 0)));
+                NeighbourList.Add(GetNode(CurrentNode.m_pos + new Vector3(0, 1, 0)));
             }
 
-            if (ValidateNode(GetNode(this.transform.position + new Vector3(0, -1, 0))))
+            if (ValidateNode(GetNode(CurrentNode.m_pos + new Vector3(0, -1, 0))))
             {
-                OpenList.Add(GetNode(this.transform.position + new Vector3(0, -1, 0)));
+                OpenList.Add(GetNode(CurrentNode.m_pos + new Vector3(0, -1, 0)));
+                NeighbourList.Add(GetNode(CurrentNode.m_pos + new Vector3(0, -1, 0)));
             }
 
-            if (ValidateNode(GetNode(this.transform.position + new Vector3(1, 0, 0))))
+            if (ValidateNode(GetNode(CurrentNode.m_pos + new Vector3(1, 0, 0))))
             {
-                OpenList.Add(GetNode(this.transform.position + new Vector3(1, 0, 0)));
+                OpenList.Add(GetNode(CurrentNode.m_pos + new Vector3(1, 0, 0)));
+                NeighbourList.Add(GetNode(CurrentNode.m_pos + new Vector3(1, 0, 0)));
             }
 
-            if (ValidateNode(GetNode(this.transform.position + new Vector3(-1, 0, 0))))
+            if (ValidateNode(GetNode(CurrentNode.m_pos + new Vector3(-1, 0, 0))))
             {
-                OpenList.Add(GetNode(this.transform.position + new Vector3(-1, 0, 0)));
+                OpenList.Add(GetNode(CurrentNode.m_pos + new Vector3(-1, 0, 0)));
+                NeighbourList.Add(GetNode(CurrentNode.m_pos + new Vector3(-1, 0, 0)));
             }
 
+            if (NeighbourList.Count <= 0)
+            {
+                Debug.Log("Pathfind failed. Current Node: " + CurrentNode.m_pos.ToString());
+                return;
+            }
+
+            // Set all neghbours parent to current node
+            foreach (Node aNode in NeighbourList)
+            {
+                aNode.ParentNode = CurrentNode;
+            }
+
+            //Debug.Log("OpenList Size: " + OpenList.Count.ToString());
             Node TempLowest = GetLowestF(OpenList);
-
+            OpenList.Remove(TempLowest);
             CurrentNode = TempLowest;
-            Neighbours.Clear();
 
-            if (TempLowest.m_pos == m_Destination)
-                b_PathFound = true;
+            ++CurrentItr;
+
+            NeighbourList.Clear();
+
         }
 
         // Add current node to closed list
@@ -101,16 +168,98 @@ public class Pathfinder : MonoBehaviour
         // Closed list will be the path to follow
     }
 
-    void FollowPath()
+    public void FollowPath()
     {
         if (b_PathFound)
         {
-            Vector3 dir = (this.transform.position - ClosedList[currIdx].m_pos).normalized * Time.deltaTime * 10;
-            this.transform.Translate(dir);
+            ////Debug.Log("Idx: " + currIdx.ToString() + " ClosedList Size: " + ClosedList.Count.ToString());
 
-            if ((this.transform.position - ClosedList[currIdx].m_pos).sqrMagnitude < 10)
+            ////Vector3 dir = (this.transform.position - (ClosedList[currIdx].m_pos + OFFSET)).normalized * Time.deltaTime * 5;
+            //Vector3 dir = (ClosedList[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 5;
+            //Debug.Log("Dir: " + dir.ToString() + " Idx: " + currIdx);
+
+            //this.GetComponent<BaseCharacter>().pos.x += dir.x;
+            //this.GetComponent<BaseCharacter>().pos.y += dir.y;
+
+            //if ((this.transform.position - ClosedList[currIdx].m_pos + OFFSET).magnitude < 0.1)
+            //{
+            //    ++currIdx;
+
+            //    if (currIdx >= ClosedList.Count)
+            //    {
+            //        currIdx = ClosedList.Count - 1;
+            //        b_PathFound = false;
+            //    }
+
+            //    Mathf.Round(this.GetComponent<BaseCharacter>().pos.x);
+            //    Mathf.Round(this.GetComponent<BaseCharacter>().pos.y);
+            //}
+
+            ////Debug.Log("Following path.");
+
+            // Use the last node to get the path
+            Node endNode = ClosedList[ClosedList.Count - 1];
+
+            List<Node> Path = new List<Node>();
+
+            Path.Add(GetNode(m_Destination));
+            Path.Add(endNode);
+
+            while (endNode.ParentNode != null)
             {
-                currIdx++;
+                endNode = endNode.ParentNode;
+                Path.Add(endNode);
+            }
+
+            Path.Reverse();
+
+            Vector3 dir = (Path[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 5;
+            //Debug.Log("Dir: " + dir.ToString() + " Idx: " + currIdx);
+
+            this.GetComponent<BaseCharacter>().pos.x += dir.x;
+            this.GetComponent<BaseCharacter>().pos.y += dir.y;
+
+            Debug.Log("Dist left to walk: " + (this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude.ToString() + " Idx: " + currIdx.ToString());
+            if ((this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude < 0.08)
+            {
+                ++currIdx;
+                if (currIdx >= Path.Count)
+                {
+                    currIdx = Path.Count - 1;
+                    b_PathFound = false;
+
+                    currIdx = 0;
+                }
+                this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
+                this.GetComponent<BaseCharacter>().pos.y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
+
+                int player_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
+                int player_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
+
+                int node_x = Mathf.RoundToInt(Path[currIdx].m_pos.x);
+                int node_y = Mathf.RoundToInt(Path[currIdx].m_pos.y);
+
+
+                if (node_x < player_x && node_y == player_y)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationLeft");
+                }
+                else if (node_x > player_x && node_y == player_y)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationRight");
+                }
+                else if (node_y < player_y && node_x == player_x)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationDown");
+                }
+                else if (node_y > player_y && node_x == player_x)
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationUp");
+                }
+                else
+                {
+                    this.GetComponent<Animator>().Play("CharacterAnimationIdle");
+                }
             }
 
         }
@@ -128,46 +277,122 @@ public class Pathfinder : MonoBehaviour
 
     Node GetNode(Vector3 pos)
     {
-        for (int y = 0; y < theLevel.ysize; ++y)
+        for (int row = 0; row < theLevel.ysize; ++row)
         {
-            for (int x = 0; x < theLevel.xsize; ++x)
+            for (int col = 0; col < theLevel.xsize; ++col)
             {
-                if (NodeList[y][x].m_pos.Equals(pos))
+                //Debug.Log("Pos: " + pos.ToString() + " XIndex: " + x.ToString() + " YIndex: " + y.ToString());
+                //Debug.Log(NodeList[y][x].m_pos.ToString());
+
+                //Debug.Log(" XIndex: " + col.ToString() + " YIndex: " + row.ToString());
+                //Debug.Log(NodeList[row][col].m_pos.ToString() + " compare to: " + pos.ToString());
+
+                if (NodeList[row][col].m_pos.ToString().Equals(pos.ToString()))
+                //if (NodeList[row][col].m_pos == (pos))
                 {
-                    return NodeList[y][x];
+                    //Debug.Log("Node found.");
+                    return NodeList[row][col];
                 }
             }
         }
 
+        Debug.Log("Can't find node. Returning NULL. Pos given: " + pos.ToString());
         return null;
     }
 
     bool ValidateNode(Node checkNode)
     {
         if (checkNode == null)
-            return false;
-
-        if (checkNode.TileCost != -1 && !ClosedList.Contains(checkNode))
         {
-            return true;
+            //Debug.Log("Node Rejected. (NULL Node)");
+            return false;
+        }
+
+        if (checkNode.TileCost == -1)
+        {
+            //Debug.Log("Node Rejected. (Obstacle Node)");
+            return false;
+        }
+
+        if (CheckIfInClosedList(checkNode))
+        {
+            //Debug.Log("Node Rejected. (In ClosedList)");
+            return false;
+        }
+
+        //if (CheckIfInOpenList(checkNode))
+        //{
+        //    //Debug.Log("Node Rejected. (In OpenList)");
+        //    return false;
+        //}
+
+        //if (checkNode.TileCost != -1 && !CheckIfInClosedList(checkNode) && !CheckIfInOpenList(checkNode))
+        //{
+        //    //Debug.Log("Node Accepted.");
+        //    return true;
+        //}
+
+
+        //Debug.Log("Node Rejected.");
+        //return false;
+
+        return true;
+    }
+
+    Node GetLowestF(List<Node> checkList)
+    {
+        if (checkList.Count <= 0)
+            return null;
+
+        int LowestF_Value = 99999;
+        int LowestF_Idx = 0;
+        for (int i = 0; i < checkList.Count; ++i)
+        {
+            if (checkList[i].CalculateAccCost() + GetManhattenDistance(checkList[i]) < LowestF_Value)
+            {
+                LowestF_Value = checkList[i].AccCost + (int)GetManhattenDistance(checkList[i]);
+                LowestF_Idx = i;
+            }
+        }
+
+        //Debug.Log("CheckList Size: " + checkList.Count.ToString());
+        //Debug.Log("LowestIdx: " + LowestF_Idx.ToString());
+        return checkList[LowestF_Idx];
+    }
+
+    bool CheckIfInClosedList(Node checkNode)
+    {
+        for (int i = 0; i < ClosedList.Count; ++i)
+        {
+            if (ClosedList[i].Equals(checkNode))
+            {
+                return true;
+            }
+
+            //if (ClosedList[i].m_pos.ToString().Equals(checkNode.m_pos.ToString()))
+            //{
+            //    return true;
+            //}
         }
 
         return false;
     }
 
-    Node GetLowestF(List<Node> checkList)
+    bool CheckIfInOpenList(Node checkNode)
     {
-        int LowestF_Value = 99999;
-        int LowestF_Idx = 0;
-        for (int i = 0; i < checkList.Count; ++i)
+        for (int i = 0; i < OpenList.Count; ++i)
         {
-            Node check = checkList[i];
-            if (check.CalculateAccCost() + GetManhattenDistance(check) < LowestF_Value)
+            if (OpenList[i].Equals(checkNode))
             {
-                LowestF_Value = check.AccCost + (int)GetManhattenDistance(check);
-                LowestF_Idx = i;
+                return true;
             }
+
+            //if (OpenList[i].m_pos.ToString().Equals(checkNode.m_pos.ToString()))
+            //{
+            //    return true;
+            //}
         }
-        return checkList[LowestF_Idx];
+
+        return false;
     }
 }

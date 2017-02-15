@@ -9,26 +9,42 @@ public class Node {
 
     public Node ParentNode = null;
 
-    public void Init(int cost, int x, int y)
+    public void Init(int cost, Vector3 pos)
     {
+        ParentNode = null;
         TileCost = cost;
-        m_pos.x = x;
-        m_pos.y = y;
+        m_pos = pos;
     }
+
+    //public int CalculateAccCost()
+    //{
+    //    int returnValue = 0;
+    //    Node checkNode = ParentNode;
+
+    //    while (checkNode != null)
+    //    {
+    //        returnValue += checkNode.TileCost;
+    //        checkNode = checkNode.ParentNode;
+    //    }
+
+    //    AccCost = returnValue;
+    //    return returnValue;
+    //}
 
     public int CalculateAccCost()
     {
-        int returnValue = 0;
-        Node checkNode = ParentNode;
-
-        while (checkNode != null)
+        if (ParentNode != null)
         {
-            returnValue += checkNode.TileCost;
-            checkNode = checkNode.ParentNode;
+            AccCost = this.TileCost + this.ParentNode.CalculateAccCost();
+            return AccCost;
+        }
+        else
+        {
+            AccCost = this.TileCost;
+            return AccCost;
         }
 
-        AccCost = returnValue;
-        return returnValue;
+        return 1;
     }
 
 }
