@@ -35,6 +35,8 @@ public class BaseCharacter : MonoBehaviour {
 
         pos.x = (int)this.transform.position.x;
         pos.y = (int)this.transform.position.y;
+
+        this.GetComponent<Animator>().Play("CharacterAnimationIdle");
 	}
 	
 	// Update is called once per frame
@@ -54,6 +56,8 @@ public class BaseCharacter : MonoBehaviour {
     {
         // Switch current controlled character to this one
         GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter = this.gameObject;
+        GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = this.gameObject.GetComponent<BaseCharacter>();
+        GameObject.Find("TurnManager").GetComponent<turnManage>().menuOpen = true;
     }
 
     public void SetCharacterDestination(Vector3 dest)

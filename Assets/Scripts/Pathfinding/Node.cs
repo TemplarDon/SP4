@@ -43,8 +43,6 @@ public class Node {
             AccCost = this.TileCost;
             return AccCost;
         }
-
-        return 1;
     }
 
 }
