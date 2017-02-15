@@ -3,7 +3,6 @@ using System.Collections;
 
 public class LevelGenerate : MonoBehaviour {
 
-    public TestingPlayer tester;
     public int mapposx;
     public int mapposy;
     public GameObject prefab;
@@ -190,7 +189,6 @@ public class LevelGenerate : MonoBehaviour {
          * 7 BLIND STEP
          */
 
-        //checkPossibleLoc(tester.mapposx, tester.mapposy, 6, 5);
         checkPossibleLoc(mapposx, mapposy, 7, 4);
 
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");

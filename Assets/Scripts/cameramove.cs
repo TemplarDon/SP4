@@ -159,35 +159,35 @@ public class cameramove : MonoBehaviour {
             specialTrigger = false;
 
             //Debug.Log(turnManager.charac.xpos + " x " + currentLoc.x);
-            if (currentLoc.x < turnManager.charac.xpos - 0.26f)
+            if (currentLoc.x < turnManager.characNEW.pos.x - 0.26f)
             {
                 transform.Translate(0.5f, 0, 0);
                 currentLoc.x += 0.5f;
             }
-            else if (currentLoc.x > turnManager.charac.xpos + 0.26f)
+            else if (currentLoc.x > turnManager.characNEW.pos.x + 0.26f)
             {
                 transform.Translate(-0.5f, 0, 0);
                 currentLoc.x -= 0.5f;
             }
             else
             {
-                currentLoc.x = turnManager.charac.xpos;
+                currentLoc.x = turnManager.characNEW.pos.x;
             }
 
             //Debug.Log(turnManager.charac.ypos + " y " + currentLoc.y);
-            if (currentLoc.y < turnManager.charac.ypos - 0.26f)
+            if (currentLoc.y < turnManager.characNEW.pos.y - 0.26f)
             {
                 transform.Translate(0, 0.5f, 0);
                 currentLoc.y += 0.5f;
             }
-            else if (currentLoc.y > turnManager.charac.ypos + 0.26f)
+            else if (currentLoc.y > turnManager.characNEW.pos.y + 0.26f)
             {
                 transform.Translate(0, -0.5f, 0);
                 currentLoc.y -= 0.5f;
             }
             else
             {
-                currentLoc.y = turnManager.charac.ypos;
+                currentLoc.y = turnManager.characNEW.pos.y;
             }
 
             if (currentLoc.x < 7.99695f - extraBorder)

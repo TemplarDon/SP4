@@ -11,6 +11,8 @@ public class turnManage : MonoBehaviour {
     public GameObject menuObject;
     public GameObject menuArrow;
     public TestingPlayer charac;
+    // change
+    public BaseCharacter characNEW;
     public Camera camera2;
     public bool menuOpen;
     public GameObject shieldIcon;
@@ -20,7 +22,8 @@ public class turnManage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         turnNum.text = 1.ToString();
-        nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
+        //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
+        nameDisplay.text = characNEW.Name;
         //camera = GetComponent<Camera>();
         actionSelection = 1;
         menuOpen = true;
@@ -154,7 +157,8 @@ public class turnManage : MonoBehaviour {
 
         if (shieldFade == true)
         {
-            shieldIcon.transform.position = new Vector3(charac.xpos, charac.ypos, -6);
+            //shieldIcon.transform.position = new Vector3(charac.xpos, charac.ypos, -6);
+            shieldIcon.transform.position = new Vector3(characNEW.pos.x, characNEW.pos.y, -6);
             //FadeTextToZeroAlpha(1f, shieldIcon.GetComponent<SpriteRenderer>());
             shieldIcon.transform.localScale += new Vector3(0.001f, 0.001f, 0);
 
@@ -177,7 +181,7 @@ public class turnManage : MonoBehaviour {
 
         if (menuOpen == true)
         {
-            menuObject.transform.position = camera2.WorldToScreenPoint(new Vector3(charac.xpos + 2, charac.ypos, 0));
+            menuObject.transform.position = camera2.WorldToScreenPoint(new Vector3(characNEW.pos.x + 2, characNEW.pos.y, 0));
         }
     }
 
