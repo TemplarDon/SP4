@@ -191,35 +191,7 @@ public class LevelGenerate : MonoBehaviour {
          */
 
         //checkPossibleLoc(tester.mapposx, tester.mapposy, 6, 5);
-        checkPossibleLoc(mapposx, mapposy, 7, 9);
-        //Debug.Log(tester.mapposy);
-
-        //if (Input.GetMouseButton(0))
-        //{
-        //    dragtimer--;
-        //    if(dragtimer < 0)
-        //    {
-        //        dragging = true;
-        //        Debug.Log("DRAGGING");
-        //        dragChange = Input.mousePosition - dragStart;
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("TAPPING");
-        //        dragStart = Input.mousePosition;
-        //        dragChange = new Vector3(0, 0, 0);
-        //    }
-        //}
-        //else if(dragtimer != 10)
-        //{
-        //    dragtimer = 10;
-        //    if(dragging == true)
-        //    {
-        //        dragStart += dragChange;
-        //    }
-        //    dragging = false;
-        //    Debug.Log("RELEASE");
-        //}
+        checkPossibleLoc(mapposx, mapposy, 7, 4);
 
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
         foreach (GameObject obj in allObjects)

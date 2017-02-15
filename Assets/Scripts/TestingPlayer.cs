@@ -10,6 +10,8 @@ public class TestingPlayer : MonoBehaviour {
     public LevelGenerate map;
     public int mapposx;
     public int mapposy;
+    public GameObject playerLoc;
+    public turnManage turnManager;
 
 	// Use this for initialization
 	void Start () {
@@ -30,25 +32,28 @@ public class TestingPlayer : MonoBehaviour {
         map.mapposx = mapposx;
         map.mapposy = mapposy;
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (turnManager.menuOpen == false)
         {
-            ypos++;
-            mapposy--;
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            ypos--;
-            mapposy++;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            xpos--;
-            mapposx--;
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            xpos++;
-            mapposx++;
+            if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                ypos++;
+                mapposy--;
+            }
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                ypos--;
+                mapposy++;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                xpos--;
+                mapposx--;
+            }
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                xpos++;
+                mapposx++;
+            }
         }
 
         if (xpos < 1)
@@ -72,5 +77,12 @@ public class TestingPlayer : MonoBehaviour {
             mapposy--;
             ypos = -map.ysize;
         }
+
+    }
+
+    public void selectChar()
+    {
+        Debug.Log("CLICKED");
+        Instantiate(playerLoc, chara.transform.position, Quaternion.identity);
     }
 }
