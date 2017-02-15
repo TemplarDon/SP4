@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tester: {fileID: 1146307647}
+  mapposx: 0
+  mapposy: 0
   prefab: {fileID: 1669621037}
   tile_grass: {fileID: 21300000, guid: d4c4bfa5b14767c4dbaa3de99f85d69c, type: 3}
   tile_stone: {fileID: 21300000, guid: 9c573d346e56742429a8c542348aad1a, type: 3}
@@ -122,6 +124,7 @@ MonoBehaviour:
   xsize: 0
   ysize: 0
   possibleLoc: {fileID: 172556093}
+  dragSpeed: 2
 --- !u!4 &154135199
 Transform:
   m_ObjectHideFlags: 0
