@@ -64,6 +64,12 @@ public class Pathfinder : MonoBehaviour
         m_Destination.x = Mathf.RoundToInt(dest.x);
         m_Destination.y = Mathf.RoundToInt(dest.y);
 
+        if (!ValidateNode(GetNode(m_Destination)))
+        {
+            Debug.Log("Invalid destination");
+            return;
+        }
+
         //Debug.Log("Clearing lists...");
 
         OpenList.Clear();
