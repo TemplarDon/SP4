@@ -230,7 +230,7 @@ MonoBehaviour:
   InventorySizeRows: 5
   Name: Man 1
   BaseSpeed: 1
-  BaseAttackRange: 1
+  BaseAttackRange: 3
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
@@ -829,7 +829,7 @@ MonoBehaviour:
   InventorySizeRows: 5
   Name: Man 1
   BaseSpeed: 1
-  BaseAttackRange: 1
+  BaseAttackRange: 5
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
