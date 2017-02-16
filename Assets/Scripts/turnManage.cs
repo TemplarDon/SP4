@@ -11,13 +11,19 @@ public class turnManage : MonoBehaviour {
     public GameObject menuObject;
     public GameObject menuArrow;
     public TestingPlayer charac;
-    // change
     public BaseCharacter characNEW;
     public Camera camera2;
     public bool menuOpen;
     public GameObject shieldIcon;
-    private Vector3 shieldSize;
     private bool shieldFade;
+
+    public GameObject cancel1;
+    public GameObject cancel2;
+    public GameObject cancel3;
+    public GameObject cancel4;
+    public GameObject cancel5;
+
+    public bool[] restrictions;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +33,13 @@ public class turnManage : MonoBehaviour {
         //camera = GetComponent<Camera>();
         actionSelection = 1;
         menuOpen = true;
-        shieldSize = shieldIcon.transform.position;
         shieldFade = false;
+
+        restrictions = new bool[5];
+        for(int i = 0; i < 5; i++)
+        {
+            restrictions[i] = false;
+        }
     }
 	
 	// Update is called once per frame
@@ -112,8 +123,54 @@ public class turnManage : MonoBehaviour {
 
         if (menuOpen == true)
         {
+            if(restrictions[0] == true)
+            {
+                cancel1.transform.localPosition = new Vector3(-3, 155, 0);
+            }
+            else
+            {
+                cancel1.transform.localPosition = new Vector3(9999, 155, 0);
+            }
+
+            if (restrictions[1] == true)
+            {
+                cancel2.transform.localPosition = new Vector3(-3, 77.5f, 0);
+            }
+            else
+            {
+                cancel2.transform.localPosition = new Vector3(9999, 77.5f, 0);
+            }
+
+            if (restrictions[2] == true)
+            {
+                cancel3.transform.localPosition = new Vector3(-3, 0, 0);
+            }
+            else
+            {
+                cancel3.transform.localPosition = new Vector3(9999, 0, 0);
+            }
+
+            if (restrictions[3] == true)
+            {
+                cancel4.transform.localPosition = new Vector3(-3, -77.5f, 0);
+            }
+            else
+            {
+                cancel4.transform.localPosition = new Vector3(9999, -77.5f, 0);
+            }
+
+            if (restrictions[4] == true)
+            {
+                cancel5.transform.localPosition = new Vector3(-3, -155, 0);
+            }
+            else
+            {
+                cancel5.transform.localPosition = new Vector3(9999, -155, 0);
+            }
+
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
             {
+                restrictions[actionSelection - 1] = true;
                 switch (actionSelection)
                 {
                     case 1:
@@ -148,15 +205,41 @@ public class turnManage : MonoBehaviour {
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (actionSelection > 1)
-                    actionSelection--;
+                {
+                    int nextOption = actionSelection;
+                    while(nextOption >= 1)
+                    {
+                        nextOption--;
+                        if(nextOption >= 1 && restrictions[nextOption - 1] == false)
+                        {
+                            actionSelection = nextOption;
+                            break;
+                        }
+                    }
+                }
+                //actionSelection--;
             }
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
+                //if (actionSelection < 5)
+                //    actionSelection++;
+
                 if (actionSelection < 5)
-                    actionSelection++;
+                {
+                    int nextOption = actionSelection;
+                    while (nextOption <= 5)
+                    {
+                        nextOption++;
+                        if (nextOption <= 5 && restrictions[nextOption - 1] == false)
+                        {
+                            actionSelection = nextOption;
+                            break;
+                        }
+                    }
+                }
             }
         }
 

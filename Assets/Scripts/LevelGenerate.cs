@@ -274,7 +274,7 @@ public class LevelGenerate : MonoBehaviour {
         return true;
     }
 
-    void checkPossibleLoc(int i, int j, int type, int range)
+    public void checkPossibleLoc(int i, int j, int type, int range)
     {
         int leftC = 0;
         int rightC = xsize - 1;
