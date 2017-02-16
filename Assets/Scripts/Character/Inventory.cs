@@ -3,7 +3,7 @@ using System.Collections;
 
 using System.Collections.Generic;
 
-public class Inventory : MonoBehaviour{
+public class Inventory {
 
     public int InventorySizeColumns;
     public int InventorySizeRows;
@@ -22,11 +22,12 @@ public class Inventory : MonoBehaviour{
         InventorySizeColumns = InventorySizeRows = 5;
 
         // Fill list with null
-        for (int y = 0; y < InventorySizeColumns; ++y)
+        for (int col = 0; col < InventorySizeColumns; ++col)
         {
-            for (int x = 0; x < InventorySizeRows; ++x)
+            InventoryList.Add(new List<Items>());
+            for (int row = 0; row < InventorySizeRows; ++row)
             {
-                InventoryList[y][x] = null;
+                InventoryList[col].Add(new Items());
             }
 
         }

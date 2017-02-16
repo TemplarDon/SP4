@@ -189,7 +189,12 @@ public class LevelGenerate : MonoBehaviour {
          * 7 BLIND STEP
          */
 
-        checkPossibleLoc(mapposx, mapposy, 7, 4);
+        BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
+
+        if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING)
+        {
+            checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
+        }
 
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
         foreach (GameObject obj in allObjects)

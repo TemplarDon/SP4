@@ -43,9 +43,14 @@ public class BaseCharacter : MonoBehaviour {
 
         ConstrainToGrid();
         this.transform.position = pos;
-        //theLevel.checkPossibleLoc((int)pos.x - 1, -((int)pos.y) - 1, 7, 4);
-        theLevel.mapposx = (int)pos.x - 1;
-        theLevel.mapposy = -((int)pos.y) - 1;
+
+        BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
+        if (theCharacter == this)
+        {
+            //theLevel.checkPossibleLoc((int)pos.x - 1, -((int)pos.y) - 1, 7, 4);
+            theLevel.mapposx = (int)pos.x - 1;
+            theLevel.mapposy = -((int)pos.y) - 1;
+        }
 
         if (b_ShouldMove)
         {

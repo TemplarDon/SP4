@@ -230,6 +230,10 @@ public class Pathfinder : MonoBehaviour
                     currIdx = Path.Count - 1;
                     b_PathFound = false;
                     b_CompletedPath = true;
+
+                    GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(false);
+                    Debug.Log("Set CanMove to false");
+
                     currIdx = 0;
 
                     // Change CONTROL_TYPE to FREE_ROAM
@@ -262,7 +266,8 @@ public class Pathfinder : MonoBehaviour
                 {
                     this.GetComponent<Animator>().Play("CharacterAnimationUp");
                 }
-                else if (b_CompletedPath)
+
+                if (b_CompletedPath)
                 {
                     this.GetComponent<Animator>().Play("CharacterAnimationIdle");
                 }

@@ -178,7 +178,7 @@ public class turnManage : MonoBehaviour {
                         menuOpen = false;
                         actionSelection = 1;
 
-                        // Change CONTROL_TYPE to SELECTION
+                        // Change CONTROL_TYPE to MOVING
                         GameObject controller = GameObject.Find("Controller");
                         controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
 
@@ -269,7 +269,6 @@ public class turnManage : MonoBehaviour {
             // Change CONTROL_TYPE to SELECTION
             GameObject controller = GameObject.Find("Controller");
             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.SELECTION;
-
         }
 
         if (menuOpen == true)
