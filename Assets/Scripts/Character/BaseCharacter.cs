@@ -12,6 +12,8 @@ public class BaseCharacter : MonoBehaviour {
     public int InventorySizeColumns = 5;
     public int InventorySizeRows = 5;
 
+    public bool[] restrictActions;
+
     public SkillsManager theSkillsManager = new SkillsManager();
 
     // Character Stats
@@ -34,6 +36,13 @@ public class BaseCharacter : MonoBehaviour {
 
         pos.x = (int)this.transform.position.x;
         pos.y = (int)this.transform.position.y;
+
+        restrictActions = new bool[5];
+
+        for(int i = 0; i < 5; i++)
+        {
+            restrictActions[i] = false;
+        }
 
         this.GetComponent<Animator>().Play("CharacterAnimationIdle");
 	}

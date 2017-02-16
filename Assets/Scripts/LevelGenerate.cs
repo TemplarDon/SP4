@@ -14,6 +14,8 @@ public class LevelGenerate : MonoBehaviour {
     public int ysize;
     public GameObject possibleLoc;
 
+    public CSVLoader newMapDetected;
+
     private bool dragging;
     private int dragtimer;
     private Vector3 dragStart;
@@ -35,142 +37,149 @@ public class LevelGenerate : MonoBehaviour {
     void Awake () {
         Debug.Log("Level Generated");
 
-        xsize = Random.Range(17, 24);
-        ysize = Random.Range(16, 21);
-        //xsize = 6;
-        //ysize = 6;
-        mapgrid = new int[xsize, ysize];
-        mapcheck = new bool[xsize, ysize];
-        mappositions = new Vector3[xsize, ysize];
-
         prefab = GameObject.Find("Tile");
         dragging = false;
         dragtimer = 10;
 
-        bool mapConfirmed = false;
-
-        while (!mapConfirmed)
+        if (newMapDetected == null)
         {
-            for (int j = 0; j < ysize; j++)
-            {
-                for (int i = 0; i < xsize; i++)
-                {
-                    mapgrid[i, j] = Random.Range(1, 6);
-                    mapcheck[i, j] = false;
-                    if (mapgrid[i, j] >= 4)
-                    {
-                        mapcheck[i, j] = true;
-                    }
-                }
-            }
+            xsize = Random.Range(17, 24);
+            ysize = Random.Range(16, 21);
+            //xsize = 6;
+            //ysize = 6;
+            mapgrid = new int[xsize, ysize];
+            mapcheck = new bool[xsize, ysize];
+            mappositions = new Vector3[xsize, ysize];
 
-            int tempi = 0;
-            int tempj = 0;
-            while(mapgrid[tempi, tempj] >= 4)
-            {
-                tempi++;
-                if(tempi == xsize - 1)
-                {
-                    tempi = 0;
-                    tempj++;
-                    if(tempj == ysize - 1)
-                    {
-                        break;
-                    }
-                }
-            }
+            bool mapConfirmed = false;
 
-            validateMapCheck(tempi, tempj);
-
-            for(int j = 0; j < ysize; j++)
+            while (!mapConfirmed)
             {
-                for(int i = 0; i < xsize; i++)
+                for (int j = 0; j < ysize; j++)
                 {
-                    if(mapcheck[i, j] == false)
+                    for (int i = 0; i < xsize; i++)
                     {
-                        if(i == 0)
+                        mapgrid[i, j] = Random.Range(1, 6);
+                        mapcheck[i, j] = false;
+                        if (mapgrid[i, j] >= 4)
                         {
-                            if (Random.value >= 0.5)
-                                mapgrid[i + 1, j] = Random.Range(1, 4);
-                            if (j == 0)
-                            {
-                                if (Random.value >= 0.5)
-                                    mapgrid[i, j + 1] = Random.Range(1, 4);
-                            }
-                            else if(j == ysize - 1)
-                            {
-                                if (Random.value >= 0.5)
-                                    mapgrid[i, j - 1] = Random.Range(1, 4);
-                            }
-                        }
-                        else if(i == xsize - 1)
-                        {
-                            if (Random.value >= 0.5)
-                                mapgrid[i - 1, j] = Random.Range(1, 4);
-                            if (j == 0)
-                            {
-                                if (Random.value >= 0.5)
-                                    mapgrid[i, j + 1] = Random.Range(1, 4);
-                            }
-                            else if (j == ysize - 1)
-                            {
-                                if (Random.value >= 0.5)
-                                    mapgrid[i, j - 1] = Random.Range(1, 4);
-                            }
-                        }
-                        else
-                        {
-                            if (Random.value >= 0.5)
-                                mapgrid[i + 1, j] = Random.Range(1, 4);
-                            if (Random.value >= 0.5)
-                                mapgrid[i - 1, j] = Random.Range(1, 4);
-                            if (j == 0)
-                            {
-                                if (Random.value >= 0.5)
-                                    mapgrid[i, j + 1] = Random.Range(1, 4);
-                            }
-                            else if (j == ysize - 1)
-                            {
-                                if (Random.value >= 0.5)
-                                    mapgrid[i, j - 1] = Random.Range(1, 4);
-                            }
+                            mapcheck[i, j] = true;
                         }
                     }
                 }
-            }
 
-            for (int j = 0; j < ysize; j++)
-            {
-                for (int i = 0; i < xsize; i++)
+                int tempi = 0;
+                int tempj = 0;
+                while (mapgrid[tempi, tempj] >= 4)
                 {
-                    mappositions[i, j] = new Vector3(i * 1.0f + prefab.GetComponent<SpriteRenderer>().bounds.size.x, (j * -1.0f) - prefab.GetComponent<SpriteRenderer>().bounds.size.y, 0);
-
-                    switch (mapgrid[i, j])
+                    tempi++;
+                    if (tempi == xsize - 1)
                     {
-                        case 1:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_grass;
+                        tempi = 0;
+                        tempj++;
+                        if (tempj == ysize - 1)
+                        {
                             break;
-                        case 2:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_stone;
-                            break;
-                        case 3:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_spike;
-                            break;
-                        case 4:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_rock;
-                            break;
-                        case 5:
-                            prefab.GetComponent<SpriteRenderer>().sprite = tile_water;
-                            break;
+                        }
                     }
-                    //Instantiate(prefab, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), 0), Quaternion.identity);
-                    Instantiate(prefab, mappositions[i,j], Quaternion.identity);
-
                 }
-            }
 
-            clearMapCheck();
-            mapConfirmed = true;
+                validateMapCheck(tempi, tempj);
+
+                for (int j = 0; j < ysize; j++)
+                {
+                    for (int i = 0; i < xsize; i++)
+                    {
+                        if (mapcheck[i, j] == false)
+                        {
+                            if (i == 0)
+                            {
+                                if (Random.value >= 0.5)
+                                    mapgrid[i + 1, j] = Random.Range(1, 4);
+                                if (j == 0)
+                                {
+                                    if (Random.value >= 0.5)
+                                        mapgrid[i, j + 1] = Random.Range(1, 4);
+                                }
+                                else if (j == ysize - 1)
+                                {
+                                    if (Random.value >= 0.5)
+                                        mapgrid[i, j - 1] = Random.Range(1, 4);
+                                }
+                            }
+                            else if (i == xsize - 1)
+                            {
+                                if (Random.value >= 0.5)
+                                    mapgrid[i - 1, j] = Random.Range(1, 4);
+                                if (j == 0)
+                                {
+                                    if (Random.value >= 0.5)
+                                        mapgrid[i, j + 1] = Random.Range(1, 4);
+                                }
+                                else if (j == ysize - 1)
+                                {
+                                    if (Random.value >= 0.5)
+                                        mapgrid[i, j - 1] = Random.Range(1, 4);
+                                }
+                            }
+                            else
+                            {
+                                if (Random.value >= 0.5)
+                                    mapgrid[i + 1, j] = Random.Range(1, 4);
+                                if (Random.value >= 0.5)
+                                    mapgrid[i - 1, j] = Random.Range(1, 4);
+                                if (j == 0)
+                                {
+                                    if (Random.value >= 0.5)
+                                        mapgrid[i, j + 1] = Random.Range(1, 4);
+                                }
+                                else if (j == ysize - 1)
+                                {
+                                    if (Random.value >= 0.5)
+                                        mapgrid[i, j - 1] = Random.Range(1, 4);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                for (int j = 0; j < ysize; j++)
+                {
+                    for (int i = 0; i < xsize; i++)
+                    {
+                        mappositions[i, j] = new Vector3(i * 1.0f + prefab.GetComponent<SpriteRenderer>().bounds.size.x, (j * -1.0f) - prefab.GetComponent<SpriteRenderer>().bounds.size.y, 0);
+
+                        switch (mapgrid[i, j])
+                        {
+                            case 1:
+                                prefab.GetComponent<SpriteRenderer>().sprite = tile_grass;
+                                break;
+                            case 2:
+                                prefab.GetComponent<SpriteRenderer>().sprite = tile_stone;
+                                break;
+                            case 3:
+                                prefab.GetComponent<SpriteRenderer>().sprite = tile_spike;
+                                break;
+                            case 4:
+                                prefab.GetComponent<SpriteRenderer>().sprite = tile_rock;
+                                break;
+                            case 5:
+                                prefab.GetComponent<SpriteRenderer>().sprite = tile_water;
+                                break;
+                        }
+                        //Instantiate(prefab, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), 0), Quaternion.identity);
+                        Instantiate(prefab, mappositions[i, j], Quaternion.identity);
+
+                    }
+                }
+
+                //clearMapCheck();
+                mapConfirmed = true;
+            }
+        }
+        else
+        {
+            generateLoadMap(newMapDetected.loadedMap, newMapDetected.newxsize, newMapDetected.newysize);
         }
     }
 	
@@ -194,16 +203,20 @@ public class LevelGenerate : MonoBehaviour {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
         foreach (GameObject obj in allObjects)
         {
-            if(obj.name == "CurrentLoc(Clone)" || obj.name == "Tile(Clone)")
+            if(obj.name == "CurrentLoc(Clone)")
                 Destroy(obj);
         }
 
-        for (int j = 0; j < ysize; j++)
+        GameObject controller = GameObject.Find("Controller");
+        if (controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING)
         {
-            for (int i = 0; i < xsize; i++)
+            for (int j = 0; j < ysize; j++)
             {
-                if (mapcheck[i,j] == true && mapgrid[i,j] < 4)
-                   Instantiate(possibleLoc, mappositions[i,j], Quaternion.identity);
+                for (int i = 0; i < xsize; i++)
+                {
+                    if (mapcheck[i, j] == true && mapgrid[i, j] < 4)
+                        Instantiate(possibleLoc, mappositions[i, j], Quaternion.identity);
+                }
             }
         }
     }
@@ -1119,4 +1132,65 @@ public class LevelGenerate : MonoBehaviour {
             }
         }
     }
+
+    public void generateLoadMap(int [,] newMap, int newxsize, int newysize)
+    {
+        xsize = newxsize;
+        ysize = newysize;
+
+        mapgrid = new int[xsize, ysize];
+        mapcheck = new bool[xsize, ysize];
+        mappositions = new Vector3[xsize, ysize];
+            for (int j = 0; j < ysize; j++)
+            {
+                for (int i = 0; i < xsize; i++)
+                {
+                    mapgrid[i, j] = newMap[i,j];
+                    mapcheck[i, j] = false;
+                    if (mapgrid[i, j] >= 4)
+                    {
+                        mapcheck[i, j] = true;
+                    }
+                }
+            }
+
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == "Tile(Clone)")
+                Destroy(obj);
+        }
+
+        for (int j = 0; j < ysize; j++)
+            {
+                for (int i = 0; i < xsize; i++)
+                {
+                    mappositions[i, j] = new Vector3(i * 1.0f + prefab.GetComponent<SpriteRenderer>().bounds.size.x, (j * -1.0f) - prefab.GetComponent<SpriteRenderer>().bounds.size.y, 0);
+
+                    switch (newMap[i, j])
+                    {
+                        case 1:
+                            prefab.GetComponent<SpriteRenderer>().sprite = tile_grass;
+                            break;
+                        case 2:
+                            prefab.GetComponent<SpriteRenderer>().sprite = tile_stone;
+                            break;
+                        case 3:
+                            prefab.GetComponent<SpriteRenderer>().sprite = tile_spike;
+                            break;
+                        case 4:
+                            prefab.GetComponent<SpriteRenderer>().sprite = tile_rock;
+                            break;
+                        case 5:
+                            prefab.GetComponent<SpriteRenderer>().sprite = tile_water;
+                            break;
+                    }
+                    //Instantiate(prefab, new Vector3(i * 1.0f - ((xsize / 2)) * 1.0f, (j * -1.0f) + (((ysize / 2) + 1) * 1.0f), 0), Quaternion.identity);
+                    Instantiate(prefab, mappositions[i, j], Quaternion.identity);
+
+                }
+            }
+
+            clearMapCheck();
+        }
 }
