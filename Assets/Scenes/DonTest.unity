@@ -405,7 +405,7 @@ MonoBehaviour:
   restrictActions: 
   Name: Man 1
   BaseSpeed: 1
-  BaseAttackRange: 1
+  BaseAttackRange: 3
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
@@ -1487,6 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   m_Delegates:
   - eventID: 0
     callback:
@@ -1524,6 +1525,22 @@ MonoBehaviour:
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!114 &942090205
+
+  theLevel: {fileID: 154135198}
+  pos: {x: 0, y: 0, z: 0}
+  theInventory: {fileID: 0}
+  InventorySizeColumns: 5
+  InventorySizeRows: 5
+  Name: Man 1
+  BaseSpeed: 1
+  BaseAttackRange: 5
+  BaseStrength: 1
+  BaseMagic: 1
+  BaseMana: 1
+  BaseHealth: 1
+  BaseArmour: 1
+--- !u!114 &1146307647
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

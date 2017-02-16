@@ -5,6 +5,8 @@ public class CharacterController : MonoBehaviour {
 
     public GameObject CurrentControlledCharacter;
 
+    private bool b_CanMove = false;
+
     public enum CONTROL_MODE
     {
         FREE_ROAM,
@@ -22,9 +24,11 @@ public class CharacterController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
-        if (Input.GetMouseButtonUp(0) && CurrentMode == CONTROL_MODE.MOVING)
+
+        if (Input.GetMouseButtonUp(0) && CurrentMode == CONTROL_MODE.MOVING && b_CanMove)
         {
+            GameObject[] InRangeTiles = GameObject.FindGameObjectsWithTag("yellowSq");
+
             Debug.Log("Telling " + CurrentControlledCharacter.name + " to move.");
             CurrentControlledCharacter.GetComponent<BaseCharacter>().SetToMove(true);
             CurrentControlledCharacter.GetComponent<BaseCharacter>().SetCharacterDestination(Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -32,5 +36,8 @@ public class CharacterController : MonoBehaviour {
 
 	}
 
-
+    public void SetCanMove(bool status)
+    {
+        b_CanMove = status;
+    }
 }

@@ -290,7 +290,6 @@ public class turnManage : MonoBehaviour {
 
             // Change CONTROL_TYPE to SELECTION
             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.SELECTION;
-
         }
         
         if (mouseOnMenu == false && menuOpen && Input.GetMouseButtonDown(0) && controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.SELECTION)
