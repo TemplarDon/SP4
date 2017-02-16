@@ -177,6 +177,11 @@ public class turnManage : MonoBehaviour {
                         menuObject.transform.position = new Vector3(-9999, -9999, 0);
                         menuOpen = false;
                         actionSelection = 1;
+
+                        // Change CONTROL_TYPE to SELECTION
+                        GameObject controller = GameObject.Find("Controller");
+                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
+
                         break;
                     case 2:
                         menuObject.transform.position = new Vector3(-9999, -9999, 0);
@@ -260,6 +265,11 @@ public class turnManage : MonoBehaviour {
         {
             menuOpen = true;
             actionSelection = 1;
+
+            // Change CONTROL_TYPE to SELECTION
+            GameObject controller = GameObject.Find("Controller");
+            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.SELECTION;
+
         }
 
         if (menuOpen == true)

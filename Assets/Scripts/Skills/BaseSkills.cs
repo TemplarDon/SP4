@@ -21,7 +21,6 @@ public class BaseSkills {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame

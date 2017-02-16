@@ -25,6 +25,8 @@ public class Pathfinder : MonoBehaviour
     //private Vector3 OFFSET = new Vector3(0.5f, -0.5f, 0f);
     private Vector3 OFFSET = new Vector3(0, -0, 0);
 
+    public bool b_CompletedPath = false;
+
     // Use this for initialization
     void Start()
     {
@@ -71,7 +73,7 @@ public class Pathfinder : MonoBehaviour
         }
 
         //Debug.Log("Clearing lists...");
-
+        b_CompletedPath = false;
         OpenList.Clear();
         ClosedList.Clear();
 
@@ -227,8 +229,12 @@ public class Pathfinder : MonoBehaviour
                 {
                     currIdx = Path.Count - 1;
                     b_PathFound = false;
-
+                    b_CompletedPath = true;
                     currIdx = 0;
+
+                    // Change CONTROL_TYPE to FREE_ROAM
+                    GameObject controller = GameObject.Find("Controller");
+                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                 }
                 this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
                 this.GetComponent<BaseCharacter>().pos.y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
@@ -256,7 +262,7 @@ public class Pathfinder : MonoBehaviour
                 {
                     this.GetComponent<Animator>().Play("CharacterAnimationUp");
                 }
-                else
+                else if (b_CompletedPath)
                 {
                     this.GetComponent<Animator>().Play("CharacterAnimationIdle");
                 }
