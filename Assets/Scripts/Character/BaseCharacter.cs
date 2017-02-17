@@ -18,6 +18,8 @@ public class BaseCharacter : MonoBehaviour {
     public SkillsManager theSkillsManager = new SkillsManager();
     public BaseSkills theSkill;
 
+  	public bool[] restrictActions;
+
     // Character Stats
     public string Name = "Man";
     public int BaseSpeed = 1;          // The speed of the character, affects the number of tiles can be walked on
@@ -36,6 +38,13 @@ public class BaseCharacter : MonoBehaviour {
 	void Start () {
         pos.x = (int)this.transform.position.x;
         pos.y = (int)this.transform.position.y;
+
+        restrictActions = new bool[5];
+
+        for(int i = 0; i < 5; i++)
+        {
+            restrictActions[i] = false;
+        }
 
         this.GetComponent<Animator>().Play("CharacterAnimationIdle");
 	}

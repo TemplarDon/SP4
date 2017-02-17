@@ -24,6 +24,7 @@ public class cameramove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        transform.position = new Vector3(transform.position.x, transform.position.y, -9);
 
        // -------------------Code for Zooming Out------------
        if (Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -233,5 +234,7 @@ public class cameramove : MonoBehaviour {
             dragOrigin = new Vector3(0, 0, 0);
             combinepos = new Vector3(0, 0, 0);
         }
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, -9);
     }
 }
