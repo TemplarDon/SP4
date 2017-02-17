@@ -9,8 +9,8 @@ public class Weapons : Equippables {
         MAGICAL,
     }
 
-    int WeaponDamage = 1;
-    int WeaponRange = 1;
+    public int WeaponDamage = 1;
+    public int WeaponRange = 1;
 
 	// Use this for initialization
 	void Start () {
