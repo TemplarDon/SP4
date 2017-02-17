@@ -441,8 +441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   pos: {x: 0, y: 0, z: 0}
-  theWeapon: {fileID: 847119758}
-  theArmour: {fileID: 907071546}
+  theWeapon: {fileID: 0}
+  theArmour: {fileID: 0}
   theItem: {fileID: 1582067856}
   theSkill: {fileID: 1215460899}
   restrictActions: 
@@ -894,11 +894,11 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: Weapon
       value: 
-      objectReference: {fileID: 847119758}
+      objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: Armour
       value: 
-      objectReference: {fileID: 907071546}
+      objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: Skill
       value: 
@@ -910,11 +910,11 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theWeapon
       value: 
-      objectReference: {fileID: 847119758}
+      objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theArmour
       value: 
-      objectReference: {fileID: 907071546}
+      objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theItem
       value: 
@@ -1459,9 +1459,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 847119756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80c617bd3caac094b914886391e689cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 54888ded2beb28242a2cccdd50d4a44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponDamage: 1
+  WeaponRange: 1
 --- !u!1 &907071544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,9 +1500,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 907071544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80c617bd3caac094b914886391e689cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5523e123e6637aa4185788ffe0af203c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArmourAmount: 1
 --- !u!1 &907230593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,8 +2041,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   pos: {x: 0, y: 0, z: 0}
-  theWeapon: {fileID: 847119758}
-  theArmour: {fileID: 907071546}
+  theWeapon: {fileID: 0}
+  theArmour: {fileID: 0}
   theItem: {fileID: 1582067856}
   theSkill: {fileID: 1215460899}
   restrictActions: 
@@ -3068,8 +3071,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118, y: -113}
-  m_SizeDelta: {x: 179, y: 112}
+  m_AnchoredPosition: {x: 120.9, y: -124.1}
+  m_SizeDelta: {x: 199.8, y: 134.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716285487
 MonoBehaviour:
@@ -3104,7 +3107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 12
+  m_Text: 1
 --- !u!222 &1716285488
 CanvasRenderer:
   m_ObjectHideFlags: 0
