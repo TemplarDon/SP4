@@ -261,6 +261,7 @@ public class Pathfinder : MonoBehaviour
                     // Change CONTROL_TYPE to FREE_ROAM
                     GameObject controller = GameObject.Find("Controller");
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                    this.GetComponent<BaseCharacter>().restrictActions[0] = true;
                 }
                 this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
                 this.GetComponent<BaseCharacter>().pos.y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);

@@ -231,7 +231,7 @@ public class cameramove : MonoBehaviour {
             transform.position = currentLoc;
         }
 
-        if ((specialTrigger2 == false) && (turnManager.menuOpen == false) && (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.MOVING) && (Input.GetMouseButtonUp(0) || specialTrigger))
+        if ((specialTrigger2 == false) && (turnManager.menuOpen == false) && (Input.GetMouseButtonUp(0) || specialTrigger))
         {
             //Debug.Log(map.mappositions[map.xsize - 1, 0]);
             currentLoc = combinepos;
@@ -240,7 +240,11 @@ public class cameramove : MonoBehaviour {
             dragOrigin = new Vector3(0, 0, 0);
             combinepos = new Vector3(0, 0, 0);
         }
-        specialTrigger2 = false;
+        if(Input.GetMouseButtonUp(0))
+        {
+            specialTrigger2 = false;
+        }
+        
         transform.position = new Vector3(transform.position.x, transform.position.y, -9);
     }
 }

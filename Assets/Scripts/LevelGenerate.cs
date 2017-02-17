@@ -15,6 +15,7 @@ public class LevelGenerate : MonoBehaviour {
     public int xsize;
     public int ysize;
     public GameObject possibleLoc;
+    public GameObject enemyLoc;
 
     public CSVLoader newMapDetected;
 
@@ -26,6 +27,9 @@ public class LevelGenerate : MonoBehaviour {
 
     public float dragSpeed = 2;
     private Vector3 dragOrigin;
+
+    bool yellowGen = false;
+    public bool redGen = false;
 
     /* List of tiles:
      * 1 [NORMAL] Grass Tile
@@ -202,28 +206,78 @@ public class LevelGenerate : MonoBehaviour {
 
         BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
 
-        if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING)
+        if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING)
         {
             checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
-        }
-
-        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
-        foreach (GameObject obj in allObjects)
-        {
-            if(obj.name == "CurrentLoc(Clone)")
-                Destroy(obj);
-        }
-
-        GameObject controller = GameObject.Find("Controller");
-        if (controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING)
-        {
-            for (int j = 0; j < ysize; j++)
+            if (redGen == false)
             {
-                for (int i = 0; i < xsize; i++)
+                GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
+                foreach (GameObject obj in allObjects)
                 {
-                    if (mapcheck[i, j] == true && mapgrid[i, j] < 4)
-                        Instantiate(possibleLoc, mappositions[i, j], Quaternion.identity);
+                    if (mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] == true)
+                    {
+                        mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] = false;
+                    }
                 }
+            }
+            else if(redGen == true)
+            {
+                GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
+                foreach (GameObject obj in allObjects)
+                {
+                    if (mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] == true && (int)obj.transform.position.x != mapposx - 1 && (int)obj.transform.position.y != -mapposy - 1)
+                    {
+                        mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] = false;
+                        Instantiate(enemyLoc, mappositions[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1], Quaternion.identity);
+                    }
+                    else
+                    {
+                        mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] = false;
+                    }
+                }
+            }
+
+            if (yellowGen == false && redGen == false)
+            {
+                yellowGen = true;
+                for (int j = 0; j < ysize; j++)
+                {
+                    for (int i = 0; i < xsize; i++)
+                    {
+                        if (mapcheck[i, j] == true && mapgrid[i, j] < 4)
+                            Instantiate(possibleLoc, mappositions[i, j], Quaternion.identity);
+                    }
+                }
+            }
+            else if (redGen == true)
+            {
+                for (int j = 0; j < ysize; j++)
+                {
+                    for (int i = 0; i < xsize; i++)
+                    {
+                        if (mapcheck[i, j] == true && mapgrid[i, j] < 4)
+                            Instantiate(enemyLoc, mappositions[i, j], Quaternion.identity);
+                    }
+                }
+                redGen = false;
+                yellowGen = true;
+            }
+        }
+        else
+        {
+            yellowGen = false;
+            GameObject[] allObjects = GameObject.FindGameObjectsWithTag("yellowSq");
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.name == "CurrentLoc(Clone)")
+                    Destroy(obj);
+            }
+
+            GameObject[] allObjects2 = GameObject.FindGameObjectsWithTag("redSq");
+            foreach (GameObject obj in allObjects2)
+            {
+                if (obj.name == "AttackSq(Clone)")
+                    Destroy(obj);
             }
         }
     }
@@ -1217,4 +1271,9 @@ public class LevelGenerate : MonoBehaviour {
 
             clearMapCheck();
         }
+
+    public void generateYellow()
+    {
+
+    }
 }

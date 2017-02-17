@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour {
         FREE_ROAM,
         SELECTION,
         MOVING,
+        ATTACKING,
     }
 
     public CONTROL_MODE CurrentMode;

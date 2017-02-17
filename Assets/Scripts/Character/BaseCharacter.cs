@@ -19,6 +19,7 @@ public class BaseCharacter : MonoBehaviour {
     public BaseSkills theSkill;
 
   	public bool[] restrictActions;
+    public bool isEnemy;
 
     // Character Stats
     public string Name = "Man";

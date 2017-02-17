@@ -23,10 +23,13 @@ public class turnManage : MonoBehaviour {
     public GameObject cancel4;
     public GameObject cancel5;
 
+    public LevelGenerate map;
+
     public bool[] restrictions;
 
     private bool mouseOnMenu;
     public bool clickingNewChar;
+    public bool cancelAction;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +42,7 @@ public class turnManage : MonoBehaviour {
         shieldFade = false;
         mouseOnMenu = false;
         clickingNewChar = false;
+        cancelAction = true;
 
         restrictions = new bool[5];
         for(int i = 0; i < 5; i++)
@@ -50,6 +54,7 @@ public class turnManage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
        turnNum.text = turnNumber.ToString();
+        nameDisplay.text = characNEW.Name;
         restrictions = characNEW.restrictActions;
         GameObject controller = GameObject.Find("Controller");
 
@@ -180,6 +185,7 @@ public class turnManage : MonoBehaviour {
                 //characNEW.restrictActions[actionSelection - 1] = restrictions[actionSelection - 1] = true;
                 if (restrictions[actionSelection - 1] == false)
                 {
+                    Debug.Log(restrictions[actionSelection - 1]);
                     switch (actionSelection)
                     {
                         case 1:
@@ -193,7 +199,8 @@ public class turnManage : MonoBehaviour {
                         case 2:
                             menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             menuOpen = false;
-                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            map.redGen = true;
+                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.ATTACKING;
                             break;
                         case 3:
                             menuObject.transform.position = new Vector3(-9999, -9999, 0);
@@ -208,11 +215,16 @@ public class turnManage : MonoBehaviour {
                         case 5:
                             //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                             break;
                     }
                 }
+                else
+                {
+                    menuOpen = false;
+                }
 
-                if (actionSelection != 1)
+                if (actionSelection > 2)
                 {
                     characNEW.restrictActions[0] = restrictions[0] = true;
                     characNEW.restrictActions[1] = restrictions[1] = true;
@@ -222,7 +234,7 @@ public class turnManage : MonoBehaviour {
                 }
                 else
                 {
-                    characNEW.restrictActions[0] = restrictions[0] = true;
+                    //characNEW.restrictActions[0] = restrictions[0] = true;
                 }
 
                 actionSelection = 1;
@@ -298,6 +310,16 @@ public class turnManage : MonoBehaviour {
             menuOpen = false;
         }
 
+        if(controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING)
+        {
+            if(Input.GetMouseButtonDown(0) && cancelAction == true)
+            {
+                controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+            }
+        }
+
+        cancelAction = true;
+
         if (menuOpen == true)
         {
             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.SELECTION;
@@ -363,7 +385,49 @@ public class turnManage : MonoBehaviour {
         mouseOnMenu = true;
         actionSelection = clickLoc;
 
-        if (actionSelection != 1)
+        if (restrictions[actionSelection - 1] == false)
+        {
+            GameObject controller = GameObject.Find("Controller");
+            switch (actionSelection)
+            {
+                case 1:
+                    menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    menuOpen = false;
+
+                    // Change CONTROL_TYPE to SELECTION
+
+                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
+
+                    break;
+                case 2:
+                    menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    menuOpen = false;
+                    map.redGen = true;
+                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.ATTACKING;
+                    break;
+                case 3:
+                    menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    menuOpen = false;
+                    shieldFade = true;
+                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                    break;
+                case 4:
+                    //menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                    break;
+                case 5:
+                    //menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                    GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
+                    break;
+            }
+        }
+        else
+        {
+            menuOpen = false;
+        }
+
+        if (actionSelection > 2)
         {
             characNEW.restrictActions[0] = restrictions[0] = true;
             characNEW.restrictActions[1] = restrictions[1] = true;
@@ -373,45 +437,10 @@ public class turnManage : MonoBehaviour {
         }
         else
         {
-            characNEW.restrictActions[0] = restrictions[0] = true;
+            //characNEW.restrictActions[0] = restrictions[0] = true;
         }
 
-        GameObject controller = GameObject.Find("Controller");
-        switch (actionSelection)
-        {
-            case 1:
-                menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                menuOpen = false;
-                actionSelection = 1;
+        actionSelection = 1;
 
-                // Change CONTROL_TYPE to SELECTION
-                
-                controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
-
-                break;
-            case 2:
-                menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                menuOpen = false;
-                actionSelection = 1;
-                controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                break;
-            case 3:
-                menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                menuOpen = false;
-                shieldFade = true;
-                actionSelection = 1;
-                controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                break;
-            case 4:
-                //menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                actionSelection = 1;
-                controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                break;
-            case 5:
-                //menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                actionSelection = 1;
-                controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                break;
-        }
     }
 }
