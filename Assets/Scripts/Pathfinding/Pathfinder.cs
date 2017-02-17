@@ -69,17 +69,16 @@ public class Pathfinder : MonoBehaviour
         m_Destination.x = Mathf.RoundToInt(dest.x);
         m_Destination.y = Mathf.RoundToInt(dest.y);
 
-        if (!ValidateNode(GetNode(m_Destination)))
-        {
-            Debug.Log("Invalid destination");
-            return;
-        }
-
         //Debug.Log("Clearing lists...");
         b_CompletedPath = false;
         OpenList.Clear();
         ClosedList.Clear();
 
+        if (!ValidateNode(GetNode(m_Destination)))
+        {
+            //Debug.Log("Invalid destination");
+            return;
+        }
         for (int row = 0; row < theLevel.ysize; ++row)
         {
             for (int col = 0; col < theLevel.xsize; ++col)
@@ -92,7 +91,7 @@ public class Pathfinder : MonoBehaviour
 
         if (!ValidateNode(CurrentNode = GetNode(this.transform.position)))
         {
-            Debug.Log("Current Pos has an error");
+            //Debug.Log("Current Pos has an error");
             return;
         }
 
@@ -100,11 +99,11 @@ public class Pathfinder : MonoBehaviour
 
         while (!b_PathFound)
         {
-            Debug.Log("Dist to destination: " + (CurrentNode.m_pos - m_Destination).magnitude.ToString());
+            //Debug.Log("Dist to destination: " + (CurrentNode.m_pos - m_Destination).magnitude.ToString());
             if ((CurrentNode.m_pos - m_Destination).magnitude < 1.05)
             {
                 b_PathFound = true;
-                Debug.Log("Path to destination: " + m_Destination.ToString() + " found.");
+                //Debug.Log("Path to destination: " + m_Destination.ToString() + " found.");
             }
 
 
@@ -139,7 +138,7 @@ public class Pathfinder : MonoBehaviour
 
             if (NeighbourList.Count <= 0)
             {
-                Debug.Log("Pathfind failed. Current Node: " + CurrentNode.m_pos.ToString());
+                //Debug.Log("Pathfind failed. Current Node: " + CurrentNode.m_pos.ToString());
                 return;
             }
 
@@ -235,7 +234,7 @@ public class Pathfinder : MonoBehaviour
             this.GetComponent<BaseCharacter>().pos.x += dir.x;
             this.GetComponent<BaseCharacter>().pos.y += dir.y;
 
-            Debug.Log("Dist left to walk: " + (this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude.ToString() + " Idx: " + currIdx.ToString());
+            //Debug.Log("Dist left to walk: " + (this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude.ToString() + " Idx: " + currIdx.ToString());
             if ((this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude < 0.08)
             {
                 ++currIdx;
@@ -246,7 +245,7 @@ public class Pathfinder : MonoBehaviour
                     b_CompletedPath = true;
 
                     GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(false);
-                    Debug.Log("Set CanMove to false");
+                    //Debug.Log("Set CanMove to false");
 
                     GameObject[] PathTileObjects = GameObject.FindGameObjectsWithTag("Path");
                     foreach (GameObject go in PathTileObjects)
@@ -329,7 +328,7 @@ public class Pathfinder : MonoBehaviour
             }
         }
 
-        Debug.Log("Can't find node. Returning NULL. Pos given: " + pos.ToString());
+        //Debug.Log("Can't find node. Returning NULL. Pos given: " + pos.ToString());
         return null;
     }
 

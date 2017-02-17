@@ -29,10 +29,30 @@ public class BaseCharacter : MonoBehaviour {
     public int BaseMana = 1;           // The mana of the character, affects how many spells can be cast
     public int BaseHealth = 1;         // The health of the character
     public int BaseArmour = 1;         // The armour of the character, reduces the damage taken
-    
+    public bool IsEnemy;               // Whether or not this character is an enemy
+    public bool IsDead;                // Whether or not this character is dead
+
+    // Animation Enums
+    enum ANIM_STATE
+    {
+        IDLE,
+        MOVE_LEFT,
+        MOVE_RIGHT,
+        MOVE_UP,
+        MOVE_DOWN,
+        ATTACK_LEFT,
+        ATTACK_RIGHT,
+        ATTACK_UP,
+        ATTACK_DOWN,
+        DIE,
+    }
+
+    ANIM_STATE CurrentAnimState;
+
     // Private Var
     private bool b_ShouldMove = false;
     private Vector3 m_Destination = new Vector3(0,1,0);
+
 
 	// Use this for initialization
 	void Start () {
@@ -55,11 +75,19 @@ public class BaseCharacter : MonoBehaviour {
         ConstrainToGrid();
         this.transform.position = pos;
 
-        BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
-        if (theCharacter == this)
+        if (!IsEnemy)
         {
-            theLevel.mapposx = (int)pos.x - 1;
-            theLevel.mapposy = -((int)pos.y) - 1;
+            BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
+            if (theCharacter == this)
+            {
+                theLevel.mapposx = (int)pos.x - 1;
+                theLevel.mapposy = -((int)pos.y) - 1;
+            }
+        }
+        else
+        {
+            // Do Enemy Updates
+
         }
 
         if (b_ShouldMove)

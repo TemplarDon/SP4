@@ -129,6 +129,7 @@ MonoBehaviour:
   cancel4: {fileID: 907230593}
   cancel5: {fileID: 1104979464}
   restrictions: 
+  clickingNewChar: 0
 --- !u!4 &16540385
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ Transform:
   m_PrefabInternal: {fileID: 402355698}
   m_GameObject: {fileID: 114326447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.63, y: -4.99, z: 0}
+  m_LocalPosition: {x: 6.64, y: -17.23, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -451,6 +452,7 @@ MonoBehaviour:
   BaseMana: 1
   BaseHealth: 1
   BaseArmour: 1
+  IsEnemy: 0
 --- !u!114 &114326452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,7 +541,7 @@ MonoBehaviour:
   tile_grass: {fileID: 21300000, guid: d4c4bfa5b14767c4dbaa3de99f85d69c, type: 3}
   tile_stone: {fileID: 21300000, guid: 9c573d346e56742429a8c542348aad1a, type: 3}
   tile_spike: {fileID: 21300000, guid: c57141e29da7273459b95328ac3e9cb2, type: 3}
-  tile_rock: {fileID: 21300000, guid: 08367d0bf28bec342adefd54fb8073de, type: 3}
+  tile_rock: {fileID: 21300000, guid: e13652a447742244f8684fdbb325424c, type: 3}
   tile_water: {fileID: 21300000, guid: b8fce3608f5f34d4b9796b8b56adf2cd, type: 3}
   xsize: 0
   ysize: 0
@@ -787,11 +789,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11.63
+      value: 6.64
       objectReference: {fileID: 0}
     - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.99
+      value: -17.23
       objectReference: {fileID: 0}
     - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1791,47 +1793,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1044539552}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 16540384}
-        m_MethodName: mouseClick
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1044539552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +1945,7 @@ MonoBehaviour:
   BaseMana: 1
   BaseHealth: 1
   BaseArmour: 1
+  IsEnemy: 0
 --- !u!114 &1146307647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,7 +1972,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1146307645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -5, z: 0}
+  m_LocalPosition: {x: 5.06, y: -15.79, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3117,7 +3079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42784b1a688d1a54ba0cc936f2f4b1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: b36045114a6d91a468b0ec21636dfb2a, type: 3}
+  csvFile: {fileID: 4900000, guid: 7a71f2d62d0ad4146b99833322bd6729, type: 3}
   newxsize: 0
   newysize: 0
   LevelLoad: {fileID: 0}
