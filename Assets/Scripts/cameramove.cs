@@ -10,9 +10,11 @@ public class cameramove : MonoBehaviour {
     private Vector3 move;
     private Vector3 combinepos;
     private bool specialTrigger;
+    private bool specialTrigger2;
     public turnManage turnManager;
 
-    public int extraBorder;
+    public float extraBorder;
+    private float extraBordersave;
 
     public LevelGenerate map;
 
@@ -20,14 +22,18 @@ public class cameramove : MonoBehaviour {
     void Start () {
         currentLoc = new Vector3(7.99695f, -5.0f, -9.0f);
         pos = new Vector3(0.0f, 0.0f, 0.0f);
+        specialTrigger2 = false;
+        //Camera.main.orthographic = false;
+        extraBordersave = extraBorder;
     }
 	
 	// Update is called once per frame
 	void Update () {
         transform.position = new Vector3(transform.position.x, transform.position.y, -9);
+        extraBorder = extraBordersave * (30.0f / (Camera.main.fieldOfView));
 
-       // -------------------Code for Zooming Out------------
-       if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        // -------------------Code for Zooming Out------------
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
        {
            if (Camera.main.fieldOfView <= 125)
                Camera.main.fieldOfView += 2;
@@ -158,6 +164,7 @@ public class cameramove : MonoBehaviour {
             dragOrigin = new Vector3(0, 0, 0);
             combinepos = new Vector3(0, 0, 0);
             specialTrigger = false;
+            specialTrigger2 = true;
 
             //Debug.Log(turnManager.charac.xpos + " x " + currentLoc.x);
             if (currentLoc.x < turnManager.characNEW.pos.x - 0.26f)
@@ -223,9 +230,8 @@ public class cameramove : MonoBehaviour {
 
             transform.position = currentLoc;
         }
-        
 
-        if ((turnManager.menuOpen == false) && (Input.GetMouseButtonUp(0) || specialTrigger))
+        if ((specialTrigger2 == false) && (turnManager.menuOpen == false) && (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.MOVING) && (Input.GetMouseButtonUp(0) || specialTrigger))
         {
             //Debug.Log(map.mappositions[map.xsize - 1, 0]);
             currentLoc = combinepos;
@@ -234,7 +240,7 @@ public class cameramove : MonoBehaviour {
             dragOrigin = new Vector3(0, 0, 0);
             combinepos = new Vector3(0, 0, 0);
         }
-
+        specialTrigger2 = false;
         transform.position = new Vector3(transform.position.x, transform.position.y, -9);
     }
 }

@@ -26,6 +26,7 @@ public class turnManage : MonoBehaviour {
     public bool[] restrictions;
 
     private bool mouseOnMenu;
+    public bool clickingNewChar;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,7 @@ public class turnManage : MonoBehaviour {
         menuOpen = true;
         shieldFade = false;
         mouseOnMenu = false;
+        clickingNewChar = false;
 
         restrictions = new bool[5];
         for(int i = 0; i < 5; i++)
@@ -48,7 +50,7 @@ public class turnManage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
        turnNum.text = turnNumber.ToString();
-        //restrictions = characNEW.restrictActions;
+        restrictions = characNEW.restrictActions;
         GameObject controller = GameObject.Find("Controller");
 
         switch (actionSelection)
@@ -176,8 +178,41 @@ public class turnManage : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
             {
                 //characNEW.restrictActions[actionSelection - 1] = restrictions[actionSelection - 1] = true;
+                if (restrictions[actionSelection - 1] == false)
+                {
+                    switch (actionSelection)
+                    {
+                        case 1:
+                            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            menuOpen = false;
 
-                if(actionSelection != 1)
+                            // Change CONTROL_TYPE to SELECTION
+                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
+                            
+                            break;
+                        case 2:
+                            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            menuOpen = false;
+                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            break;
+                        case 3:
+                            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            menuOpen = false;
+                            shieldFade = true;
+                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            break;
+                        case 4:
+                            //menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            break;
+                        case 5:
+                            //menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            break;
+                    }
+                }
+
+                if (actionSelection != 1)
                 {
                     characNEW.restrictActions[0] = restrictions[0] = true;
                     characNEW.restrictActions[1] = restrictions[1] = true;
@@ -190,41 +225,7 @@ public class turnManage : MonoBehaviour {
                     characNEW.restrictActions[0] = restrictions[0] = true;
                 }
 
-                switch (actionSelection)
-                {
-                    case 1:
-                        menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                        menuOpen = false;
-                        actionSelection = 1;
-
-                        // Change CONTROL_TYPE to SELECTION
-                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
-
-                        break;
-                    case 2:
-                        menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                        menuOpen = false;
-                        actionSelection = 1;
-                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                        break;
-                    case 3:
-                        menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                        menuOpen = false;
-                        shieldFade = true;
-                        actionSelection = 1;
-                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                        break;
-                    case 4:
-                        //menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                        actionSelection = 1;
-                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                        break;
-                    case 5:
-                        //menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                        actionSelection = 1;
-                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                        break;
-                }
+                actionSelection = 1;
             }
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -292,11 +293,10 @@ public class turnManage : MonoBehaviour {
             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.SELECTION;
         }
         
-        if (mouseOnMenu == false && menuOpen && Input.GetMouseButtonDown(0) && controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.SELECTION)
+        if (clickingNewChar == false && mouseOnMenu == false && menuOpen && Input.GetMouseButtonDown(0) && controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.SELECTION)
         {
             menuOpen = false;
         }
-
 
         if (menuOpen == true)
         {
