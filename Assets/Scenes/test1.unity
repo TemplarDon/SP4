@@ -366,6 +366,8 @@ MonoBehaviour:
   BaseMana: 1
   BaseHealth: 1
   BaseArmour: 1
+  IsEnemy: 0
+  IsDead: 0
 --- !u!114 &14647691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,6 +2023,8 @@ MonoBehaviour:
   BaseMana: 1
   BaseHealth: 1
   BaseArmour: 1
+  IsEnemy: 0
+  IsDead: 0
 --- !u!1 &1070178502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,6 +2327,8 @@ MonoBehaviour:
   BaseMana: 1
   BaseHealth: 1
   BaseArmour: 1
+  IsEnemy: 0
+  IsDead: 0
 --- !u!114 &1212258154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3365,6 +3371,7 @@ GameObject:
   - 4: {fileID: 1827345013}
   - 212: {fileID: 1827345012}
   - 61: {fileID: 1827345011}
+  - 114: {fileID: 1827345010}
   m_Layer: 0
   m_Name: AttackSq
   m_TagString: redSq
@@ -3372,6 +3379,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1827345010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1827345009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77e5906ca0e4254aa79737ae465ad97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1827345011
 BoxCollider2D:
   m_ObjectHideFlags: 0
