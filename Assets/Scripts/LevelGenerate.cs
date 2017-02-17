@@ -208,9 +208,10 @@ public class LevelGenerate : MonoBehaviour {
 
         if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING)
         {
-            checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
+            //checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
             if (redGen == false)
             {
+                checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {
@@ -222,6 +223,7 @@ public class LevelGenerate : MonoBehaviour {
             }
             else if(redGen == true)
             {
+                checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseAttackRange);
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {
