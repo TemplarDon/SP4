@@ -74,6 +74,12 @@ public class BaseCharacter : MonoBehaviour {
         GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter = this.gameObject;
         GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = this.gameObject.GetComponent<BaseCharacter>();
         GameObject.Find("TurnManager").GetComponent<turnManage>().menuOpen = true;
+        GameObject.Find("TurnManager").GetComponent<turnManage>().clickingNewChar = true;
+    }
+
+    void OnMouseExit()
+    {
+        GameObject.Find("TurnManager").GetComponent<turnManage>().clickingNewChar = false;
     }
 
     public void SetCharacterDestination(Vector3 dest)
