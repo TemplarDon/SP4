@@ -227,7 +227,7 @@ public class LevelGenerate : MonoBehaviour {
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {
-                    if (mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] == true && (int)obj.transform.position.x != mapposx - 1 && (int)obj.transform.position.y != -mapposy - 1)
+                    if (mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] == true && (int)obj.transform.position.x - 1 != mapposx && (int)obj.transform.position.y - 1 != -mapposy)
                     {
                         mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] = false;
                         Instantiate(enemyLoc, mappositions[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1], Quaternion.identity);
