@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
+
 public class BaseCharacter : MonoBehaviour {
 
     // Handle to map
@@ -8,11 +10,13 @@ public class BaseCharacter : MonoBehaviour {
     public Vector3 pos;
 
     // Managers
-    public Inventory theInventory = new Inventory();
-    public int InventorySizeColumns = 5;
-    public int InventorySizeRows = 5;
-
+    public EquipmentManger theEquipmentManger = new EquipmentManger();
+    public Equippables theWeapon;
+    public Equippables theArmour;
+    public Useables theItem;
+    
     public SkillsManager theSkillsManager = new SkillsManager();
+    public BaseSkills theSkill;
 
     // Character Stats
     public string Name = "Man";
@@ -23,15 +27,13 @@ public class BaseCharacter : MonoBehaviour {
     public int BaseMana = 1;           // The mana of the character, affects how many spells can be cast
     public int BaseHealth = 1;         // The health of the character
     public int BaseArmour = 1;         // The armour of the character, reduces the damage taken
-
+    
     // Private Var
     private bool b_ShouldMove = false;
     private Vector3 m_Destination = new Vector3(0,1,0);
 
 	// Use this for initialization
 	void Start () {
-        //theInventory.Init(InventorySizeColumns, InventorySizeRows);
-
         pos.x = (int)this.transform.position.x;
         pos.y = (int)this.transform.position.y;
 
@@ -47,7 +49,6 @@ public class BaseCharacter : MonoBehaviour {
         BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
         if (theCharacter == this)
         {
-            //theLevel.checkPossibleLoc((int)pos.x - 1, -((int)pos.y) - 1, 7, 4);
             theLevel.mapposx = (int)pos.x - 1;
             theLevel.mapposy = -((int)pos.y) - 1;
         }
@@ -97,5 +98,17 @@ public class BaseCharacter : MonoBehaviour {
         {
             pos.y = -theLevel.ysize;
         }
+    }
+
+    public void UseSkill()
+    {
+        Debug.Log("Using skill!");
+        theSkill.GetComponent<BaseSkills>().DoEffect(this);
+    }
+
+    public void UseItem()
+    {
+        Debug.Log("Using item!");
+        theItem.GetComponent<Useables>().DoEffect(this);
     }
 }

@@ -25,6 +25,9 @@ public class Pathfinder : MonoBehaviour
     //private Vector3 OFFSET = new Vector3(0.5f, -0.5f, 0f);
     private Vector3 OFFSET = new Vector3(0, -0, 0);
 
+    public GameObject PathTile;
+    public bool b_PathSpawned = false;
+
     public bool b_CompletedPath = false;
 
     // Use this for initialization
@@ -215,6 +218,17 @@ public class Pathfinder : MonoBehaviour
 
             Path.Reverse();
 
+            // Spawn PathTiles
+            if (!b_PathSpawned)
+            {
+                for (int i = 0; i < Path.Count; ++i)
+                {
+                    Instantiate(PathTile, Path[i].m_pos, Quaternion.identity);
+                }
+
+                b_PathSpawned = true;
+            }
+
             Vector3 dir = (Path[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 5;
             //Debug.Log("Dir: " + dir.ToString() + " Idx: " + currIdx);
 
@@ -233,6 +247,14 @@ public class Pathfinder : MonoBehaviour
 
                     GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(false);
                     Debug.Log("Set CanMove to false");
+
+                    GameObject[] PathTileObjects = GameObject.FindGameObjectsWithTag("Path");
+                    foreach (GameObject go in PathTileObjects)
+                    { 
+                        if (go.name != "PathTile")
+                            Destroy(go);
+                    }
+                    b_PathSpawned = false;
 
                     currIdx = 0;
 

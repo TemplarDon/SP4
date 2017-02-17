@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BaseSkills {
+public abstract class BaseSkills : MonoBehaviour {
 
     public enum SKILL_TYPE
     {
@@ -28,9 +28,5 @@ public class BaseSkills {
 	
 	}
 
-    public void DoEffect()
-    {
-        
-    }
-
+    public abstract void DoEffect(BaseCharacter user);
 }   

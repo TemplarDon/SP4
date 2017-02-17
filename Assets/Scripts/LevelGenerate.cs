@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
+
 public class LevelGenerate : MonoBehaviour {
 
     public int mapposx;
@@ -1124,4 +1126,22 @@ public class LevelGenerate : MonoBehaviour {
             }
         }
     }
+
+    public BaseCharacter GetCharacterInTile(Vector3 CheckPosition)
+    {
+        GameObject[] CharacterList = GameObject.FindGameObjectsWithTag("Character");
+
+        foreach (GameObject checkChar in CharacterList)
+        {
+            if (checkChar.GetComponent<BaseCharacter>().pos.x == CheckPosition.x && checkChar.GetComponent<BaseCharacter>().pos.y == CheckPosition.y)
+            {
+                Debug.Log("Character Found!");
+                return checkChar.GetComponent<BaseCharacter>();
+            }
+        }
+
+        return null;
+
+    }
+
 }
