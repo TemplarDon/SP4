@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Useables : Items {
+public abstract class Useables : Items {
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +12,6 @@ public class Useables : Items {
 	void Update () {
 	
 	}
+
+    public abstract void DoEffect(BaseCharacter user);
 }

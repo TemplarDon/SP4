@@ -3,7 +3,7 @@ using System.Collections;
 
 using System.Collections.Generic;
 
-public class Inventory {
+public class PlayerInventory {
 
     public int InventorySizeColumns;
     public int InventorySizeRows;
@@ -13,8 +13,8 @@ public class Inventory {
     private Equippables EquippedArmour;
     private Equippables EquippedWeapon;
 
-	// Use this for initialization
-	public void Init (int c = 5, int r = 5) 
+    // Use this for initialization
+    public void Init(int c = 5, int r = 5)
     {
         EquippedArmour = null;
         EquippedWeapon = null;
@@ -31,19 +31,20 @@ public class Inventory {
             }
 
         }
-	}
-	
-	// Update is called once per frame
-	public void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    public void Update()
+    {
+
+    }
 
     // Add to item list
     // toAdd    - Item to add
     // c        - column index to add to, if -1; add to next empty spot
     // r        - row index to add to, if -1; add to next empty spot
     // returns true if could add, returns false otherwise
-    public bool AddItem(Items toAdd,  int c = -1, int r = -1)
+    public bool AddItem(Items toAdd, int c = -1, int r = -1)
     {
         if (c < 0 || r < 0)
         {
@@ -79,5 +80,4 @@ public class Inventory {
 
         return null;
     }
-
 }
