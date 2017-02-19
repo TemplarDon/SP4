@@ -25,7 +25,7 @@ public class CommanderFSM : FSMBase {
         
     bool b_PlanFound = false;                                       // Bool to trigger state switch from PLAN to SEND_ORDERS
     bool b_OrderSent = false;                                       // Bool to trigger state switch from SEND_ORDER to PLAN
-    Dictionary<Message, List<GameObject>> MessageBuffer;            // Message buffer to send to units
+    List<Message> MessageBuffer;            // Message buffer to send to units
     int TurnCounter = 0;                                            // Counter for the amount of turns passed
     GameObject Target;                                              // Handle to message target, if needed
 
@@ -41,7 +41,7 @@ public class CommanderFSM : FSMBase {
 
         foreach (GameObject go in goList)
         {
-            if (go.GetComponent<BaseCharacter>().IsDead)
+            if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
                 continue;
 
             if (!go.GetComponent<BaseCharacter>().IsEnemy)
@@ -103,6 +103,14 @@ public class CommanderFSM : FSMBase {
 
     void DoPlan()
     {
+        Vector3 AverageTeamPosition = new Vector3(0, 0, 0);
+        foreach (BaseCharacter Character in TeamList)
+        {
+            AverageTeamPosition += Character.pos;
+        }
+        AverageTeamPosition /= TeamList.Count;
+
+
         float AverageDistToEnemy;
 
         float TotalDist = 0;
@@ -112,27 +120,52 @@ public class CommanderFSM : FSMBase {
         }
         AverageDistToEnemy = TotalDist / EnemyList.Count;
 
-        GameObject[] TeamList = GameObject.FindGameObjectsWithTag("Characters");
+        // Check AverageDistToEnemy 
+        if (AverageDistToEnemy > TacticsRange)
+        {
+            // Enemy further away than TacticsRange, send ORDER_FRONTAL_ASSAULT
+            foreach (BaseCharacter Character in TeamList)
+            {
+                Message aMessage = new Message();
+                aMessage.theMessageType = Message.MESSAGE_TYPE.ORDER_FRONTAL_ASSAULT;
+                aMessage.theSender = this.gameObject;
+                aMessage.theReceiver = Character.gameObject;
+                aMessage.theTarget = null;
 
-        //// Check AverageDistToEnemy 
-        //if (AverageDistToEnemy > TacticsRange)
-        //{
-        //    // Enemy further away than TacticsRange, send ORDER_FRONTAL_ASSAULT
-        //    Message aMessage = new Message();
-        //    aMessage.theMessageType = Message.MESSAGE_TYPE.ORDER_FRONTAL_ASSAULT;
-        //    aMessage.theSender = this.gameObject;
-        //    aMessage.theReceiver = aReceiver;
-        //    aMessage.theTarget = null;
+                MessageBuffer.Add(aMessage);
+            }
 
-        //    MessageToSend = Message.MESSAGE_TYPE.ORDER_FRONTAL_ASSAULT;
-        //    b_PlanFound = true;
-        //}
-        //else
-        //{
-        //    // Enemy within tactics range, send ORDER_SURROUND_TARGET
-        //    MessageToSend = Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET;
-        //    b_PlanFound = true;
-        //}
+            b_PlanFound = true;
+        }
+        else
+        {
+            // Enemy within tactics range, send ORDER_SURROUND_TARGET
+
+            // Find target to surround
+            float ClosestDist = 99999;
+            int ClosestIdx = 0;
+            for (int i = 0; i < EnemyList.Count; ++i)
+            {
+                BaseCharacter Enemy = EnemyList[i];
+                if ((AverageTeamPosition - Enemy.pos).magnitude < ClosestDist)
+                {
+                    ClosestDist = (AverageTeamPosition - Enemy.pos).magnitude;
+                    ClosestIdx = i;
+                }
+            }
+
+            foreach (BaseCharacter Character in TeamList)
+            {
+                Message aMessage = new Message();
+                aMessage.theMessageType = Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET;
+                aMessage.theSender = this.gameObject;
+                aMessage.theReceiver = Character.gameObject;
+                aMessage.theTarget = EnemyList[ClosestIdx].gameObject;
+
+                MessageBuffer.Add(aMessage);
+            }
+            b_PlanFound = true;
+        }
     }
 
     void DoSendOrders()
