@@ -127,15 +127,27 @@ public class MeleeFSM : FSMBase {
     }
 
     void DoAttack()
-    { }
+    {
+ 
+
+    }
 
     void DoHelp()
     { }
 
     public override void ProcessMessage()
     {
+        if (this.GetComponent<Pathfinder>().b_CompletedPath)
+        {
+            this.GetComponent<BaseCharacter>().restrictActions[1] = true;
+            //Debug.Log("Melee Done.");
+        }
+
         if (CurrentMessage == null)
+        {
+            this.GetComponent<BaseCharacter>().SetToMove(true);
             return;
+        }
 
         switch (CurrentMessage.theMessageType)
         {

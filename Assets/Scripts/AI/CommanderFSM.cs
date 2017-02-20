@@ -31,7 +31,7 @@ public class CommanderFSM : FSMBase {
 
 	// Use this for initialization
 	void Start () {
-        CurrentState = STATES.PLAN;
+        CurrentState = STATES.IDLE;
 	}
 	
     public override void Sense()     
@@ -94,6 +94,11 @@ public class CommanderFSM : FSMBase {
     {
         switch (value)
         {
+            case (int)STATES.IDLE:
+                CurrentState = STATES.IDLE;
+                DoIdle();
+                break;
+
             case (int)STATES.PLAN:
                 CurrentState = STATES.PLAN;
                 DoPlan();
@@ -104,6 +109,12 @@ public class CommanderFSM : FSMBase {
                 DoSendOrders();
                 break;
         }
+    }
+
+    void DoIdle()
+    {
+        this.GetComponent<BaseCharacter>().restrictActions[1] = true;
+        //Debug.Log("Commander done.");
     }
 
     void DoPlan()

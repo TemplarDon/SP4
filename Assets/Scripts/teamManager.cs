@@ -49,6 +49,7 @@ public class teamManager : MonoBehaviour {
             {
                 GameObject.Find(greenHighlight).transform.position = new Vector3(-9999, -9999, 0);
             }
+
             if (teamDone == true && teamList[i] != null && teamList[i].restrictActions[1] == false)
             {
                 teamDone = false;

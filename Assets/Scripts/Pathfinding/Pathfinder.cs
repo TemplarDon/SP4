@@ -34,8 +34,6 @@ public class Pathfinder : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        MoveLimit = this.GetComponent<BaseCharacter>().BaseSpeed;
-
         //Debug.Log(theLevel.xsize + " " + theLevel.ysize);
 
         NodeList = new List<List<Node>>();
@@ -62,21 +60,20 @@ public class Pathfinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        MoveLimit = this.GetComponent<BaseCharacter>().BaseSpeed + 1;
     }
 
     public void FindPath(Vector3 dest)
     {
+        //Debug.Log("Clearing lists...");
+        OpenList.Clear();
+        ClosedList.Clear();
+        b_CompletedPath = false;
+
         //Debug.Log("Path Status: " + b_PathFound.ToString());
 
         m_Destination.x = Mathf.RoundToInt(dest.x);
         m_Destination.y = Mathf.RoundToInt(dest.y);
-
-        //Debug.Log("Clearing lists...");
-        b_StoppedByLimit = false;
-        b_CompletedPath = false;
-        OpenList.Clear();
-        ClosedList.Clear();
 
         if (!ValidateNode(GetNode(m_Destination)))
         {
@@ -107,14 +104,14 @@ public class Pathfinder : MonoBehaviour
             if ((CurrentNode.m_pos - m_Destination).magnitude < 1.05)
             {
                 b_PathFound = true;
-                //Debug.Log("Path to destination: " + m_Destination.ToString() + " found.");
-            }
+                CurrentItr = 0;
 
+                //Debug.Log("Path to destination: " + m_Destination.ToString() + " found.");
+                Debug.Log("Destination reached.");
+            }
 
             //Debug.Log("Adding to closed list: " + CurrentNode.m_pos.ToString());
             ClosedList.Add(CurrentNode);
-
-
 
             if (ValidateNode(GetNode(CurrentNode.m_pos + new Vector3(0, 1, 0))))
             {
@@ -143,14 +140,8 @@ public class Pathfinder : MonoBehaviour
             if (NeighbourList.Count <= 0)
             {
                 //Debug.Log("Pathfind failed. Current Node: " + CurrentNode.m_pos.ToString());
-                return;
-            }
-
-            if (CurrentItr >= MoveLimit)
-            {
-                b_PathFound = true;
-                b_StoppedByLimit = true;
                 CurrentItr = 0;
+                return;
             }
 
             // Set all neghbours parent to current node
@@ -165,9 +156,7 @@ public class Pathfinder : MonoBehaviour
             CurrentNode = TempLowest;
 
             ++CurrentItr;
-
             NeighbourList.Clear();
-
         }
 
         // Add current node to closed list
@@ -185,7 +174,7 @@ public class Pathfinder : MonoBehaviour
 
     public void FollowPath()
     {
-        if (b_PathFound)
+        if (!b_CompletedPath)
         {
             ////Debug.Log("Following path.");
 
@@ -194,9 +183,7 @@ public class Pathfinder : MonoBehaviour
 
             List<Node> Path = new List<Node>();
 
-            if (!b_StoppedByLimit)
-                Path.Add(GetNode(m_Destination));
-
+            Path.Add(GetNode(m_Destination));
             Path.Add(endNode);
 
             while (endNode.ParentNode != null)
@@ -228,11 +215,16 @@ public class Pathfinder : MonoBehaviour
             if ((this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude < 0.08)
             {
                 ++currIdx;
-                if (currIdx >= Path.Count || currIdx > this.GetComponent<BaseCharacter>().BaseSpeed)
+                if (currIdx >= Path.Count || currIdx > MoveLimit)
                 {
-                    currIdx = Path.Count - 1;
+                    if (currIdx > MoveLimit)
+                        b_StoppedByLimit = true;
+                    else
+                        b_StoppedByLimit = false;
+
                     b_PathFound = false;
                     b_CompletedPath = true;
+                    Debug.Log("Path done.");
 
                     GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(false);
                     //Debug.Log("Set CanMove to false");
@@ -252,6 +244,7 @@ public class Pathfinder : MonoBehaviour
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                     this.GetComponent<BaseCharacter>().restrictActions[0] = true;
                 }
+
                 this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
                 this.GetComponent<BaseCharacter>().pos.y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
 
