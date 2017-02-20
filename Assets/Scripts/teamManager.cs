@@ -39,6 +39,11 @@ public class teamManager : MonoBehaviour {
         teamDone = true;
         for(int i = 0; i < teamList.Count; i++)
         {
+            if (teamList[i].BaseMana > 0)
+            {
+                teamList[i].restrictActions[4] = true;
+            }
+
             string greenHighlight = "PlayerLoc" + (i + 1);
             if (teamList[i] != null && teamList[i].restrictActions[1] == false  && (controller.GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.MOVING) && (controller.GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.ATTACKING))
             {
@@ -62,7 +67,12 @@ public class teamManager : MonoBehaviour {
             {
                 if(teamList[i] != null)
                 {
-                    for(int j = 0; j < 5; j++)
+                    if(teamList[i].BaseMana > 0)
+                    {
+                        teamList[i].BaseMana--;
+                    }
+                    
+                    for (int j = 0; j < 5; j++)
                     {
                         teamList[i].restrictActions[j] = false;
                     }
