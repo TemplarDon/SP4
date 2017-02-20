@@ -52,17 +52,17 @@ public class CharacterController : MonoBehaviour {
         }
 
         // Temporary code
-        if (Input.GetKeyUp(KeyCode.T))
-        {
-            Debug.Log("Telling " + CurrentControlledCharacter.name + " to use spell.");
-            CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
-        }
+        //if (Input.GetKeyUp(KeyCode.T))
+        //{
+        //    Debug.Log("Telling " + CurrentControlledCharacter.name + " to use spell.");
+        //    CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
+        //}
 
-        if (Input.GetKeyUp(KeyCode.Y))
-        {
-            Debug.Log("Telling " + CurrentControlledCharacter.name + " to use item.");
-            CurrentControlledCharacter.GetComponent<BaseCharacter>().UseItem();
-        }
+        //if (Input.GetKeyUp(KeyCode.Y))
+        //{
+        //    Debug.Log("Telling " + CurrentControlledCharacter.name + " to use item.");
+        //    CurrentControlledCharacter.GetComponent<BaseCharacter>().UseItem();
+        //}
 
 	}
 

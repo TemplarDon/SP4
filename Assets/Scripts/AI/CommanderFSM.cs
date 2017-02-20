@@ -25,8 +25,8 @@ public class CommanderFSM : FSMBase {
         
     bool b_PlanFound = false;                                       // Bool to trigger state switch from PLAN to SEND_ORDERS
     bool b_OrderSent = false;                                       // Bool to trigger state switch from SEND_ORDER to PLAN
-    List<Message> MessageBuffer;            // Message buffer to send to units
-    int TurnCounter = 0;                                            // Counter for the amount of turns passed
+    List<Message> MessageBuffer = new List<Message>();              // Message buffer to send to units
+    int TurnCounter = 9;                                            // Counter for the amount of turns passed
     GameObject Target;                                              // Handle to message target, if needed
 
 	// Use this for initialization
@@ -62,7 +62,10 @@ public class CommanderFSM : FSMBase {
             case STATES.IDLE:
 
                 if (TurnCounter >= OrderFrequency)
+                {
+                    TurnCounter = 0;
                     return (int)STATES.PLAN;
+                }
 
                 return (int)STATES.IDLE;
 
@@ -78,7 +81,7 @@ public class CommanderFSM : FSMBase {
             case STATES.SEND_ORDERS:
 
                 if (b_OrderSent)
-                    return (int)STATES.PLAN;
+                    return (int)STATES.IDLE;
 
                 return (int)STATES.SEND_ORDERS;
 
@@ -89,13 +92,15 @@ public class CommanderFSM : FSMBase {
 
     public override void Act(int value)
     {
-        switch (CurrentState)
+        switch (value)
         {
-            case STATES.PLAN:
+            case (int)STATES.PLAN:
+                CurrentState = STATES.PLAN;
                 DoPlan();
                 break;
 
-            case STATES.SEND_ORDERS:
+            case (int)STATES.SEND_ORDERS:
+                CurrentState = STATES.SEND_ORDERS;
                 DoSendOrders();
                 break;
         }
@@ -110,15 +115,14 @@ public class CommanderFSM : FSMBase {
         }
         AverageTeamPosition /= TeamList.Count;
 
-
-        float AverageDistToEnemy;
-
-        float TotalDist = 0;
-        foreach (BaseCharacter aCharacter in EnemyList)
+        Vector3 AverageEnemyPosition = new Vector3(0, 0, 0);
+        foreach (BaseCharacter Character in EnemyList)
         {
-            TotalDist += (aCharacter.pos - this.GetComponent<BaseCharacter>().pos).magnitude;
+            AverageEnemyPosition += Character.pos;
         }
-        AverageDistToEnemy = TotalDist / EnemyList.Count;
+        AverageEnemyPosition /= EnemyList.Count;
+
+        float AverageDistToEnemy = (AverageTeamPosition - AverageEnemyPosition).magnitude;
 
         // Check AverageDistToEnemy 
         if (AverageDistToEnemy > TacticsRange)
@@ -131,11 +135,13 @@ public class CommanderFSM : FSMBase {
                 aMessage.theSender = this.gameObject;
                 aMessage.theReceiver = Character.gameObject;
                 aMessage.theTarget = null;
+                aMessage.theDestination = AverageEnemyPosition;
 
                 MessageBuffer.Add(aMessage);
             }
 
             b_PlanFound = true;
+            b_OrderSent = false;
         }
         else
         {
@@ -164,12 +170,25 @@ public class CommanderFSM : FSMBase {
 
                 MessageBuffer.Add(aMessage);
             }
+
             b_PlanFound = true;
+            b_OrderSent = false;
         }
     }
 
     void DoSendOrders()
     {
+        foreach (Message aMessage in MessageBuffer)
+        {
+            theBoard.AddMessage(aMessage);
+            Debug.Log("Sending orders.");
+        }
 
+        b_PlanFound = false;
+        b_OrderSent = true;
+    }
+
+    public override void ProcessMessage()
+    {
     }
 }

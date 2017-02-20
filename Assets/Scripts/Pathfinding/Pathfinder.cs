@@ -18,7 +18,8 @@ public class Pathfinder : MonoBehaviour
     private Node CurrentNode = null;
 
     private int CurrentItr = 0;
-    private int ForceStop = 5;
+    private int MoveLimit = 0;
+    private bool b_StoppedByLimit = false;
 
     // Translating Var
     private int currIdx = 0;
@@ -33,6 +34,8 @@ public class Pathfinder : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        MoveLimit = this.GetComponent<BaseCharacter>().BaseSpeed;
+
         //Debug.Log(theLevel.xsize + " " + theLevel.ysize);
 
         NodeList = new List<List<Node>>();
@@ -70,6 +73,7 @@ public class Pathfinder : MonoBehaviour
         m_Destination.y = Mathf.RoundToInt(dest.y);
 
         //Debug.Log("Clearing lists...");
+        b_StoppedByLimit = false;
         b_CompletedPath = false;
         OpenList.Clear();
         ClosedList.Clear();
@@ -142,6 +146,13 @@ public class Pathfinder : MonoBehaviour
                 return;
             }
 
+            if (CurrentItr >= MoveLimit)
+            {
+                b_PathFound = true;
+                b_StoppedByLimit = true;
+                CurrentItr = 0;
+            }
+
             // Set all neghbours parent to current node
             foreach (Node aNode in NeighbourList)
             {
@@ -176,29 +187,6 @@ public class Pathfinder : MonoBehaviour
     {
         if (b_PathFound)
         {
-            ////Debug.Log("Idx: " + currIdx.ToString() + " ClosedList Size: " + ClosedList.Count.ToString());
-
-            ////Vector3 dir = (this.transform.position - (ClosedList[currIdx].m_pos + OFFSET)).normalized * Time.deltaTime * 5;
-            //Vector3 dir = (ClosedList[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 5;
-            //Debug.Log("Dir: " + dir.ToString() + " Idx: " + currIdx);
-
-            //this.GetComponent<BaseCharacter>().pos.x += dir.x;
-            //this.GetComponent<BaseCharacter>().pos.y += dir.y;
-
-            //if ((this.transform.position - ClosedList[currIdx].m_pos + OFFSET).magnitude < 0.1)
-            //{
-            //    ++currIdx;
-
-            //    if (currIdx >= ClosedList.Count)
-            //    {
-            //        currIdx = ClosedList.Count - 1;
-            //        b_PathFound = false;
-            //    }
-
-            //    Mathf.Round(this.GetComponent<BaseCharacter>().pos.x);
-            //    Mathf.Round(this.GetComponent<BaseCharacter>().pos.y);
-            //}
-
             ////Debug.Log("Following path.");
 
             // Use the last node to get the path
@@ -206,7 +194,9 @@ public class Pathfinder : MonoBehaviour
 
             List<Node> Path = new List<Node>();
 
-            Path.Add(GetNode(m_Destination));
+            if (!b_StoppedByLimit)
+                Path.Add(GetNode(m_Destination));
+
             Path.Add(endNode);
 
             while (endNode.ParentNode != null)
@@ -238,7 +228,7 @@ public class Pathfinder : MonoBehaviour
             if ((this.transform.position - Path[currIdx].m_pos + OFFSET).magnitude < 0.08)
             {
                 ++currIdx;
-                if (currIdx >= Path.Count)
+                if (currIdx >= Path.Count || currIdx > this.GetComponent<BaseCharacter>().BaseSpeed)
                 {
                     currIdx = Path.Count - 1;
                     b_PathFound = false;
@@ -274,24 +264,29 @@ public class Pathfinder : MonoBehaviour
 
                 if (node_x < player_x && node_y == player_y)
                 {
-                    this.GetComponent<Animator>().Play("CharacterAnimationLeft");
+                    //this.GetComponent<Animator>().Play("CharacterAnimationLeft");
+                    this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.MOVE_LEFT;
                 }
                 else if (node_x > player_x && node_y == player_y)
                 {
-                    this.GetComponent<Animator>().Play("CharacterAnimationRight");
+                    //this.GetComponent<Animator>().Play("CharacterAnimationRight");
+                    this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.MOVE_RIGHT;
                 }
                 else if (node_y < player_y && node_x == player_x)
                 {
-                    this.GetComponent<Animator>().Play("CharacterAnimationDown");
+                    //this.GetComponent<Animator>().Play("CharacterAnimationDown");
+                    this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.MOVE_DOWN;
                 }
                 else if (node_y > player_y && node_x == player_x)
                 {
-                    this.GetComponent<Animator>().Play("CharacterAnimationUp");
+                    //this.GetComponent<Animator>().Play("CharacterAnimationUp");
+                    this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.MOVE_UP;
                 }
 
                 if (b_CompletedPath)
                 {
-                    this.GetComponent<Animator>().Play("CharacterAnimationIdle");
+                    //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
+                    this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.IDLE;
                 }
             }
 
