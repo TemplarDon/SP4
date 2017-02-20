@@ -100,11 +100,14 @@ public class BaseCharacter : MonoBehaviour {
 
     void OnMouseDown()
     {
-        // Switch current controlled character to this one
-        GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter = this.gameObject;
-        GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = this.gameObject.GetComponent<BaseCharacter>();
-        GameObject.Find("TurnManager").GetComponent<turnManage>().menuOpen = true;
-        GameObject.Find("TurnManager").GetComponent<turnManage>().clickingNewChar = true;
+        if (GameObject.Find("TurnManager").GetComponent<turnManage>().menuOpen == false && GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.ATTACKING)
+        {
+            // Switch current controlled character to this one
+            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter = this.gameObject;
+            GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = this.gameObject.GetComponent<BaseCharacter>();
+            GameObject.Find("TurnManager").GetComponent<turnManage>().menuOpen = true;
+            GameObject.Find("TurnManager").GetComponent<turnManage>().clickingNewChar = true;
+        }
     }
 
     void OnMouseExit()

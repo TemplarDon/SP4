@@ -31,6 +31,11 @@ public class turnManage : MonoBehaviour {
     public bool clickingNewChar;
     public bool cancelAction;
 
+    public int teamTurn;
+    public Image YourTurn;
+    public Image EnemyTurn;
+    private float timer;
+
 	// Use this for initialization
 	void Start () {
         turnNum.text = 1.ToString();
@@ -43,16 +48,55 @@ public class turnManage : MonoBehaviour {
         mouseOnMenu = false;
         clickingNewChar = false;
         cancelAction = true;
+        teamTurn = 1;
+        timer = 0.0f;
 
         restrictions = new bool[5];
         for(int i = 0; i < 5; i++)
         {
             restrictions[i] = false;
         }
+
+        YourTurn.transform.localPosition = new Vector3(0, 0, 0);
+        YourTurn.fillAmount = 0.0f;
+        //EnemyTurn.transform.localPosition = new Vector3(0, 0, 0);
+        //EnemyTurn.fillAmount = 0.0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if(teamTurn >= 5)
+        {
+            teamTurn -= 4;
+        }
+        if(teamTurn == 1)
+        {
+            YourTurn.transform.localPosition = new Vector3(0, 0, 0);
+            timer += Mathf.PI / 180;
+            YourTurn.fillAmount += 0.05f * Mathf.Cos(timer);
+            if(timer >= Mathf.PI)
+            {
+                teamTurn = 2;
+                timer = 0.0f;
+                YourTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
+                turnNumber++;
+            }
+        }
+        else if(teamTurn == 3)
+        {
+            EnemyTurn.transform.localPosition = new Vector3(0, 0, 0);
+            timer += Mathf.PI / 180;
+            EnemyTurn.fillAmount += 0.05f * Mathf.Cos(timer);
+            if (timer >= Mathf.PI)
+            {
+                teamTurn = 4;
+                timer = 0.0f;
+                EnemyTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
+                turnNumber++;
+            }
+        }
+        //Debug.Log(teamTurn);
+
        turnNum.text = turnNumber.ToString();
         nameDisplay.text = characNEW.Name;
         restrictions = characNEW.restrictActions;
