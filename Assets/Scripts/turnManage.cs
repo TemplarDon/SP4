@@ -255,6 +255,7 @@ public class turnManage : MonoBehaviour {
                         case 4:
                             //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseItem();
                             break;
                         case 5:
                             //menuObject.transform.position = new Vector3(-9999, -9999, 0);

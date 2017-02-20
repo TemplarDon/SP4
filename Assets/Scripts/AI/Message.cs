@@ -15,16 +15,5 @@ public class Message {
 
     public MESSAGE_TYPE theMessageType;
     public GameObject theSender, theReceiver, theTarget;
-
-    //public Message CreateMessage(MESSAGE_TYPE aType, GameObject aSender, GameObject aReceiver, GameObject aTarget = null)
-    //{
-    //    Message returnMessage = new Message();
-    //    returnMessage.theMessageType = aType;
-    //    returnMessage.theSender = aSender;
-    //    returnMessage.theReceiver = aReceiver;
-    //    returnMessage.theTarget = aTarget;
-
-    //    return returnMessage;
-    //}
-
+    public Vector3 theDestination;
 }

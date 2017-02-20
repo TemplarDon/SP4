@@ -3,6 +3,9 @@ using System.Collections;
 
 public abstract class FSMBase : MonoBehaviour {
 
+    public MessageBoard theBoard;
+    public Message CurrentMessage = null;     // Handle to message
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,12 +13,10 @@ public abstract class FSMBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         RunFSM();
-
 	}
 
-   public void RunFSM()
+    public void RunFSM()
     {
         Sense();
 
@@ -26,7 +27,13 @@ public abstract class FSMBase : MonoBehaviour {
         }
     }
 
-    public abstract void Sense();          // get/receive updates from the world
-    public abstract int Think();           // process the updates
-    public abstract void Act(int value);   // act upon any change in behaviour
+    public abstract void Sense();           // get/receive updates from the world
+    public abstract int Think();            // process the updates
+    public abstract void Act(int value);    // act upon any change in behaviour
+    public abstract void ProcessMessage();  // process message received
+
+    public Message ReadFromMessageBoard()
+    {
+        return theBoard.GetMessage(this.gameObject.GetInstanceID());
+    }
 }

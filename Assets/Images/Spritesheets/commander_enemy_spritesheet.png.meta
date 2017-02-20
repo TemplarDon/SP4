@@ -1,0 +1,2700 @@
+fileFormatVersion: 2
+guid: 80bedf85938c6d443b361ddf72020adc
+timeCreated: 1487570021
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: commander_enemy_spritesheet_0
+    21300002: commander_enemy_spritesheet_1
+    21300004: commander_enemy_spritesheet_2
+    21300006: commander_enemy_spritesheet_3
+    21300008: commander_enemy_spritesheet_4
+    21300010: commander_enemy_spritesheet_5
+    21300012: commander_enemy_spritesheet_6
+    21300014: commander_enemy_spritesheet_7
+    21300016: commander_enemy_spritesheet_8
+    21300018: commander_enemy_spritesheet_9
+    21300020: commander_enemy_spritesheet_10
+    21300022: commander_enemy_spritesheet_11
+    21300024: commander_enemy_spritesheet_12
+    21300026: commander_enemy_spritesheet_13
+    21300028: commander_enemy_spritesheet_14
+    21300030: commander_enemy_spritesheet_15
+    21300032: commander_enemy_spritesheet_16
+    21300034: commander_enemy_spritesheet_17
+    21300036: commander_enemy_spritesheet_18
+    21300038: commander_enemy_spritesheet_19
+    21300040: commander_enemy_spritesheet_20
+    21300042: commander_enemy_spritesheet_21
+    21300044: commander_enemy_spritesheet_22
+    21300046: commander_enemy_spritesheet_23
+    21300048: commander_enemy_spritesheet_24
+    21300050: commander_enemy_spritesheet_25
+    21300052: commander_enemy_spritesheet_26
+    21300054: commander_enemy_spritesheet_27
+    21300056: commander_enemy_spritesheet_28
+    21300058: commander_enemy_spritesheet_29
+    21300060: commander_enemy_spritesheet_30
+    21300062: commander_enemy_spritesheet_31
+    21300064: commander_enemy_spritesheet_32
+    21300066: commander_enemy_spritesheet_33
+    21300068: commander_enemy_spritesheet_34
+    21300070: commander_enemy_spritesheet_35
+    21300072: commander_enemy_spritesheet_36
+    21300074: commander_enemy_spritesheet_37
+    21300076: commander_enemy_spritesheet_38
+    21300078: commander_enemy_spritesheet_39
+    21300080: commander_enemy_spritesheet_40
+    21300082: commander_enemy_spritesheet_41
+    21300084: commander_enemy_spritesheet_42
+    21300086: commander_enemy_spritesheet_43
+    21300088: commander_enemy_spritesheet_44
+    21300090: commander_enemy_spritesheet_45
+    21300092: commander_enemy_spritesheet_46
+    21300094: commander_enemy_spritesheet_47
+    21300096: commander_enemy_spritesheet_48
+    21300098: commander_enemy_spritesheet_49
+    21300100: commander_enemy_spritesheet_50
+    21300102: commander_enemy_spritesheet_51
+    21300104: commander_enemy_spritesheet_52
+    21300106: commander_enemy_spritesheet_53
+    21300108: commander_enemy_spritesheet_54
+    21300110: commander_enemy_spritesheet_55
+    21300112: commander_enemy_spritesheet_56
+    21300114: commander_enemy_spritesheet_57
+    21300116: commander_enemy_spritesheet_58
+    21300118: commander_enemy_spritesheet_59
+    21300120: commander_enemy_spritesheet_60
+    21300122: commander_enemy_spritesheet_61
+    21300124: commander_enemy_spritesheet_62
+    21300126: commander_enemy_spritesheet_63
+    21300128: commander_enemy_spritesheet_64
+    21300130: commander_enemy_spritesheet_65
+    21300132: commander_enemy_spritesheet_66
+    21300134: commander_enemy_spritesheet_67
+    21300136: commander_enemy_spritesheet_68
+    21300138: commander_enemy_spritesheet_69
+    21300140: commander_enemy_spritesheet_70
+    21300142: commander_enemy_spritesheet_71
+    21300144: commander_enemy_spritesheet_72
+    21300146: commander_enemy_spritesheet_73
+    21300148: commander_enemy_spritesheet_74
+    21300150: commander_enemy_spritesheet_75
+    21300152: commander_enemy_spritesheet_76
+    21300154: commander_enemy_spritesheet_77
+    21300156: commander_enemy_spritesheet_78
+    21300158: commander_enemy_spritesheet_79
+    21300160: commander_enemy_spritesheet_80
+    21300162: commander_enemy_spritesheet_81
+    21300164: commander_enemy_spritesheet_82
+    21300166: commander_enemy_spritesheet_83
+    21300168: commander_enemy_spritesheet_84
+    21300170: commander_enemy_spritesheet_85
+    21300172: commander_enemy_spritesheet_86
+    21300174: commander_enemy_spritesheet_87
+    21300176: commander_enemy_spritesheet_88
+    21300178: commander_enemy_spritesheet_89
+    21300180: commander_enemy_spritesheet_90
+    21300182: commander_enemy_spritesheet_91
+    21300184: commander_enemy_spritesheet_92
+    21300186: commander_enemy_spritesheet_93
+    21300188: commander_enemy_spritesheet_94
+    21300190: commander_enemy_spritesheet_95
+    21300192: commander_enemy_spritesheet_96
+    21300194: commander_enemy_spritesheet_97
+    21300196: commander_enemy_spritesheet_98
+    21300198: commander_enemy_spritesheet_99
+    21300200: commander_enemy_spritesheet_100
+    21300202: commander_enemy_spritesheet_101
+    21300204: commander_enemy_spritesheet_102
+    21300206: commander_enemy_spritesheet_103
+    21300208: commander_enemy_spritesheet_104
+    21300210: commander_enemy_spritesheet_105
+    21300212: commander_enemy_spritesheet_106
+    21300214: commander_enemy_spritesheet_107
+    21300216: commander_enemy_spritesheet_108
+    21300218: commander_enemy_spritesheet_109
+    21300220: commander_enemy_spritesheet_110
+    21300222: commander_enemy_spritesheet_111
+    21300224: commander_enemy_spritesheet_112
+    21300226: commander_enemy_spritesheet_113
+    21300228: commander_enemy_spritesheet_114
+    21300230: commander_enemy_spritesheet_115
+    21300232: commander_enemy_spritesheet_116
+    21300234: commander_enemy_spritesheet_117
+    21300236: commander_enemy_spritesheet_118
+    21300238: commander_enemy_spritesheet_119
+    21300240: commander_enemy_spritesheet_120
+    21300242: commander_enemy_spritesheet_121
+    21300244: commander_enemy_spritesheet_122
+    21300246: commander_enemy_spritesheet_123
+    21300248: commander_enemy_spritesheet_124
+    21300250: commander_enemy_spritesheet_125
+    21300252: commander_enemy_spritesheet_126
+    21300254: commander_enemy_spritesheet_127
+    21300256: commander_enemy_spritesheet_128
+    21300258: commander_enemy_spritesheet_129
+    21300260: commander_enemy_spritesheet_130
+    21300262: commander_enemy_spritesheet_131
+    21300264: commander_enemy_spritesheet_132
+    21300266: commander_enemy_spritesheet_133
+    21300268: commander_enemy_spritesheet_134
+    21300270: commander_enemy_spritesheet_135
+    21300272: commander_enemy_spritesheet_136
+    21300274: commander_enemy_spritesheet_137
+    21300276: commander_enemy_spritesheet_138
+    21300278: commander_enemy_spritesheet_139
+    21300280: commander_enemy_spritesheet_140
+    21300282: commander_enemy_spritesheet_141
+    21300284: commander_enemy_spritesheet_142
+    21300286: commander_enemy_spritesheet_143
+    21300288: commander_enemy_spritesheet_144
+    21300290: commander_enemy_spritesheet_145
+    21300292: commander_enemy_spritesheet_146
+    21300294: commander_enemy_spritesheet_147
+    21300296: commander_enemy_spritesheet_148
+    21300298: commander_enemy_spritesheet_149
+    21300300: commander_enemy_spritesheet_150
+    21300302: commander_enemy_spritesheet_151
+    21300304: commander_enemy_spritesheet_152
+    21300306: commander_enemy_spritesheet_153
+    21300308: commander_enemy_spritesheet_154
+    21300310: commander_enemy_spritesheet_155
+    21300312: commander_enemy_spritesheet_156
+    21300314: commander_enemy_spritesheet_157
+    21300316: commander_enemy_spritesheet_158
+    21300318: commander_enemy_spritesheet_159
+    21300320: commander_enemy_spritesheet_160
+    21300322: commander_enemy_spritesheet_161
+    21300324: commander_enemy_spritesheet_162
+    21300326: commander_enemy_spritesheet_163
+    21300328: commander_enemy_spritesheet_164
+    21300330: commander_enemy_spritesheet_165
+    21300332: commander_enemy_spritesheet_166
+    21300334: commander_enemy_spritesheet_167
+    21300336: commander_enemy_spritesheet_168
+    21300338: commander_enemy_spritesheet_169
+    21300340: commander_enemy_spritesheet_170
+    21300342: commander_enemy_spritesheet_171
+    21300344: commander_enemy_spritesheet_172
+    21300346: commander_enemy_spritesheet_173
+    21300348: commander_enemy_spritesheet_174
+    21300350: commander_enemy_spritesheet_175
+    21300352: commander_enemy_spritesheet_176
+    21300354: commander_enemy_spritesheet_177
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: commander_enemy_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1282
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1282
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1282
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1282
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 24}
+        - {x: -18, y: 11}
+        - {x: -18, y: -18}
+        - {x: -16, y: -24}
+        - {x: 18, y: -24}
+        - {x: 18, y: 24}
+    - name: commander_enemy_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1282
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24}
+        - {x: -25, y: 18}
+        - {x: -25, y: -4}
+        - {x: -23, y: -6}
+        - {x: -14, y: -24}
+        - {x: 17, y: -24}
+        - {x: 25, y: -9}
+        - {x: 25, y: 13}
+        - {x: 19, y: 24}
+    - name: commander_enemy_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1282
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 24}
+        - {x: -24, y: 18}
+        - {x: -24, y: -3}
+        - {x: -19, y: -24}
+        - {x: 21, y: -24}
+        - {x: 24, y: -15}
+        - {x: 24, y: 24}
+    - name: commander_enemy_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1282
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 24}
+        - {x: -18, y: 11}
+        - {x: -18, y: -18}
+        - {x: -16, y: -24}
+        - {x: 18, y: -24}
+        - {x: 18, y: 24}
+    - name: commander_enemy_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1217
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1217
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1217
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1217
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1217
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: 24.5}
+        - {x: -16.5, y: 24.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 7.5, y: -24.5}
+        - {x: 16.5, y: -7.5}
+        - {x: 16.5, y: 12.5}
+        - {x: 13.5, y: 23.5}
+    - name: commander_enemy_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1217
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 24.5}
+        - {x: -11.5, y: 24.5}
+        - {x: -16.5, y: 18.5}
+        - {x: -16.5, y: -22.5}
+        - {x: -12.5, y: -24.5}
+        - {x: 4.5, y: -24.5}
+        - {x: 7.5, y: -21.5}
+        - {x: 16.5, y: 1.5}
+        - {x: 16.5, y: 14.5}
+    - name: commander_enemy_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1217
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1152
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1152
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1152
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1152
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 13.5}
+        - {x: -18, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 18, y: -20.5}
+        - {x: 18, y: 25.5}
+    - name: commander_enemy_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1152
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 25.5}
+        - {x: -16, y: 25.5}
+        - {x: -25, y: 23.5}
+        - {x: -25, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 18, y: -24.5}
+        - {x: 25, y: -3.5}
+        - {x: 25, y: 16.5}
+    - name: commander_enemy_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1152
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 25.5}
+        - {x: -24, y: 25.5}
+        - {x: -24, y: -1.5}
+        - {x: -14, y: -25.5}
+        - {x: 11, y: -25.5}
+        - {x: 14, y: -22.5}
+        - {x: 14, y: -19.5}
+        - {x: 24, y: 2.5}
+    - name: commander_enemy_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1152
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 25.5}
+        - {x: -13, y: 25.5}
+        - {x: -17, y: 21.5}
+        - {x: -17, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 17, y: 15.5}
+        - {x: 16, y: 23.5}
+    - name: commander_enemy_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1089
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1089
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1089
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1089
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1089
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 24.5}
+        - {x: -12.5, y: 22.5}
+        - {x: -16.5, y: 12.5}
+        - {x: -16.5, y: -3.5}
+        - {x: -14.5, y: -9.5}
+        - {x: -5.5, y: -24.5}
+        - {x: 16.5, y: -24.5}
+        - {x: 16.5, y: 24.5}
+    - name: commander_enemy_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1089
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 24.5}
+        - {x: -16.5, y: 15.5}
+        - {x: -16.5, y: 4.5}
+        - {x: -12.5, y: 0.5}
+        - {x: -7.5, y: -21.5}
+        - {x: -5.5, y: -24.5}
+        - {x: 14.5, y: -24.5}
+        - {x: 16.5, y: -19.5}
+        - {x: 16.5, y: 17.5}
+        - {x: 10.5, y: 24.5}
+    - name: commander_enemy_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1089
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1026
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1024
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1024
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1024
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1024
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1024
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1024
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1024
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 961
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 961
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 961
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 960
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 960
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 960
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 960
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 960
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 896
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 897
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 897
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 897
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 897
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 897
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 897
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 897
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 833
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 833
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 833
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 832
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 832
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 832
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 832
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 832
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 771
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 24}
+        - {x: -17, y: 22}
+        - {x: -17, y: -21}
+        - {x: -16, y: -24}
+        - {x: 13, y: -24}
+        - {x: 17, y: -15}
+        - {x: 17, y: 10}
+        - {x: 11, y: 24}
+    - name: commander_enemy_spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 771
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 24}
+        - {x: -17, y: 22}
+        - {x: -17, y: -18}
+        - {x: -15, y: -24}
+        - {x: 12, y: -24}
+        - {x: 17, y: -12}
+        - {x: 17, y: 8}
+        - {x: 10, y: 24}
+    - name: commander_enemy_spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 770
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 24.5}
+        - {x: -17, y: -19.5}
+        - {x: -15, y: -24.5}
+        - {x: 17, y: -24.5}
+        - {x: 17, y: 18.5}
+        - {x: 14, y: 24.5}
+    - name: commander_enemy_spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 769
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 24.5}
+        - {x: -16.5, y: 16.5}
+        - {x: -16.5, y: -21.5}
+        - {x: -11.5, y: -24.5}
+        - {x: 14.5, y: -24.5}
+        - {x: 16.5, y: -18.5}
+        - {x: 16.5, y: 16.5}
+        - {x: 10.5, y: 24.5}
+    - name: commander_enemy_spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 770
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24.5}
+        - {x: -17, y: 21.5}
+        - {x: -17, y: -17.5}
+        - {x: -14, y: -24.5}
+        - {x: 11, y: -24.5}
+        - {x: 17, y: -15.5}
+        - {x: 17, y: 24.5}
+    - name: commander_enemy_spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 771
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 24}
+        - {x: -17, y: 22}
+        - {x: -17, y: -18}
+        - {x: -15, y: -24}
+        - {x: 12, y: -24}
+        - {x: 17, y: -12}
+        - {x: 17, y: 8}
+        - {x: 10, y: 24}
+    - name: commander_enemy_spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 770
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 24.5}
+        - {x: -17, y: 19.5}
+        - {x: -17, y: -24.5}
+        - {x: 14, y: -24.5}
+        - {x: 17, y: -16.5}
+        - {x: 17, y: 24.5}
+    - name: commander_enemy_spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 769
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 24.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 7.5, y: -24.5}
+        - {x: 16.5, y: -16.5}
+        - {x: 16.5, y: 11.5}
+        - {x: 9.5, y: 24.5}
+    - name: commander_enemy_spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 770
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 24.5}
+        - {x: -17, y: 17.5}
+        - {x: -17, y: -17.5}
+        - {x: -15, y: -24.5}
+        - {x: 10, y: -24.5}
+        - {x: 14, y: -22.5}
+        - {x: 17, y: -19.5}
+        - {x: 17, y: 24.5}
+    - name: commander_enemy_spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 705
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 24.5}
+        - {x: -11.5, y: 23.5}
+        - {x: -16.5, y: 8.5}
+        - {x: -16.5, y: -10.5}
+        - {x: -14.5, y: -11.5}
+        - {x: -9.5, y: -21.5}
+        - {x: -7.5, y: -23.5}
+        - {x: -3.5, y: -24.5}
+        - {x: 12.5, y: -24.5}
+        - {x: 16.5, y: -15.5}
+        - {x: 16.5, y: 23.5}
+        - {x: 14.5, y: 24.5}
+    - name: commander_enemy_spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 706
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 707
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 707
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 706
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 706
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 706
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 706
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 24}
+        - {x: -12.5, y: 23}
+        - {x: -16.5, y: 15}
+        - {x: -16.5, y: -21}
+        - {x: -14.5, y: -24}
+        - {x: 8.5, y: -24}
+        - {x: 12.5, y: -22}
+        - {x: 16.5, y: -19}
+        - {x: 16.5, y: 18}
+        - {x: 14.5, y: 24}
+    - name: commander_enemy_spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 706
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 640
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 25.5}
+        - {x: -11, y: 25.5}
+        - {x: -17, y: 23.5}
+        - {x: -17, y: -20.5}
+        - {x: -14, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 17, y: -18.5}
+        - {x: 17, y: 14.5}
+        - {x: 16, y: 20.5}
+    - name: commander_enemy_spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 640
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -17, y: 22.5}
+        - {x: -17, y: -16.5}
+        - {x: -16, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 17, y: 20.5}
+        - {x: 15, y: 25.5}
+    - name: commander_enemy_spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 641
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25}
+        - {x: -17, y: 22}
+        - {x: -17, y: -14}
+        - {x: -13, y: -25}
+        - {x: 16, y: -25}
+        - {x: 17, y: -22}
+        - {x: 17, y: 18}
+        - {x: 12, y: 25}
+    - name: commander_enemy_spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 641
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 24.5}
+        - {x: -16.5, y: 22.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 16.5, y: -24.5}
+        - {x: 16.5, y: 24.5}
+    - name: commander_enemy_spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 640
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 25.5}
+        - {x: -17, y: 15.5}
+        - {x: -17, y: -21.5}
+        - {x: -12, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 17, y: 25.5}
+    - name: commander_enemy_spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 640
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 25.5}
+        - {x: -16, y: 25.5}
+        - {x: -17, y: 20.5}
+        - {x: -17, y: -12.5}
+        - {x: -13, y: -23.5}
+        - {x: -10, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 17, y: -20.5}
+        - {x: 17, y: 24.5}
+    - name: commander_enemy_spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 641
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 25}
+        - {x: -15, y: 25}
+        - {x: -17, y: 20}
+        - {x: -17, y: -23}
+        - {x: -15, y: -25}
+        - {x: 15, y: -25}
+        - {x: 17, y: -18}
+        - {x: 17, y: 20}
+        - {x: 15, y: 23}
+    - name: commander_enemy_spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 641
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 24.5}
+        - {x: -16.5, y: 17.5}
+        - {x: -16.5, y: -15.5}
+        - {x: -14.5, y: -24.5}
+        - {x: 12.5, y: -24.5}
+        - {x: 16.5, y: -18.5}
+        - {x: 16.5, y: 23.5}
+        - {x: 14.5, y: 24.5}
+    - name: commander_enemy_spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 640
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 25.5}
+        - {x: -13, y: 25.5}
+        - {x: -17, y: 22.5}
+        - {x: -17, y: -23.5}
+        - {x: -15, y: -25.5}
+        - {x: 10, y: -25.5}
+        - {x: 17, y: -16.5}
+        - {x: 17, y: 15.5}
+        - {x: 15, y: 23.5}
+    - name: commander_enemy_spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 577
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 24.5}
+        - {x: -16.5, y: 24.5}
+        - {x: -16.5, y: -22.5}
+        - {x: -13.5, y: -24.5}
+        - {x: 8.5, y: -24.5}
+        - {x: 16.5, y: -13.5}
+        - {x: 16.5, y: 1.5}
+        - {x: 10.5, y: 23.5}
+    - name: commander_enemy_spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 578
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 579
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 579
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 578
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 578
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 578
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 578
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 24}
+        - {x: -16.5, y: 23}
+        - {x: -16.5, y: -9}
+        - {x: -14.5, y: -13}
+        - {x: -11.5, y: -21}
+        - {x: -10.5, y: -24}
+        - {x: 9.5, y: -24}
+        - {x: 16.5, y: -20}
+        - {x: 16.5, y: 24}
+    - name: commander_enemy_spritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 578
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 514
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 513
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 513
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 513
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 513
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 24.5}
+        - {x: -18, y: 17.5}
+        - {x: -18, y: -24.5}
+        - {x: 13, y: -24.5}
+        - {x: 18, y: -15.5}
+        - {x: 18, y: 14.5}
+        - {x: 10, y: 24.5}
+    - name: commander_enemy_spritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 513
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 24.5}
+        - {x: -19.5, y: 15.5}
+        - {x: -19.5, y: -24.5}
+        - {x: 17.5, y: -24.5}
+        - {x: 19.5, y: -11.5}
+        - {x: 19.5, y: 22.5}
+        - {x: 18.5, y: 24.5}
+    - name: commander_enemy_spritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 449
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 448
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 448
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_105
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 448
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 25}
+        - {x: -11, y: 24}
+        - {x: -19, y: -2}
+        - {x: -19, y: -23}
+        - {x: -11, y: -25}
+        - {x: 15, y: -25}
+        - {x: 18, y: -24}
+        - {x: 19, y: -23}
+        - {x: 19, y: 14}
+        - {x: 16, y: 25}
+    - name: commander_enemy_spritesheet_106
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 25}
+        - {x: -22, y: 10}
+        - {x: -22, y: -2}
+        - {x: -10, y: -25}
+        - {x: 22, y: -25}
+        - {x: 22, y: 23}
+        - {x: 16, y: 25}
+    - name: commander_enemy_spritesheet_107
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 448
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 25}
+        - {x: -21.5, y: 18}
+        - {x: -21.5, y: -15}
+        - {x: -6.5, y: -25}
+        - {x: 21.5, y: -25}
+        - {x: 21.5, y: 25}
+    - name: commander_enemy_spritesheet_108
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 384
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 25.5}
+        - {x: -11, y: 25.5}
+        - {x: -17, y: 23.5}
+        - {x: -17, y: -20.5}
+        - {x: -14, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -18.5}
+        - {x: 17, y: 15.5}
+        - {x: 15, y: 19.5}
+    - name: commander_enemy_spritesheet_109
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 384
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_110
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 384
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_111
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 385
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_112
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 385
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: -21}
+        - {x: 13.5, y: -21}
+        - {x: 17.5, y: -17}
+        - {x: 17.5, y: 4}
+        - {x: 12.5, y: 23}
+        - {x: 9.5, y: 25}
+        - {x: -14.5, y: 25}
+        - {x: -17.5, y: 18}
+        - {x: -17.5, y: -25}
+        - {x: 6.5, y: -25}
+        - {x: 9.5, y: -22}
+        - {x: 9.5, y: -12}
+        - {x: 9.5, y: -18}
+    - name: commander_enemy_spritesheet_113
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 385
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 25}
+        - {x: -22, y: -25}
+        - {x: 13, y: -25}
+        - {x: 22, y: -17}
+        - {x: 22, y: 2}
+        - {x: 6, y: 25}
+    - name: commander_enemy_spritesheet_114
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 321
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_115
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 320
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_116
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 320
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_117
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 320
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 25}
+        - {x: -19, y: 24}
+        - {x: -19, y: -23}
+        - {x: -18, y: -25}
+        - {x: 15, y: -25}
+        - {x: 19, y: -17}
+        - {x: 19, y: 0}
+        - {x: 8, y: 25}
+    - name: commander_enemy_spritesheet_118
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 320
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 25}
+        - {x: -17, y: 25}
+        - {x: -22, y: 14}
+        - {x: -22, y: -25}
+        - {x: -2, y: -25}
+        - {x: 7, y: -23}
+        - {x: 22, y: -2}
+        - {x: 22, y: 10}
+    - name: commander_enemy_spritesheet_119
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 320
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 25}
+        - {x: -15.5, y: 25}
+        - {x: -21.5, y: 23}
+        - {x: -21.5, y: -25}
+        - {x: 0.5, y: -25}
+        - {x: 8.5, y: -24}
+        - {x: 21.5, y: 0}
+        - {x: 21.5, y: 13}
+    - name: commander_enemy_spritesheet_120
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 258
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_121
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 256
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_122
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 256
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_123
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 256
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_124
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 256
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_125
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 256
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_126
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 256
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_127
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 256
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_128
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 256
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_129
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 256
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_130
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 256
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_131
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 256
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_132
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 256
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_133
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 193
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_134
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 193
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_135
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 193
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 24.5}
+        - {x: -16, y: 13.5}
+        - {x: -16, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 16, y: 24.5}
+    - name: commander_enemy_spritesheet_136
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 192
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 25}
+        - {x: -17.5, y: 23}
+        - {x: -17.5, y: -25}
+        - {x: 14.5, y: -25}
+        - {x: 17.5, y: -20}
+        - {x: 17.5, y: 17}
+        - {x: 14.5, y: 25}
+    - name: commander_enemy_spritesheet_137
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 192
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 25}
+        - {x: -17.5, y: 16}
+        - {x: -17.5, y: -17}
+        - {x: -15.5, y: -25}
+        - {x: 16.5, y: -25}
+        - {x: 17.5, y: -22}
+        - {x: 17.5, y: 24}
+        - {x: 13.5, y: 25}
+    - name: commander_enemy_spritesheet_138
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 192
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 25}
+        - {x: -16, y: 20}
+        - {x: -16, y: -25}
+        - {x: 16, y: -25}
+        - {x: 16, y: 25}
+    - name: commander_enemy_spritesheet_139
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 192
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 25}
+        - {x: -17, y: 19}
+        - {x: -17, y: -13}
+        - {x: -8, y: -24}
+        - {x: -5, y: -25}
+        - {x: 16, y: -25}
+        - {x: 17, y: -23}
+        - {x: 17, y: 25}
+    - name: commander_enemy_spritesheet_140
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 192
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 25}
+        - {x: -12, y: 24}
+        - {x: -18, y: 19}
+        - {x: -18, y: -20}
+        - {x: -16, y: -25}
+        - {x: 14, y: -25}
+        - {x: 18, y: -18}
+        - {x: 18, y: 23}
+        - {x: 16, y: 25}
+    - name: commander_enemy_spritesheet_141
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 192
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 25}
+        - {x: -15, y: 25}
+        - {x: -19, y: 19}
+        - {x: -19, y: -15}
+        - {x: -10, y: -25}
+        - {x: 14, y: -25}
+        - {x: 15, y: -24}
+        - {x: 19, y: -14}
+        - {x: 19, y: 15}
+        - {x: 17, y: 22}
+    - name: commander_enemy_spritesheet_142
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 192
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 25}
+        - {x: -17.5, y: 16}
+        - {x: -17.5, y: -17}
+        - {x: -15.5, y: -25}
+        - {x: 16.5, y: -25}
+        - {x: 17.5, y: -22}
+        - {x: 17.5, y: 24}
+        - {x: 13.5, y: 25}
+    - name: commander_enemy_spritesheet_143
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 192
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25}
+        - {x: -17, y: 21}
+        - {x: -17, y: -25}
+        - {x: 17, y: -25}
+        - {x: 17, y: 25}
+    - name: commander_enemy_spritesheet_144
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 192
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_145
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 192
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25}
+        - {x: -17, y: 21}
+        - {x: -17, y: -25}
+        - {x: 17, y: -25}
+        - {x: 17, y: 25}
+    - name: commander_enemy_spritesheet_146
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_147
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 129
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_148
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_149
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 128
+        width: 24
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_150
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 128
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_151
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 128
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_152
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 128
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_153
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 128
+        width: 24
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_154
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 128
+        width: 24
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_155
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 128
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_156
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 128
+        width: 24
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_157
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 128
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_158
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 128
+        width: 24
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_159
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 65
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_160
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 65
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_161
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 65
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 24.5}
+        - {x: -13, y: 24.5}
+        - {x: -16, y: 15.5}
+        - {x: -16, y: -24.5}
+        - {x: 13, y: -24.5}
+        - {x: 16, y: -15.5}
+        - {x: 16, y: 12.5}
+        - {x: 13, y: 23.5}
+    - name: commander_enemy_spritesheet_162
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 25}
+        - {x: -17.5, y: -25}
+        - {x: 11.5, y: -25}
+        - {x: 17.5, y: -10}
+        - {x: 17.5, y: 6}
+        - {x: 9.5, y: 25}
+    - name: commander_enemy_spritesheet_163
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 64
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 25}
+        - {x: -15.5, y: 22}
+        - {x: -17.5, y: 18}
+        - {x: -17.5, y: -13}
+        - {x: -13.5, y: -25}
+        - {x: 12.5, y: -25}
+        - {x: 17.5, y: -14}
+        - {x: 17.5, y: 11}
+        - {x: 12.5, y: 25}
+    - name: commander_enemy_spritesheet_164
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 64
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 25}
+        - {x: -16, y: 24}
+        - {x: -16, y: -25}
+        - {x: 11, y: -25}
+        - {x: 16, y: -4}
+        - {x: 16, y: 14}
+        - {x: 9, y: 25}
+    - name: commander_enemy_spritesheet_165
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 64
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 20}
+        - {x: 7, y: 25}
+        - {x: -17, y: 25}
+        - {x: -17, y: -25}
+        - {x: 9, y: -25}
+        - {x: 10, y: -18}
+        - {x: 7, y: -16}
+        - {x: 17, y: 0}
+    - name: commander_enemy_spritesheet_166
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 64
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25}
+        - {x: -18, y: 16}
+        - {x: -18, y: -8}
+        - {x: -13, y: -25}
+        - {x: 15, y: -25}
+        - {x: 18, y: -11}
+        - {x: 18, y: 15}
+        - {x: 6, y: 25}
+    - name: commander_enemy_spritesheet_167
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 64
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 24}
+        - {x: 9, y: 25}
+        - {x: -14, y: 25}
+        - {x: -19, y: 14}
+        - {x: -19, y: -12}
+        - {x: -12, y: -25}
+        - {x: 13, y: -25}
+        - {x: 19, y: -10}
+        - {x: 19, y: 13}
+    - name: commander_enemy_spritesheet_168
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 64
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 25}
+        - {x: -15.5, y: 22}
+        - {x: -17.5, y: 18}
+        - {x: -17.5, y: -13}
+        - {x: -13.5, y: -25}
+        - {x: 12.5, y: -25}
+        - {x: 17.5, y: -14}
+        - {x: 17.5, y: 11}
+        - {x: 12.5, y: 25}
+    - name: commander_enemy_spritesheet_169
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 64
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 25}
+        - {x: -17, y: -25}
+        - {x: 17, y: -25}
+        - {x: 17, y: 21}
+        - {x: 12, y: 25}
+    - name: commander_enemy_spritesheet_170
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 64
+        width: 31
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_171
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 64
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 25}
+        - {x: -17, y: 23}
+        - {x: -17, y: -19}
+        - {x: -16, y: -23}
+        - {x: -14, y: -25}
+        - {x: 12, y: -25}
+        - {x: 17, y: -14}
+        - {x: 17, y: 11}
+        - {x: 12, y: 25}
+    - name: commander_enemy_spritesheet_172
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_173
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_174
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_175
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 3
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_176
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 3
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: commander_enemy_spritesheet_177
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 0
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 18}
+        - {x: -17, y: -18}
+        - {x: 17, y: -18}
+        - {x: 17, y: 16}
+        - {x: 16, y: 18}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

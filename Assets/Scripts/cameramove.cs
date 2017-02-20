@@ -21,7 +21,7 @@ public class cameramove : MonoBehaviour {
     // Use this for initialization
     void Start () {
         currentLoc = new Vector3(7.99695f, -5.0f, -9.0f);
-        pos = new Vector3(0.0f, 0.0f, 0.0f);
+        //pos = new Vector3(0.0f, 0.0f, 0.0f);
         specialTrigger2 = false;
         //Camera.main.orthographic = false;
         extraBordersave = extraBorder;

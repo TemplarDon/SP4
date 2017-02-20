@@ -19,7 +19,6 @@ public class BaseCharacter : MonoBehaviour {
     public BaseSkills theSkill;
 
   	public bool[] restrictActions;
-    public bool isEnemy;
 
     // Character Stats
     public string Name = "Man";
@@ -34,7 +33,7 @@ public class BaseCharacter : MonoBehaviour {
     public bool IsDead;                // Whether or not this character is dead
 
     // Animation Enums
-    enum ANIM_STATE
+    public enum ANIM_STATE
     {
         IDLE,
         MOVE_LEFT,
@@ -45,10 +44,15 @@ public class BaseCharacter : MonoBehaviour {
         ATTACK_RIGHT,
         ATTACK_UP,
         ATTACK_DOWN,
+        STAND_LEFT,
+        STAND_RIGHT,
+        STAND_UP,
+        STAND_DOWN,
         DIE,
+        DEAD,
     }
 
-    ANIM_STATE CurrentAnimState;
+    public ANIM_STATE CurrentAnimState;
 
     // Private Var
     private bool b_ShouldMove = false;
@@ -67,12 +71,12 @@ public class BaseCharacter : MonoBehaviour {
             restrictActions[i] = false;
         }
 
-        this.GetComponent<Animator>().Play("CharacterAnimationIdle");
+        //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
+        CurrentAnimState = ANIM_STATE.IDLE;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         ConstrainToGrid();
         this.transform.position = pos;
 
@@ -95,7 +99,9 @@ public class BaseCharacter : MonoBehaviour {
         {
             //Debug.Log("Trying to follow path.");
             this.GetComponent<Pathfinder>().FollowPath();
-        }    
+        }
+
+        UpdateAnimState();
 	}
 
     void OnMouseDown()
@@ -119,6 +125,11 @@ public class BaseCharacter : MonoBehaviour {
     {
         m_Destination = dest;
         this.GetComponent<Pathfinder>().FindPath(m_Destination);
+    }
+
+    public Vector3 GetCharacterDestination()
+    {
+        return m_Destination;
     }
 
     public void SetToMove(bool status)
@@ -157,5 +168,71 @@ public class BaseCharacter : MonoBehaviour {
     {
         Debug.Log("Using item!");
         theItem.GetComponent<Useables>().DoEffect(this);
+    }
+
+    void UpdateAnimState()
+    {
+        switch (CurrentAnimState)
+        {
+            case ANIM_STATE.IDLE:
+                this.GetComponent<Animator>().Play("Idle");
+                break;
+
+            case ANIM_STATE.MOVE_DOWN:
+                this.GetComponent<Animator>().Play("MoveDown");
+                break;
+
+            case ANIM_STATE.MOVE_LEFT:
+                this.GetComponent<Animator>().Play("MoveLeft");
+                break;
+
+            case ANIM_STATE.MOVE_RIGHT:
+                this.GetComponent<Animator>().Play("MoveRight");
+                break;
+
+            case ANIM_STATE.MOVE_UP:
+                this.GetComponent<Animator>().Play("MoveUp");
+                break;
+
+            case ANIM_STATE.ATTACK_DOWN:
+                this.GetComponent<Animator>().Play("AttackDown");
+                break;
+
+            case ANIM_STATE.ATTACK_LEFT:
+                this.GetComponent<Animator>().Play("AttackLeft");
+                break;
+
+            case ANIM_STATE.ATTACK_RIGHT:
+                this.GetComponent<Animator>().Play("AttackRight");
+                break;
+
+            case ANIM_STATE.ATTACK_UP:
+                this.GetComponent<Animator>().Play("AttackUp");
+                break;
+
+            case ANIM_STATE.STAND_DOWN:
+                this.GetComponent<Animator>().Play("StandDown");
+                break;
+
+            case ANIM_STATE.STAND_LEFT:
+                this.GetComponent<Animator>().Play("StandLeft");
+                break;
+
+            case ANIM_STATE.STAND_RIGHT:
+                this.GetComponent<Animator>().Play("StandRight");
+                break;
+
+            case ANIM_STATE.STAND_UP:
+                this.GetComponent<Animator>().Play("StandUp");
+                break;
+
+            case ANIM_STATE.DIE:
+                this.GetComponent<Animator>().Play("Die");
+                break;
+
+            case ANIM_STATE.DEAD:
+                this.GetComponent<Animator>().Play("Dead");
+                break;
+        }
     }
 }
