@@ -32,6 +32,14 @@ public class BaseCharacter : MonoBehaviour {
     public bool IsEnemy;               // Whether or not this character is an enemy
     public bool IsDead;                // Whether or not this character is dead
 
+    private int MaxSpeed =           0;
+    private int MaxAttackRange =     0;
+    private int MaxStrength =        0;
+    private int MaxMagic =           0;
+    private int MaxMana =            0;
+    private int MaxHealth =          0;
+    private int MaxArmour =          0;
+
     // Animation Enums
     public enum ANIM_STATE
     {
@@ -71,8 +79,16 @@ public class BaseCharacter : MonoBehaviour {
             restrictActions[i] = false;
         }
 
-        //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
-        CurrentAnimState = ANIM_STATE.IDLE;
+        MaxSpeed = BaseSpeed;
+        MaxAttackRange = BaseAttackRange;
+        MaxStrength = BaseStrength;
+        MaxMagic = BaseMagic;
+        MaxMana = BaseMana;
+        MaxHealth = BaseHealth;
+        MaxArmour = BaseArmour;
+
+    //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
+    CurrentAnimState = ANIM_STATE.IDLE;
 	}
 	
 	// Update is called once per frame
@@ -235,4 +251,39 @@ public class BaseCharacter : MonoBehaviour {
                 break;
         }
     }
-}
+
+    public int GetMaxHealth()
+    {
+        return MaxHealth;
+    }
+
+    public int GetMaxSpeed()
+    {
+        return MaxSpeed;
+    }
+
+    public int GetMaxAttackRange()
+    {
+        return MaxAttackRange;
+    }
+
+    public int GetMaxStrength()
+    {
+        return MaxStrength;
+    }
+
+    public int GetMaxMagic()
+    {
+        return MaxMagic;
+    }
+
+    public int GetMaxMana()
+    {
+        return MaxMana;
+    }
+    
+    public int GetMaxArmour()
+    {
+        return MaxArmour;
+    }
+}                   

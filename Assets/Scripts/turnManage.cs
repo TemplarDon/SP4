@@ -8,6 +8,11 @@ public class turnManage : MonoBehaviour {
     public Text turnNum;
     public int actionSelection;
     public Text nameDisplay;
+    public Text chargeDisplay;
+    public Text atkDisplay;
+    public Text ranDisplay;
+    public Text defDisplay;
+    public Text heaDisplay;
     public GameObject menuObject;
     public GameObject menuArrow;
     public TestingPlayer charac;
@@ -41,6 +46,11 @@ public class turnManage : MonoBehaviour {
         turnNum.text = 1.ToString();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
         nameDisplay.text = characNEW.Name;
+        chargeDisplay.text = characNEW.BaseMagic.ToString();
+        atkDisplay.text = characNEW.BaseStrength.ToString();
+        ranDisplay.text = characNEW.BaseAttackRange.ToString();
+        defDisplay.text = characNEW.BaseArmour.ToString();
+        heaDisplay.text = characNEW.BaseHealth.ToString();
         //camera = GetComponent<Camera>();
         actionSelection = 1;
         menuOpen = true;
@@ -65,7 +75,7 @@ public class turnManage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(teamTurn >= 5)
+        if (teamTurn >= 5)
         {
             teamTurn -= 4;
         }
@@ -99,6 +109,12 @@ public class turnManage : MonoBehaviour {
 
        turnNum.text = turnNumber.ToString();
         nameDisplay.text = characNEW.Name;
+        chargeDisplay.text = characNEW.BaseMana.ToString();
+        atkDisplay.text = characNEW.BaseStrength.ToString();
+        ranDisplay.text = characNEW.BaseAttackRange.ToString();
+        defDisplay.text = characNEW.BaseArmour.ToString();
+        heaDisplay.text = characNEW.BaseHealth.ToString();
+
         restrictions = characNEW.restrictActions;
         GameObject controller = GameObject.Find("Controller");
 
@@ -229,7 +245,7 @@ public class turnManage : MonoBehaviour {
                 //characNEW.restrictActions[actionSelection - 1] = restrictions[actionSelection - 1] = true;
                 if (restrictions[actionSelection - 1] == false)
                 {
-                    Debug.Log(restrictions[actionSelection - 1]);
+                    Debug.Log(actionSelection - 1);
                     switch (actionSelection)
                     {
                         case 1:
@@ -261,28 +277,32 @@ public class turnManage : MonoBehaviour {
                             //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                             GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
+                            characNEW.BaseMana = characNEW.GetMaxMana();
                             break;
                     }
+
+                    if (actionSelection > 2)
+                    {
+                        characNEW.restrictActions[0] = restrictions[0] = true;
+                        characNEW.restrictActions[1] = restrictions[1] = true;
+                        characNEW.restrictActions[2] = restrictions[2] = true;
+                        characNEW.restrictActions[3] = restrictions[3] = true;
+                        characNEW.restrictActions[4] = restrictions[4] = true;
+                    }
+                    else
+                    {
+                        //characNEW.restrictActions[0] = restrictions[0] = true;
+                    }
+
+                    actionSelection = 1;
+
                 }
                 else
                 {
                     menuOpen = false;
                 }
 
-                if (actionSelection > 2)
-                {
-                    characNEW.restrictActions[0] = restrictions[0] = true;
-                    characNEW.restrictActions[1] = restrictions[1] = true;
-                    characNEW.restrictActions[2] = restrictions[2] = true;
-                    characNEW.restrictActions[3] = restrictions[3] = true;
-                    characNEW.restrictActions[4] = restrictions[4] = true;
-                }
-                else
-                {
-                    //characNEW.restrictActions[0] = restrictions[0] = true;
-                }
-
-                actionSelection = 1;
+                
             }
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -464,28 +484,32 @@ public class turnManage : MonoBehaviour {
                     //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
+                    characNEW.BaseMana = characNEW.GetMaxMana();
                     break;
             }
+
+            if (actionSelection > 2)
+            {
+                characNEW.restrictActions[0] = restrictions[0] = true;
+                characNEW.restrictActions[1] = restrictions[1] = true;
+                characNEW.restrictActions[2] = restrictions[2] = true;
+                characNEW.restrictActions[3] = restrictions[3] = true;
+                characNEW.restrictActions[4] = restrictions[4] = true;
+            }
+            else
+            {
+                //characNEW.restrictActions[0] = restrictions[0] = true;
+            }
+
+            actionSelection = 1;
+
+
         }
         else
         {
             menuOpen = false;
         }
 
-        if (actionSelection > 2)
-        {
-            characNEW.restrictActions[0] = restrictions[0] = true;
-            characNEW.restrictActions[1] = restrictions[1] = true;
-            characNEW.restrictActions[2] = restrictions[2] = true;
-            characNEW.restrictActions[3] = restrictions[3] = true;
-            characNEW.restrictActions[4] = restrictions[4] = true;
-        }
-        else
-        {
-            //characNEW.restrictActions[0] = restrictions[0] = true;
-        }
-
-        actionSelection = 1;
-
+        
     }
 }
