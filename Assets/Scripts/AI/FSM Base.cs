@@ -13,7 +13,10 @@ public abstract class FSMBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        RunFSM();
+        if(GameObject.Find("TurnManager").GetComponent<turnManage>().turnNumber % 2 == 0)
+        {
+            RunFSM();
+        }
 	}
 
     public void RunFSM()
