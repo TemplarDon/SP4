@@ -7,6 +7,7 @@ public class CommanderFSM : FSMBase {
 
     // Public Vars
     public int RecallHealthThreshold;   // The amount of health where the commander will call units to fallback and protect him
+    public int ActivaRange;             // The range where the commander will start moving his units
     public int TacticsRange;            // The range where the commander starts to use other orders besides ORDER_FRONTAL_ASSAULT
     public int OrderFrequency;          // Amount of turns before another order will be given
 
@@ -26,7 +27,7 @@ public class CommanderFSM : FSMBase {
     bool b_PlanFound = false;                                       // Bool to trigger state switch from PLAN to SEND_ORDERS
     bool b_OrderSent = false;                                       // Bool to trigger state switch from SEND_ORDER to PLAN
     List<Message> MessageBuffer = new List<Message>();              // Message buffer to send to units
-    int TurnCounter = 9;                                            // Counter for the amount of turns passed
+    int TurnCounter = 5;                                            // Counter for the amount of turns passed
     GameObject Target;                                              // Handle to message target, if needed
 
 	// Use this for initialization
@@ -36,21 +37,24 @@ public class CommanderFSM : FSMBase {
 	
     public override void Sense()     
     {
-        // Get Enemy data
-        GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
-
-        foreach (GameObject go in goList)
+        if (TeamList.Count <= 0)
         {
-            if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
-                continue;
+            // Get Enemy data
+            GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
 
-            if (!go.GetComponent<BaseCharacter>().IsEnemy)
+            foreach (GameObject go in goList)
             {
-                EnemyList.Add(go.GetComponent<BaseCharacter>());
-            }
-            else
-            {
-                TeamList.Add(go.GetComponent<BaseCharacter>());
+                if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
+                    continue;
+
+                if (!go.GetComponent<BaseCharacter>().IsEnemy)
+                {
+                    EnemyList.Add(go.GetComponent<BaseCharacter>());
+                }
+                else
+                {
+                    TeamList.Add(go.GetComponent<BaseCharacter>());
+                }
             }
         }
     }
@@ -64,6 +68,9 @@ public class CommanderFSM : FSMBase {
                 if (TurnCounter >= OrderFrequency)
                 {
                     TurnCounter = 0;
+
+                    Debug.Log("Going into PLAN.");
+
                     return (int)STATES.PLAN;
                 }
 
@@ -73,15 +80,20 @@ public class CommanderFSM : FSMBase {
             case STATES.PLAN:
 
                 if (b_PlanFound)
+                {
+                    Debug.Log("Going into SEND_ORDERS.");
                     return (int)STATES.SEND_ORDERS;
-
+                }
 
                 return (int)STATES.PLAN;
 
             case STATES.SEND_ORDERS:
 
                 if (b_OrderSent)
+                {
+                    Debug.Log("Going into IDLE.");
                     return (int)STATES.IDLE;
+                }
 
                 return (int)STATES.SEND_ORDERS;
 
@@ -136,6 +148,12 @@ public class CommanderFSM : FSMBase {
         float AverageDistToEnemy = (AverageTeamPosition - AverageEnemyPosition).magnitude;
 
         // Check AverageDistToEnemy 
+        if (AverageDistToEnemy > ActivaRange)
+        {
+            b_PlanFound = true;
+            return;
+        }
+
         if (AverageDistToEnemy > TacticsRange)
         {
             // Enemy further away than TacticsRange, send ORDER_FRONTAL_ASSAULT
@@ -197,9 +215,16 @@ public class CommanderFSM : FSMBase {
 
         b_PlanFound = false;
         b_OrderSent = true;
+        MessageBuffer.Clear();
     }
 
     public override void ProcessMessage()
     {
+    }
+
+    public void IncreaseTurnCount()
+    {
+        TurnCounter++;
+        Debug.Log("Commander increase turn counter.");
     }
 }

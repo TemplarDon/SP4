@@ -174,10 +174,9 @@ public class Pathfinder : MonoBehaviour
 
     public void FollowPath()
     {
-        if (!b_CompletedPath)
+        if (!b_CompletedPath && b_PathFound)
         {
-            ////Debug.Log("Following path.");
-
+            ////Debug.Log("Following path.");S
             // Use the last node to get the path
             Node endNode = ClosedList[ClosedList.Count - 1];
 
@@ -415,5 +414,11 @@ public class Pathfinder : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void Reset()
+    {
+        b_PathFound = false;
+        b_CompletedPath = false;
     }
 }

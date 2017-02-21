@@ -27,14 +27,14 @@ public class TestSkill : BaseSkills {
         BaseCharacter check1 = user.theLevel.GetCharacterInTile(mapPos + new Vector3(0, 1, 0));
         if (check1 != null)
         {
-            GameObject.Find(check1.name).GetComponent<BaseCharacter>().BaseHealth -= 3;
+            GameObject.Find(check1.name).GetComponent<BaseCharacter>().TakeDamage(3);
             Debug.Log("Damage Taken!");
         }
 
         BaseCharacter check2 = user.theLevel.GetCharacterInTile(mapPos + new Vector3(0, 2, 0));
         if (check2 != null)
         {
-            GameObject.Find(check2.name).GetComponent<BaseCharacter>().BaseHealth -= 3;
+            GameObject.Find(check2.name).GetComponent<BaseCharacter>().TakeDamage(3);
             Debug.Log("Damage Taken!");
         }
 

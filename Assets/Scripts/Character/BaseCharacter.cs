@@ -119,6 +119,8 @@ public class BaseCharacter : MonoBehaviour {
         }
 
         UpdateAnimState();
+        CheckIfDead();
+        
 	}
 
     void OnMouseDown()
@@ -141,6 +143,7 @@ public class BaseCharacter : MonoBehaviour {
     public void SetCharacterDestination(Vector3 dest)
     {
         m_Destination = dest;
+        this.GetComponent<Pathfinder>().Reset();
         this.GetComponent<Pathfinder>().FindPath(m_Destination);
     }
 
@@ -189,6 +192,23 @@ public class BaseCharacter : MonoBehaviour {
 
     void UpdateAnimState()
     {
+        if (this.GetComponent<AnimationEnd>().b_AnimationEnded)
+        {
+            if (this.CurrentAnimState == ANIM_STATE.DIE)
+            {
+                this.CurrentAnimState = ANIM_STATE.DEAD;
+                if (IsEnemy)
+                    this.GetComponent<FSMBase>().enabled = false;
+
+                this.GetComponent<Pathfinder>().enabled = false;
+                this.enabled = false;
+            }
+            else
+                this.CurrentAnimState = ANIM_STATE.IDLE;
+            Debug.Log("Reset anim.");
+        }
+
+
         switch (CurrentAnimState)
         {
             case ANIM_STATE.IDLE:
@@ -286,5 +306,21 @@ public class BaseCharacter : MonoBehaviour {
     public int GetMaxArmour()
     {
         return MaxArmour;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        BaseHealth -= damage;
+        CheckIfDead();
+    }
+
+    void CheckIfDead()
+    {
+        if (BaseHealth <= 0 )
+        {
+            Debug.Log("Died.");
+
+            CurrentAnimState = ANIM_STATE.DIE;
+        }
     }
 }                   

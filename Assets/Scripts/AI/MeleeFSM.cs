@@ -11,6 +11,7 @@ public class MeleeFSM : FSMBase {
     {
         IDLE,
         FOLLOW_ORDER,
+        CHASE,
         ATTACK,
         HELP,
     }
@@ -18,6 +19,7 @@ public class MeleeFSM : FSMBase {
     STATES CurrentState;
 
     bool b_NearEnemy = false;
+    bool b_Attacked = false;
     GameObject m_TargetedEnemy = null;
 
     List<GameObject> AlliedUnits = new List<GameObject>();
@@ -36,26 +38,96 @@ public class MeleeFSM : FSMBase {
             Debug.Log("Received a message.");
         }
 
-        // Get Enemy data
-        GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
-
-        foreach (GameObject go in goList)
+        if (AlliedUnits.Count <= 0)
         {
-            if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
-                continue;
+            // Get Enemy data
+            GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
 
-            if (!go.GetComponent<BaseCharacter>().IsEnemy)
+            foreach (GameObject go in goList)
             {
-                if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < AggroRange * AggroRange)
+                if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
+                    continue;
+
+                if (go.GetComponent<BaseCharacter>().IsEnemy)
                 {
-                    b_NearEnemy = true;
+                    AlliedUnits.Add(go);
                 }
-            }
-            else
-            {
-                AlliedUnits.Add(go);
+
             }
         }
+
+
+        int EmptyPositisions = 0;
+        BaseCharacter checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, AggroRange, 0));
+        if (checkGo != null)
+        {
+            if (!checkGo.IsEnemy)
+            {
+                b_NearEnemy = true;
+                m_TargetedEnemy = checkGo.gameObject;
+
+                Debug.Log("Enemy near!");
+            }
+        }
+        else
+        {
+            EmptyPositisions++;
+        }
+
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, -AggroRange, 0));
+        if (checkGo != null)
+        {
+            if (!checkGo.IsEnemy)
+            {
+                b_NearEnemy = true;
+                m_TargetedEnemy = checkGo.gameObject;
+
+                Debug.Log("Enemy near!");
+            }
+        }
+        else
+        {
+            EmptyPositisions++;
+        }
+
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(AggroRange, 0, 0));
+        if (checkGo != null)
+        {
+            if (!checkGo.IsEnemy)
+            {
+                b_NearEnemy = true;
+                m_TargetedEnemy = checkGo.gameObject;
+
+                Debug.Log("Enemy near!");
+            }
+        }
+        else
+        {
+            EmptyPositisions++;
+        }
+
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-AggroRange, 0, 0));
+        if (checkGo != null)
+        {
+            if (!checkGo.IsEnemy)
+            {
+                b_NearEnemy = true;
+                m_TargetedEnemy = checkGo.gameObject;
+
+                Debug.Log("Enemy near!");
+            }
+        }
+        else
+        {
+            EmptyPositisions++;
+        }
+
+
+        if (EmptyPositisions == 4)
+        {
+            b_NearEnemy = false;
+        }
+
     }
 
     public override int Think()
@@ -73,12 +145,22 @@ public class MeleeFSM : FSMBase {
             case STATES.FOLLOW_ORDER:
 
                 if (b_NearEnemy)
+                {
+                    b_Attacked = false;
                     return (int)STATES.ATTACK;
+                }
 
                 return (int)STATES.FOLLOW_ORDER;
 
 
+            case STATES.CHASE:
+
+                break;
+
             case STATES.ATTACK:
+
+                if (!b_NearEnemy)
+                    return (int)STATES.CHASE;
 
                 return (int)STATES.ATTACK;
 
@@ -106,6 +188,11 @@ public class MeleeFSM : FSMBase {
                 DoFollowOrder();
                 break;
 
+            case (int)STATES.CHASE:
+                CurrentState = STATES.CHASE;
+                DoChase();
+                break;
+
             case (int)STATES.ATTACK:
                 CurrentState = STATES.ATTACK;
                 DoAttack();
@@ -119,17 +206,60 @@ public class MeleeFSM : FSMBase {
     }
     
     void DoIdle()
-    { }
+    {
+        this.GetComponent<BaseCharacter>().restrictActions[1] = true;
+    }
 
     void DoFollowOrder()
     {
         ProcessMessage();
     }
 
+
+    void DoChase()
+    {
+
+    }
+
     void DoAttack()
     {
- 
+        if (m_TargetedEnemy != null && !b_Attacked)
+        {
+            this.GetComponent<BaseCharacter>().restrictActions[1] = true;
+            m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(1);
 
+            int attacker_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
+            int attacker_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
+
+            int reciever_x = Mathf.RoundToInt(m_TargetedEnemy.GetComponent<BaseCharacter>().pos.x);
+            int reciever_y = Mathf.RoundToInt(m_TargetedEnemy.GetComponent<BaseCharacter>().pos.y);
+
+
+            if (reciever_x < attacker_x && reciever_y == attacker_y)
+            {
+                //this.GetComponent<Animator>().Play("CharacterAnimationLeft");
+                this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_LEFT;
+            }
+            else if (reciever_x > attacker_x && reciever_y == attacker_y)
+            {
+                //this.GetComponent<Animator>().Play("CharacterAnimationRight");
+                this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_RIGHT;
+            }
+            else if (reciever_y < attacker_y && reciever_x == attacker_x)
+            {
+                //this.GetComponent<Animator>().Play("CharacterAnimationDown");
+                this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_DOWN;
+            }
+            else if (reciever_y > attacker_y && reciever_x == attacker_x)
+            {
+                //this.GetComponent<Animator>().Play("CharacterAnimationUp");
+                this.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_UP;
+            }
+
+            b_Attacked = true;
+
+            Debug.Log("Attacking!");
+        }
     }
 
     void DoHelp()
@@ -137,71 +267,36 @@ public class MeleeFSM : FSMBase {
 
     public override void ProcessMessage()
     {
-        if (this.GetComponent<Pathfinder>().b_CompletedPath)
-        {
-            this.GetComponent<BaseCharacter>().restrictActions[1] = true;
-            //Debug.Log("Melee Done.");
-        }
-
         if (CurrentMessage == null)
         {
+            if (this.GetComponent<Pathfinder>().b_CompletedPath)
+            {
+                this.GetComponent<BaseCharacter>().restrictActions[1] = true;
+                this.GetComponent<BaseCharacter>().SetCharacterDestination(this.GetComponent<BaseCharacter>().GetCharacterDestination());
+                this.GetComponent<BaseCharacter>().SetToMove(false);
+                Debug.Log("Melee Done.");
+                return;
+            }
+
             this.GetComponent<BaseCharacter>().SetToMove(true);
             return;
+
         }
 
         switch (CurrentMessage.theMessageType)
         {
             case Message.MESSAGE_TYPE.ORDER_FRONTAL_ASSAULT:
-                this.GetComponent<BaseCharacter>().SetToMove(true);
                 this.GetComponent<BaseCharacter>().SetCharacterDestination(CurrentMessage.theDestination);
+                this.GetComponent<BaseCharacter>().SetToMove(true);
 
                 Debug.Log("Following Order: Frontal Assualt");
                 break;
 
             case Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET:
-                m_TargetedEnemy = CurrentMessage.theTarget;
-
-                List<Vector3> PossibleLocations = new List<Vector3>();
-                PossibleLocations.Add(m_TargetedEnemy.GetComponent<BaseCharacter>().pos + new Vector3(0, 1, 0));
-                PossibleLocations.Add(m_TargetedEnemy.GetComponent<BaseCharacter>().pos + new Vector3(0, -1, 0));
-                PossibleLocations.Add(m_TargetedEnemy.GetComponent<BaseCharacter>().pos + new Vector3(1, 0, 0));
-                PossibleLocations.Add(m_TargetedEnemy.GetComponent<BaseCharacter>().pos + new Vector3(-1, 0, 0));
-
-                bool LocationFound = false;
-                while (!LocationFound)
-                {
-                    // Find closest pos
-                    float ClosestDist = 99999;
-                    int ClosestIdx = 0;
-                    for (int i = 0; i < PossibleLocations.Count; ++i)
-                    {
-                        if ((this.GetComponent<BaseCharacter>().pos - PossibleLocations[i]).magnitude < ClosestDist)
-                        {
-                            ClosestDist = (this.GetComponent<BaseCharacter>().pos - PossibleLocations[i]).magnitude;
-                            ClosestIdx = i;
-                        }
-                    }
-
-                    Vector3 CheckPos = PossibleLocations[ClosestIdx];
-                    PossibleLocations.RemoveAt(ClosestIdx);
-
-                    foreach (GameObject go in AlliedUnits)
-                    {
-                        if (go.GetComponent<FSMBase>().CurrentMessage.theMessageType == Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET)
-                        {
-                            if (go.GetComponent<BaseCharacter>().GetCharacterDestination() == CheckPos)
-                            {
-                                break;
-                            }
-                        }
-
-                        LocationFound = true;
-                        this.GetComponent<BaseCharacter>().SetToMove(true);
-                        this.GetComponent<BaseCharacter>().SetCharacterDestination(CheckPos);
-
-                        Debug.Log("Following Order: Surround Target");
-                    }
-                }
+                this.GetComponent<BaseCharacter>().SetCharacterDestination(FindClosestSpot(CurrentMessage.theTarget.GetComponent<BaseCharacter>().pos));
+                this.GetComponent<BaseCharacter>().SetToMove(true);
+                Debug.Log("Following Order: Surround Target");
+           
                 break;
 
             case Message.MESSAGE_TYPE.ORDER_FALLBACK:
@@ -211,6 +306,57 @@ public class MeleeFSM : FSMBase {
                 break;
         }
         CurrentMessage = null;
+    }
+
+    Vector3 FindClosestSpot(Vector3 target)
+    {
+        List<Vector3> PossibleLocations = new List<Vector3>();
+        PossibleLocations.Add(target + new Vector3(0, 1, 0));
+        PossibleLocations.Add(target + new Vector3(0, -1, 0));
+        PossibleLocations.Add(target + new Vector3(1, 0, 0));
+        PossibleLocations.Add(target + new Vector3(-1, 0, 0));
+
+        bool LocationFound = false;
+        while (!LocationFound)
+        {
+            // Find closest pos
+            float ClosestDist = 99999;
+            int ClosestIdx = 0;
+            for (int i = 0; i < PossibleLocations.Count; ++i)
+            {
+                if ((this.GetComponent<BaseCharacter>().pos - PossibleLocations[i]).magnitude < ClosestDist)
+                {
+                    ClosestDist = (this.GetComponent<BaseCharacter>().pos - PossibleLocations[i]).magnitude;
+                    ClosestIdx = i;
+                }
+            }
+
+            Vector3 CheckPos = PossibleLocations[ClosestIdx];
+            PossibleLocations.RemoveAt(ClosestIdx);
+
+            bool PosTaken = false;
+            foreach (GameObject go in AlliedUnits)
+            {
+                if (go.GetComponent<BaseCharacter>().name == "EnemyCommander")
+                    continue;
+
+                if (go.GetComponent<FSMBase>().CurrentMessage.theMessageType == Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET)
+                {
+                    if (go.GetComponent<BaseCharacter>().GetCharacterDestination() == CheckPos)
+                    {
+                        PosTaken = true;
+                    }
+                }
+            }
+
+            if (!PosTaken)
+            {
+                LocationFound = true;
+                return CheckPos;
+            }
+        }
+
+        return new Vector3(0,0,0);
     }
 
 }

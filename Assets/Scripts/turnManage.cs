@@ -42,6 +42,7 @@ public class turnManage : MonoBehaviour {
     public Image EnemyTurn;
     private float timer;
 
+
     public teamManager playerTeam;
     public teamManager enemyTeam;
 
@@ -49,8 +50,10 @@ public class turnManage : MonoBehaviour {
     public bool animDelay = false;
     public int animTimer = 100;
 
-    // Use this for initialization
-    void Start () {
+    GameObject Commander;   // Handle to the enemy commander
+
+	// Use this for initialization
+	void Start () {
         turnNum.text = 1.ToString();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
         nameDisplay.text = characNEW.Name;
@@ -80,6 +83,8 @@ public class turnManage : MonoBehaviour {
         YourTurn.fillAmount = 0.0f;
         //EnemyTurn.transform.localPosition = new Vector3(0, 0, 0);
         //EnemyTurn.fillAmount = 0.0f;
+
+        Commander = GameObject.Find("EnemyCommander");
     }
 	
 	// Update is called once per frame
@@ -131,8 +136,12 @@ public class turnManage : MonoBehaviour {
                 timer = 0.0f;
                 EnemyTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
                 turnNumber++;
+
                 enemyTeam.running = true;
                 enemyTeam.resetStats = true;
+
+                Commander.GetComponent<CommanderFSM>().IncreaseTurnCount();
+
             }
         }
         //Debug.Log(teamTurn);
