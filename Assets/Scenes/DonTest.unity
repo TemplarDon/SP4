@@ -505,7 +505,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 9c4d192934451794384ce10d701ff992, type: 3}
+  m_Sprite: {fileID: 21300354, guid: 9c4d192934451794384ce10d701ff992, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1221,12 +1221,16 @@ Prefab:
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9c4d192934451794384ce10d701ff992,
+      objectReference: {fileID: 21300354, guid: 9c4d192934451794384ce10d701ff992,
         type: 3}
     - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a331583816d98c444b0132c76a5c94d7, type: 2}
+    - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
   m_IsPrefabParent: 0
@@ -3709,7 +3713,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466040319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.93, y: -6.91, z: 0}
+  m_LocalPosition: {x: 7.3, y: -8.68, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 595044464}
@@ -3986,7 +3990,7 @@ MonoBehaviour:
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
-  BaseHealth: 5
+  BaseHealth: 2
   BaseArmour: 1
   IsEnemy: 1
   IsDead: 0
@@ -3998,7 +4002,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1513550188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.53, y: -7.64, z: 0}
+  m_LocalPosition: {x: 5.9, y: -9.41, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
