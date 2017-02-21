@@ -31,6 +31,7 @@ public class BaseCharacter : MonoBehaviour {
     public int BaseArmour = 1;         // The armour of the character, reduces the damage taken
     public bool IsEnemy;               // Whether or not this character is an enemy
     public bool IsDead;                // Whether or not this character is dead
+    public Sprite profilePic;
 
     private int MaxSpeed =           0;
     private int MaxAttackRange =     0;

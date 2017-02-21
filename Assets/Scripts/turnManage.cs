@@ -13,6 +13,7 @@ public class turnManage : MonoBehaviour {
     public Text ranDisplay;
     public Text defDisplay;
     public Text heaDisplay;
+    public Image profilePic;
     public GameObject menuObject;
     public GameObject menuArrow;
     public TestingPlayer charac;
@@ -41,8 +42,15 @@ public class turnManage : MonoBehaviour {
     public Image EnemyTurn;
     private float timer;
 
-	// Use this for initialization
-	void Start () {
+    public teamManager playerTeam;
+    public teamManager enemyTeam;
+
+    public Sprite imgTmp;
+    public bool animDelay = false;
+    public int animTimer = 100;
+
+    // Use this for initialization
+    void Start () {
         turnNum.text = 1.ToString();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
         nameDisplay.text = characNEW.Name;
@@ -51,6 +59,7 @@ public class turnManage : MonoBehaviour {
         ranDisplay.text = characNEW.BaseAttackRange.ToString();
         defDisplay.text = characNEW.BaseArmour.ToString();
         heaDisplay.text = characNEW.BaseHealth.ToString();
+        profilePic.sprite = imgTmp;
         //camera = GetComponent<Camera>();
         actionSelection = 1;
         menuOpen = true;
@@ -75,34 +84,55 @@ public class turnManage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(animDelay == true)
+        {
+            animTimer--;
+            //Debug.Log(animTimer);
+            if(animTimer <= 0)
+            {
+                animTimer = 100;
+                animDelay = false;
+            }
+        }
+
+        if(characNEW.profilePic != null)
+        profilePic.sprite = characNEW.profilePic;
+
         if (teamTurn >= 5)
         {
             teamTurn -= 4;
         }
-        if(teamTurn == 1)
+        if(teamTurn == 1 && animDelay == false)
         {
             YourTurn.transform.localPosition = new Vector3(0, 0, 0);
             timer += Mathf.PI / 180;
             YourTurn.fillAmount += 0.05f * Mathf.Cos(timer);
-            if(timer >= Mathf.PI)
+            enemyTeam.running = false;
+            if (timer >= Mathf.PI)
             {
                 teamTurn = 2;
                 timer = 0.0f;
                 YourTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
                 turnNumber++;
+                playerTeam.running = true;
+                playerTeam.resetStats = true;
             }
         }
-        else if(teamTurn == 3)
+        else if(teamTurn == 3 && animDelay == false)
         {
             EnemyTurn.transform.localPosition = new Vector3(0, 0, 0);
             timer += Mathf.PI / 180;
             EnemyTurn.fillAmount += 0.05f * Mathf.Cos(timer);
+            playerTeam.running = false;
             if (timer >= Mathf.PI)
             {
                 teamTurn = 4;
                 timer = 0.0f;
                 EnemyTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
                 turnNumber++;
+                enemyTeam.running = true;
+                enemyTeam.resetStats = true;
             }
         }
         //Debug.Log(teamTurn);
@@ -267,6 +297,7 @@ public class turnManage : MonoBehaviour {
                             menuOpen = false;
                             shieldFade = true;
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseArmour++;
                             break;
                         case 4:
                             //menuObject.transform.position = new Vector3(-9999, -9999, 0);
@@ -475,6 +506,7 @@ public class turnManage : MonoBehaviour {
                     menuOpen = false;
                     shieldFade = true;
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                    GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseArmour++;
                     break;
                 case 4:
                     //menuObject.transform.position = new Vector3(-9999, -9999, 0);

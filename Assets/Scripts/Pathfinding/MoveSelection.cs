@@ -1,17 +1,33 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
+using System.Collections.Generic;
 
 public class MoveSelection : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+    public Text dmgIndicator;
+    public List<Text> dmgList = new List<Text>();
+    private Camera camera;
+
+    // Use this for initialization
+    void Start () {
+        dmgIndicator = GameObject.Find("DmgIndicator").GetComponent<Text>();
+        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        dmgIndicator.transform.Translate(0, 0.1f, 0);
+
+        dmgIndicator.color = new Color(dmgIndicator.color.r, dmgIndicator.color.g, dmgIndicator.color.b, dmgIndicator.color.a - (Time.deltaTime * 0.2f));
+
+        if (dmgIndicator.color.a <= 0.0f)
+        {
+            dmgIndicator.transform.position = new Vector3(9999, 9999, 9999);
+        }
+
+    }
 
     void OnMouseDown()
     {
@@ -32,8 +48,12 @@ public class MoveSelection : MonoBehaviour {
                 {
                     if ((int)obj.transform.position.x == (int)transform.position.x + 1 && (int)obj.transform.position.y == (int)transform.position.y - 1)
                     {
-                        obj.GetComponent<BaseCharacter>().BaseHealth -= GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength;
+                        int damageDealt = (int)(Mathf.Clamp(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength - obj.GetComponent<BaseCharacter>().BaseArmour, 1.0f, 999.0f));
+                        obj.GetComponent<BaseCharacter>().BaseHealth -= damageDealt;
                         playerPresent = true;
+                        dmgIndicator.color = new Color(dmgIndicator.color.r, dmgIndicator.color.g, dmgIndicator.color.b, 1.0f);
+                        dmgIndicator.transform.position = camera.WorldToScreenPoint(obj.transform.position);
+                        dmgIndicator.text = damageDealt.ToString();
                     }
                 }
 

@@ -17,8 +17,8 @@ public class ProfileUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        chargeStartPos = new Vector3(-257.5f, 0, 0);
-        chargeEndPos = new Vector3(-585.6f, 0, 0);
+        chargeStartPos = new Vector3(-255.5f, 0, 0);
+        chargeEndPos = new Vector3(-583.6f, 0, 0);
         statsStartPos = new Vector3(445, 21, 0);
         statsEndPos = new Vector3(103.5f, 21, 0);
         hoverProfile = false;
