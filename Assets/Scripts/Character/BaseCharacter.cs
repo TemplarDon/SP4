@@ -31,6 +31,7 @@ public class BaseCharacter : MonoBehaviour {
     public int BaseArmour = 1;         // The armour of the character, reduces the damage taken
     public bool IsEnemy;               // Whether or not this character is an enemy
     public bool IsDead;                // Whether or not this character is dead
+    public Sprite profilePic;
 
     private int MaxSpeed =           0;
     private int MaxAttackRange =     0;
@@ -197,10 +198,14 @@ public class BaseCharacter : MonoBehaviour {
             {
                 this.CurrentAnimState = ANIM_STATE.DEAD;
                 if (IsEnemy)
+                {
                     this.GetComponent<FSMBase>().enabled = false;
+                    GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().popPlayer(this.gameObject);
+                }
 
                 this.GetComponent<Pathfinder>().enabled = false;
                 this.enabled = false;
+                GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().popPlayer(this.gameObject);
             }
             else
                 this.CurrentAnimState = ANIM_STATE.IDLE;
