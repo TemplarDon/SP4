@@ -116,11 +116,11 @@ MonoBehaviour:
   turnNum: {fileID: 1716285487}
   actionSelection: 0
   nameDisplay: {fileID: 1905255276}
-  chargeDisplay: {fileID: 2032737838}
-  atkDisplay: {fileID: 265813307}
-  ranDisplay: {fileID: 478666740}
-  defDisplay: {fileID: 1658359088}
-  heaDisplay: {fileID: 34744876}
+  chargeDisplay: {fileID: 1184959098}
+  atkDisplay: {fileID: 582873067}
+  ranDisplay: {fileID: 1331063429}
+  defDisplay: {fileID: 188660713}
+  heaDisplay: {fileID: 1088737273}
   profilePic: {fileID: 1153439551}
   menuObject: {fileID: 1285771006}
   menuArrow: {fileID: 803948598}

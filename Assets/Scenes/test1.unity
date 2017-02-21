@@ -255,6 +255,7 @@ GameObject:
   - 61: {fileID: 14647688}
   - 114: {fileID: 14647687}
   - 95: {fileID: 14647686}
+  - 114: {fileID: 14647693}
   m_Layer: 0
   m_Name: Test Character 2
   m_TagString: Character
@@ -400,6 +401,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
+--- !u!114 &14647693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14647685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
 --- !u!1 &21112458
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +849,7 @@ GameObject:
   - 95: {fileID: 137485664}
   - 114: {fileID: 137485663}
   - 114: {fileID: 137485662}
+  - 114: {fileID: 137485667}
   m_Layer: 0
   m_Name: TestEnemy1
   m_TagString: Character
@@ -961,6 +975,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 28
+--- !u!114 &137485667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137485660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
 --- !u!1 &144076912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,6 +3324,7 @@ GameObject:
   - 61: {fileID: 1212258151}
   - 114: {fileID: 1212258150}
   - 95: {fileID: 1212258149}
+  - 114: {fileID: 1212258156}
   m_Layer: 0
   m_Name: Test Character 3
   m_TagString: Character
@@ -3443,6 +3470,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
+--- !u!114 &1212258156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1212258148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
 --- !u!1 &1225381600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4205,6 +4244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgIndicator: {fileID: 0}
+  dmgList: []
 --- !u!61 &1701116065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4753,6 +4793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgIndicator: {fileID: 1336547229}
+  dmgList: []
 --- !u!61 &1827345011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4822,6 +4863,7 @@ GameObject:
   - 95: {fileID: 1885733938}
   - 114: {fileID: 1885733937}
   - 114: {fileID: 1885733936}
+  - 114: {fileID: 1885733940}
   m_Layer: 0
   m_Name: EnemyCommander
   m_TagString: Character
@@ -4886,6 +4928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theBoard: {fileID: 378685560}
   RecallHealthThreshold: 3
+  ActivaRange: 8
   TacticsRange: 3
   OrderFrequency: 1
 --- !u!114 &1885733937
@@ -4951,6 +4994,18 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1885733940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1885733933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
 --- !u!1 &1933097822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,6 +5036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgIndicator: {fileID: 1336547229}
+  dmgList: []
 --- !u!61 &1933097824
 BoxCollider2D:
   m_ObjectHideFlags: 0
