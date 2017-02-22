@@ -194,14 +194,17 @@ public class Pathfinder : MonoBehaviour
             Path.Reverse();
 
             // Spawn PathTiles
-            if (!b_PathSpawned)
+            if (!this.GetComponent<BaseCharacter>().IsEnemy)
             {
-                for (int i = 0; i < Path.Count; ++i)
+                if (!b_PathSpawned)
                 {
-                    Instantiate(PathTile, Path[i].m_pos, Quaternion.identity);
-                }
+                    for (int i = 0; i < Path.Count; ++i)
+                    {
+                        Instantiate(PathTile, Path[i].m_pos, Quaternion.identity);
+                    }
 
-                b_PathSpawned = true;
+                    b_PathSpawned = true;
+                }
             }
 
             Vector3 dir = (Path[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 5;
