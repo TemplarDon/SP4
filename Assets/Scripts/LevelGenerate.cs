@@ -1208,7 +1208,7 @@ public class LevelGenerate : MonoBehaviour {
 
             if (checkChar.GetComponent<BaseCharacter>().pos.x == CheckPosition.x && checkChar.GetComponent<BaseCharacter>().pos.y == CheckPosition.y)
             {
-                //Debug.Log("Character Found!");
+                Debug.Log("Character Found!");
                 return checkChar.GetComponent<BaseCharacter>();
             }
         }

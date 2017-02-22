@@ -377,6 +377,7 @@ GameObject:
   - 114: {fileID: 114326453}
   - 95: {fileID: 114326454}
   - 114: {fileID: 114326455}
+  - 114: {fileID: 114326456}
   m_Layer: 0
   m_Name: Test Character 1
   m_TagString: Character
@@ -541,6 +542,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_AnimationEnded: 0
+--- !u!114 &114326456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114326447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutRate: 3
+  StartFade: 0
 --- !u!1 &132447448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,6 +2962,7 @@ GameObject:
   - 114: {fileID: 1146307651}
   - 95: {fileID: 1146307652}
   - 114: {fileID: 1146307653}
+  - 114: {fileID: 1146307654}
   m_Layer: 0
   m_Name: Test Character 2
   m_TagString: Character
@@ -3106,6 +3121,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_AnimationEnded: 0
+--- !u!114 &1146307654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146307645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutRate: 3
+  StartFade: 0
 --- !u!1 &1153439550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,6 +4055,7 @@ GameObject:
   - 114: {fileID: 1372439625}
   - 114: {fileID: 1372439624}
   - 114: {fileID: 1372439623}
+  - 114: {fileID: 1372439629}
   m_Layer: 0
   m_Name: TestEnemy1 (1)
   m_TagString: Character
@@ -4165,6 +4194,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 26
+--- !u!114 &1372439629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372439621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutRate: 3
+  StartFade: 0
 --- !u!1 &1458952926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,6 +4279,7 @@ GameObject:
   - 114: {fileID: 1466040322}
   - 114: {fileID: 1466040325}
   - 114: {fileID: 1466040326}
+  - 114: {fileID: 1466040327}
   m_Layer: 0
   m_Name: EnemyCommander
   m_TagString: Character
@@ -4380,6 +4423,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_AnimationEnded: 0
+--- !u!114 &1466040327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466040319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutRate: 3
+  StartFade: 0
 --- !u!1 &1475272737
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,6 +4508,7 @@ GameObject:
   - 114: {fileID: 1513550190}
   - 114: {fileID: 1513550189}
   - 114: {fileID: 1513550195}
+  - 114: {fileID: 1513550196}
   m_Layer: 0
   m_Name: TestEnemy1
   m_TagString: Character
@@ -4590,6 +4647,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_AnimationEnded: 0
+--- !u!114 &1513550196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1513550188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutRate: 3
+  StartFade: 0
 --- !u!1 &1540807178
 GameObject:
   m_ObjectHideFlags: 0

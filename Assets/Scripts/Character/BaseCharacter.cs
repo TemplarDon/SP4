@@ -211,6 +211,8 @@ public class BaseCharacter : MonoBehaviour {
                 this.GetComponent<Pathfinder>().enabled = false;
                 this.enabled = false;
                 GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().popPlayer(this.gameObject);
+
+                this.GetComponent<CharacterFadeOut>().StartFade = true;
             }
             else
                 this.CurrentAnimState = ANIM_STATE.IDLE;

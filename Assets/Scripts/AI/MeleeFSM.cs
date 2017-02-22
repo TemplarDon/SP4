@@ -394,6 +394,13 @@ public class MeleeFSM : FSMBase {
         PossibleLocations.Add(target + new Vector3(1, 0, 0));
         PossibleLocations.Add(target + new Vector3(-1, 0, 0));
 
+        // Check if possible locations are valid
+        foreach (Vector3 check in PossibleLocations)
+        {
+            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)check.y) == 4 || this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)check.y) == 5)
+                PossibleLocations.Remove(check);
+        }
+
         bool LocationFound = false;
         while (!LocationFound)
         {
