@@ -3999,6 +3999,49 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1415801724}
+--- !u!1 &1581004842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1581004844}
+  - 114: {fileID: 1581004843}
+  m_Layer: 0
+  m_Name: DmgIndiManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1581004843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1581004842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54da4b00d974db2449afb2b388e75a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgIndicator: {fileID: 1336547229}
+  spawnList: []
+  posList: []
+  textList: []
+--- !u!4 &1581004844
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1581004842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.9590807, y: -4.9032416, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
 --- !u!1 &1642046324
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,7 +4286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77e5906ca0e4254aa79737ae465ad97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgIndicator: {fileID: 0}
   dmgList: []
 --- !u!61 &1701116065
 BoxCollider2D:
@@ -4792,7 +4834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77e5906ca0e4254aa79737ae465ad97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgIndicator: {fileID: 1336547229}
   dmgList: []
 --- !u!61 &1827345011
 BoxCollider2D:
@@ -5035,7 +5076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77e5906ca0e4254aa79737ae465ad97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgIndicator: {fileID: 1336547229}
   dmgList: []
 --- !u!61 &1933097824
 BoxCollider2D:
