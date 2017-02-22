@@ -64,6 +64,7 @@ public class MeleeFSM : FSMBase {
         }
 
         bool b_Change = false;
+        float ClosestDist = 99999;
         foreach (GameObject go in goList)
         {
             if (!go.GetComponent<BaseCharacter>().enabled || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
@@ -73,12 +74,16 @@ public class MeleeFSM : FSMBase {
             {
                 if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < AggroRange * AggroRange)
                 {
-                    b_Change = true;
+                    if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < ClosestDist)
+                    {
+                        ClosestDist = (this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude;
+                        b_Change = true;
 
-                    b_NearEnemy = true;
-                    m_TargetedEnemy = go.gameObject;
+                        b_NearEnemy = true;
+                        m_TargetedEnemy = go.gameObject;
 
-                    Debug.Log("Enemy near!");
+                        //Debug.Log("Enemy near!");
+                    }
                 }
             }
         }
@@ -178,6 +183,11 @@ public class MeleeFSM : FSMBase {
                 if (CurrentMessage != null)
                     return (int)STATES.FOLLOW_ORDER;
 
+                if (b_NearEnemy)
+                {
+                    return (int)STATES.CHASE;
+                }
+
                 return (int)STATES.IDLE;
 
 
@@ -202,6 +212,9 @@ public class MeleeFSM : FSMBase {
                     return (int)STATES.ATTACK;
                 }
 
+                if (this.GetComponent<BaseCharacter>().restrictActions[0] == true)
+                    return (int)STATES.IDLE;
+
                 return (int)STATES.CHASE;
 
 
@@ -210,7 +223,7 @@ public class MeleeFSM : FSMBase {
                 if (!b_NearEnemy && m_TargetedEnemy != null)
                     return (int)STATES.CHASE;
 
-                if (m_TargetedEnemy == null)
+                if (m_TargetedEnemy == null || b_Attacked)
                     return (int)STATES.IDLE;
 
                 return (int)STATES.ATTACK;
@@ -258,25 +271,33 @@ public class MeleeFSM : FSMBase {
     
     void DoIdle()
     {
+        //Debug.Log("Melee Idling");
         this.GetComponent<BaseCharacter>().restrictActions[1] = true;
     }
 
     void DoFollowOrder()
     {
+        //Debug.Log("Melee Follow");
         ProcessMessage();
     }
 
 
     void DoChase()
     {
-        if (!this.GetComponent<Pathfinder>().b_PathFound)
-            this.GetComponent<BaseCharacter>().SetCharacterDestination(FindClosestSpot(m_TargetedEnemy.GetComponent<BaseCharacter>().pos));
-        
-        this.GetComponent<BaseCharacter>().SetToMove(true);
+        //Debug.Log("Melee Chase");
+        //Debug.Log(this.GetComponent<BaseCharacter>().restrictActions[0].ToString() + " " + this.GetComponent<BaseCharacter>().restrictActions[1].ToString());
+        if (this.GetComponent<BaseCharacter>().restrictActions[0] == false && this.GetComponent<BaseCharacter>().restrictActions[1] == false)
+        {
+            if (!this.GetComponent<Pathfinder>().b_PathFound)
+                this.GetComponent<BaseCharacter>().SetCharacterDestination(FindClosestSpot(m_TargetedEnemy.GetComponent<BaseCharacter>().pos));
+
+            this.GetComponent<BaseCharacter>().SetToMove(true);
+        }
     }
 
     void DoAttack()
     {
+        //Debug.Log("Melee Attack");
         this.GetComponent<Pathfinder>().Reset();
         if (m_TargetedEnemy != null && !b_Attacked)
         {
@@ -327,9 +348,8 @@ public class MeleeFSM : FSMBase {
             if (this.GetComponent<Pathfinder>().b_CompletedPath)
             {
                 this.GetComponent<BaseCharacter>().restrictActions[1] = true;
-                this.GetComponent<BaseCharacter>().SetCharacterDestination(this.GetComponent<BaseCharacter>().GetCharacterDestination());
+                //this.GetComponent<BaseCharacter>().SetCharacterDestination(this.GetComponent<BaseCharacter>().GetCharacterDestination());
                 this.GetComponent<BaseCharacter>().SetToMove(false);
-                Debug.Log("Melee Done.");
                 return;
             }
 

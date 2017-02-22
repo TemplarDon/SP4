@@ -41,7 +41,7 @@ public class LevelGenerate : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        Debug.Log("Level Generated");
+        //Debug.Log("Level Generated");
 
         prefab = GameObject.Find("Tile");
         dragging = false;
@@ -1208,7 +1208,7 @@ public class LevelGenerate : MonoBehaviour {
 
             if (checkChar.GetComponent<BaseCharacter>().pos.x == CheckPosition.x && checkChar.GetComponent<BaseCharacter>().pos.y == CheckPosition.y)
             {
-                Debug.Log("Character Found!");
+                //Debug.Log("Character Found!");
                 return checkChar.GetComponent<BaseCharacter>();
             }
         }

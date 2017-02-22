@@ -59,6 +59,7 @@ public class BaseCharacter : MonoBehaviour {
         STAND_DOWN,
         DIE,
         DEAD,
+        TAKE_DAMAGE,
     }
 
     public ANIM_STATE CurrentAnimState;
@@ -92,6 +93,7 @@ public class BaseCharacter : MonoBehaviour {
 
     //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
     CurrentAnimState = ANIM_STATE.IDLE;
+    UpdateAnimState();
 	}
 	
 	// Update is called once per frame
@@ -277,6 +279,10 @@ public class BaseCharacter : MonoBehaviour {
             case ANIM_STATE.DEAD:
                 this.GetComponent<Animator>().Play("Dead");
                 break;
+
+            case ANIM_STATE.TAKE_DAMAGE:
+                this.GetComponent<Animator>().Play("TakeDamage");
+                break;
         }
     }
 
@@ -319,7 +325,8 @@ public class BaseCharacter : MonoBehaviour {
     {
         int damageTaken = (int)Mathf.Clamp(damage - BaseArmour, 1.0f, 999.0f);
         BaseHealth -= damageTaken;
-        GameObject.Find("DmgIndiMDanager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
+        GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
+        CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
         CheckIfDead();
     }
 

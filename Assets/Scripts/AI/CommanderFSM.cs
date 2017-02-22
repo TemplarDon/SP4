@@ -140,7 +140,7 @@ public class CommanderFSM : FSMBase {
     void DoIdle()
     {
         this.GetComponent<BaseCharacter>().restrictActions[1] = true;
-        //Debug.Log("Commander done.");
+        Debug.Log("Commander done.");
     }
 
     void DoPlan()

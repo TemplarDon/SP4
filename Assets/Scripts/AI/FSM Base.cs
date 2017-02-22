@@ -13,9 +13,9 @@ public abstract class FSMBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameObject.Find("TurnManager").GetComponent<turnManage>().turnNumber % 2 == 0 && GameObject.Find("TurnManager").GetComponent<turnManage>().turnNumber != 0 && GameObject.Find("TurnManager").GetComponent<turnManage>().teamTurn == 4)
+        if (GameObject.Find("TurnManager").GetComponent<turnManage>().teamTurn == 4)
         {
-            RunFSM();
+            GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().GetComponent<FSMBase>().RunFSM();
         }
 	}
 

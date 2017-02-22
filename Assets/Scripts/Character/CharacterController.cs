@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Controller Launched.");
+        //Debug.Log("Controller Launched.");
         CurrentMode = CONTROL_MODE.FREE_ROAM;
 	}
 	

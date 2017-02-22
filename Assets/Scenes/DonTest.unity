@@ -438,7 +438,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300354, guid: 9c4d192934451794384ce10d701ff992, type: 3}
+  m_Sprite: {fileID: 21300346, guid: 9c4d192934451794384ce10d701ff992, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   BaseStrength: 2
   BaseMagic: 1
   BaseMana: 1
-  BaseHealth: 1
+  BaseHealth: 3
   BaseArmour: 1
   IsEnemy: 0
   IsDead: 0
@@ -685,6 +685,7 @@ MonoBehaviour:
   teamList:
   - {fileID: 114326451}
   - {fileID: 1146307646}
+  IsEnemy: 0
 --- !u!4 &149205378
 Transform:
   m_ObjectHideFlags: 0
@@ -1300,7 +1301,7 @@ Prefab:
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300354, guid: 9c4d192934451794384ce10d701ff992,
+      objectReference: {fileID: 21300000, guid: 9c4d192934451794384ce10d701ff992,
         type: 3}
     - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Controller
@@ -1313,6 +1314,10 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseHealth
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
@@ -2974,7 +2979,7 @@ MonoBehaviour:
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
-  BaseHealth: 1
+  BaseHealth: 3
   BaseArmour: 1
   IsEnemy: 0
   IsDead: 0
@@ -4083,7 +4088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theBoard: {fileID: 132447449}
-  AggroRange: 2
+  AggroRange: 3
 --- !u!114 &1372439625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4155,7 +4160,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372439621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.07, y: -8.88, z: 0}
+  m_LocalPosition: {x: 10.73, y: -8.79, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4276,7 +4281,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466040319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.37, y: -7.2, z: 0}
+  m_LocalPosition: {x: 9.81, y: -7.04, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 595044464}
@@ -4466,7 +4471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theBoard: {fileID: 132447449}
-  AggroRange: 2
+  AggroRange: 3
 --- !u!114 &1513550190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4568,7 +4573,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1513550188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.97, y: -7.93, z: 0}
+  m_LocalPosition: {x: 8.36, y: -7.33, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5500,6 +5505,7 @@ MonoBehaviour:
   - {fileID: 1466040320}
   - {fileID: 1513550193}
   - {fileID: 1372439622}
+  IsEnemy: 1
 --- !u!4 &1978857699
 Transform:
   m_ObjectHideFlags: 0
@@ -5655,7 +5661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54da4b00d974db2449afb2b388e75a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgIndicator: {fileID: 0}
+  dmgIndicator: {fileID: 139900035}
   spawnList: []
   posList: []
   textList: []
