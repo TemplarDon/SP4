@@ -359,11 +359,11 @@ MonoBehaviour:
   theSkill: {fileID: 875195903}
   restrictActions: 
   Name: Man 2
-  BaseSpeed: 1
+  BaseSpeed: 3
   BaseAttackRange: 1
   BaseStrength: 1
   BaseMagic: 1
-  BaseMana: 2
+  BaseMana: 0
   BaseHealth: 1
   BaseArmour: 1
   IsEnemy: 0
@@ -3428,11 +3428,11 @@ MonoBehaviour:
   theSkill: {fileID: 875195903}
   restrictActions: 
   Name: Man 3
-  BaseSpeed: 1
+  BaseSpeed: 3
   BaseAttackRange: 1
   BaseStrength: 1
   BaseMagic: 1
-  BaseMana: 3
+  BaseMana: 0
   BaseHealth: 1
   BaseArmour: 1
   IsEnemy: 0
@@ -3811,6 +3811,7 @@ GameObject:
   - 224: {fileID: 1336547228}
   - 222: {fileID: 1336547230}
   - 114: {fileID: 1336547229}
+  - 114: {fileID: 1336547231}
   m_Layer: 5
   m_Name: DmgIndicator
   m_TagString: Untagged
@@ -3874,6 +3875,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1336547227}
+--- !u!114 &1336547231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1336547227}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7c14baf0772664b80d03b2938a5ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  d_LifeTime: 0.5
 --- !u!1 &1382380043
 GameObject:
   m_ObjectHideFlags: 0
