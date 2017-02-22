@@ -37,7 +37,7 @@ public class dmgDisp : MonoBehaviour {
             posList[i] = camera.WorldToScreenPoint(spawnList[i]) + heightUp;
             textList[i].transform.position = posList[i];
             textList[i].color = new Color(dmgIndicator.color.r, dmgIndicator.color.g, dmgIndicator.color.b, textList[i].color.a - (Time.deltaTime * 0.4f));
-            Debug.Log(textList[i].color.a);
+            //Debug.Log(textList[i].color.a);
             if (textList[i].color.a <= 0.0f)
             {
                 //Destroy(textList[i]);
