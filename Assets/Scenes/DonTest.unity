@@ -456,13 +456,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   pos: {x: 0, y: 0, z: 0}
-  theWeapon: {fileID: 0}
-  theArmour: {fileID: 0}
+  theWeapon: {fileID: 847119758}
+  theArmour: {fileID: 907071546}
   theItem: {fileID: 1582067856}
   theSkill: {fileID: 1215460899}
   restrictActions: 
   Name: Man 1
-  BaseSpeed: 3
+  BaseSpeed: 5
   BaseAttackRange: 1
   BaseStrength: 2
   BaseMagic: 1
@@ -507,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   m_Destination: {x: 0, y: 0, z: 0}
+  b_PathFound: 0
   PathTile: {fileID: 490096121}
   b_PathSpawned: 0
   b_CompletedPath: 0
@@ -1284,11 +1285,11 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theWeapon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 847119758}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theArmour
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 907071546}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theItem
       value: 
@@ -1309,6 +1310,10 @@ Prefab:
     - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
@@ -2960,13 +2965,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   pos: {x: 0, y: 0, z: 0}
-  theWeapon: {fileID: 0}
-  theArmour: {fileID: 0}
+  theWeapon: {fileID: 847119758}
+  theArmour: {fileID: 907071546}
   theItem: {fileID: 1582067856}
   theSkill: {fileID: 1215460899}
   restrictActions: 
   Name: Man 2
-  BaseSpeed: 5
+  BaseSpeed: 7
   BaseAttackRange: 1
   BaseStrength: 1
   BaseMagic: 1
@@ -3065,6 +3070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   m_Destination: {x: 0, y: 0, z: 0}
+  b_PathFound: 0
   PathTile: {fileID: 490096121}
   b_PathSpawned: 0
   b_CompletedPath: 0
@@ -4121,7 +4127,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466040319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3, y: -8.68, z: 0}
+  m_LocalPosition: {x: 9.37, y: -7.2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 595044464}
@@ -4141,6 +4147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   m_Destination: {x: 0, y: 0, z: 0}
+  b_PathFound: 0
   PathTile: {fileID: 490096121}
   b_PathSpawned: 0
   b_CompletedPath: 0
@@ -4206,7 +4213,7 @@ MonoBehaviour:
   RecallHealthThreshold: 3
   ActivaRange: 8
   TacticsRange: 3
-  OrderFrequency: 1
+  OrderFrequency: 2
 --- !u!114 &1466040326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4310,7 +4317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theBoard: {fileID: 132447449}
-  AggroRange: 1
+  AggroRange: 2
 --- !u!114 &1513550190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,6 +4331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theLevel: {fileID: 154135198}
   m_Destination: {x: 0, y: 0, z: 0}
+  b_PathFound: 0
   PathTile: {fileID: 490096121}
   b_PathSpawned: 0
   b_CompletedPath: 0
@@ -4411,7 +4419,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1513550188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9, y: -9.41, z: 0}
+  m_LocalPosition: {x: 7.97, y: -7.93, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -97,7 +97,7 @@ public class teamManager : MonoBehaviour {
                 callOnce = true;
                 turnManager.GetComponent<turnManage>().teamTurn++;
                 turnManager.GetComponent<turnManage>().animDelay = true;
-                Debug.Log("TRIGGER");
+                //Debug.Log("TRIGGER");
                 //for (int i = 0; i < teamList.Count; i++)
                 //{
                 //    if (teamList[i] != null)

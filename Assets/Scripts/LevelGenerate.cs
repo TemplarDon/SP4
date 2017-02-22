@@ -1203,6 +1203,9 @@ public class LevelGenerate : MonoBehaviour {
 
         foreach (GameObject checkChar in CharacterList)
         {
+            if (!checkChar.GetComponent<BaseCharacter>().enabled)
+                continue;
+
             if (checkChar.GetComponent<BaseCharacter>().pos.x == CheckPosition.x && checkChar.GetComponent<BaseCharacter>().pos.y == CheckPosition.y)
             {
                 Debug.Log("Character Found!");

@@ -43,7 +43,7 @@ public class CharacterController : MonoBehaviour {
 
         if (Input.GetMouseButtonUp(0) && CurrentMode == CONTROL_MODE.MOVING && b_CanMove && d_Timer > 0.5 && !b_CommandSent)
         {
-            Debug.Log("Telling " + CurrentControlledCharacter.name + " to move.");
+            //Debug.Log("Telling " + CurrentControlledCharacter.name + " to move.");
             CurrentControlledCharacter.GetComponent<BaseCharacter>().SetToMove(true);
             CurrentControlledCharacter.GetComponent<BaseCharacter>().SetCharacterDestination(MousePos);
 

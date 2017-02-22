@@ -38,96 +38,135 @@ public class MeleeFSM : FSMBase {
             Debug.Log("Received a message.");
         }
 
-        if (AlliedUnits.Count <= 0)
+
+        // Get Enemy data
+        GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
+
+        
+        foreach (GameObject go in goList)
         {
-            // Get Enemy data
-            GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
-
-            foreach (GameObject go in goList)
+            if (!go.GetComponent<BaseCharacter>().enabled || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
             {
-                if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
-                    continue;
+                if (AlliedUnits.Contains(go))
+                    AlliedUnits.Remove(go);
+                
+                continue;
+            }
 
-                if (go.GetComponent<BaseCharacter>().IsEnemy)
+            if (AlliedUnits.Contains(go))
+                continue;
+
+            if (go.GetComponent<BaseCharacter>().IsEnemy)
+            {
+                AlliedUnits.Add(go);
+            }
+
+        }
+
+        bool b_Change = false;
+        foreach (GameObject go in goList)
+        {
+            if (!go.GetComponent<BaseCharacter>().enabled || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
+                continue;
+
+            if (!go.GetComponent<BaseCharacter>().IsEnemy)
+            {
+                if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < AggroRange * AggroRange)
                 {
-                    AlliedUnits.Add(go);
+                    b_Change = true;
+
+                    b_NearEnemy = true;
+                    m_TargetedEnemy = go.gameObject;
+
+                    Debug.Log("Enemy near!");
                 }
-
             }
         }
 
-
-        int EmptyPositisions = 0;
-        BaseCharacter checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, AggroRange, 0));
-        if (checkGo != null)
-        {
-            if (!checkGo.IsEnemy)
-            {
-                b_NearEnemy = true;
-                m_TargetedEnemy = checkGo.gameObject;
-
-                Debug.Log("Enemy near!");
-            }
-        }
-        else
-        {
-            EmptyPositisions++;
-        }
-
-        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, -AggroRange, 0));
-        if (checkGo != null)
-        {
-            if (!checkGo.IsEnemy)
-            {
-                b_NearEnemy = true;
-                m_TargetedEnemy = checkGo.gameObject;
-
-                Debug.Log("Enemy near!");
-            }
-        }
-        else
-        {
-            EmptyPositisions++;
-        }
-
-        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(AggroRange, 0, 0));
-        if (checkGo != null)
-        {
-            if (!checkGo.IsEnemy)
-            {
-                b_NearEnemy = true;
-                m_TargetedEnemy = checkGo.gameObject;
-
-                Debug.Log("Enemy near!");
-            }
-        }
-        else
-        {
-            EmptyPositisions++;
-        }
-
-        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-AggroRange, 0, 0));
-        if (checkGo != null)
-        {
-            if (!checkGo.IsEnemy)
-            {
-                b_NearEnemy = true;
-                m_TargetedEnemy = checkGo.gameObject;
-
-                Debug.Log("Enemy near!");
-            }
-        }
-        else
-        {
-            EmptyPositisions++;
-        }
-
-
-        if (EmptyPositisions == 4)
+        if (!b_Change)
         {
             b_NearEnemy = false;
         }
+        
+        //int EmptyPositisions = 0;
+        //BaseCharacter checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, AggroRange, 0));
+        //if (checkGo != null)
+        //{
+        //    if (!checkGo.IsEnemy)
+        //    {
+        //        b_NearEnemy = true;
+        //        m_TargetedEnemy = checkGo.gameObject;
 
+        //        Debug.Log("Enemy near!");
+        //    }
+        //}
+        //else
+        //{
+        //    EmptyPositisions++;
+        //}
+
+        //checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, -AggroRange, 0));
+        //if (checkGo != null)
+        //{
+        //    if (!checkGo.IsEnemy)
+        //    {
+        //        b_NearEnemy = true;
+        //        m_TargetedEnemy = checkGo.gameObject;
+
+        //        Debug.Log("Enemy near!");
+        //    }
+        //}
+        //else
+        //{
+        //    EmptyPositisions++;
+        //}
+
+        //checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(AggroRange, 0, 0));
+        //if (checkGo != null)
+        //{
+        //    if (!checkGo.IsEnemy)
+        //    {
+        //        b_NearEnemy = true;
+        //        m_TargetedEnemy = checkGo.gameObject;
+
+        //        Debug.Log("Enemy near!");
+        //    }
+        //}
+        //else
+        //{
+        //    EmptyPositisions++;
+        //}
+
+        //checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-AggroRange, 0, 0));
+        //if (checkGo != null)
+        //{
+        //    if (!checkGo.IsEnemy)
+        //    {
+        //        b_NearEnemy = true;
+        //        m_TargetedEnemy = checkGo.gameObject;
+
+        //        Debug.Log("Enemy near!");
+        //    }
+        //}
+        //else
+        //{
+        //    EmptyPositisions++;
+        //}
+
+
+        //if (EmptyPositisions == 4)
+        //{
+        //    b_NearEnemy = false;
+        //}
+
+        if (m_TargetedEnemy != null)
+        {
+            if (!m_TargetedEnemy.GetComponent<BaseCharacter>().enabled)
+            {
+                b_NearEnemy = false;
+                m_TargetedEnemy = null;
+            }
+        }
     }
 
     public override int Think()
@@ -146,8 +185,7 @@ public class MeleeFSM : FSMBase {
 
                 if (b_NearEnemy)
                 {
-                    b_Attacked = false;
-                    return (int)STATES.ATTACK;
+                    return (int)STATES.CHASE;
                 }
 
                 return (int)STATES.FOLLOW_ORDER;
@@ -155,12 +193,25 @@ public class MeleeFSM : FSMBase {
 
             case STATES.CHASE:
 
-                break;
+                if (m_TargetedEnemy == null)
+                    return (int)STATES.IDLE;
+
+                if (CanAttack())
+                {
+                    b_Attacked = false;
+                    return (int)STATES.ATTACK;
+                }
+
+                return (int)STATES.CHASE;
+
 
             case STATES.ATTACK:
 
-                if (!b_NearEnemy)
+                if (!b_NearEnemy && m_TargetedEnemy != null)
                     return (int)STATES.CHASE;
+
+                if (m_TargetedEnemy == null)
+                    return (int)STATES.IDLE;
 
                 return (int)STATES.ATTACK;
 
@@ -218,11 +269,15 @@ public class MeleeFSM : FSMBase {
 
     void DoChase()
     {
-
+        if (!this.GetComponent<Pathfinder>().b_PathFound)
+            this.GetComponent<BaseCharacter>().SetCharacterDestination(FindClosestSpot(m_TargetedEnemy.GetComponent<BaseCharacter>().pos));
+        
+        this.GetComponent<BaseCharacter>().SetToMove(true);
     }
 
     void DoAttack()
     {
+        this.GetComponent<Pathfinder>().Reset();
         if (m_TargetedEnemy != null && !b_Attacked)
         {
             this.GetComponent<BaseCharacter>().restrictActions[1] = true;
@@ -277,6 +332,9 @@ public class MeleeFSM : FSMBase {
                 Debug.Log("Melee Done.");
                 return;
             }
+
+            if (!this.GetComponent<Pathfinder>().b_PathFound)
+                this.GetComponent<BaseCharacter>().SetCharacterDestination(this.GetComponent<BaseCharacter>().GetCharacterDestination());
 
             this.GetComponent<BaseCharacter>().SetToMove(true);
             return;
@@ -357,6 +415,40 @@ public class MeleeFSM : FSMBase {
         }
 
         return new Vector3(0,0,0);
+    }
+
+    bool CanAttack()
+    {
+        BaseCharacter checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, -this.GetComponent<BaseCharacter>().BaseAttackRange, 0));
+        if (checkGo == m_TargetedEnemy.GetComponent<BaseCharacter>())
+        {
+            return true;
+        }
+
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(0, this.GetComponent<BaseCharacter>().BaseAttackRange, 0));
+        if (checkGo == m_TargetedEnemy.GetComponent<BaseCharacter>())
+        {
+            return true;
+        }
+
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-this.GetComponent<BaseCharacter>().BaseAttackRange, 0, 0));
+        if (checkGo == m_TargetedEnemy.GetComponent<BaseCharacter>())
+        {
+            return true;
+        }
+
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-this.GetComponent<BaseCharacter>().BaseAttackRange, 0, 0));
+        if (checkGo == m_TargetedEnemy.GetComponent<BaseCharacter>())
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public override void TurnReset()
+    {
+        b_Attacked = false;
     }
 
 }

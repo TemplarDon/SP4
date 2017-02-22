@@ -34,6 +34,7 @@ public abstract class FSMBase : MonoBehaviour {
     public abstract int Think();            // process the updates
     public abstract void Act(int value);    // act upon any change in behaviour
     public abstract void ProcessMessage();  // process message received
+    public abstract void TurnReset();       // reset any variables when turn increases
 
     public Message ReadFromMessageBoard()
     {

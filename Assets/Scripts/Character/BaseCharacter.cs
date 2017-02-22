@@ -80,6 +80,8 @@ public class BaseCharacter : MonoBehaviour {
             restrictActions[i] = false;
         }
 
+        ApplyEquipmentStats();
+
         MaxSpeed = BaseSpeed;
         MaxAttackRange = BaseAttackRange;
         MaxStrength = BaseStrength;
@@ -104,6 +106,7 @@ public class BaseCharacter : MonoBehaviour {
             {
                 theLevel.mapposx = (int)pos.x - 1;
                 theLevel.mapposy = -((int)pos.y) - 1;
+
             }
         }
         else
@@ -209,7 +212,7 @@ public class BaseCharacter : MonoBehaviour {
             }
             else
                 this.CurrentAnimState = ANIM_STATE.IDLE;
-            Debug.Log("Reset anim.");
+            //Debug.Log(this.name + ": Reset anim.");
         }
 
 
@@ -322,9 +325,23 @@ public class BaseCharacter : MonoBehaviour {
     {
         if (BaseHealth <= 0 )
         {
-            Debug.Log("Died.");
+            //Debug.Log("Died.");
 
             CurrentAnimState = ANIM_STATE.DIE;
+        }
+    }
+
+    void ApplyEquipmentStats()
+    {
+        if (theWeapon)
+        {
+            this.BaseStrength += ((Weapons)(theWeapon)).WeaponDamage;
+            this.BaseAttackRange = ((Weapons)(theWeapon)).WeaponRange;
+        }
+
+        if (theArmour)
+        {
+            this.BaseArmour += ((Armours)(theArmour)).ArmourAmount;
         }
     }
 }                   
