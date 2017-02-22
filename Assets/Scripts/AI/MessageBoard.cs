@@ -19,7 +19,7 @@ public class MessageBoard : MonoBehaviour {
 
     public void AddMessage(Message aMessage)
     {
-        Debug.Log("Adding a message.");
+        //Debug.Log("Adding a message.");
         MessageList.Add(aMessage);
     }
 
@@ -31,7 +31,7 @@ public class MessageBoard : MonoBehaviour {
             {
                 Message temp = aMessage;
                 MessageList.Remove(aMessage);
-                Debug.Log("Getting a message.");
+                //Debug.Log("Getting a message.");
                 return temp;
             }
         }

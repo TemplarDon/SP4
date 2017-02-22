@@ -6,10 +6,10 @@ using System.Collections.Generic;
 public class CommanderFSM : FSMBase {
 
     // Public Vars
-    public int RecallHealthThreshold;   // The amount of health where the commander will call units to fallback and protect him
-    public int ActivaRange;             // The range where the commander will start moving his units
-    public int TacticsRange;            // The range where the commander starts to use other orders besides ORDER_FRONTAL_ASSAULT
-    public int OrderFrequency;          // Amount of turns before another order will be given
+    public int RecallHealthThreshold = 3;   // The amount of health where the commander will call units to fallback and protect him
+    public int ActivaRange = 8;             // The range where the commander will start moving his units
+    public int TacticsRange = 5;            // The range where the commander starts to use other orders besides ORDER_FRONTAL_ASSAULT
+    public int OrderFrequency = 2;          // Amount of turns before another order will be given
 
     // Private Vars
     enum STATES
@@ -37,26 +37,40 @@ public class CommanderFSM : FSMBase {
 	
     public override void Sense()     
     {
-        if (TeamList.Count <= 0)
+        // Get Enemy data
+        GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
+
+        foreach (GameObject go in goList)
         {
-            // Get Enemy data
-            GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
-
-            foreach (GameObject go in goList)
+            if (!go.GetComponent<BaseCharacter>().enabled || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
             {
-                if (go.GetComponent<BaseCharacter>().IsDead || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
-                    continue;
-
                 if (!go.GetComponent<BaseCharacter>().IsEnemy)
                 {
-                    EnemyList.Add(go.GetComponent<BaseCharacter>());
+                    if (EnemyList.Contains(go.GetComponent<BaseCharacter>()))
+                        EnemyList.Remove(go.GetComponent<BaseCharacter>());
                 }
                 else
                 {
-                    TeamList.Add(go.GetComponent<BaseCharacter>());
+                    if (TeamList.Contains(go.GetComponent<BaseCharacter>()))
+                        TeamList.Remove(go.GetComponent<BaseCharacter>());
                 }
+
+                continue;
+            }
+
+            if (EnemyList.Contains(go.GetComponent<BaseCharacter>()) || TeamList.Contains(go.GetComponent<BaseCharacter>()))
+                continue;
+
+            if (!go.GetComponent<BaseCharacter>().IsEnemy)
+            {
+                EnemyList.Add(go.GetComponent<BaseCharacter>());
+            }
+            else
+            {
+                TeamList.Add(go.GetComponent<BaseCharacter>());
             }
         }
+        
     }
 
     public override int Think()
@@ -126,11 +140,23 @@ public class CommanderFSM : FSMBase {
     void DoIdle()
     {
         this.GetComponent<BaseCharacter>().restrictActions[1] = true;
-        //Debug.Log("Commander done.");
+        Debug.Log("Commander done.");
     }
 
     void DoPlan()
     {
+        float ClosestDistToEnemy = 99999;
+        foreach (BaseCharacter AICharacter in EnemyList)
+        {
+            foreach (BaseCharacter PlayerCharacter in TeamList)
+            {
+                if ((AICharacter.pos - PlayerCharacter.pos).magnitude < ClosestDistToEnemy)
+                {
+                    ClosestDistToEnemy = (AICharacter.pos - PlayerCharacter.pos).magnitude;
+                }
+            }
+        }
+
         Vector3 AverageTeamPosition = new Vector3(0, 0, 0);
         foreach (BaseCharacter Character in TeamList)
         {
@@ -145,16 +171,16 @@ public class CommanderFSM : FSMBase {
         }
         AverageEnemyPosition /= EnemyList.Count;
 
-        float AverageDistToEnemy = (AverageTeamPosition - AverageEnemyPosition).magnitude;
+        //float AverageDistToEnemy = (AverageTeamPosition - AverageEnemyPosition).magnitude;
 
         // Check AverageDistToEnemy 
-        if (AverageDistToEnemy > ActivaRange)
+        if (ClosestDistToEnemy > ActivaRange)
         {
             b_PlanFound = true;
             return;
         }
 
-        if (AverageDistToEnemy > TacticsRange)
+        if (ClosestDistToEnemy > TacticsRange)
         {
             // Enemy further away than TacticsRange, send ORDER_FRONTAL_ASSAULT
             foreach (BaseCharacter Character in TeamList)
@@ -222,9 +248,18 @@ public class CommanderFSM : FSMBase {
     {
     }
 
+    public override void TurnReset()
+    {
+    }
+
     public void IncreaseTurnCount()
     {
         TurnCounter++;
         Debug.Log("Commander increase turn counter.");
+
+        foreach (BaseCharacter aCharacter in TeamList)
+        {
+            aCharacter.GetComponent<FSMBase>().TurnReset();
+        }
     }
 }

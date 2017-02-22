@@ -59,6 +59,7 @@ public class BaseCharacter : MonoBehaviour {
         STAND_DOWN,
         DIE,
         DEAD,
+        TAKE_DAMAGE,
     }
 
     public ANIM_STATE CurrentAnimState;
@@ -80,6 +81,8 @@ public class BaseCharacter : MonoBehaviour {
             restrictActions[i] = false;
         }
 
+        ApplyEquipmentStats();
+
         MaxSpeed = BaseSpeed;
         MaxAttackRange = BaseAttackRange;
         MaxStrength = BaseStrength;
@@ -90,6 +93,7 @@ public class BaseCharacter : MonoBehaviour {
 
     //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
     CurrentAnimState = ANIM_STATE.IDLE;
+    UpdateAnimState();
 	}
 	
 	// Update is called once per frame
@@ -104,6 +108,7 @@ public class BaseCharacter : MonoBehaviour {
             {
                 theLevel.mapposx = (int)pos.x - 1;
                 theLevel.mapposy = -((int)pos.y) - 1;
+
             }
         }
         else
@@ -206,10 +211,12 @@ public class BaseCharacter : MonoBehaviour {
                 this.GetComponent<Pathfinder>().enabled = false;
                 this.enabled = false;
                 GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().popPlayer(this.gameObject);
+
+                this.GetComponent<CharacterFadeOut>().StartFade = true;
             }
             else
                 this.CurrentAnimState = ANIM_STATE.IDLE;
-            Debug.Log("Reset anim.");
+            //Debug.Log(this.name + ": Reset anim.");
         }
 
 
@@ -274,6 +281,10 @@ public class BaseCharacter : MonoBehaviour {
             case ANIM_STATE.DEAD:
                 this.GetComponent<Animator>().Play("Dead");
                 break;
+
+            case ANIM_STATE.TAKE_DAMAGE:
+                this.GetComponent<Animator>().Play("TakeDamage");
+                break;
         }
     }
 
@@ -317,6 +328,7 @@ public class BaseCharacter : MonoBehaviour {
         int damageTaken = (int)Mathf.Clamp(damage - BaseArmour, 1.0f, 999.0f);
         BaseHealth -= damageTaken;
         GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
+        CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
         CheckIfDead();
     }
 
@@ -324,9 +336,23 @@ public class BaseCharacter : MonoBehaviour {
     {
         if (BaseHealth <= 0 )
         {
-            Debug.Log("Died.");
+            //Debug.Log("Died.");
 
             CurrentAnimState = ANIM_STATE.DIE;
+        }
+    }
+
+    void ApplyEquipmentStats()
+    {
+        if (theWeapon)
+        {
+            this.BaseStrength += ((Weapons)(theWeapon)).WeaponDamage;
+            this.BaseAttackRange = ((Weapons)(theWeapon)).WeaponRange;
+        }
+
+        if (theArmour)
+        {
+            this.BaseArmour += ((Armours)(theArmour)).ArmourAmount;
         }
     }
 }                   

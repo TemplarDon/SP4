@@ -38,7 +38,7 @@ public class MoveSelection : MonoBehaviour {
                 GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(true);
                 GameObject.Find("TurnManager").GetComponent<turnManage>().cancelAction = false;
 
-                Debug.Log("Set CanMove to true");
+                //Debug.Log("Set CanMove to true");
                 break;
             case "redSq":
                 bool playerPresent = false;

@@ -29,6 +29,9 @@ public class teamManager : MonoBehaviour {
 
     public List<BaseCharacter> teamList = new List<BaseCharacter>();
 
+    private int ActiveMemberIdx = 0;
+    public bool IsEnemy;
+
     // Use this for initialization
     void Start () {
         controller = GameObject.Find("Controller");
@@ -97,7 +100,8 @@ public class teamManager : MonoBehaviour {
                 callOnce = true;
                 turnManager.GetComponent<turnManage>().teamTurn++;
                 turnManager.GetComponent<turnManage>().animDelay = true;
-                Debug.Log("TRIGGER");
+                ActiveMemberIdx = 0;
+                //Debug.Log("TRIGGER");
                 //for (int i = 0; i < teamList.Count; i++)
                 //{
                 //    if (teamList[i] != null)
@@ -115,7 +119,10 @@ public class teamManager : MonoBehaviour {
                 //}
             }
 
+            if (IsEnemy)
+                UpdateCurrentActiveMember();
         }
+
     }
 
     public void popPlayer(GameObject deadPlayer)
@@ -125,8 +132,24 @@ public class teamManager : MonoBehaviour {
             if (teamList[i].gameObject.GetInstanceID() == deadPlayer.GetInstanceID())
             {
                 teamList.Remove(deadPlayer.GetComponent<BaseCharacter>());
+                ActiveMemberIdx = 0;
                 Debug.Log("Character Removed.");
             }
         }
+    }
+
+    // Specific functions for AI-controlled teams
+    void UpdateCurrentActiveMember()
+    {
+        if (ActiveMemberIdx + 1 < teamList.Count)
+        {
+            if (teamList[ActiveMemberIdx].restrictActions[1] == true)
+                ++ActiveMemberIdx;
+        }
+    }
+
+    public BaseCharacter GetCurrentActiveMember()
+    {
+        return teamList[ActiveMemberIdx];
     }
 }

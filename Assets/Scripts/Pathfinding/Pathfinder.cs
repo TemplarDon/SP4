@@ -14,7 +14,7 @@ public class Pathfinder : MonoBehaviour
     public Vector3 m_Destination;
 
     // Pathfinding Var
-    private bool b_PathFound = false;
+    public bool b_PathFound = false;
     private Node CurrentNode = null;
 
     private int CurrentItr = 0;
@@ -107,7 +107,7 @@ public class Pathfinder : MonoBehaviour
                 CurrentItr = 0;
 
                 //Debug.Log("Path to destination: " + m_Destination.ToString() + " found.");
-                Debug.Log("Destination reached.");
+                //Debug.Log("Destination reached.");
             }
 
             //Debug.Log("Adding to closed list: " + CurrentNode.m_pos.ToString());
@@ -223,7 +223,7 @@ public class Pathfinder : MonoBehaviour
 
                     b_PathFound = false;
                     b_CompletedPath = true;
-                    Debug.Log("Path done.");
+                    //Debug.Log("Path done.");
 
                     GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(false);
                     //Debug.Log("Set CanMove to false");
@@ -352,6 +352,11 @@ public class Pathfinder : MonoBehaviour
         //    return true;
         //}
 
+        if (theLevel.GetCharacterInTile(checkNode.m_pos) != null)
+        {
+            Debug.Log("Node Rejected. (Character on the spot)");
+            return false;
+        }
 
         //Debug.Log("Node Rejected.");
         //return false;
