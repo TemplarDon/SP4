@@ -317,7 +317,9 @@ public class BaseCharacter : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        BaseHealth -= damage;
+        int damageTaken = (int)Mathf.Clamp(damage - BaseArmour, 1.0f, 999.0f);
+        BaseHealth -= damageTaken;
+        GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
         CheckIfDead();
     }
 
