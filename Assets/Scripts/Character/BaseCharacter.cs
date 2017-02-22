@@ -319,7 +319,7 @@ public class BaseCharacter : MonoBehaviour {
     {
         int damageTaken = (int)Mathf.Clamp(damage - BaseArmour, 1.0f, 999.0f);
         BaseHealth -= damageTaken;
-        GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
+        GameObject.Find("DmgIndiMDanager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
         CheckIfDead();
     }
 
