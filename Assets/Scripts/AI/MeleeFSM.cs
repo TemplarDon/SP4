@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 public class MeleeFSM : FSMBase {
 
-    public int AggroRange = 1;
-
     enum STATES
     {
         IDLE,
@@ -42,14 +40,13 @@ public class MeleeFSM : FSMBase {
         // Get Enemy data
         GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
 
-        
         foreach (GameObject go in goList)
         {
             if (!go.GetComponent<BaseCharacter>().enabled || go.GetComponent<BaseCharacter>() == this.GetComponent<BaseCharacter>())
             {
                 if (AlliedUnits.Contains(go))
                     AlliedUnits.Remove(go);
-                
+
                 continue;
             }
 
@@ -62,6 +59,25 @@ public class MeleeFSM : FSMBase {
             }
 
         }
+
+        //foreach (BaseCharacter aCharacter in GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().teamList)
+        //{
+        //    if (!aCharacter.enabled || aCharacter == this.GetComponent<BaseCharacter>())
+        //    {
+        //        if (AlliedUnits.Contains(aCharacter.gameObject))
+        //            AlliedUnits.Remove(aCharacter.gameObject);
+
+        //        continue;
+        //    }
+
+        //    if (AlliedUnits.Contains(aCharacter.gameObject))
+        //        continue;
+
+        //    if (aCharacter.IsEnemy)
+        //    {
+        //        AlliedUnits.Add(aCharacter.gameObject);
+        //    }
+        //}
 
         bool b_Change = false;
         float ClosestDist = 99999;
@@ -87,6 +103,29 @@ public class MeleeFSM : FSMBase {
                 }
             }
         }
+
+        //foreach (BaseCharacter aCharacter in GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().teamList)
+        //{
+        //    if (!aCharacter.enabled || aCharacter == this.GetComponent<BaseCharacter>())
+        //        continue;
+
+        //    if (!aCharacter.IsEnemy)
+        //    {
+        //        if ((this.GetComponent<BaseCharacter>().pos - aCharacter.pos).sqrMagnitude < AggroRange * AggroRange)
+        //        {
+        //            if ((this.GetComponent<BaseCharacter>().pos - aCharacter.pos).sqrMagnitude < ClosestDist)
+        //            {
+        //                ClosestDist = (this.GetComponent<BaseCharacter>().pos - aCharacter.pos).sqrMagnitude;
+        //                b_Change = true;
+
+        //                b_NearEnemy = true;
+        //                m_TargetedEnemy = aCharacter.gameObject;
+
+        //                //Debug.Log("Enemy near!");
+        //            }
+        //        }
+        //    }
+        //}
 
         if (!b_Change)
         {
@@ -397,7 +436,7 @@ public class MeleeFSM : FSMBase {
         // Check if possible locations are valid
         foreach (Vector3 check in PossibleLocations)
         {
-            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)check.y) == 4 || this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)check.y) == 5)
+            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)-check.y) == 4 || this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)-check.y) == 5)
                 PossibleLocations.Remove(check);
         }
 
