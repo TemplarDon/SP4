@@ -3002,7 +3002,7 @@ MonoBehaviour:
   theSkill: {fileID: 1215460899}
   restrictActions: 
   Name: Man 2
-  BaseSpeed: 7
+  BaseSpeed: 4
   BaseAttackRange: 1
   BaseStrength: 1
   BaseMagic: 1
@@ -4325,7 +4325,7 @@ MonoBehaviour:
   BaseMagic: 1
   BaseMana: 1
   BaseHealth: 5
-  BaseArmour: 1
+  BaseArmour: 3
   IsEnemy: 1
   IsDead: 0
   profilePic: {fileID: 21300000, guid: 9629256c0b6d7df449762b34c700698d, type: 3}
