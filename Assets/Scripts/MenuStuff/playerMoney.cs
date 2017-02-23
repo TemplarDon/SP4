@@ -114,7 +114,7 @@ public class playerMoney : MonoBehaviour {
         {
             PlayerPrefs.SetString("BoughtChar1", "AeroSmith");
             boughtImage.enabled = true;
-            buyButton.enabled = false;
+            buyButton.enabled =false;
         }
     }
 

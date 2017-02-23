@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Slide
+  m_Name: RightArrow1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,14 +20,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 69.3
-        inSlope: -3.9000092
-        outSlope: -3.9000092
+        value: 68
+        inSlope: -9
+        outSlope: -9
         tangentMode: 10
       - time: 0.33333334
-        value: 68
-        inSlope: -3.9000092
-        outSlope: -3.9000092
+        value: 65
+        inSlope: -9
+        outSlope: -9
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -40,12 +40,12 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: 0.000022888
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       - time: 0.33333334
-        value: 0
+        value: 0.000022888
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -102,14 +102,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 69.3
-        inSlope: -3.9000092
-        outSlope: -3.9000092
+        value: 68
+        inSlope: -9
+        outSlope: -9
         tangentMode: 10
       - time: 0.33333334
-        value: 68
-        inSlope: -3.9000092
-        outSlope: -3.9000092
+        value: 65
+        inSlope: -9
+        outSlope: -9
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -122,12 +122,12 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: 0.000022888
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       - time: 0.33333334
-        value: 0
+        value: 0.000022888
         inSlope: 0
         outSlope: 0
         tangentMode: 10

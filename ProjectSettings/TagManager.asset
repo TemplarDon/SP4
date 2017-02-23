@@ -9,6 +9,7 @@ TagManager:
   - Character
   - Explosion
   - redSq
+  - ItemTemp
   layers:
   - Default
   - TransparentFX
