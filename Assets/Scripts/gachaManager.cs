@@ -7,24 +7,85 @@ using System.Collections.Generic;
 public class gachaManager : MonoBehaviour {
 
     public Image prize;
-    public List<Sprite> spriteList = new List<Sprite>();
+    //public List<Sprite> spriteList = new List<Sprite>();
+    private List<Sprite> spriteList2 = new List<Sprite>();
+
+    private Image gachaHandle;
+    private Image gachaCapsules;
+    private Image gachaPrize;
 
     private Image prizeRays;
     private Image prizeWhite;
+    private Image prizeImage;
+    private int prizeNum = 0;
+
+    private Image background1;
+    private Image background2;
 
     private bool prizeDisplay = true;
     public float fadeSpeed = 0.1f;
 
+    private int frameNum = 0;
+    private bool playAnim = false;
+
     // Use this for initialization
     void Start () {
+        gachaHandle = GameObject.Find("gacha_machineHandle").GetComponent<Image>();
+        gachaHandle.GetComponent<Animator>().speed = 1.0f;
+
+        gachaCapsules = GameObject.Find("gacha_machineCapsule").GetComponent<Image>();
+        gachaCapsules.GetComponent<Animator>().speed = 1.0f;
+
+        gachaPrize = GameObject.Find("gacha_machinePrize").GetComponent<Image>();
+        gachaPrize.GetComponent<Animator>().speed = 1.0f;
+
         prizeRays = GameObject.Find("gacha_prizeRays").GetComponent<Image>();
         prizeRays.GetComponent<Animator>().speed = 0.01f;
 
         prizeWhite = GameObject.Find("gacha_prizeWhite").GetComponent<Image>();
+
+        prizeImage = GameObject.Find("gacha_prizeItem").GetComponent<Image>();
+
+        background1 = GameObject.Find("gacha_background (1)").GetComponent<Image>();
+        background2 = GameObject.Find("gacha_background (2)").GetComponent<Image>();
+        background1.GetComponent<Animator>().speed = 0.01f;
+        background2.GetComponent<Animator>().speed = 0.01f;
+
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("ItemTemp");
+        foreach (GameObject obj in allObjects)
+        {
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (playAnim == true)
+        {
+            frameNum++;
+            if(frameNum >= 60)
+            {
+                gachaHandle.GetComponent<Animator>().SetTrigger("StopGacha");
+                gachaCapsules.GetComponent<Animator>().SetTrigger("StopGacha");
+                gachaPrize.GetComponent<Animator>().SetTrigger("StopGacha");
+                prizeNum = (int)Random.Range(0.0f, spriteList2.Count);
+                //Debug.Log(prizeNum);
+                //prizeImage.sprite = spriteList[prizeNum];
+                prizeImage.sprite = spriteList2[prizeNum];
+                frameNum = 0;
+                playAnim = false;
+                prizeDisplay = true;
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space) && playAnim == false && prizeDisplay == false)
+        {
+            gachaHandle.GetComponent<Animator>().SetTrigger("PlayGacha");
+            gachaCapsules.GetComponent<Animator>().SetTrigger("PlayGacha");
+            gachaPrize.GetComponent<Animator>().SetTrigger("PlayGacha");
+            playAnim = true;
+        }
 
         if (prizeDisplay == true)
         {
@@ -35,11 +96,20 @@ public class gachaManager : MonoBehaviour {
 
             if(prizeRays.color.a < 1.0f)
             {
-                prizeWhite.color = new Color(1, 1, 1, prizeWhite.color.a + fadeSpeed);
-                if (prizeRays.transform.localScale.x > 0.1f)
-                {
-                    prizeRays.transform.localScale *= 1.1f;
-                }
+                prizeRays.color = new Color(1, 1, 1, prizeRays.color.a + fadeSpeed);
+            }
+            if (prizeRays.transform.localScale.x < 16.12046f)
+            {
+                prizeRays.transform.localScale *= 1.1f;
+            }
+
+            if (prizeImage.color.a < 1.0f)
+            {
+                prizeImage.color = new Color(1, 1, 1, prizeImage.color.a + fadeSpeed);
+            }
+            if (prizeImage.transform.localScale.x < 5.355362f)
+            {
+                prizeImage.transform.localScale *= 1.1f;
             }
         }
         else if (prizeDisplay == false)
@@ -51,10 +121,19 @@ public class gachaManager : MonoBehaviour {
 
             if (prizeRays.color.a > 0.0f)
             {
-                prizeWhite.color = new Color(1, 1, 1, prizeWhite.color.a - fadeSpeed);
+                prizeRays.color = new Color(1, 1, 1, prizeRays.color.a - fadeSpeed);
                 if (prizeRays.transform.localScale.x > 0.1f)
                 {
                     prizeRays.transform.localScale *= 0.9f;
+                }
+            }
+
+            if (prizeImage.color.a > 0.0f)
+            {
+                prizeImage.color = new Color(1, 1, 1, prizeImage.color.a - (fadeSpeed * 0.9f));
+                if (prizeImage.transform.localScale.x > 0.1f)
+                {
+                    prizeImage.transform.localScale *= 0.95f;
                 }
             }
         }
@@ -66,6 +145,24 @@ public class gachaManager : MonoBehaviour {
         else
         {
             prizeWhite.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        if (prizeRays.color.a <= 0.0f)
+        {
+            prizeRays.transform.localPosition = new Vector3(999, 999, 999);
+        }
+        else
+        {
+            prizeRays.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        if (prizeImage.color.a <= 0.0f)
+        {
+            prizeImage.transform.localPosition = new Vector3(999, 999, 999);
+        }
+        else
+        {
+            prizeImage.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 
