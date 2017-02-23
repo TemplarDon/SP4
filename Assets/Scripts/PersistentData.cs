@@ -9,9 +9,12 @@ public class PersistentData : MonoBehaviour {
 
     public static PersistentData m_Instance;
 
+    bool b_InitialLoad = false;
+
     // Stuff to store in persistent data
     public int PlayerMoney;
     public List<Items> ItemList = new List<Items>();
+    public List<string> CharacterList = new List<string>();
 
 	// Use this for initialization
 	void Awake () {
@@ -31,12 +34,24 @@ public class PersistentData : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	   
+        if (!b_InitialLoad)
+        {
+            LoadData();
+            b_InitialLoad = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            // Load whatever numbers here
+            PlayerMoney = 100000;
+        }
+
 	}
 
-    void OnEnable()
-    {
-        LoadData();
-    }
+    //void OnEnable()
+    //{
+    //    LoadData();
+    //}
 
     void OnDisable()
     {
@@ -55,8 +70,8 @@ public class PersistentData : MonoBehaviour {
 
     void LoadData(PlayerData theData)
     {
-        theData.PlayerMoney = this.PlayerMoney;
-        theData.ItemList = this.ItemList;
+        this.PlayerMoney = theData.PlayerMoney;
+        this.ItemList = theData.ItemList;
     }
 
     public void SaveDate()
@@ -68,6 +83,8 @@ public class PersistentData : MonoBehaviour {
 
         bf.Serialize(file, data);
         file.Close();
+
+        Debug.Log("Saved Data.");
     }
 
     public void LoadData()
@@ -81,6 +98,8 @@ public class PersistentData : MonoBehaviour {
             LoadData(data);
 
             file.Close();
+
+            Debug.Log("Loaded Data.");
         }
     }
 }

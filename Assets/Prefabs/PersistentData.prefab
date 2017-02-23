@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 483514}
   - 114: {fileID: 11431016}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: PersistentData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,6 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2f453bfd460124294d127f65d8bff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerMoney: 100000
+  ItemList: []
+  CharacterList: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

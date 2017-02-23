@@ -38,7 +38,18 @@ public class playerMoney : MonoBehaviour {
             PlayerPrefs.SetInt("CurrentMoney", 50000);
 
         }
-        moneyText.text = "\u00A5" + currentMoney;
+        //moneyText.text = "\u00A5" + currentMoney;
+        moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
+
+
+        for (int i = 0; i < PersistentData.m_Instance.CharacterList.Count; ++i)
+        {
+            if (PersistentData.m_Instance.CharacterList[i].Equals("AeroSmith"))
+            {
+                boughtImage.enabled = true;
+            }
+        }
+
 
         if (boughtImage)
         {
@@ -90,7 +101,7 @@ public class playerMoney : MonoBehaviour {
     {
         currentMoney += moneyToAdd;
         PlayerPrefs.SetInt("CurrentMoney",currentMoney);
-        moneyText.text = "\u00A5" + currentMoney;
+        moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
     }
     public void subtractMoney(int moneyToSubtract)
     {
@@ -102,19 +113,22 @@ public class playerMoney : MonoBehaviour {
         {
             Debug.Log("Have enough money");
 
-            currentMoney -= moneyToSubtract;
+            //currentMoney -= moneyToSubtract;
+            PersistentData.m_Instance.PlayerMoney -= moneyToSubtract;
             PlayerPrefs.SetInt("CurrentMoney", currentMoney);
-            moneyText.text = "\u00A5" + currentMoney;
+            moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
         }
     }
 
     public void BoughtImage()
     {
-        if (currentMoney >= 50000)
+        if (PersistentData.m_Instance.PlayerMoney >= 50000)
         {
-            PlayerPrefs.SetString("BoughtChar1", "AeroSmith");
+            //PlayerPrefs.SetString("BoughtChar1", "AeroSmith");
             boughtImage.enabled = true;
             buyButton.enabled =false;
+
+            PersistentData.m_Instance.CharacterList.Add("AeroSmitH");
         }
     }
 
