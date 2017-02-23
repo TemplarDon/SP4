@@ -215,6 +215,9 @@ public class LevelGenerate : MonoBehaviour {
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {
+                    if (!obj.GetComponent<BaseCharacter>().enabled)
+                        continue;
+
                     if (mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] == true)
                     {
                         mapcheck[(int)obj.transform.position.x - 1, -(int)obj.transform.position.y - 1] = false;
@@ -1206,7 +1209,8 @@ public class LevelGenerate : MonoBehaviour {
             if (!checkChar.GetComponent<BaseCharacter>().enabled)
                 continue;
 
-            if (checkChar.GetComponent<BaseCharacter>().pos.x == CheckPosition.x && checkChar.GetComponent<BaseCharacter>().pos.y == CheckPosition.y)
+            Vector3 check = checkChar.GetComponent<BaseCharacter>().pos;
+            if (Mathf.RoundToInt(check.x) == Mathf.RoundToInt(CheckPosition.x) && Mathf.RoundToInt(check.y) == Mathf.RoundToInt(CheckPosition.y))
             {
                 Debug.Log("Character Found!");
                 return checkChar.GetComponent<BaseCharacter>();

@@ -53,6 +53,7 @@ public class teamManager : MonoBehaviour {
                     teamList[i].BaseSpeed = teamList[i].GetMaxSpeed();
                     teamList[i].BaseStrength = teamList[i].GetMaxStrength();
                     teamList[i].BaseMagic = teamList[i].GetMaxMagic();
+                    ActiveMemberIdx = 0;
 
                     if (teamList[i] != null)
                     {

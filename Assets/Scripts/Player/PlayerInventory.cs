@@ -10,15 +10,9 @@ public class PlayerInventory {
 
     private List<List<Items>> InventoryList = new List<List<Items>>();
 
-    private Equippables EquippedArmour;
-    private Equippables EquippedWeapon;
-
     // Use this for initialization
     public void Init(int c = 5, int r = 5)
     {
-        EquippedArmour = null;
-        EquippedWeapon = null;
-
         InventorySizeColumns = InventorySizeRows = 5;
 
         // Fill list with null

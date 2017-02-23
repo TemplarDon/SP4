@@ -433,11 +433,22 @@ public class MeleeFSM : FSMBase {
         PossibleLocations.Add(target + new Vector3(1, 0, 0));
         PossibleLocations.Add(target + new Vector3(-1, 0, 0));
 
+        bool[] Marked = new bool[4]{ false, false, false, false };
+
         // Check if possible locations are valid
-        foreach (Vector3 check in PossibleLocations)
+        for (int i = 0; i < PossibleLocations.Count; ++i)
         {
-            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)-check.y) == 4 || this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x, (int)-check.y) == 5)
-                PossibleLocations.Remove(check);
+            Vector3 check = PossibleLocations[i];
+            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x - 1, (int)-check.y - 1) == -1)
+            {
+                Marked[i] = true;
+            }
+        }
+
+        for (int i = 0; i < PossibleLocations.Count; ++i)
+        {
+            if (Marked[i])
+                PossibleLocations.RemoveAt(i);
         }
 
         bool LocationFound = false;
@@ -462,6 +473,9 @@ public class MeleeFSM : FSMBase {
             foreach (GameObject go in AlliedUnits)
             {
                 if (go.GetComponent<BaseCharacter>().name == "EnemyCommander")
+                    continue;
+
+                if (go.GetComponent<FSMBase>().CurrentMessage == null)
                     continue;
 
                 if (go.GetComponent<FSMBase>().CurrentMessage.theMessageType == Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET)

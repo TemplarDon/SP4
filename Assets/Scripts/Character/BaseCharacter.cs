@@ -197,7 +197,7 @@ public class BaseCharacter : MonoBehaviour {
 
     void UpdateAnimState()
     {
-        if (this.GetComponent<AnimationEnd>().b_AnimationEnded)
+        if (this.GetComponent<AnimationEnd>().b_AnimationEnded && CurrentAnimState != ANIM_STATE.IDLE)
         {
             if (this.CurrentAnimState == ANIM_STATE.DIE)
             {

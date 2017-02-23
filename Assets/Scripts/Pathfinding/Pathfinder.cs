@@ -355,10 +355,14 @@ public class Pathfinder : MonoBehaviour
         //    return true;
         //}
 
-        if (theLevel.GetCharacterInTile(checkNode.m_pos) != null)
+        BaseCharacter CheckCharacter = theLevel.GetCharacterInTile(checkNode.m_pos);
+        if (CheckCharacter != null)
         {
-            Debug.Log("Node Rejected. (Character on the spot)");
-            return false;
+            if (CheckCharacter != this.GetComponent<BaseCharacter>())
+            {
+                Debug.Log("Node Rejected. (Character on the spot)");
+                return false;
+            }
         }
 
         //Debug.Log("Node Rejected.");
