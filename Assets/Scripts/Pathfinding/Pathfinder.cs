@@ -360,7 +360,7 @@ public class Pathfinder : MonoBehaviour
         {
             if (CheckCharacter != this.GetComponent<BaseCharacter>() && Mathf.RoundToInt(checkNode.m_pos.x) != m_Destination.x && Mathf.RoundToInt(checkNode.m_pos.y) != m_Destination.y)
             {
-                Debug.Log("Node Rejected. (Character on the spot)");
+                //Debug.Log("Node Rejected. (Character on the spot)");
                 return false;
             }
         }

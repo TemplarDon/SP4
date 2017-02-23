@@ -232,7 +232,7 @@ public class MeleeFSM : FSMBase {
 
             case STATES.FOLLOW_ORDER:
 
-                if (b_NearEnemy)
+                if (b_NearEnemy && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
                     return (int)STATES.CHASE;
                 }
@@ -245,7 +245,7 @@ public class MeleeFSM : FSMBase {
                 if (m_TargetedEnemy == null)
                     return (int)STATES.IDLE;
 
-                if (CanAttack())
+                if (CanAttack() && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
                     b_Attacked = false;
                     return (int)STATES.ATTACK;
@@ -439,7 +439,7 @@ public class MeleeFSM : FSMBase {
         for (int i = 0; i < PossibleLocations.Count; ++i)
         {
             Vector3 check = PossibleLocations[i];
-            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x - 1, (int)-check.y - 1) == -1)
+            if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x - 1, (int)-check.y - 1) == -1 || this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(check) != null)
             {
                 Marked[i] = true;
             }

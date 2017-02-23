@@ -71,7 +71,7 @@ public class BowFSM : FSMBase
 
             if (!go.GetComponent<BaseCharacter>().IsEnemy)
             {
-                if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < AggroRange * AggroRange)
+                if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < (AggroRange + this.GetComponent<BaseCharacter>().BaseAttackRange) * (AggroRange + this.GetComponent<BaseCharacter>().BaseAttackRange))
                 {
                     if ((this.GetComponent<BaseCharacter>().pos - go.GetComponent<BaseCharacter>().pos).sqrMagnitude < ClosestDist)
                     {
@@ -121,7 +121,7 @@ public class BowFSM : FSMBase
 
             case STATES.FOLLOW_ORDER:
 
-                if (b_NearEnemy)
+                if (b_NearEnemy && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
                     return (int)STATES.CHASE;
                 }
@@ -134,7 +134,7 @@ public class BowFSM : FSMBase
                 if (m_TargetedEnemy == null)
                     return (int)STATES.IDLE;
 
-                if (CanAttack())
+                if (CanAttack() && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
                     b_Attacked = false;
                     return (int)STATES.ATTACK;
