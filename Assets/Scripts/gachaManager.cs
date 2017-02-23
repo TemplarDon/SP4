@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 using System.Collections.Generic;
 
@@ -28,8 +29,11 @@ public class gachaManager : MonoBehaviour {
     private int frameNum = 0;
     private bool playAnim = false;
 
-    // Use this for initialization
-    void Start () {
+    public int currentMoney;
+    public Text moneyText;
+
+        // Use this for initialization
+        void Start () {
         gachaHandle = GameObject.Find("gacha_machineHandle").GetComponent<Image>();
         gachaHandle.GetComponent<Animator>().speed = 1.0f;
 
@@ -56,7 +60,20 @@ public class gachaManager : MonoBehaviour {
         {
             spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
-    }
+
+        //PlayerPrefs.SetInt("CurrentMoney", 50000);
+        if (PlayerPrefs.HasKey("CurrentMoney"))
+        {
+            currentMoney = PlayerPrefs.GetInt("CurrentMoney");
+        }
+        else
+        {
+            currentMoney = 50000;
+            PlayerPrefs.SetInt("CurrentMoney", 50000);
+
+        }
+        moneyText.text = "\u00A5" + currentMoney;
+   }
 	
 	// Update is called once per frame
 	void Update () {
@@ -85,6 +102,7 @@ public class gachaManager : MonoBehaviour {
             gachaCapsules.GetComponent<Animator>().SetTrigger("PlayGacha");
             gachaPrize.GetComponent<Animator>().SetTrigger("PlayGacha");
             playAnim = true;
+            insertCoin();
         }
 
         if (prizeDisplay == true)
@@ -140,7 +158,7 @@ public class gachaManager : MonoBehaviour {
 
         if (prizeWhite.color.a <= 0.0f)
         {
-            prizeWhite.transform.localPosition = new Vector3(999, 999, 999);
+            prizeWhite.transform.localPosition = new Vector3(9999, 9999, 999);
         }
         else
         {
@@ -149,7 +167,7 @@ public class gachaManager : MonoBehaviour {
 
         if (prizeRays.color.a <= 0.0f)
         {
-            prizeRays.transform.localPosition = new Vector3(999, 999, 999);
+            prizeRays.transform.localPosition = new Vector3(9999, 9999, 999);
         }
         else
         {
@@ -158,7 +176,7 @@ public class gachaManager : MonoBehaviour {
 
         if (prizeImage.color.a <= 0.0f)
         {
-            prizeImage.transform.localPosition = new Vector3(999, 999, 999);
+            prizeImage.transform.localPosition = new Vector3(9999, 9999, 999);
         }
         else
         {
@@ -174,5 +192,34 @@ public class gachaManager : MonoBehaviour {
     public void closePrize()
     {
         prizeDisplay = false;
+    }
+
+    public void insertCoin()
+    {
+        if (playAnim == false && prizeDisplay == false)
+        {
+            if (currentMoney - 200 < 0)
+            {
+                Debug.Log("Dont have enough money");
+            }
+            else
+            {
+                Debug.Log("Have enough money");
+
+                currentMoney -= 200;
+                PlayerPrefs.SetInt("CurrentMoney", currentMoney);
+                moneyText.text = "\u00A5" + currentMoney;
+
+                gachaHandle.GetComponent<Animator>().SetTrigger("PlayGacha");
+                gachaCapsules.GetComponent<Animator>().SetTrigger("PlayGacha");
+                gachaPrize.GetComponent<Animator>().SetTrigger("PlayGacha");
+                playAnim = true;
+            }
+        }
+    }
+
+    public void backBtn(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
