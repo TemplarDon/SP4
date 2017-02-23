@@ -19,15 +19,15 @@ public class CharacterSelect : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        AeroSmith.enabled = PlayerPrefs.HasKey("BoughtChar1");
-        SixBullets.enabled = PlayerPrefs.HasKey("BoughtChar2");
-        Zipperman.enabled = PlayerPrefs.HasKey("BoughtChar3");
-        SilverChariot.enabled = PlayerPrefs.HasKey("BoughtChar4");
-        StarPlatinum.enabled = PlayerPrefs.HasKey("BoughtChar5");
-        GoldenWind.enabled = PlayerPrefs.HasKey("BoughtChar6");
-        PurpleSmoke.enabled = PlayerPrefs.HasKey("BoughtChar7");
-        Reverb.enabled = PlayerPrefs.HasKey("BoughtChar8");
-        EmperorCrimson.enabled = PlayerPrefs.HasKey("BoughtChar9");
+        //AeroSmith.enabled = PlayerPrefs.HasKey("BoughtChar1");
+        //SixBullets.enabled = PlayerPrefs.HasKey("BoughtChar2");
+        //Zipperman.enabled = PlayerPrefs.HasKey("BoughtChar3");
+        //SilverChariot.enabled = PlayerPrefs.HasKey("BoughtChar4");
+        //StarPlatinum.enabled = PlayerPrefs.HasKey("BoughtChar5");
+        //GoldenWind.enabled = PlayerPrefs.HasKey("BoughtChar6");
+        //PurpleSmoke.enabled = PlayerPrefs.HasKey("BoughtChar7");
+        //Reverb.enabled = PlayerPrefs.HasKey("BoughtChar8");
+        //EmperorCrimson.enabled = PlayerPrefs.HasKey("BoughtChar9");
 	}
 	
 	// Update is called once per frame
