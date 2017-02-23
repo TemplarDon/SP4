@@ -4420,6 +4420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theBoard: {fileID: 132447449}
+  AggroRange: 3
   RecallHealthThreshold: 3
   ActivaRange: 8
   TacticsRange: 3

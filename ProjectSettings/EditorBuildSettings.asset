@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/JianWei's Scene/StorySelect.unity
   - enabled: 1
     path: Assets/Scenes/JianWei's Scene/Shop.unity
+  - enabled: 1
+    path: Assets/Scenes/DonTest.unity

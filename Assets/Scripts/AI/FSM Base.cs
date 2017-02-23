@@ -6,6 +6,8 @@ public abstract class FSMBase : MonoBehaviour {
     public MessageBoard theBoard;
     public Message CurrentMessage = null;     // Handle to message
 
+    public int AggroRange = 1;
+
 	// Use this for initialization
 	void Start () {
 	
