@@ -8,7 +8,8 @@ public class Water : Useables {
     // Use this for initialization
     void Start()
     {
-
+        s_ItemName = "Water";
+        m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 
     // Update is called once per frame

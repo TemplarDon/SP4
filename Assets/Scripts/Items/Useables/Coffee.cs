@@ -8,7 +8,8 @@ public class Coffee : Useables {
     // Use this for initialization
     void Start()
     {
-
+        s_ItemName = "Coffee";
+        m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 
     // Update is called once per frame

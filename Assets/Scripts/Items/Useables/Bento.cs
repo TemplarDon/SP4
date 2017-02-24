@@ -8,7 +8,8 @@ public class Bento : Useables {
     // Use this for initialization
     void Start()
     {
-
+        s_ItemName = "Bento";
+        m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 
     // Update is called once per frame
