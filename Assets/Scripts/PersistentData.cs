@@ -44,6 +44,8 @@ public class PersistentData : MonoBehaviour {
         {
             // Load whatever numbers here
             PlayerMoney = 100000;
+            ItemList.Clear();
+            CharacterList.Clear();
         }
 
 	}
@@ -64,6 +66,7 @@ public class PersistentData : MonoBehaviour {
 
         returnData.PlayerMoney = this.PlayerMoney;
         returnData.ItemList = this.ItemList;
+        returnData.CharacterList = this.CharacterList;
 
         return returnData;
     }
@@ -72,6 +75,7 @@ public class PersistentData : MonoBehaviour {
     {
         this.PlayerMoney = theData.PlayerMoney;
         this.ItemList = theData.ItemList;
+        this.CharacterList = theData.CharacterList;
     }
 
     public void SaveDate()
@@ -109,4 +113,5 @@ class PlayerData
 {
     public int PlayerMoney;
     public List<Items> ItemList = new List<Items>();
+    public List<string> CharacterList = new List<string>();
 }

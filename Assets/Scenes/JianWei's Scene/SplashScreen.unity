@@ -2880,7 +2880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   image: {fileID: 1137938866}
-  sceneName: MainMenu
+  sceneName: Introduction
 --- !u!114 &1137938866
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -171,7 +171,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -497,7 +497,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -1510,7 +1510,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -1735,7 +1735,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -2986,7 +2986,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -610, y: 799.8612}
+  m_AnchoredPosition: {x: -610, y: 504.5}
   m_SizeDelta: {x: 1141.5, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1079809290
@@ -3606,7 +3606,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -3727,7 +3727,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1930483966}
   m_Direction: 3
   m_Value: 1
-  m_Size: 0.59691143
+  m_Size: 0.48671815
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3853,7 +3853,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -4126,7 +4126,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -5258,7 +5258,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:
@@ -5455,7 +5455,6 @@ GameObject:
   - 4: {fileID: 1727380300}
   - 114: {fileID: 1727380299}
   - 114: {fileID: 1727380301}
-  - 114: {fileID: 1727380302}
   m_Layer: 0
   m_Name: _Main
   m_TagString: Untagged
@@ -5515,18 +5514,6 @@ MonoBehaviour:
   infoOpen7: 0
   infoOpen8: 0
   infoOpen9: 0
---- !u!114 &1727380302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1727380298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14785a1f9efd9cc45947c9692c0b7651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PMoney: {fileID: 0}
 --- !u!1 &1738104137
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,7 +6039,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727380302}
+      - m_Target: {fileID: 0}
         m_MethodName: buyItem
         m_Mode: 3
         m_Arguments:

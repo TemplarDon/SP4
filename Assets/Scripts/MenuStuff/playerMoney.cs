@@ -28,16 +28,16 @@ public class playerMoney : MonoBehaviour {
 	void Start () 
     {
         //PlayerPrefs.SetInt("CurrentMoney", 50000);
-        if (PlayerPrefs.HasKey("CurrentMoney"))
-        {
-            currentMoney = PlayerPrefs.GetInt("CurrentMoney");
-        }
-        else
-        {
-            currentMoney = 50000;
-            PlayerPrefs.SetInt("CurrentMoney", 50000);
+       // if (PlayerPrefs.HasKey("CurrentMoney"))
+        //{
+        //    currentMoney = PlayerPrefs.GetInt("CurrentMoney");
+        //}
+        //else
+        //{
+        //    currentMoney = 50000;
+        //    PlayerPrefs.SetInt("CurrentMoney", 50000);
 
-        }
+        //}
         //moneyText.text = "\u00A5" + currentMoney;
         moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
 
@@ -47,46 +47,87 @@ public class playerMoney : MonoBehaviour {
             if (PersistentData.m_Instance.CharacterList[i].Equals("AeroSmith"))
             {
                 boughtImage.enabled = true;
+                buyButton.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("SixBullets"))
+            {
+                boughtImage2.enabled = true;
+                buyButton2.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("Zipperman"))
+            {
+                boughtImage3.enabled = true;
+                buyButton3.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("SilverChariot"))
+            {
+                boughtImage4.enabled = true;
+                buyButton4.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("StarPlatinum"))
+            {
+                boughtImage5.enabled = true;
+                buyButton5.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("GoldenWind"))
+            {
+                boughtImage6.enabled = true;
+                buyButton6.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("PurpleSmoke"))
+            {
+                boughtImage7.enabled = true;
+                buyButton7.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("Reverb"))
+            {
+                boughtImage8.enabled = true;
+                buyButton8.enabled = false;
+            }
+            if (PersistentData.m_Instance.CharacterList[i].Equals("EmperorCrimson"))
+            {
+                boughtImage9.enabled = true;
+                buyButton9.enabled = false;
             }
         }
 
 
-        if (boughtImage)
-        {
-            boughtImage.enabled = PlayerPrefs.HasKey("BoughtChar1");
-        }
-        if (boughtImage2)
-        {
-            boughtImage2.enabled = PlayerPrefs.HasKey("BoughtChar2");
-        }
-        if (boughtImage3)
-        {
-            boughtImage3.enabled = PlayerPrefs.HasKey("BoughtChar3");
-        }
-        if (boughtImage4)
-        {
-            boughtImage4.enabled = PlayerPrefs.HasKey("BoughtChar4");
-        }
-        if (boughtImage5)
-        {
-            boughtImage5.enabled = PlayerPrefs.HasKey("BoughtChar5");
-        }
-        if (boughtImage6)
-        {
-            boughtImage6.enabled = PlayerPrefs.HasKey("BoughtChar6");
-        }
-        if (boughtImage7)
-        {
-            boughtImage7.enabled = PlayerPrefs.HasKey("BoughtChar7");
-        }
-        if (boughtImage8)
-        {
-            boughtImage8.enabled = PlayerPrefs.HasKey("BoughtChar8");
-        }
-        if (boughtImage9)
-        {
-            boughtImage9.enabled = PlayerPrefs.HasKey("BoughtChar9");
-        }
+        //if (boughtImage)
+        //{
+        //    boughtImage.enabled = PlayerPrefs.HasKey("BoughtChar1");
+        //}
+        //if (boughtImage2)
+        //{
+        //    boughtImage2.enabled = PlayerPrefs.HasKey("BoughtChar2");
+        //}
+        //if (boughtImage3)
+        //{
+        //    boughtImage3.enabled = PlayerPrefs.HasKey("BoughtChar3");
+        //}
+        //if (boughtImage4)
+        //{
+        //    boughtImage4.enabled = PlayerPrefs.HasKey("BoughtChar4");
+        //}
+        //if (boughtImage5)
+        //{
+        //    boughtImage5.enabled = PlayerPrefs.HasKey("BoughtChar5");
+        //}
+        //if (boughtImage6)
+        //{
+        //    boughtImage6.enabled = PlayerPrefs.HasKey("BoughtChar6");
+        //}
+        //if (boughtImage7)
+        //{
+        //    boughtImage7.enabled = PlayerPrefs.HasKey("BoughtChar7");
+        //}
+        //if (boughtImage8)
+        //{
+        //    boughtImage8.enabled = PlayerPrefs.HasKey("BoughtChar8");
+        //}
+        //if (boughtImage9)
+        //{
+        //    boughtImage9.enabled = PlayerPrefs.HasKey("BoughtChar9");
+        //}
 	}
 	
 	// Update is called once per frame
@@ -99,13 +140,14 @@ public class playerMoney : MonoBehaviour {
 	}
     public void addMoney(int moneyToAdd)
     {
-        currentMoney += moneyToAdd;
-        PlayerPrefs.SetInt("CurrentMoney",currentMoney);
+        PersistentData.m_Instance.PlayerMoney += moneyToAdd;
+        //currentMoney += moneyToAdd;
+        //PlayerPrefs.SetInt("CurrentMoney",currentMoney);
         moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
     }
     public void subtractMoney(int moneyToSubtract)
     {
-        if (currentMoney - moneyToSubtract < 0)
+        if (PersistentData.m_Instance.PlayerMoney - moneyToSubtract < 0)
         {
             Debug.Log("Dont have enough money");
         }
@@ -115,7 +157,7 @@ public class playerMoney : MonoBehaviour {
 
             //currentMoney -= moneyToSubtract;
             PersistentData.m_Instance.PlayerMoney -= moneyToSubtract;
-            PlayerPrefs.SetInt("CurrentMoney", currentMoney);
+            //PlayerPrefs.SetInt("CurrentMoney", currentMoney);
             moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
         }
     }
@@ -128,81 +170,106 @@ public class playerMoney : MonoBehaviour {
             boughtImage.enabled = true;
             buyButton.enabled =false;
 
-            PersistentData.m_Instance.CharacterList.Add("AeroSmitH");
+            subtractMoney(50000);
+            PersistentData.m_Instance.CharacterList.Add("AeroSmith");
         }
     }
 
 	public void BoughtImage2()
 	{
-        if (currentMoney >= 50000)
+        if (PersistentData.m_Instance.PlayerMoney >= 50000)
         {
-            PlayerPrefs.SetString("BoughtChar2", "SixBullets");
+            //PlayerPrefs.SetString("BoughtChar2", "SixBullets");
             boughtImage2.enabled = true;
             buyButton2.enabled = false;
+
+            subtractMoney(50000);
+            PersistentData.m_Instance.CharacterList.Add("SixBullets");
         }
 	}
 	public void BoughtImage3()
 	{
-        if (currentMoney >= 50000)
+        if (PersistentData.m_Instance.PlayerMoney >= 50000)
         {
-            PlayerPrefs.SetString("BoughtChar3", "Zipperman");
+            //PlayerPrefs.SetString("BoughtChar3", "Zipperman");
             boughtImage3.enabled = true;
             buyButton3.enabled = false;
+
+            subtractMoney(50000);
+            PersistentData.m_Instance.CharacterList.Add("Zipperman");
         }
 	}
 	public void BoughtImage4()
 	{
-        if (currentMoney >= 50000)
+        if (PersistentData.m_Instance.PlayerMoney >= 50000)
         {
-            PlayerPrefs.SetString("BoughtChar4", "SliverChariot");
+           // PlayerPrefs.SetString("BoughtChar4", "SliverChariot");
             boughtImage4.enabled = true;
             buyButton4.enabled = false;
+
+            subtractMoney(50000);
+            PersistentData.m_Instance.CharacterList.Add("SilverChariot");
         }
 	}
 	public void BoughtImage5()
 	{
-        if (currentMoney >= 100000)
+        if (PersistentData.m_Instance.PlayerMoney >= 100000)
         {
-            PlayerPrefs.SetString("BoughtChar5", "StarPlatinum");
+            //PlayerPrefs.SetString("BoughtChar5", "StarPlatinum");
             boughtImage5.enabled = true;
             buyButton5.enabled = false;
+
+            subtractMoney(100000);
+            PersistentData.m_Instance.CharacterList.Add("StarPlatinum");
         }
 	}
 	public void BoughtImage6()
 	{
-        if (currentMoney >= 100000)
+        if (PersistentData.m_Instance.PlayerMoney >= 100000)
         {
-            PlayerPrefs.SetString("BoughtChar6", "GoldenWind");
+            //PlayerPrefs.SetString("BoughtChar6", "GoldenWind");
             boughtImage6.enabled = true;
             buyButton6.enabled = false;
+
+            subtractMoney(100000);
+            PersistentData.m_Instance.CharacterList.Add("GoldenWind");
         }
 	}
 	public void BoughtImage7()
 	{
-        if (currentMoney >= 100000)
+        if (PersistentData.m_Instance.PlayerMoney >= 100000)
         {
-            PlayerPrefs.SetString("BoughtChar7", "PurpleSmoke");
+            //PlayerPrefs.SetString("BoughtChar7", "PurpleSmoke");
             boughtImage7.enabled = true;
             buyButton7.enabled = false;
+
+            subtractMoney(100000);
+            PersistentData.m_Instance.CharacterList.Add("PurpleSmoke");
         }
 	}
 	public void BoughtImage8()
 	{
-        if (currentMoney >= 100000)
+        if (PersistentData.m_Instance.PlayerMoney >= 100000)
         {
-            PlayerPrefs.SetString("BoughtChar8", "Reverb");
+            //PlayerPrefs.SetString("BoughtChar8", "Reverb");
             boughtImage8.enabled = true;
             buyButton8.enabled = false;
+
+            subtractMoney(100000);
+            PersistentData.m_Instance.CharacterList.Add("Reverb");
         }
 		
 	}
 	public void BoughtImage9()
 	{
-        if (currentMoney >= 200000)
+        if (PersistentData.m_Instance.PlayerMoney >= 200000)
         {
-            PlayerPrefs.SetString("BoughtChar9", "EmperorCrimson");
+            //PlayerPrefs.SetString("BoughtChar9", "EmperorCrimson");
             boughtImage9.enabled = true;
             buyButton9.enabled = false;
+
+            subtractMoney(200000);
+            PersistentData.m_Instance.CharacterList.Add("EmperorCrimson");
         }
 	}
 }

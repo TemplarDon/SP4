@@ -46,10 +46,10 @@ public class MoveSelection : MonoBehaviour {
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {
-                    if ((int)obj.transform.position.x == (int)transform.position.x + 1 && (int)obj.transform.position.y == (int)transform.position.y - 1)
+                    if ((int)obj.transform.position.x == (int)transform.position.x && (int)obj.transform.position.y == (int)transform.position.y)
                     {
                         //int damageDealt = (int)(Mathf.Clamp(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength - obj.GetComponent<BaseCharacter>().BaseArmour, 1.0f, 999.0f));
-                        obj.GetComponent<BaseCharacter>().TakeDamage(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength);
+                        obj.GetComponent<BaseCharacter>().TakeDamage(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().GetAttackDamage());
                         playerPresent = true;  
                         //GameObject.Find("DmgIndicator").GetComponent<dmgDisp>().dispAtk(damageDealt, obj.transform.position);
                     }
