@@ -33,6 +33,13 @@ public class BaseCharacter : MonoBehaviour {
     public bool IsDead;                // Whether or not this character is dead
     public Sprite profilePic;
 
+    // Modified Values (Base Values + Modifier Values)
+    private int ModifiedSpeed = 0;
+    private int ModifiedAttackRange = 0;
+    private int ModifiedStrength = 0;
+    private int ModifiedMagic = 0;
+    private int ModifiedArmour = 0;
+
     private int MaxSpeed =           0;
     private int MaxAttackRange =     0;
     private int MaxStrength =        0;
@@ -40,6 +47,8 @@ public class BaseCharacter : MonoBehaviour {
     private int MaxMana =            0;
     private int MaxHealth =          0;
     private int MaxArmour =          0;
+
+    private List<Modifier> m_ModifierList = new List<Modifier>();
 
     // Animation Enums
     public enum ANIM_STATE
@@ -90,6 +99,12 @@ public class BaseCharacter : MonoBehaviour {
         MaxMana = BaseMana;
         MaxHealth = BaseHealth;
         MaxArmour = BaseArmour;
+
+        ModifiedSpeed = BaseSpeed;
+        ModifiedAttackRange = BaseAttackRange;
+        ModifiedStrength = BaseStrength;
+        ModifiedMagic = BaseMagic;
+        ModifiedArmour = BaseArmour;
 
     //this.GetComponent<Animator>().Play("CharacterAnimationIdle");
     CurrentAnimState = ANIM_STATE.IDLE;
@@ -323,19 +338,34 @@ public class BaseCharacter : MonoBehaviour {
         return MaxArmour;
     }
 
+    public int GetSpeed()
+    {
+        return ModifiedSpeed;
+    }
+
+    public int GetAttackRange()
+    {
+        return ModifiedSpeed;
+    }
+
     public int GetAttackDamage()
     {
-        return this.theWeapon.GetComponent<Weapons>().WeaponDamage + this.BaseStrength;
+        return this.theWeapon.GetComponent<Weapons>().WeaponDamage + this.ModifiedStrength;
     }
 
     public int GetMagicDamage(int SpellDmg)
     {
-        return SpellDmg + this.BaseMagic;
+        return SpellDmg + this.ModifiedMagic;
+    }
+
+    public int GetArmour()
+    {
+        return ModifiedArmour;
     }
 
     public void TakeDamage(int damage)
     {
-        int damageTaken = (int)Mathf.Clamp(damage - BaseArmour, 1.0f, 999.0f);
+        int damageTaken = (int)Mathf.Clamp(damage - ModifiedArmour, 1.0f, 999.0f);
         BaseHealth -= damageTaken;
         GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
         CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
@@ -367,6 +397,112 @@ public class BaseCharacter : MonoBehaviour {
         if (theArmour)
         {
             this.BaseArmour += ((Armours)(theArmour)).ArmourAmount;
+        }
+    }
+
+    public void AddModifier(Modifier toAdd)
+    {
+        m_ModifierList.Add(toAdd);
+
+        ApplyModifiers();
+    }
+
+    public void RunTurnIncrease()
+    {
+        UpdateModifiers();
+    }
+
+    public void UpdateModifiers()
+    {
+        // Runs only when turn increases
+        List<bool> ToRemove = new List<bool>();
+        for (int i = 0; i < m_ModifierList.Count; ++i)
+        {
+            ToRemove.Add(false);
+        }
+
+        for (int i = 0; i < m_ModifierList.Count; ++i)
+        {
+            Modifier aModifier = m_ModifierList[i];
+
+            aModifier.Update();
+
+            if (!aModifier.b_Active)
+            {
+                // Take away modifier effects if inactive then remove from list
+                switch (aModifier.m_Type)
+                {
+
+                    case Modifier.MODIFY_TYPE.ATTACK:
+                        this.ModifiedStrength -= aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.MAGIC:
+                        this.ModifiedMagic -= aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.ARMOUR:
+                        this.ModifiedArmour -= aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.SPEED:
+                        this.ModifiedSpeed -= aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.RANGE:
+                        this.ModifiedAttackRange -= aModifier.i_ModifierAmount;
+                        break;
+                }
+                ToRemove[i] = true;
+            }
+        }
+        
+        for (int i = 0; i < ToRemove.Count; ++i)
+        {
+            if (ToRemove[i])
+                m_ModifierList.RemoveAt(i);
+        }
+
+    }
+
+    void ApplyModifiers()
+    {
+        foreach (Modifier aModifier in m_ModifierList)
+        {
+            if (aModifier.b_Active)
+            {
+                // Apply modifier effects if active
+                switch (aModifier.m_Type)
+                {
+                    case Modifier.MODIFY_TYPE.HEALTH:
+
+                        // Special case for health modifiers as they are immediate
+                        this.BaseHealth += aModifier.i_ModifierAmount;
+                        aModifier.b_Active = false;
+
+                        break;
+
+                    case Modifier.MODIFY_TYPE.ATTACK:
+                        this.ModifiedStrength = this.BaseStrength + aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.MAGIC:
+                        this.ModifiedMagic = this.BaseMagic + aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.ARMOUR:
+                        this.ModifiedArmour = this.BaseArmour + aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.SPEED:
+                        this.ModifiedSpeed = this.BaseSpeed + aModifier.i_ModifierAmount;
+                        break;
+
+                    case Modifier.MODIFY_TYPE.RANGE:
+                        this.ModifiedAttackRange = this.BaseAttackRange + aModifier.i_ModifierAmount;
+                        break;
+                }
+            }
         }
     }
 }                   

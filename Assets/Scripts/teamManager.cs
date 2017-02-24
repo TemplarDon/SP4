@@ -49,10 +49,10 @@ public class teamManager : MonoBehaviour {
                 callOnce = false;
                 for (int i = 0; i < teamList.Count; i++)
                 {
-                    teamList[i].BaseArmour = teamList[i].GetMaxArmour();
-                    teamList[i].BaseSpeed = teamList[i].GetMaxSpeed();
-                    teamList[i].BaseStrength = teamList[i].GetMaxStrength();
-                    teamList[i].BaseMagic = teamList[i].GetMaxMagic();
+                    //teamList[i].BaseArmour = teamList[i].GetMaxArmour();
+                    //teamList[i].BaseSpeed = teamList[i].GetMaxSpeed();
+                    //teamList[i].BaseStrength = teamList[i].GetMaxStrength();
+                    //teamList[i].BaseMagic = teamList[i].GetMaxMagic();
                     ActiveMemberIdx = 0;
 
                     if (teamList[i] != null)
