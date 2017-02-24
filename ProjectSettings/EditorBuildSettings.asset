@@ -19,3 +19,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DonTest.unity
   - enabled: 1
     path: Assets/Scenes/gacha.unity
+  - enabled: 1
+    path: Assets/Scenes/JianWei's Scene/CharandItemSelect.unity
+  - enabled: 1
+    path: Assets/Scenes/JianWei's Scene/Introduction.unity
