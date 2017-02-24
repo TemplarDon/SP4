@@ -1,0 +1,24 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Coffee : Useables {
+
+    public int BuffAmount = 1;
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public override void DoEffect(BaseCharacter user)
+    {
+        GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseSpeed += BuffAmount;
+    }
+}

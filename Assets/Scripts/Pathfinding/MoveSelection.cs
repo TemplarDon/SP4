@@ -49,7 +49,7 @@ public class MoveSelection : MonoBehaviour {
                     if ((int)obj.transform.position.x == (int)transform.position.x + 1 && (int)obj.transform.position.y == (int)transform.position.y - 1)
                     {
                         //int damageDealt = (int)(Mathf.Clamp(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength - obj.GetComponent<BaseCharacter>().BaseArmour, 1.0f, 999.0f));
-                        obj.GetComponent<BaseCharacter>().TakeDamage(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength);
+                        obj.GetComponent<BaseCharacter>().TakeDamage(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().GetAttackDamage());
                         playerPresent = true;  
                         //GameObject.Find("DmgIndicator").GetComponent<dmgDisp>().dispAtk(damageDealt, obj.transform.position);
                     }

@@ -464,7 +464,7 @@ MonoBehaviour:
   restrictActions: 
   Name: Man 1
   BaseSpeed: 5
-  BaseAttackRange: 1
+  BaseAttackRange: 0
   BaseStrength: 2
   BaseMagic: 1
   BaseMana: 1
@@ -1346,6 +1346,10 @@ Prefab:
       propertyPath: BaseHealth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseAttackRange
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
   m_IsPrefabParent: 0
@@ -2112,7 +2116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponDamage: 1
-  WeaponRange: 1
+  WeaponRange: 2
 --- !u!1 &907071544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,7 +3007,7 @@ MonoBehaviour:
   restrictActions: 
   Name: Man 2
   BaseSpeed: 4
-  BaseAttackRange: 1
+  BaseAttackRange: 0
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1

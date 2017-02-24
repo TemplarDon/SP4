@@ -23,7 +23,7 @@ public class BaseCharacter : MonoBehaviour {
     // Character Stats
     public string Name = "Man";
     public int BaseSpeed = 1;          // The speed of the character, affects the number of tiles can be walked on
-    public int BaseAttackRange = 1;    // The attack range of the character
+    public int BaseAttackRange = 0;    // The attack range of the character
     public int BaseStrength = 1;       // The attack strength of the character, affects the damage done by physical weapons
     public int BaseMagic = 1;          // The attack strength of the character, affects the damage done by magical weapons
     public int BaseMana = 1;           // The mana of the character, affects how many spells can be cast
@@ -321,6 +321,16 @@ public class BaseCharacter : MonoBehaviour {
     public int GetMaxArmour()
     {
         return MaxArmour;
+    }
+
+    public int GetAttackDamage()
+    {
+        return this.theWeapon.GetComponent<Weapons>().WeaponDamage + this.BaseStrength;
+    }
+
+    public int GetMagicDamage(int SpellDmg)
+    {
+        return SpellDmg + this.BaseMagic;
     }
 
     public void TakeDamage(int damage)
