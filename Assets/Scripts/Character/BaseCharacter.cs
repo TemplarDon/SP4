@@ -329,6 +329,10 @@ public class BaseCharacter : MonoBehaviour {
         BaseHealth -= damageTaken;
         GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
         CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
+
+        GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
+        go.GetComponent<CleanUp>().enabled = true;
+
         CheckIfDead();
     }
 
