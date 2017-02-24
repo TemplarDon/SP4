@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EndGame : MonoBehaviour {
+public class EndGameManager : MonoBehaviour {
+
+    teamManager m_PlayerTeam;
+    teamManager m_EnemyTeam;
 
 	// Use this for initialization
 	void Start () {

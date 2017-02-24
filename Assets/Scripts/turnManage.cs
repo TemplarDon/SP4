@@ -57,10 +57,10 @@ public class turnManage : MonoBehaviour {
         turnNum.text = 1.ToString();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
         nameDisplay.text = characNEW.Name;
-        chargeDisplay.text = characNEW.BaseMagic.ToString();
-        atkDisplay.text = characNEW.BaseStrength.ToString();
-        ranDisplay.text = characNEW.BaseAttackRange.ToString();
-        defDisplay.text = characNEW.BaseArmour.ToString();
+        chargeDisplay.text = characNEW.BaseMana.ToString();
+        atkDisplay.text = characNEW.GetAttackDamage().ToString();
+        ranDisplay.text = characNEW.GetAttackRange().ToString();
+        defDisplay.text = characNEW.GetArmour().ToString();
         heaDisplay.text = characNEW.BaseHealth.ToString();
         profilePic.sprite = imgTmp;
         //camera = GetComponent<Camera>();
@@ -122,6 +122,11 @@ public class turnManage : MonoBehaviour {
                 turnNumber++;
                 playerTeam.running = true;
                 playerTeam.resetStats = true;
+
+                foreach (BaseCharacter aCharacter in playerTeam.GetComponent<teamManager>().teamList)
+                {
+                    aCharacter.UpdateModifiers();
+                }
             }
         }
         else if(teamTurn == 3 && animDelay == false)
@@ -140,6 +145,11 @@ public class turnManage : MonoBehaviour {
                 enemyTeam.running = true;
                 enemyTeam.resetStats = true;
 
+                foreach (BaseCharacter aCharacter in enemyTeam.GetComponent<teamManager>().teamList)
+                {
+                    aCharacter.UpdateModifiers();
+                }
+
                 Commander.GetComponent<CommanderFSM>().IncreaseTurnCount();
 
             }
@@ -149,9 +159,9 @@ public class turnManage : MonoBehaviour {
        turnNum.text = turnNumber.ToString();
         nameDisplay.text = characNEW.Name;
         chargeDisplay.text = characNEW.BaseMana.ToString();
-        atkDisplay.text = characNEW.BaseStrength.ToString();
-        ranDisplay.text = characNEW.BaseAttackRange.ToString();
-        defDisplay.text = characNEW.BaseArmour.ToString();
+        atkDisplay.text = characNEW.GetAttackDamage().ToString();
+        ranDisplay.text = characNEW.GetAttackRange().ToString();
+        defDisplay.text = characNEW.GetArmour().ToString();
         heaDisplay.text = characNEW.BaseHealth.ToString();
 
         restrictions = characNEW.restrictActions;
@@ -515,7 +525,12 @@ public class turnManage : MonoBehaviour {
                     menuOpen = false;
                     shieldFade = true;
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-                    GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseArmour++;
+
+                    Modifier toAdd = new Modifier();
+                    toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, 1, 1);
+                    GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().AddModifier(toAdd);
+
+                    //GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseArmour++;
                     break;
                 case 4:
                     //menuObject.transform.position = new Vector3(-9999, -9999, 0);
