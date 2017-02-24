@@ -358,9 +358,12 @@ public class Pathfinder : MonoBehaviour
         BaseCharacter CheckCharacter = theLevel.GetCharacterInTile(checkNode.m_pos);
         if (CheckCharacter != null)
         {
-            if (CheckCharacter != this.GetComponent<BaseCharacter>() && Mathf.RoundToInt(checkNode.m_pos.x) != m_Destination.x && Mathf.RoundToInt(checkNode.m_pos.y) != m_Destination.y)
+            int checkx = Mathf.RoundToInt(checkNode.m_pos.x);
+            int checky = Mathf.RoundToInt(checkNode.m_pos.y);
+
+            if (CheckCharacter != this.GetComponent<BaseCharacter>() && (checkx != m_Destination.x || checky != m_Destination.y))
             {
-                //Debug.Log("Node Rejected. (Character on the spot)");
+                Debug.Log("Node Rejected. (Character on the spot)");
                 return false;
             }
         }
