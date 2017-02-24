@@ -1212,7 +1212,7 @@ public class LevelGenerate : MonoBehaviour {
             Vector3 check = checkChar.GetComponent<BaseCharacter>().pos;
             if (Mathf.RoundToInt(check.x) == Mathf.RoundToInt(CheckPosition.x) && Mathf.RoundToInt(check.y) == Mathf.RoundToInt(CheckPosition.y))
             {
-                Debug.Log("Character Found!");
+                //Debug.Log("Character Found!");
                 return checkChar.GetComponent<BaseCharacter>();
             }
         }

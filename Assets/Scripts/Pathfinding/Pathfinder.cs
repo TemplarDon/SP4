@@ -151,7 +151,7 @@ public class Pathfinder : MonoBehaviour
             }
 
             //Debug.Log("OpenList Size: " + OpenList.Count.ToString());
-            Node TempLowest = GetLowestF(OpenList);
+            Node TempLowest = GetLowestF(NeighbourList);
             OpenList.Remove(TempLowest);
             CurrentNode = TempLowest;
 
@@ -358,7 +358,10 @@ public class Pathfinder : MonoBehaviour
         BaseCharacter CheckCharacter = theLevel.GetCharacterInTile(checkNode.m_pos);
         if (CheckCharacter != null)
         {
-            if (CheckCharacter != this.GetComponent<BaseCharacter>())
+            int checkx = Mathf.RoundToInt(checkNode.m_pos.x);
+            int checky = Mathf.RoundToInt(checkNode.m_pos.y);
+
+            if (CheckCharacter != this.GetComponent<BaseCharacter>() && (checkx != m_Destination.x || checky != m_Destination.y))
             {
                 Debug.Log("Node Rejected. (Character on the spot)");
                 return false;

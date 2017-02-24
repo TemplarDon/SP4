@@ -23,7 +23,7 @@ public class BaseCharacter : MonoBehaviour {
     // Character Stats
     public string Name = "Man";
     public int BaseSpeed = 1;          // The speed of the character, affects the number of tiles can be walked on
-    public int BaseAttackRange = 1;    // The attack range of the character
+    public int BaseAttackRange = 0;    // The attack range of the character
     public int BaseStrength = 1;       // The attack strength of the character, affects the damage done by physical weapons
     public int BaseMagic = 1;          // The attack strength of the character, affects the damage done by magical weapons
     public int BaseMana = 1;           // The mana of the character, affects how many spells can be cast
@@ -323,12 +323,26 @@ public class BaseCharacter : MonoBehaviour {
         return MaxArmour;
     }
 
+    public int GetAttackDamage()
+    {
+        return this.theWeapon.GetComponent<Weapons>().WeaponDamage + this.BaseStrength;
+    }
+
+    public int GetMagicDamage(int SpellDmg)
+    {
+        return SpellDmg + this.BaseMagic;
+    }
+
     public void TakeDamage(int damage)
     {
         int damageTaken = (int)Mathf.Clamp(damage - BaseArmour, 1.0f, 999.0f);
         BaseHealth -= damageTaken;
         GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
         CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
+
+        GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
+        go.GetComponent<CleanUp>().enabled = true;
+
         CheckIfDead();
     }
 

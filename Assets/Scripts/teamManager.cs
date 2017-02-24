@@ -134,7 +134,7 @@ public class teamManager : MonoBehaviour {
             {
                 teamList.Remove(deadPlayer.GetComponent<BaseCharacter>());
                 ActiveMemberIdx = 0;
-                Debug.Log("Character Removed.");
+                //Debug.Log("Character Removed.");
             }
         }
     }
