@@ -20,6 +20,10 @@ public class Crossaint : Useables {
 
     public override void DoEffect(BaseCharacter user)
     {
-        GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseArmour += BuffAmount;
+        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseArmour += BuffAmount;
+
+        Modifier toAdd = new Modifier();
+        toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, BuffAmount, 1);
+        GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
     }
 }

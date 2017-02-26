@@ -1286,4 +1286,52 @@ public class LevelGenerate : MonoBehaviour {
     {
 
     }
+
+    public List<BaseCharacter> GetCharactersInRange(Vector3 checkPos, int range)
+    {
+        List<BaseCharacter> returnList = new List<BaseCharacter>();
+
+
+
+        return returnList;
+    }
+
+    List<BaseCharacter> RecursiveFindCharacter(Vector3 checkPos, int tilesLeft)
+    {
+        List<BaseCharacter> returnList = new List<BaseCharacter>();
+        if (tilesLeft > 0)
+        {
+            List<BaseCharacter> tempList1 = RecursiveFindCharacter(checkPos - new Vector3(0, 1, 0), tilesLeft - 1);
+            List<BaseCharacter> tempList2 = RecursiveFindCharacter(checkPos - new Vector3(0, -1, 0), tilesLeft - 1);
+            List<BaseCharacter> tempList3 = RecursiveFindCharacter(checkPos - new Vector3(1, 0, 0), tilesLeft - 1);
+            List<BaseCharacter> tempList4 = RecursiveFindCharacter(checkPos - new Vector3(-1, 0, 0), tilesLeft - 1);
+
+            foreach (BaseCharacter aCharacter in tempList1)
+            {
+                returnList.Add(aCharacter);
+            }
+
+            foreach (BaseCharacter aCharacter in tempList2)
+            {
+                returnList.Add(aCharacter);
+            }
+
+            foreach (BaseCharacter aCharacter in tempList3)
+            {
+                returnList.Add(aCharacter);
+            }
+
+            foreach (BaseCharacter aCharacter in tempList4)
+            {
+                returnList.Add(aCharacter);
+            }
+        }
+
+        if (GetCharacterInTile(checkPos) != null)
+        {
+            returnList.Add(GetCharacterInTile(checkPos));
+        }
+
+        return returnList;
+    }
 }

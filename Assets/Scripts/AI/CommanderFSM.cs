@@ -169,7 +169,7 @@ public class CommanderFSM : FSMBase {
                 if (m_TargetedEnemy == null)
                     return (int)STATES.IDLE;
 
-                if (CanAttack())
+                if (CanAttack() && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
                     Debug.Log("Going into ATTACK.");
 

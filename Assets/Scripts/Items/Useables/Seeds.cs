@@ -20,7 +20,11 @@ public class Seeds : Useables {
 
     public override void DoEffect(BaseCharacter user)
     {
-        GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseHealth += HealAmount;
+        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseHealth += HealAmount;
         Debug.Log("Healed!");
+
+        Modifier toAdd = new Modifier();
+        toAdd.Init(Modifier.MODIFY_TYPE.HEALTH, HealAmount, 1);
+        GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
     }
 }

@@ -18,6 +18,10 @@ public class RedTea : Useables {
 
     public override void DoEffect(BaseCharacter user)
     {
-        GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseStrength += BuffAmount;
+        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseStrength += BuffAmount;
+
+        Modifier toAdd = new Modifier();
+        toAdd.Init(Modifier.MODIFY_TYPE.ATTACK, BuffAmount, 1);
+        GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
     }
 }

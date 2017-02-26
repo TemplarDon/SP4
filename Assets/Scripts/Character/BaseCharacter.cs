@@ -480,6 +480,9 @@ public class BaseCharacter : MonoBehaviour {
                         this.BaseHealth += aModifier.i_ModifierAmount;
                         aModifier.b_Active = false;
 
+                        GameObject go = Instantiate(GameObject.Find("Heal Particle System"), pos, Quaternion.identity) as GameObject;
+                        go.GetComponent<CleanUp>().enabled = true;
+
                         break;
 
                     case Modifier.MODIFY_TYPE.ATTACK:

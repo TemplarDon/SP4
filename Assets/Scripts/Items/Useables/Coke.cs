@@ -20,6 +20,10 @@ public class Coke : Useables {
 
     public override void DoEffect(BaseCharacter user)
     {
-        GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseSpeed += BuffAmount;
+        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseSpeed += BuffAmount;
+
+        Modifier toAdd = new Modifier();
+        toAdd.Init(Modifier.MODIFY_TYPE.SPEED, BuffAmount, 1);
+        GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
     }
 }

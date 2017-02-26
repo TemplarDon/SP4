@@ -20,6 +20,10 @@ public class Donut : Useables {
 
     public override void DoEffect(BaseCharacter user)
     {
-        GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseAttackRange += BuffAmount;
+        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseAttackRange += BuffAmount;
+
+        Modifier toAdd = new Modifier();
+        toAdd.Init(Modifier.MODIFY_TYPE.RANGE, BuffAmount, 1);
+        GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
     }
 }
