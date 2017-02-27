@@ -102,6 +102,8 @@ public class gachaManager : MonoBehaviour {
                 //Debug.Log(prizeNum);
                 //prizeImage.sprite = spriteList[prizeNum];
                 prizeImage.sprite = spriteList2[prizeNum];
+                string discardedItem = prizeImage.GetComponent<Image>().sprite.name.Replace("item_", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
                 frameNum = 0;
                 playAnim = false;
                 prizeDisplay = true;
