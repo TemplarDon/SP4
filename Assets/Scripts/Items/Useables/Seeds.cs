@@ -8,7 +8,9 @@ public class Seeds : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Seeds";
+        s_ItemName = "sunflowerseeds";
+        s_ItemDisp = "Sunflower Seeds";
+        s_ItemDesc = "They have a flavor somewhat similar to peanuts. The flower itself represents the sun's watchful eyes";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

@@ -13,7 +13,7 @@ public class PersistentData : MonoBehaviour {
 
     // Stuff to store in persistent data
     public int PlayerMoney;
-    public List<Items> ItemList = new List<Items>();
+    public List<string> ItemList = new List<string>();
     public List<string> CharacterList = new List<string>();
 
 	// Use this for initialization
@@ -46,6 +46,7 @@ public class PersistentData : MonoBehaviour {
             PlayerMoney = 100000;
             ItemList.Clear();
             CharacterList.Clear();
+            Debug.Log("Data Cleared");
         }
 
 	}
@@ -111,6 +112,6 @@ public class PersistentData : MonoBehaviour {
 class PlayerData
 {
     public int PlayerMoney;
-    public List<Items> ItemList = new List<Items>();
+    public List<string> ItemList = new List<string>();
     public List<string> CharacterList = new List<string>();
 }

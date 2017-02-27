@@ -61,6 +61,18 @@ public class gachaManager : MonoBehaviour {
             spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
 
+        GameObject[] allObjects2 = GameObject.FindGameObjectsWithTag("WeaponTemp");
+        foreach (GameObject obj in allObjects2)
+        {
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
+        }
+
+        GameObject[] allObjects3 = GameObject.FindGameObjectsWithTag("HelmetTemp");
+        foreach (GameObject obj in allObjects3)
+        {
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
+        }
+
         //PlayerPrefs.SetInt("CurrentMoney", 50000);
         if (PlayerPrefs.HasKey("CurrentMoney"))
         {
@@ -90,6 +102,8 @@ public class gachaManager : MonoBehaviour {
                 //Debug.Log(prizeNum);
                 //prizeImage.sprite = spriteList[prizeNum];
                 prizeImage.sprite = spriteList2[prizeNum];
+                string discardedItem = prizeImage.GetComponent<Image>().sprite.name.Replace("item_", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
                 frameNum = 0;
                 playAnim = false;
                 prizeDisplay = true;

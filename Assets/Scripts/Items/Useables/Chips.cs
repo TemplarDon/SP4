@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Water : Useables {
+public class Chips : Useables
+{
 
     public int HealAmount = 1;
 
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "water";
-        s_ItemDisp = "Mineral Water";
-        s_ItemDesc = "Drawn from the ocean depths and rigorously purified. Ideal for a modern on-the-go public unsatisfied with tap water.";
+        s_ItemName = "chips";
+        s_ItemDisp = "Potato Chips";
+        s_ItemDesc = "A staple snack food made by frying thick potato slices in oil. Beware its dangerously high calorie count.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

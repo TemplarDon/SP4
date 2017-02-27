@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Water : Useables {
+public class Biscuit : Useables
+{
 
     public int HealAmount = 1;
 
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "water";
-        s_ItemDisp = "Mineral Water";
-        s_ItemDesc = "Drawn from the ocean depths and rigorously purified. Ideal for a modern on-the-go public unsatisfied with tap water.";
+        s_ItemName = "biscuit";
+        s_ItemDisp = "Royal Curry";
+        s_ItemDesc = "It's made with expensive, high-quality ingredients you wouldn't expect from a kid's food.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 
