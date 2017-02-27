@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
+
 public abstract class BaseSkills : MonoBehaviour {
 
     public enum SKILL_TYPE
@@ -18,6 +20,7 @@ public abstract class BaseSkills : MonoBehaviour {
     public string SkillName;
     public string SkillText;
 
+    public int ChargeCost;
 
 	// Use this for initialization
 	void Start () {

@@ -100,7 +100,6 @@ public class PersistentData : MonoBehaviour {
             PlayerData data = (PlayerData)(bf.Deserialize(file));
 
             LoadData(data);
-
             file.Close();
 
             Debug.Log("Loaded Data.");

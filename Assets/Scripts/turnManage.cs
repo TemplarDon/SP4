@@ -104,54 +104,57 @@ public class turnManage : MonoBehaviour {
         if(characNEW.profilePic != null)
         profilePic.sprite = characNEW.profilePic;
 
-        if (teamTurn >= 5)
+        if (!GameObject.Find("EndGameManager").GetComponent<EndGameManager>().GetGameEnded())
         {
-            teamTurn -= 4;
-        }
-        if(teamTurn == 1 && animDelay == false)
-        {
-            YourTurn.transform.localPosition = new Vector3(0, 0, 0);
-            timer += Mathf.PI / 180;
-            YourTurn.fillAmount += 0.05f * Mathf.Cos(timer);
-            enemyTeam.running = false;
-            if (timer >= Mathf.PI)
+            if (teamTurn >= 5)
             {
-                teamTurn = 2;
-                timer = 0.0f;
-                YourTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
-                turnNumber++;
-                playerTeam.running = true;
-                playerTeam.resetStats = true;
-
-                foreach (BaseCharacter aCharacter in playerTeam.GetComponent<teamManager>().teamList)
+                teamTurn -= 4;
+            }
+            if (teamTurn == 1 && animDelay == false)
+            {
+                YourTurn.transform.localPosition = new Vector3(0, 0, 0);
+                timer += Mathf.PI / 180;
+                YourTurn.fillAmount += 0.05f * Mathf.Cos(timer);
+                enemyTeam.running = false;
+                if (timer >= Mathf.PI)
                 {
-                    aCharacter.UpdateModifiers();
+                    teamTurn = 2;
+                    timer = 0.0f;
+                    YourTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
+                    turnNumber++;
+                    playerTeam.running = true;
+                    playerTeam.resetStats = true;
+
+                    foreach (BaseCharacter aCharacter in playerTeam.GetComponent<teamManager>().teamList)
+                    {
+                        aCharacter.UpdateModifiers();
+                    }
                 }
             }
-        }
-        else if(teamTurn == 3 && animDelay == false)
-        {
-            EnemyTurn.transform.localPosition = new Vector3(0, 0, 0);
-            timer += Mathf.PI / 180;
-            EnemyTurn.fillAmount += 0.05f * Mathf.Cos(timer);
-            playerTeam.running = false;
-            if (timer >= Mathf.PI)
+            else if (teamTurn == 3 && animDelay == false)
             {
-                teamTurn = 4;
-                timer = 0.0f;
-                EnemyTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
-                turnNumber++;
-
-                enemyTeam.running = true;
-                enemyTeam.resetStats = true;
-
-                foreach (BaseCharacter aCharacter in enemyTeam.GetComponent<teamManager>().teamList)
+                EnemyTurn.transform.localPosition = new Vector3(0, 0, 0);
+                timer += Mathf.PI / 180;
+                EnemyTurn.fillAmount += 0.05f * Mathf.Cos(timer);
+                playerTeam.running = false;
+                if (timer >= Mathf.PI)
                 {
-                    aCharacter.UpdateModifiers();
+                    teamTurn = 4;
+                    timer = 0.0f;
+                    EnemyTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
+                    turnNumber++;
+
+                    enemyTeam.running = true;
+                    enemyTeam.resetStats = true;
+
+                    foreach (BaseCharacter aCharacter in enemyTeam.GetComponent<teamManager>().teamList)
+                    {
+                        aCharacter.UpdateModifiers();
+                    }
+
+                    Commander.GetComponent<CommanderFSM>().IncreaseTurnCount();
+
                 }
-
-                Commander.GetComponent<CommanderFSM>().IncreaseTurnCount();
-
             }
         }
         //Debug.Log(teamTurn);

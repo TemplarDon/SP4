@@ -32,7 +32,7 @@ public class Modifier {
 
         i_Lifetime -= 1;
         
-        if (i_Lifetime <= 0)
+        if (i_Lifetime < 0)
         {
             b_Active = false;
         }

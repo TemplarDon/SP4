@@ -360,8 +360,79 @@ Transform:
   - {fileID: 907071545}
   - {fileID: 1582067855}
   - {fileID: 1215460898}
+  - {fileID: 2073342008}
+  - {fileID: 1831493282}
+  - {fileID: 1214097564}
+  - {fileID: 1147761901}
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!1 &85926518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 85926521}
+  - 222: {fileID: 85926520}
+  - 114: {fileID: 85926519}
+  m_Layer: 5
+  m_Name: PlayerLose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &85926519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85926518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: c0871b993115adb4cb68812caab9be9f, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &85926520
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85926518}
+--- !u!224 &85926521
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85926518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1249812519}
+  m_RootOrder: 7
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5473.9995, y: -1813}
+  m_SizeDelta: {x: 492, y: 190}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &114326447
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +463,7 @@ Transform:
   m_PrefabInternal: {fileID: 402355698}
   m_GameObject: {fileID: 114326447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.64, y: -17.23, z: 0}
+  m_LocalPosition: {x: 9.94, y: -13.22, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -460,7 +531,7 @@ MonoBehaviour:
   theWeapon: {fileID: 847119758}
   theArmour: {fileID: 907071546}
   theItem: {fileID: 648618330}
-  theSkill: {fileID: 1215460899}
+  theSkill: {fileID: 1147761902}
   restrictActions: 
   Name: Man 1
   BaseSpeed: 3
@@ -662,7 +733,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1249812519}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2560, y: 1600}
@@ -1239,11 +1310,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.64
+      value: 9.94
       objectReference: {fileID: 0}
     - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -17.23
+      value: -13.22
       objectReference: {fileID: 0}
     - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1324,7 +1395,7 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theSkill
       value: 
-      objectReference: {fileID: 1215460899}
+      objectReference: {fileID: 1147761902}
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
@@ -1439,6 +1510,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!1 &501975134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 501975136}
+  - 114: {fileID: 501975135}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &501975135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501975134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1dfbbe9a3cf43468cfefe5ad570797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &501975136
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501975134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -271.13046, y: -59.857635, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
 --- !u!1 &552714231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +2234,7 @@ MonoBehaviour:
   s_ItemName: 
   m_ItemType: 0
   WeaponDamage: 1
-  WeaponRange: 2
+  WeaponRange: 1
 --- !u!1 &907071544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,7 +3163,7 @@ MonoBehaviour:
   theWeapon: {fileID: 847119758}
   theArmour: {fileID: 907071546}
   theItem: {fileID: 1582067856}
-  theSkill: {fileID: 1215460899}
+  theSkill: {fileID: 1214097563}
   restrictActions: 
   Name: Man 2
   BaseSpeed: 4
@@ -3093,7 +3203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1146307645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.66, y: -15.24, z: 0}
+  m_LocalPosition: {x: 8.4, y: -13.22, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3201,6 +3311,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FadeoutTime: 1
   StartFade: 0
+--- !u!1 &1147761900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1147761901}
+  - 114: {fileID: 1147761902}
+  m_Layer: 0
+  m_Name: PolneraffSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147761901
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147761900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 83107156}
+  m_RootOrder: 7
+--- !u!114 &1147761902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147761900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4106a82dc4db80c4a8e6f71c355afba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillType: 0
+  SkillName: 
+  SkillText: 
+  ChargeCost: 0
 --- !u!1 &1153439550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3612,51 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195084349}
+--- !u!1 &1214097562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1214097564}
+  - 114: {fileID: 1214097563}
+  m_Layer: 0
+  m_Name: FugoSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214097563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214097562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0109a02b28d134ea563ac6aff730d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillType: 0
+  SkillName: 
+  SkillText: 
+  ChargeCost: 0
+  Animation: {fileID: 1355225220}
+  Range: 2
+--- !u!4 &1214097564
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214097562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 83107156}
+  m_RootOrder: 6
 --- !u!1 &1215460897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,6 +3699,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: 
   SkillText: 
+  ChargeCost: 0
   Animation: {fileID: 1355225220}
 --- !u!1 &1249812515
 GameObject:
@@ -3596,6 +3795,8 @@ RectTransform:
   - {fileID: 1905255275}
   - {fileID: 1250201022}
   - {fileID: 1681001368}
+  - {fileID: 1582402088}
+  - {fileID: 85926521}
   - {fileID: 1326708831}
   - {fileID: 139900037}
   m_Father: {fileID: 0}
@@ -3807,7 +4008,7 @@ RectTransform:
   - {fileID: 1153439554}
   - {fileID: 1007621232}
   m_Father: {fileID: 1249812519}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -152.00006, y: -156.00003}
@@ -4256,7 +4457,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372439621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.74, y: -8.84, z: 0}
+  m_LocalPosition: {x: 9.23, y: -14.57, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4378,7 +4579,7 @@ MonoBehaviour:
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
-  BaseHealth: 5
+  BaseHealth: 0
   BaseArmour: 3
   IsEnemy: 1
   IsDead: 0
@@ -4391,7 +4592,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466040319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.81, y: -7.04, z: 0}
+  m_LocalPosition: {x: 9.86, y: -6.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 595044464}
@@ -6257,7 +6458,7 @@ MonoBehaviour:
   BaseStrength: 1
   BaseMagic: 1
   BaseMana: 1
-  BaseHealth: 2
+  BaseHealth: 0
   BaseArmour: 1
   IsEnemy: 1
   IsDead: 0
@@ -6563,6 +6764,73 @@ MonoBehaviour:
   s_ItemName: 
   m_ItemType: 0
   HealAmount: 1
+--- !u!1 &1582402087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1582402088}
+  - 222: {fileID: 1582402089}
+  - 114: {fileID: 1582402090}
+  m_Layer: 5
+  m_Name: PlayerWin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1582402088
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1582402087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1249812519}
+  m_RootOrder: 6
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4087, y: -717}
+  m_SizeDelta: {x: 541, y: 194}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1582402089
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1582402087}
+--- !u!114 &1582402090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1582402087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2f76e879713ec01449776cd91aa670d4, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!1001 &1592835498
 Prefab:
   m_ObjectHideFlags: 0
@@ -6876,6 +7144,93 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1716285485}
+--- !u!1 &1719031259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1719031261}
+  - 114: {fileID: 1719031260}
+  m_Layer: 0
+  m_Name: EndGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1719031260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719031259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea36e5800106b444aa0a36986e2844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerTeam: {fileID: 149205377}
+  m_EnemyTeam: {fileID: 1978857698}
+  WinImage: {fileID: 1582402090}
+  LoseImage: {fileID: 85926519}
+--- !u!4 &1719031261
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719031259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.4906025, y: -16.844545, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 32
+--- !u!1 &1831493280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1831493282}
+  - 114: {fileID: 1831493281}
+  m_Layer: 0
+  m_Name: NaranciaSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1831493281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831493280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621dbd7e183e79d478f850a4cdd1ee63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillType: 0
+  SkillName: SHARPSIGHT
+  SkillText: INCREASE ALLIES RANGE
+  ChargeCost: 0
+  Range: 2
+--- !u!4 &1831493282
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831493280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 83107156}
+  m_RootOrder: 5
 --- !u!1 &1889596169
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,6 +7743,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
+--- !u!1 &2073342007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2073342008}
+  - 114: {fileID: 2073342009}
+  m_Layer: 0
+  m_Name: GiornoSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2073342008
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2073342007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 83107156}
+  m_RootOrder: 4
+--- !u!114 &2073342009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2073342007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6460b8ce3652f46a82fba25103da0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillType: 0
+  SkillName: HEAL
+  SkillText: HEALS ALLIES WITHIN 2 TILES
+  ChargeCost: 0
+  Range: 2
 --- !u!1 &2127534623
 GameObject:
   m_ObjectHideFlags: 0

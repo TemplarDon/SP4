@@ -3,20 +3,22 @@ using System.Collections;
 
 using System.Collections.Generic;
 
-public class GiornoSkill : BaseSkills {
+public class NaranciaSkill : BaseSkills {
 
-    // Increase the health of nearby teammates
+    // Increase range of nearby teammates
     public int Range = 2;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public override void DoEffect(BaseCharacter user)
     {
@@ -29,7 +31,7 @@ public class GiornoSkill : BaseSkills {
         foreach (BaseCharacter aCharacter in AffectedCharacters)
         {
             Modifier toAdd = new Modifier();
-            toAdd.Init(Modifier.MODIFY_TYPE.HEALTH, 2, 1);
+            toAdd.Init(Modifier.MODIFY_TYPE.RANGE, 1, 1);
             GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
         }
     }
