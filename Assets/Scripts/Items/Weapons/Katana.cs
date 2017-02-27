@@ -7,6 +7,8 @@ public class Katana : Weapons
     void Start()
     {
         this.s_ItemName = "katana";
+        this.s_ItemDisp = "Zantetsuken";
+        this.s_ItemDesc = "A sword that can't even cut through iron. Or flesh. Or anything, really. In other words, totally useless...";
         WeaponDamage = 1;
         WeaponRange = 1;
     }

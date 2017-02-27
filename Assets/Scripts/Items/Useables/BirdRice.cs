@@ -9,6 +9,8 @@ public class BirdRice : Useables {
     void Start()
     {
         s_ItemName = "birdrice";
+        s_ItemDisp = "Birdseed";
+        s_ItemDesc = "Sprinkle this around outside and watch the birds come flocking. There's nothing stopping you from eating it too, I suppose...";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

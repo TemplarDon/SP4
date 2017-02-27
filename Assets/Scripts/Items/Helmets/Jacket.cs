@@ -7,6 +7,8 @@ public class Jacket : Armours
     void Start()
     {
         this.s_ItemName = "jacket";
+        this.s_ItemDisp = "Shinings Diamond";
+        this.s_ItemDesc = "Has the name of the country's greatest biker gang leader embroidered on it.";
         ArmourAmount = 1;
     }
 

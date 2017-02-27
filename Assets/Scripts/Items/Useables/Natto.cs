@@ -9,6 +9,8 @@ public class Natto : Useables {
     void Start()
     {
         s_ItemName = "natto";
+        s_ItemDisp = "Crackers";
+        s_ItemDesc = "A tough, long-lasting cracker used mainly as an emergency ration. Each piece contains a full seven different flavors.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

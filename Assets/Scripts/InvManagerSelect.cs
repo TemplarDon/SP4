@@ -28,6 +28,9 @@ public class InvManagerSelect : MonoBehaviour {
     private Text slot3_weaponBuff;
     private Text slot3_itemBuff;
 
+    private Text itemName;
+    private Text itemDesc;
+
     private int currentTab = 3;
 
     // Use this for initialization
@@ -49,6 +52,9 @@ public class InvManagerSelect : MonoBehaviour {
         {
             helmetSpriteList.Add(obj.GetComponent<Image>().sprite);
         }
+
+        itemName = GameObject.Find("ItemName").GetComponent<Text>();
+        itemDesc = GameObject.Find("ItemDesc").GetComponent<Text>();
 
         fetchHelmetSprites();
         //fetchWeaponSprites();
@@ -102,7 +108,7 @@ public class InvManagerSelect : MonoBehaviour {
                         break;
                 }
 
-                Debug.Log("hovState = falseeee");
+                //Debug.Log("hovState = falseeee");
             }
             else if((currentHov.name[6] == 'h' && currentTab == 1) || (currentHov.name[6] == 'w' && currentTab == 2) || (currentHov.name[6] == 'i' && currentTab == 3))
             {
@@ -294,7 +300,7 @@ public class InvManagerSelect : MonoBehaviour {
                                 break;
                         }
                         
-                        Debug.Log("--- removed --- ");
+                        //Debug.Log("--- removed --- ");
                         break;
                     }
                 }
@@ -338,5 +344,21 @@ public class InvManagerSelect : MonoBehaviour {
             currentHov.GetComponent<Image>().color = currentCol;
         draggingEquip.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         currentHovState = false;
+    }
+
+    public void clickItem(Button button)
+    {
+        //Debug.Log("CLICKED " + button.GetComponent<Image>().color.r);
+        //for (int i = 0; i < 15; i++)
+        //{
+        //    string newName = "InvButton" + i.ToString();
+        //    if (button.name == newName && button.GetComponent<Image>().color.r != 0.1f)
+        //    {
+                string highlightName = draggingEquip.GetComponent<Image>().sprite.name.Replace("2", "");
+                itemName.text = (GameObject.Find(highlightName).GetComponent<Items>().s_ItemDisp);
+                itemDesc.text = (GameObject.Find(highlightName).GetComponent<Items>().s_ItemDesc);
+        //        break;
+        //    }
+        //}
     }
 }

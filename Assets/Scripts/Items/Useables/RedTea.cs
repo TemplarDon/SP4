@@ -8,6 +8,8 @@ public class RedTea : Useables {
 	// Use this for initialization
 	void Start () {
         s_ItemName = "redtea";
+        s_ItemDisp = "Rose Tea";
+        s_ItemDesc = "An herbal tea said to promote beauty and wellness. You can somehow sense its essential elegance...";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
 	}
 	

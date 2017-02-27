@@ -9,6 +9,8 @@ public class Coke : Useables {
     void Start()
     {
         s_ItemName = "coke";
+        s_ItemDisp = "Cola Cola";
+        s_ItemDesc = "Contains a highly stimulating almost addictive sweetness. Pair it with some nice junk food for a can't-miss combo.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

@@ -9,6 +9,8 @@ public class Coffee : Useables {
     void Start()
     {
         s_ItemName = "coffee";
+        s_ItemDisp = "Coffee";
+        s_ItemDesc = "Made from an extremely rare and expensive coffee bean collected from the dung of the Asian palm civet. It has a unique fragrance...";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

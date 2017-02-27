@@ -9,6 +9,8 @@ public class Medkit : Useables {
     void Start()
     {
         s_ItemName = "medkit";
+        s_ItemDisp = "Ration";
+        s_ItemDesc = "A set of canned and vacuum-sealed foodstuffs. The taste isn't bad, and certain snakes that enjoy hide-and-go-seek are just crazy about it.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

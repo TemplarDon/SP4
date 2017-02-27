@@ -9,6 +9,8 @@ public class Water : Useables {
     void Start()
     {
         s_ItemName = "water";
+        s_ItemDisp = "Mineral Water";
+        s_ItemDesc = "Drawn from the ocean depths and rigorously purified. Ideal for a modern on-the-go public unsatisfied with tap water.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

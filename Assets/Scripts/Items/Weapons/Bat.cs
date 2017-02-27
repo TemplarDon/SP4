@@ -7,6 +7,8 @@ public class Bat : Weapons
     void Start()
     {
         this.s_ItemName = "bat";
+        this.s_ItemDisp = "Metal Bat";
+        this.s_ItemDesc = "It's metal. It's hard.";
         WeaponDamage = 1;
         WeaponRange = 1;
     }

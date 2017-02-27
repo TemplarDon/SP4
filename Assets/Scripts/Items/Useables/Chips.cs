@@ -10,6 +10,8 @@ public class Chips : Useables
     void Start()
     {
         s_ItemName = "chips";
+        s_ItemDisp = "Potato Chips";
+        s_ItemDesc = "A staple snack food made by frying thick potato slices in oil. Beware its dangerously high calorie count.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

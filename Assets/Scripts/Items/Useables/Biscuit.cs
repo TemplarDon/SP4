@@ -10,6 +10,8 @@ public class Biscuit : Useables
     void Start()
     {
         s_ItemName = "biscuit";
+        s_ItemDisp = "Royal Curry";
+        s_ItemDesc = "It's made with expensive, high-quality ingredients you wouldn't expect from a kid's food.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

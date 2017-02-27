@@ -10,6 +10,8 @@ public class Ramen : Useables
     void Start()
     {
         s_ItemName = "ramen";
+        s_ItemDisp = "Cup Noodles";
+        s_ItemDesc = "Instant noodles. Fill it with boiling water and it's ready in 3 seconds. Of course, it also goes bad in like 30...";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

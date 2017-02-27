@@ -7,6 +7,8 @@ public class Arrow : Weapons
     void Start()
     {
         this.s_ItemName = "arrow";
+        this.s_ItemDisp = "Stand Arrow";
+        this.s_ItemDesc = "An arrowhead discovered in some ancient ruins. Fashioned from a meteorite, they say that getting pierced by it will give you the power to see demons.";
         WeaponDamage = 1;
         WeaponRange = 1;
     }
