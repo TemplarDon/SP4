@@ -770,6 +770,18 @@ public class LevelGenerate : MonoBehaviour {
             return;
         }
 
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
+        foreach (GameObject obj in allObjects)
+        {
+            if ((int)obj.transform.position.x - 1 != mapposx || ((int)-obj.transform.position.y - 1) != mapposy)
+            {
+                if (i == (int)obj.transform.position.x - 1 && j == -(int)obj.transform.position.y - 1)
+                {
+                    return;
+                }
+            }
+        }
+
         //if (mapcheck[i,j] == true)
         //{
         //    return;
