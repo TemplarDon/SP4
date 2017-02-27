@@ -51,6 +51,11 @@ public class CharacterController : MonoBehaviour {
             b_CommandSent = true;
         }
 
+        if (CurrentMode == CONTROL_MODE.MOVING || CurrentMode == CONTROL_MODE.ATTACKING)
+        {
+            GameObject.Find("Main Camera").transform.position = this.CurrentControlledCharacter.transform.position;
+        }
+
         // Temporary code
         //if (Input.GetKeyUp(KeyCode.T))
         //{

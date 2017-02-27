@@ -18,6 +18,7 @@ public abstract class FSMBase : MonoBehaviour {
         if (GameObject.Find("TurnManager").GetComponent<turnManage>().teamTurn == 4)
         {
             GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().GetComponent<FSMBase>().RunFSM();
+            GameObject.Find("Main Camera").transform.position = GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position;
         }
 	}
 

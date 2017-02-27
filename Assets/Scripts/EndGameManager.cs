@@ -61,6 +61,8 @@ public class EndGameManager : MonoBehaviour {
                 WinImage.transform.localPosition = new Vector3(9999, 9999, 9999);
 
                 GameObject.Find("SceneChanger").GetComponent<LoadScenes>().Loadscene("MainMenu");
+                PersistentData.m_Instance.PlayerMoney += 1000;
+
                 Debug.Log("Back to mainmenu");
             }
         }
