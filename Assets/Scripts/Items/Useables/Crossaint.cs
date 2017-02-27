@@ -8,7 +8,7 @@ public class Crossaint : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Crossaint";
+        s_ItemName = "blackcrossaint";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

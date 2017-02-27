@@ -87,15 +87,94 @@ public class InvManagerSelect : MonoBehaviour {
             {
                 draggingEquip.transform.position = new Vector3(9999, 9999, 9999);
                 dragging = false;
+                string discardedItem = (draggingEquip.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
+                switch (currentTab)
+                {
+                    case 1:
+                        fetchHelmetSprites();
+                        break;
+                    case 2:
+                        fetchWeaponSprites();
+                        break;
+                    case 3:
+                        fetchItemSprites();
+                        break;
+                }
+
+                Debug.Log("hovState = falseeee");
             }
-            else
+            else if((currentHov.name[6] == 'h' && currentTab == 1) || (currentHov.name[6] == 'w' && currentTab == 2) || (currentHov.name[6] == 'i' && currentTab == 3))
             {
+                if(currentHov.GetComponent<Image>().name.Contains("slot"))
+                {
+                    
+                }
+                else
+                {
+                    string discardedItem = (currentHov.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                    PersistentData.m_Instance.ItemList.Add(discardedItem);
+                    switch (currentTab)
+                    {
+                        case 1:
+                            fetchHelmetSprites();
+                            break;
+                        case 2:
+                            fetchWeaponSprites();
+                            break;
+                        case 3:
+                            fetchItemSprites();
+                            break;
+                    }
+                    Debug.Log("RECYCLE");
+                }
                 currentHov.GetComponent<Image>().sprite = draggingEquip.GetComponent<Image>().sprite;
                 draggingEquip.transform.position = new Vector3(9999, 9999, 9999);
                 dragging = false;
             }
+            else
+            {
+                draggingEquip.transform.position = new Vector3(9999, 9999, 9999);
+                dragging = false;
+                string discardedItem = (draggingEquip.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
+                Debug.Log(" ? else final ? ");
+
+                switch (currentTab)
+                {
+                    case 1:
+                        fetchHelmetSprites();
+                        break;
+                    case 2:
+                        fetchWeaponSprites();
+                        break;
+                    case 3:
+                        fetchItemSprites();
+                        break;
+                }
+
+            }
         }
-	}
+
+        //if (Input.GetKeyUp(KeyCode.Z))
+        //{
+        //    PersistentData.m_Instance.ItemList.Add("jacket");
+        //    fetchHelmetSprites();
+        //    Debug.Log("ADDED");
+        //}
+        //
+        //if(Input.GetKeyUp(KeyCode.A))
+        //{
+        //    for(int i = 0; i < PersistentData.m_Instance.ItemList.Count; i++)
+        //    {
+        //        if(PersistentData.m_Instance.ItemList[i] == "Potion")
+        //        {
+        //            Debug.Log("POTION FOUND");
+        //        }
+        //    }
+        //}
+
+    }
 
     public void fetchHelmetSprites()
     {
@@ -110,7 +189,15 @@ public class InvManagerSelect : MonoBehaviour {
         {
             string newName = "InvButton" + j.ToString();
             GameObject.Find(newName).GetComponent<Image>().sprite = helmetSpriteList[j];
-            GameObject.Find(newName).GetComponent<Image>().color = new Color(1, 1, 1);
+            GameObject.Find(newName).GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            for (int k = 0; k < PersistentData.m_Instance.ItemList.Count; k++)
+            {
+                if (helmetSpriteList[j].name.Contains(PersistentData.m_Instance.ItemList[k]))
+                {
+                    GameObject.Find(newName).GetComponent<Image>().color = new Color(1, 1, 1);
+                    break;
+                }
+            }
         }
 
         currentTab = 1;
@@ -132,7 +219,15 @@ public class InvManagerSelect : MonoBehaviour {
         {
             string newName = "InvButton" + i.ToString();
             GameObject.Find(newName).GetComponent<Image>().sprite = weaponSpriteList[i];
-            GameObject.Find(newName).GetComponent<Image>().color = new Color(1,1,1);
+            GameObject.Find(newName).GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            for (int k = 0; k < PersistentData.m_Instance.ItemList.Count; k++)
+            {
+                if (weaponSpriteList[i].name.Contains(PersistentData.m_Instance.ItemList[k]))
+                {
+                    GameObject.Find(newName).GetComponent<Image>().color = new Color(1, 1, 1);
+                    break;
+                }
+            }
         }
 
         currentTab = 2;
@@ -154,13 +249,24 @@ public class InvManagerSelect : MonoBehaviour {
         {
             string newName = "InvButton" + j.ToString();
             GameObject.Find(newName).GetComponent<Image>().sprite = itemSpriteList[j];
-            GameObject.Find(newName).GetComponent<Image>().color = new Color(1,1,1);
+
+            GameObject.Find(newName).GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            for (int k = 0; k < PersistentData.m_Instance.ItemList.Count; k++)
+            {
+                if(itemSpriteList[j].name.Contains(PersistentData.m_Instance.ItemList[k]))
+                {
+                    GameObject.Find(newName).GetComponent<Image>().color = new Color(1, 1, 1);
+                    break;
+                }
+            }
         }
 
         currentTab = 3;
         GameObject.Find("InvTab1").GetComponent<Image>().color = new Color(1, 1, 1, 0.8f);
         GameObject.Find("InvTab2").GetComponent<Image>().color = new Color(1, 1, 1, 0.8f);
         GameObject.Find("InvTab3").GetComponent<Image>().color = new Color(0, 1, 0, 0.8f);
+
+        //PersistentData.m_Instance.ItemList
     }
 
     public void clickDrag(Button button)
@@ -168,8 +274,31 @@ public class InvManagerSelect : MonoBehaviour {
         for(int i = 0; i < 15; i++)
         {
             string newName = "InvButton" + i.ToString();
-            if (button.name == newName)
+            if (button.name == newName && button.GetComponent<Image>().color.r != 0.1f)
             {
+                for(int j = 0; j < PersistentData.m_Instance.ItemList.Count; j++)
+                {
+                    if((button.GetComponent<Image>().sprite.name).Contains(PersistentData.m_Instance.ItemList[j]))
+                    {
+                        PersistentData.m_Instance.ItemList.Remove(PersistentData.m_Instance.ItemList[j]);
+                        switch(currentTab)
+                        {
+                            case 1:
+                                fetchHelmetSprites();
+                                break;
+                            case 2:
+                                fetchWeaponSprites();
+                                break;
+                            case 3:
+                                fetchItemSprites();
+                                break;
+                        }
+                        
+                        Debug.Log("--- removed --- ");
+                        break;
+                    }
+                }
+
                 dragging = true;
                 draggingEquip.transform.position = Input.mousePosition;
                 switch(currentTab)
@@ -206,7 +335,7 @@ public class InvManagerSelect : MonoBehaviour {
     public void slotLeave()
     {
         if(currentHov != null)
-        currentHov.GetComponent<Image>().color = currentCol;
+            currentHov.GetComponent<Image>().color = currentCol;
         draggingEquip.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         currentHovState = false;
     }

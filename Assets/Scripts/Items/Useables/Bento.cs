@@ -8,7 +8,7 @@ public class Bento : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Bento";
+        s_ItemName = "bento";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

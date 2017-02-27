@@ -8,7 +8,7 @@ public class Coke : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Coke";
+        s_ItemName = "coke";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

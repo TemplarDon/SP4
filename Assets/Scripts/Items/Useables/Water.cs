@@ -8,7 +8,7 @@ public class Water : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Water";
+        s_ItemName = "water";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

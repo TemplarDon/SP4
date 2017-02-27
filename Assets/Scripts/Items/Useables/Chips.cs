@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Natto : Useables {
+public class Chips : Useables
+{
 
-    public int BuffAmount = 1;
+    public int HealAmount = 1;
 
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "natto";
+        s_ItemName = "chips";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 
@@ -20,10 +21,11 @@ public class Natto : Useables {
 
     public override void DoEffect(BaseCharacter user)
     {
-        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseArmour += BuffAmount;
+        //GameObject.Find(user.name).GetComponent<BaseCharacter>().BaseHealth += HealAmount;
+        Debug.Log("Healed!");
 
         Modifier toAdd = new Modifier();
-        toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, BuffAmount, 1);
+        toAdd.Init(Modifier.MODIFY_TYPE.HEALTH, HealAmount, 1);
         GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
     }
 }

@@ -8,7 +8,7 @@ public class Seeds : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Seeds";
+        s_ItemName = "sunflowerseeds";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

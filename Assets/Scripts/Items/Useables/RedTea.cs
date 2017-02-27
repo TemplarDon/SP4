@@ -7,7 +7,7 @@ public class RedTea : Useables {
 
 	// Use this for initialization
 	void Start () {
-        s_ItemName = "RedTea";
+        s_ItemName = "redtea";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
 	}
 	

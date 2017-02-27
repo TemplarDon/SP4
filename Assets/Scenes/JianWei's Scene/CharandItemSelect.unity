@@ -8228,8 +8228,8 @@ GameObject:
   - 224: {fileID: 1492568807}
   - 222: {fileID: 1492568809}
   - 114: {fileID: 1492568808}
-  - 114: {fileID: 1492568811}
   - 114: {fileID: 1492568810}
+  - 114: {fileID: 1492568811}
   m_Layer: 5
   m_Name: Slot1_helmet
   m_TagString: Untagged
@@ -10850,6 +10850,62 @@ Prefab:
     - target: {fileID: 139940, guid: 0015ace5afeee83439a9877872cace90, type: 2}
       propertyPath: m_TagString
       value: ItemTemp
+      objectReference: {fileID: 0}
+    - target: {fileID: 128688, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_biscuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 120322, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_chips
+      objectReference: {fileID: 0}
+    - target: {fileID: 153398, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_birdrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 130340, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_blackcrossaint
+      objectReference: {fileID: 0}
+    - target: {fileID: 154710, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_bento
+      objectReference: {fileID: 0}
+    - target: {fileID: 129380, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 103276, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_coke
+      objectReference: {fileID: 0}
+    - target: {fileID: 111400, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_donut
+      objectReference: {fileID: 0}
+    - target: {fileID: 170402, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_medkit
+      objectReference: {fileID: 0}
+    - target: {fileID: 143196, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_natto
+      objectReference: {fileID: 0}
+    - target: {fileID: 180980, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_ramen
+      objectReference: {fileID: 0}
+    - target: {fileID: 143664, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_redtea
+      objectReference: {fileID: 0}
+    - target: {fileID: 180944, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_sunflowerseeds
+      objectReference: {fileID: 0}
+    - target: {fileID: 139940, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+      propertyPath: m_Name
+      value: item_water
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0015ace5afeee83439a9877872cace90, type: 2}
