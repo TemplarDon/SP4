@@ -8,7 +8,9 @@ public class Donut : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Donut";
+        s_ItemName = "donut";
+        s_ItemDisp = "Donut";
+        s_ItemDesc = "Donuts large enough to double as lifesavers. It goes without saying, you can float across the ocean and enjoy a delicious pastry simultaneously.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

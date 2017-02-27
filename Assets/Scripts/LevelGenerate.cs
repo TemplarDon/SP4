@@ -211,7 +211,7 @@ public class LevelGenerate : MonoBehaviour {
             //checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
             if (redGen == false)
             {
-                checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
+                checkPossibleLoc(mapposx, mapposy, 6, theCharacter.GetSpeed());
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {
@@ -770,6 +770,18 @@ public class LevelGenerate : MonoBehaviour {
             return;
         }
 
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
+        foreach (GameObject obj in allObjects)
+        {
+            if ((int)obj.transform.position.x - 1 != mapposx || ((int)-obj.transform.position.y - 1) != mapposy)
+            {
+                if (i == (int)obj.transform.position.x - 1 && j == -(int)obj.transform.position.y - 1)
+                {
+                    return;
+                }
+            }
+        }
+
         //if (mapcheck[i,j] == true)
         //{
         //    return;
@@ -1290,21 +1302,52 @@ public class LevelGenerate : MonoBehaviour {
     public List<BaseCharacter> GetCharactersInRange(Vector3 checkPos, int range)
     {
         List<BaseCharacter> returnList = new List<BaseCharacter>();
+        List<Vector3> checkedList = new List<Vector3>();
 
-
+        returnList = RecursiveFindCharacter(checkPos, range, checkedList);
 
         return returnList;
     }
 
-    List<BaseCharacter> RecursiveFindCharacter(Vector3 checkPos, int tilesLeft)
+    List<BaseCharacter> RecursiveFindCharacter(Vector3 checkPos, int tilesLeft, List<Vector3> checkedPos)
     {
         List<BaseCharacter> returnList = new List<BaseCharacter>();
+
+        if (GetCharacterInTile(checkPos) != null)
+        {
+            returnList.Add(GetCharacterInTile(checkPos));
+            checkedPos.Add(checkPos);
+        }
+
         if (tilesLeft > 0)
         {
-            List<BaseCharacter> tempList1 = RecursiveFindCharacter(checkPos - new Vector3(0, 1, 0), tilesLeft - 1);
-            List<BaseCharacter> tempList2 = RecursiveFindCharacter(checkPos - new Vector3(0, -1, 0), tilesLeft - 1);
-            List<BaseCharacter> tempList3 = RecursiveFindCharacter(checkPos - new Vector3(1, 0, 0), tilesLeft - 1);
-            List<BaseCharacter> tempList4 = RecursiveFindCharacter(checkPos - new Vector3(-1, 0, 0), tilesLeft - 1);
+            Vector3 newPos = checkPos - new Vector3(0, 1, 0);
+            List<BaseCharacter> tempList1 = new List<BaseCharacter>();
+            if (!checkedPos.Contains(newPos))
+            {
+                tempList1 = RecursiveFindCharacter(newPos, tilesLeft - 1, checkedPos);
+            }
+
+            newPos = checkPos - new Vector3(0, -1, 0);
+            List<BaseCharacter> tempList2 = new List<BaseCharacter>();
+            if (!checkedPos.Contains(newPos))
+            {
+                tempList2 = RecursiveFindCharacter(newPos, tilesLeft - 1, checkedPos);
+            }
+
+            newPos = checkPos - new Vector3(1, 0, 0);
+            List<BaseCharacter> tempList3 = new List<BaseCharacter>();
+            if (!checkedPos.Contains(newPos))
+            {
+                tempList3 = RecursiveFindCharacter(newPos, tilesLeft - 1, checkedPos);
+            }
+
+            newPos = checkPos - new Vector3(-1, 0, 0);
+            List<BaseCharacter> tempList4 = new List<BaseCharacter>();
+            if (!checkedPos.Contains(newPos))
+            {
+                tempList4 = RecursiveFindCharacter(newPos, tilesLeft - 1, checkedPos);
+            }
 
             foreach (BaseCharacter aCharacter in tempList1)
             {
@@ -1325,11 +1368,6 @@ public class LevelGenerate : MonoBehaviour {
             {
                 returnList.Add(aCharacter);
             }
-        }
-
-        if (GetCharacterInTile(checkPos) != null)
-        {
-            returnList.Add(GetCharacterInTile(checkPos));
         }
 
         return returnList;

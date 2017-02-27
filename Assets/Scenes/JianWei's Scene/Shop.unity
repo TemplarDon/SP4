@@ -2458,7 +2458,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 778765386}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1727380299}
+        m_MethodName: Loadscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: gacha
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &778765386
@@ -2986,7 +2997,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -610, y: 504.5}
+  m_AnchoredPosition: {x: -610, y: 800}
   m_SizeDelta: {x: 1141.5, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1079809290
@@ -3727,7 +3738,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1930483966}
   m_Direction: 3
   m_Value: 1
-  m_Size: 0.48671815
+  m_Size: 0.4918755
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

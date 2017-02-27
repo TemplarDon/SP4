@@ -124,6 +124,7 @@ public class teamManager : MonoBehaviour {
                 UpdateCurrentActiveMember();
         }
 
+
     }
 
     public void popPlayer(GameObject deadPlayer)

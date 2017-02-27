@@ -3,9 +3,9 @@ using System.Collections;
 
 public abstract class Useables : Items {
 
-	// Use this for initialization
-	void Start () {
-	
+    // Use this for initialization
+    void Start () {
+        this.m_ItemType = Items.ITEM_TYPE.USEABLES;
 	}
 	
 	// Update is called once per frame

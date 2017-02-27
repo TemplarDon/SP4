@@ -60,7 +60,7 @@ public class Pathfinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveLimit = this.GetComponent<BaseCharacter>().BaseSpeed + 1;
+        MoveLimit = this.GetComponent<BaseCharacter>().GetSpeed() + 1;
     }
 
     public void FindPath(Vector3 dest)
@@ -207,7 +207,7 @@ public class Pathfinder : MonoBehaviour
                 }
             }
 
-            Vector3 dir = (Path[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 5;
+            Vector3 dir = (Path[currIdx].m_pos + OFFSET - this.transform.position).normalized * Time.deltaTime * 3.0f;
             //Debug.Log("Dir: " + dir.ToString() + " Idx: " + currIdx);
 
             this.GetComponent<BaseCharacter>().pos.x += dir.x;
@@ -363,7 +363,7 @@ public class Pathfinder : MonoBehaviour
 
             if (CheckCharacter != this.GetComponent<BaseCharacter>() && (checkx != m_Destination.x || checky != m_Destination.y))
             {
-                Debug.Log("Node Rejected. (Character on the spot)");
+                Debug.Log("Node Rejected. (Character on the spot) " + CheckCharacter.Name);
                 return false;
             }
         }

@@ -8,7 +8,9 @@ public class Bento : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Bento";
+        s_ItemName = "bento";
+        s_ItemDisp = "Bento Box";
+        s_ItemDesc = "Stuffed with rice, ginger, carrots, peppers, mushrooms, and more. It's meat-free, so you vegetarians out there are covered, too.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

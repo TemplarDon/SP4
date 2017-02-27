@@ -7,8 +7,9 @@ public class Potion : Useables {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        this.s_ItemName = "Potion";
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

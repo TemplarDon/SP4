@@ -441,6 +441,7 @@ public class MeleeFSM : FSMBase {
             Vector3 check = PossibleLocations[i];
             if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x - 1, (int)-check.y - 1) == -1 || this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(check) != null)
             {
+                Debug.Log("Found invalid closest spot.");
                 Marked[i] = true;
             }
         }

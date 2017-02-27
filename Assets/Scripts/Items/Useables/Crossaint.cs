@@ -8,7 +8,9 @@ public class Crossaint : Useables {
     // Use this for initialization
     void Start()
     {
-        s_ItemName = "Crossaint";
+        s_ItemName = "blackcrossaint";
+        s_ItemDisp = "Black Crossaint";
+        s_ItemDesc = "A baked good made from black ingredients. It looks burnt, but it's actually pretty good.";
         m_ItemType = Items.ITEM_TYPE.USEABLES;
     }
 

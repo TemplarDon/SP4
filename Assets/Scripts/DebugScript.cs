@@ -20,7 +20,7 @@ public class DebugScript : MonoBehaviour
     {
 #if UNITY_ANDROID
             Touch myTouch = Input.GetTouch(0);
-            newpos = new Vector3(myTouch.position.x, myTouch.position.y, 1);
+            //newpos = new Vector3(myTouch.position.x, myTouch.position.y, 1);
 #else
         //newpos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 1);
 #endif

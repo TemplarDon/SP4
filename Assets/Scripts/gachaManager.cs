@@ -23,7 +23,7 @@ public class gachaManager : MonoBehaviour {
     private Image background1;
     private Image background2;
 
-    private bool prizeDisplay = true;
+    private bool prizeDisplay = false;
     public float fadeSpeed = 0.1f;
 
     private int frameNum = 0;
@@ -61,17 +61,19 @@ public class gachaManager : MonoBehaviour {
             spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
 
-        //PlayerPrefs.SetInt("CurrentMoney", 50000);
-        if (PlayerPrefs.HasKey("CurrentMoney"))
+        GameObject[] allObjects2 = GameObject.FindGameObjectsWithTag("WeaponTemp");
+        foreach (GameObject obj in allObjects2)
         {
-            currentMoney = PlayerPrefs.GetInt("CurrentMoney");
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
-        else
-        {
-            currentMoney = 50000;
-            PlayerPrefs.SetInt("CurrentMoney", 50000);
 
+        GameObject[] allObjects3 = GameObject.FindGameObjectsWithTag("HelmetTemp");
+        foreach (GameObject obj in allObjects3)
+        {
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
+
+        currentMoney = PersistentData.m_Instance.PlayerMoney;
         moneyText.text = "\u00A5" + currentMoney;
    }
 	
@@ -90,9 +92,12 @@ public class gachaManager : MonoBehaviour {
                 //Debug.Log(prizeNum);
                 //prizeImage.sprite = spriteList[prizeNum];
                 prizeImage.sprite = spriteList2[prizeNum];
+                string discardedItem = prizeImage.GetComponent<Image>().sprite.name.Replace("item_", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
                 frameNum = 0;
                 playAnim = false;
                 prizeDisplay = true;
+                PersistentData.m_Instance.PlayerMoney = currentMoney;
             }
         }
 

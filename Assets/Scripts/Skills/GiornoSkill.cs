@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
+
 public class GiornoSkill : BaseSkills {
 
     // Increase the health of nearby teammates
+    public int Range = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -21,17 +24,13 @@ public class GiornoSkill : BaseSkills {
 
         Vector3 mapPos = new Vector3(user.pos.x, user.pos.y, 0);
 
-        BaseCharacter check1 = user.theLevel.GetCharacterInTile(mapPos + new Vector3(0, 1, 0));
-        if (check1 != null)
+        List<BaseCharacter> AffectedCharacters = Map.GetCharactersInRange(mapPos, Range);
+
+        foreach (BaseCharacter aCharacter in AffectedCharacters)
         {
-            GameObject.Find(check1.name).GetComponent<BaseCharacter>().TakeDamage(2);
-            Debug.Log("Damage Taken!");
-        }
-        BaseCharacter check2 = user.theLevel.GetCharacterInTile(mapPos + new Vector3(0, -1, 0));
-        if (check2 != null)
-        {
-            GameObject.Find(check2.name).GetComponent<BaseCharacter>().TakeDamage(2);
-            Debug.Log("Damage Taken!");
+            Modifier toAdd = new Modifier();
+            toAdd.Init(Modifier.MODIFY_TYPE.HEALTH, 2, 1);
+            GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
         }
     }
 }

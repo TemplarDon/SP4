@@ -481,6 +481,7 @@ public class BaseCharacter : MonoBehaviour {
                         aModifier.b_Active = false;
 
                         GameObject go = Instantiate(GameObject.Find("Heal Particle System"), pos, Quaternion.identity) as GameObject;
+                        //GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
                         break;
