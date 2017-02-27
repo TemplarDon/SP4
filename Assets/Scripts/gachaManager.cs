@@ -61,6 +61,18 @@ public class gachaManager : MonoBehaviour {
             spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
 
+        GameObject[] allObjects2 = GameObject.FindGameObjectsWithTag("WeaponTemp");
+        foreach (GameObject obj in allObjects2)
+        {
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
+        }
+
+        GameObject[] allObjects3 = GameObject.FindGameObjectsWithTag("HelmetTemp");
+        foreach (GameObject obj in allObjects3)
+        {
+            spriteList2.Add(obj.GetComponent<Image>().sprite);
+        }
+
         //PlayerPrefs.SetInt("CurrentMoney", 50000);
         if (PlayerPrefs.HasKey("CurrentMoney"))
         {
