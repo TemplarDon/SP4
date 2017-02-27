@@ -33,6 +33,10 @@ public class InvManagerSelect : MonoBehaviour {
 
     private int currentTab = 3;
 
+    public Sprite   helmetIcon;
+    public Sprite   weaponIcon;
+    public Sprite   itemIcon;
+
     // Use this for initialization
     void Start () {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("ItemTemp");
@@ -79,7 +83,17 @@ public class InvManagerSelect : MonoBehaviour {
         slot3_helmetBuff.text = "No Armour";
         slot3_weaponBuff.text= "No Weapon";
         slot3_itemBuff.text  = "No Item";
-}
+
+        slot1_helmetBuff.color = new Color(1, 0, 0);
+        slot1_weaponBuff.color = new Color(1, 0, 0);
+        slot1_itemBuff.color = new Color(1, 0, 0);
+        slot2_helmetBuff.color = new Color(1, 0, 0);
+        slot2_weaponBuff.color = new Color(1, 0, 0);
+        slot2_itemBuff.color = new Color(1, 0, 0);
+        slot3_helmetBuff.color = new Color(1, 0, 0);
+        slot3_weaponBuff.color = new Color(1, 0, 0);
+        slot3_itemBuff.color = new Color(1, 0, 0);
+    }
 
     // Update is called once per frame
     void Update () {
@@ -118,23 +132,86 @@ public class InvManagerSelect : MonoBehaviour {
                 }
                 else
                 {
-                    string discardedItem = (currentHov.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
-                    PersistentData.m_Instance.ItemList.Add(discardedItem);
+                    string discardedItem;
                     switch (currentTab)
                     {
                         case 1:
+                            discardedItem = (currentHov.GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+                            PersistentData.m_Instance.ItemList.Add(discardedItem);
                             fetchHelmetSprites();
                             break;
                         case 2:
+                            discardedItem = (currentHov.GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+                            PersistentData.m_Instance.ItemList.Add(discardedItem);
                             fetchWeaponSprites();
                             break;
                         case 3:
+                            discardedItem = (currentHov.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                            PersistentData.m_Instance.ItemList.Add(discardedItem);
                             fetchItemSprites();
                             break;
                     }
-                    Debug.Log("RECYCLE");
+                    //Debug.Log("RECYCLE");
                 }
+
                 currentHov.GetComponent<Image>().sprite = draggingEquip.GetComponent<Image>().sprite;
+
+                if (currentHov.name.Contains("Slot1"))
+                {
+                    if (currentHov.name.Contains("helmet"))
+                    {
+                        slot1_helmetBuff.color = new Color(0, 0, 0);
+                        slot1_helmetBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                    else if (currentHov.name.Contains("weapon"))
+                    {
+                        slot1_weaponBuff.color = new Color(0, 0, 0);
+                        slot1_weaponBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                    else if (currentHov.name.Contains("item"))
+                    {
+                        slot1_itemBuff.color = new Color(0, 0, 0);
+                        slot1_itemBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                }
+                else if (currentHov.name.Contains("Slot2"))
+                {
+                    if (currentHov.name.Contains("helmet"))
+                    {
+                        slot2_helmetBuff.color = new Color(0, 0, 0);
+                        slot2_helmetBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2","")).GetComponent<Items>().s_ItemDisp;
+                    }
+                    else if (currentHov.name.Contains("weapon"))
+                    {
+                        slot2_weaponBuff.color = new Color(0, 0, 0);
+                        slot2_weaponBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                    else if (currentHov.name.Contains("item"))
+                    {
+                        slot2_itemBuff.color = new Color(0, 0, 0);
+                        slot2_itemBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                }
+                else if (currentHov.name.Contains("Slot3"))
+                {
+                    if (currentHov.name.Contains("helmet"))
+                    {
+                        slot3_helmetBuff.color = new Color(0, 0, 0);
+                        slot3_helmetBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                    else if (currentHov.name.Contains("weapon"))
+                    {
+                        slot3_weaponBuff.color = new Color(0, 0, 0);
+                        slot3_weaponBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                    else if (currentHov.name.Contains("item"))
+                    {
+                        slot3_itemBuff.color = new Color(0, 0, 0);
+                        slot3_itemBuff.text = GameObject.Find(currentHov.GetComponent<Image>().sprite.name.Replace("2", "")).GetComponent<Items>().s_ItemDisp;
+                    }
+                }
+
+                
                 draggingEquip.transform.position = new Vector3(9999, 9999, 9999);
                 dragging = false;
             }
@@ -348,17 +425,86 @@ public class InvManagerSelect : MonoBehaviour {
 
     public void clickItem(Button button)
     {
-        //Debug.Log("CLICKED " + button.GetComponent<Image>().color.r);
-        //for (int i = 0; i < 15; i++)
-        //{
-        //    string newName = "InvButton" + i.ToString();
-        //    if (button.name == newName && button.GetComponent<Image>().color.r != 0.1f)
-        //    {
-                string highlightName = draggingEquip.GetComponent<Image>().sprite.name.Replace("2", "");
-                itemName.text = (GameObject.Find(highlightName).GetComponent<Items>().s_ItemDisp);
-                itemDesc.text = (GameObject.Find(highlightName).GetComponent<Items>().s_ItemDesc);
-        //        break;
-        //    }
-        //}
+        string highlightName = draggingEquip.GetComponent<Image>().sprite.name.Replace("2", "");
+        itemName.text = (GameObject.Find(highlightName).GetComponent<Items>().s_ItemDisp);
+        itemDesc.text = (GameObject.Find(highlightName).GetComponent<Items>().s_ItemDesc);
+    }
+
+    public void clickSlot(Button button)
+    {
+        if (button.GetComponent<Image>().sprite.name.Contains("slot"))
+        {
+
+        }
+        else
+        {
+            string discardedItem;
+            if (button.name.Contains("helmet"))
+            {
+                discardedItem = (button.GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
+                button.GetComponent<Image>().sprite = helmetIcon;
+                fetchHelmetSprites();
+                if (button.name.Contains("Slot1"))
+                {
+                    slot1_helmetBuff.text = "No Armour";
+                    slot1_helmetBuff.color = new Color(1, 0, 0);
+                }
+                else if (button.name.Contains("Slot2"))
+                {
+                    slot2_helmetBuff.text = "No Armour";
+                    slot2_helmetBuff.color = new Color(1, 0, 0);
+                }
+                else if (button.name.Contains("Slot3"))
+                {
+                    slot3_helmetBuff.text = "No Armour";
+                    slot3_helmetBuff.color = new Color(1, 0, 0);
+                }
+            }
+            else if (button.name.Contains("weapon"))
+            {
+                discardedItem = (button.GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
+                button.GetComponent<Image>().sprite = weaponIcon;
+                fetchWeaponSprites();
+                if (button.name.Contains("Slot1"))
+                {
+                    slot1_weaponBuff.text = "No Armour";
+                    slot1_weaponBuff.color = new Color(1, 0, 0);
+                }
+                else if (button.name.Contains("Slot2"))
+                {
+                    slot2_weaponBuff.text = "No Armour";
+                    slot2_weaponBuff.color = new Color(1, 0, 0);
+                }
+                else if (button.name.Contains("Slot3"))
+                {
+                    slot3_weaponBuff.text = "No Armour";
+                    slot3_weaponBuff.color = new Color(1, 0, 0);
+                }
+            }
+            else if (button.name.Contains("item"))
+            {
+                discardedItem = (button.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                PersistentData.m_Instance.ItemList.Add(discardedItem);
+                button.GetComponent<Image>().sprite = itemIcon;
+                fetchItemSprites();
+                if (button.name.Contains("Slot1"))
+                {
+                    slot1_itemBuff.text = "No Armour";
+                    slot1_itemBuff.color = new Color(1, 0, 0);
+                }
+                else if (button.name.Contains("Slot2"))
+                {
+                    slot2_itemBuff.text = "No Armour";
+                    slot2_itemBuff.color = new Color(1, 0, 0);
+                }
+                else if (button.name.Contains("Slot3"))
+                {
+                    slot3_itemBuff.text = "No Armour";
+                    slot3_itemBuff.color = new Color(1, 0, 0);
+                }
+            }
+        }
     }
 }

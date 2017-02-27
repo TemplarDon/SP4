@@ -23,7 +23,7 @@ public class gachaManager : MonoBehaviour {
     private Image background1;
     private Image background2;
 
-    private bool prizeDisplay = true;
+    private bool prizeDisplay = false;
     public float fadeSpeed = 0.1f;
 
     private int frameNum = 0;
@@ -73,17 +73,7 @@ public class gachaManager : MonoBehaviour {
             spriteList2.Add(obj.GetComponent<Image>().sprite);
         }
 
-        //PlayerPrefs.SetInt("CurrentMoney", 50000);
-        if (PlayerPrefs.HasKey("CurrentMoney"))
-        {
-            currentMoney = PlayerPrefs.GetInt("CurrentMoney");
-        }
-        else
-        {
-            currentMoney = 50000;
-            PlayerPrefs.SetInt("CurrentMoney", 50000);
-
-        }
+        currentMoney = PersistentData.m_Instance.PlayerMoney;
         moneyText.text = "\u00A5" + currentMoney;
    }
 	
@@ -107,6 +97,7 @@ public class gachaManager : MonoBehaviour {
                 frameNum = 0;
                 playAnim = false;
                 prizeDisplay = true;
+                PersistentData.m_Instance.PlayerMoney = currentMoney;
             }
         }
 
