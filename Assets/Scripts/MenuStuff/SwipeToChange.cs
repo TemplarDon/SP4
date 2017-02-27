@@ -10,14 +10,14 @@ public class SwipeToChange : MonoBehaviour
 
 	//Private Variables
 	private float[] distance; // All button's distance to the center
-	private bool dragging = false; //While dragging, it will turn to true
+	private bool dragging = false; //Only snap when we don't drag
 	private int imgDistance; //Will hold the distance between the buttons
 	private int minImgNum; //To hold the number of images
 
 	void Start()
 	{
 		int imgLength = img.Length;
-		distance = new float[imgLength];
+		distance = new float[imgLength]; //set distance array to be the same as img array
 
 		//Get distance between buttons
 		imgDistance = (int)Mathf.Abs(img[1].GetComponent<RectTransform>().anchoredPosition.x-img[0].GetComponent<RectTransform>().anchoredPosition.x);
