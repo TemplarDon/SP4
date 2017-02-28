@@ -31,7 +31,7 @@ public class turnManage : MonoBehaviour {
 
     public LevelGenerate map;
 
-    public bool[] restrictions;
+    public bool[] restrictions = new bool[5];
 
     private bool mouseOnMenu;
     public bool clickingNewChar;
@@ -57,7 +57,7 @@ public class turnManage : MonoBehaviour {
         turnNum.text = 1.ToString();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
 
-        characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
+        //characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
 
         nameDisplay.text = characNEW.Name;
         chargeDisplay.text = characNEW.theSkill.ChargeCost.ToString();
@@ -76,7 +76,6 @@ public class turnManage : MonoBehaviour {
         teamTurn = 1;
         timer = 0.0f;
 
-        restrictions = new bool[5];
         for(int i = 0; i < 5; i++)
         {
             restrictions[i] = false;
@@ -111,7 +110,7 @@ public class turnManage : MonoBehaviour {
         {
             if (teamTurn >= 5)
             {
-                teamTurn -= 4;
+                teamTurn = 1;
             }
             if (teamTurn == 1 && animDelay == false)
             {

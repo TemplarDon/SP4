@@ -110,19 +110,36 @@ public class StartGameManager : MonoBehaviour
             if (GameObject.Find("friendlyTeamManager") != null)
             {
                 if (Char1Found)
-                GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>());
-                
+                {
+                    GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>());
+                }
+
                 if (Char2Found)
-                GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>());
-                
+                {
+                    GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>());
+                }
+
                 if (Char3Found)
-                GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>());
+                {
+                    GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>());
+                }
 
                 GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
 
-                SpawnPos_1.active = false;
-                SpawnPos_2.active = false;
-                SpawnPos_3.active = false;
+                SpawnPos_1.SetActive(false);
+                SpawnPos_2.SetActive(false);
+                SpawnPos_3.SetActive(false);
+
+                // Set all other characters to offscreen and disable them
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("Character"))
+                {
+                    BaseCharacter aCharacter = go.GetComponent<BaseCharacter>();
+
+                    if (!aCharacter.IsEnemy && (go.name != PersistentData.m_Instance.char1Char && go.name != PersistentData.m_Instance.char2Char && go.name != PersistentData.m_Instance.char3Char))
+                    {
+                        aCharacter.GetComponent<BaseCharacter>().enabled = false;
+                    }
+                }
 
                 b_AssignedCharacters = true;
             }
