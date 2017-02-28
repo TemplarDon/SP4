@@ -17,6 +17,13 @@ public class dmgDisp : MonoBehaviour {
 
     private Canvas canvas;
 
+    public enum DISPLAY_TYPE
+    {
+        DAMAGE, 
+        HEAL,
+    }
+
+
     // Use this for initialization
     void Start () {
         dmgIndicator = GameObject.Find("DmgIndicator").GetComponent<Text>();
@@ -56,6 +63,35 @@ public class dmgDisp : MonoBehaviour {
         //dmgIndicator.transform.position = camera.WorldToScreenPoint(location);
         dmgIndicator.transform.position = new Vector3(999, 999, 999);
         dmgIndicator.text = damageDealt.ToString();
+        spawnPos = location;
+        heightUp = new Vector3(0, 0, 0);
+
+        //textList.Add(dmgIndicator);
+        spawnList.Add(location);
+        posList.Add(camera.WorldToScreenPoint(location));
+        dmgIndicator.transform.SetParent(canvas.transform, false);
+        Text tempObj = (Text)(Instantiate(dmgIndicator, camera.WorldToScreenPoint(location), Quaternion.identity));
+        tempObj.transform.SetParent(canvas.transform, false);
+        textList.Add(tempObj);
+    }
+
+    public void dispNum(dmgDisp.DISPLAY_TYPE theType, int amt, Vector3 location)
+    {
+        switch (theType)
+        {
+            case DISPLAY_TYPE.DAMAGE:
+                dmgIndicator.color = new Color(1, 0, 0, 1.0f);
+                break;
+
+            case DISPLAY_TYPE.HEAL:
+                dmgIndicator.color = new Color(0, 1, 0, 1.0f);
+                break;
+        }
+
+        dmgIndicator.color = new Color(dmgIndicator.color.r, dmgIndicator.color.g, dmgIndicator.color.b, 1.0f);
+        //dmgIndicator.transform.position = camera.WorldToScreenPoint(location);
+        dmgIndicator.transform.position = new Vector3(999, 999, 999);
+        dmgIndicator.text = amt.ToString();
         spawnPos = location;
         heightUp = new Vector3(0, 0, 0);
 

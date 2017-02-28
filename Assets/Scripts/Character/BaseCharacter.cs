@@ -26,7 +26,7 @@ public class BaseCharacter : MonoBehaviour {
     public int BaseAttackRange = 0;    // The attack range of the character
     public int BaseStrength = 1;       // The attack strength of the character, affects the damage done by physical weapons
     public int BaseMagic = 1;          // The attack strength of the character, affects the damage done by magical weapons
-    public int BaseMana = 1;           // The mana of the character, affects how many spells can be cast
+    //public int BaseMana = 1;           // The mana of the character, affects how many spells can be cast
     public int BaseHealth = 1;         // The health of the character
     public int BaseArmour = 1;         // The armour of the character, reduces the damage taken
     public bool IsEnemy;               // Whether or not this character is an enemy
@@ -96,7 +96,7 @@ public class BaseCharacter : MonoBehaviour {
         MaxAttackRange = BaseAttackRange;
         MaxStrength = BaseStrength;
         MaxMagic = BaseMagic;
-        MaxMana = BaseMana;
+        //MaxMana = BaseMana;
         MaxHealth = BaseHealth;
         MaxArmour = BaseArmour;
 
@@ -152,6 +152,8 @@ public class BaseCharacter : MonoBehaviour {
             GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = this.gameObject.GetComponent<BaseCharacter>();
             GameObject.Find("TurnManager").GetComponent<turnManage>().menuOpen = true;
             GameObject.Find("TurnManager").GetComponent<turnManage>().clickingNewChar = true;
+
+            //Debug.Log("Clicked");
         }
     }
 
@@ -350,7 +352,10 @@ public class BaseCharacter : MonoBehaviour {
 
     public int GetAttackDamage()
     {
-        return this.theWeapon.GetComponent<Weapons>().WeaponDamage + this.ModifiedStrength;
+        if (theWeapon != null)
+            return this.theWeapon.GetComponent<Weapons>().WeaponDamage + this.ModifiedStrength;
+        else
+            return this.ModifiedStrength;
     }
 
     public int GetMagicDamage(int SpellDmg)
@@ -367,7 +372,7 @@ public class BaseCharacter : MonoBehaviour {
     {
         int damageTaken = (int)Mathf.Clamp(damage - ModifiedArmour, 1.0f, 999.0f);
         BaseHealth -= damageTaken;
-        GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispAtk(damageTaken, transform.position);
+        GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispNum(dmgDisp.DISPLAY_TYPE.DAMAGE, damageTaken, transform.position);
         CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
 
         GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
@@ -479,6 +484,8 @@ public class BaseCharacter : MonoBehaviour {
                         // Special case for health modifiers as they are immediate
                         this.BaseHealth += aModifier.i_ModifierAmount;
                         aModifier.b_Active = false;
+
+                        GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispNum(dmgDisp.DISPLAY_TYPE.HEAL, aModifier.i_ModifierAmount, transform.position);
 
                         GameObject go = Instantiate(GameObject.Find("Heal Particle System"), pos, Quaternion.identity) as GameObject;
                         //GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;

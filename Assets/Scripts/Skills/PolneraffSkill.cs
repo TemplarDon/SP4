@@ -8,16 +8,6 @@ public class PolneraffSkill :  BaseSkills {
     //Decrease armor, increase speed
     int Amount = 1;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public override void DoEffect(BaseCharacter user)
     {
         LevelGenerate Map = GameObject.Find("MapGeneration").GetComponent<LevelGenerate>();
