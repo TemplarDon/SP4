@@ -540,49 +540,49 @@ public class InvManagerSelect : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
         string discardedItem;
 
-        if (slot1_helmetBuff.text != "")
+        if (slot1_helmetBuff.text != "No Armour")
         {
             discardedItem = (GameObject.Find("Slot1_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
-        if (slot1_weaponBuff.text != "")
+        if (slot1_weaponBuff.text != "No Weapon")
         {
             discardedItem = (GameObject.Find("Slot1_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
-        if (slot1_itemBuff.text != "")
+        if (slot1_itemBuff.text != "No Item")
         {
             discardedItem = (GameObject.Find("Slot1_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
 
-        if (slot2_helmetBuff.text != "")
+        if (slot2_helmetBuff.text != "No Armour")
         {
             discardedItem = (GameObject.Find("Slot2_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
-        if (slot2_weaponBuff.text != "")
+        if (slot2_weaponBuff.text != "No Weapon")
         {
             discardedItem = (GameObject.Find("Slot2_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
-        if (slot2_itemBuff.text != "")
+        if (slot2_itemBuff.text != "No Item")
         {
             discardedItem = (GameObject.Find("Slot2_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
 
-        if (slot3_helmetBuff.text != "")
+        if (slot3_helmetBuff.text != "No Armour")
         {
             discardedItem = (GameObject.Find("Slot3_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
-        if (slot3_weaponBuff.text != "")
+        if (slot3_weaponBuff.text != "No Weapon")
         {
             discardedItem = (GameObject.Find("Slot3_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);
         }
-        if (slot3_itemBuff.text != "")
+        if (slot3_itemBuff.text != "No Item")
         {
             discardedItem = (GameObject.Find("Slot3_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
             PersistentData.m_Instance.ItemList.Add(discardedItem);

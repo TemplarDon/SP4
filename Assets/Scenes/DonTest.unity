@@ -538,6 +538,7 @@ Transform:
   - {fileID: 1147761901}
   - {fileID: 4640092}
   - {fileID: 1215460898}
+  - {fileID: 1262054257}
   m_Father: {fileID: 0}
   m_RootOrder: 15
 --- !u!1 &85926518
@@ -1855,7 +1856,7 @@ MonoBehaviour:
   theWeapon: {fileID: 0}
   theArmour: {fileID: 0}
   theItem: {fileID: 0}
-  theSkill: {fileID: 4640093}
+  theSkill: {fileID: 1262054258}
   restrictActions: 
   Name: Narancia
   BaseSpeed: 3
@@ -2105,7 +2106,7 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theSkill
       value: 
-      objectReference: {fileID: 4640093}
+      objectReference: {fileID: 1262054258}
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
@@ -6360,6 +6361,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 83107156}
   m_RootOrder: 3
+--- !u!1 &1262054256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1262054257}
+  - 114: {fileID: 1262054258}
+  m_Layer: 0
+  m_Name: DiavoloSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262054257
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1262054256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 83107156}
+  m_RootOrder: 10
+--- !u!114 &1262054258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1262054256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981488e9f4f8c244e955df6327579be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillType: 0
+  SkillName: KINGCRIMSON
+  SkillText: DECREASES CHARGE
+  ChargeCost: 0
+  Range: 9
 --- !u!1 &1285771006
 GameObject:
   m_ObjectHideFlags: 0
