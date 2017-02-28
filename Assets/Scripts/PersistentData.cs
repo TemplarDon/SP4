@@ -45,7 +45,7 @@ public class PersistentData : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.X))
         {
             // Load whatever numbers here
-            PlayerMoney = 100000;
+            PlayerMoney = 1000000;
             ItemList.Clear();
             CharacterList.Clear();
             Debug.Log("Data Cleared");
