@@ -37,6 +37,15 @@ public class InvManagerSelect : MonoBehaviour {
     public Sprite   weaponIcon;
     public Sprite   itemIcon;
 
+    private Image char1;
+    private Image char2;
+    private Image char3;
+    private Image char4;
+    private Text text1;
+    private Text text2;
+    private Text text3;
+    private CharacterSelect charInfo;
+
     // Use this for initialization
     void Start () {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("ItemTemp");
@@ -93,10 +102,23 @@ public class InvManagerSelect : MonoBehaviour {
         slot3_helmetBuff.color = new Color(1, 0, 0);
         slot3_weaponBuff.color = new Color(1, 0, 0);
         slot3_itemBuff.color = new Color(1, 0, 0);
+
+        char1 = GameObject.Find("Char1").GetComponent<Image>();
+        char2 = GameObject.Find("Char2").GetComponent<Image>();
+        char3 = GameObject.Find("Char3").GetComponent<Image>();
+        char4 = GameObject.Find("Char4").GetComponent<Image>();
+        text1 = GameObject.Find("Text1").GetComponent<Text>();
+        text2 = GameObject.Find("Text2").GetComponent<Text>();
+        text3 = GameObject.Find("Text3").GetComponent<Text>();
+        text1.text = "";
+        text2.text = "";
+        text3.text = "";
+        charInfo = GameObject.Find("Main Camera").GetComponent<CharacterSelect>();
     }
 
     // Update is called once per frame
     void Update () {
+
         if (dragging)
         {
             if (Input.GetMouseButton(0))
@@ -527,11 +549,49 @@ public class InvManagerSelect : MonoBehaviour {
         discardedItem = (GameObject.Find("Slot2_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
         PersistentData.m_Instance.ItemList.Add(discardedItem);
 
-        discardedItem = (GameObject.Find("Slot13_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+        discardedItem = (GameObject.Find("Slot3_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
         PersistentData.m_Instance.ItemList.Add(discardedItem);
         discardedItem = (GameObject.Find("Slot3_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
         PersistentData.m_Instance.ItemList.Add(discardedItem);
         discardedItem = (GameObject.Find("Slot3_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
         PersistentData.m_Instance.ItemList.Add(discardedItem);
+    }
+
+    public void addChar(Image image)
+    {
+        if(char1.sprite == char4.sprite)
+        {
+            char1.sprite = image.sprite;
+            text1.text = image.name;
+        }
+        else if (char2.sprite == char4.sprite)
+        {
+            char2.sprite = image.sprite;
+            text2.text = image.name;
+        }
+        else if (char3.sprite == char4.sprite)
+        {
+            char3.sprite = image.sprite;
+            text3.text = image.name;
+        }
+    }
+
+    public void removeChar(Image image)
+    {
+        if (char1.sprite == image.sprite)
+        {
+            char1.sprite = char4.sprite;
+            text1.text = "";
+        }
+        else if (char2.sprite == image.sprite)
+        {
+            char2.sprite = char4.sprite;
+            text2.text = "";
+        }
+        else if (char3.sprite == image.sprite)
+        {
+            char3.sprite = char4.sprite;
+            text3.text = "";
+        }
     }
 }
