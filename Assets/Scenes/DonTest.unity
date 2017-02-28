@@ -85,6 +85,50 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4640091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4640092}
+  - 114: {fileID: 4640093}
+  m_Layer: 0
+  m_Name: JotaroSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4640092
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4640091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 83107156}
+  m_RootOrder: 8
+--- !u!114 &4640093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4640091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa1446b738d2a54bb1094fd31864a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillType: 3
+  SkillName: STARPLATINUMTHEWORLD
+  SkillText: REFRESHES TURN
+  ChargeCost: 0
+  Range: 1
 --- !u!1 &16540383
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +536,7 @@ Transform:
   - {fileID: 1831493282}
   - {fileID: 1214097564}
   - {fileID: 1147761901}
+  - {fileID: 4640092}
   - {fileID: 1215460898}
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -887,7 +932,7 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theItem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 546397917}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theSkill
       value: 
@@ -1267,7 +1312,7 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   theWeapon: {fileID: 0}
   theArmour: {fileID: 0}
-  theItem: {fileID: 0}
+  theItem: {fileID: 546397917}
   theSkill: {fileID: 1214097563}
   restrictActions: 
   Name: Fugo
@@ -1810,7 +1855,7 @@ MonoBehaviour:
   theWeapon: {fileID: 0}
   theArmour: {fileID: 0}
   theItem: {fileID: 0}
-  theSkill: {fileID: 1831493281}
+  theSkill: {fileID: 4640093}
   restrictActions: 
   Name: Narancia
   BaseSpeed: 3
@@ -2060,7 +2105,7 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theSkill
       value: 
-      objectReference: {fileID: 1831493281}
+      objectReference: {fileID: 4640093}
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
@@ -2220,6 +2265,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 31
+--- !u!114 &546397917 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11408006, guid: d5c65fc402a70d543acb884b7a32213e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1592835498}
+  m_Script: {fileID: 11500000, guid: 56caa3800945ac84185a9069041d2f81, type: 3}
 --- !u!1 &582873065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,7 +4599,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 83107156}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &1215460899
 MonoBehaviour:
   m_ObjectHideFlags: 0
