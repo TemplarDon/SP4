@@ -51,7 +51,7 @@ public abstract class BaseSkills : MonoBehaviour {
 
     public void ResetCharge()
     {
-        ChargeCost = OrigChargeCost;
+        ChargeCost = OrigChargeCost + 1;
 
         Debug.Log("Reset");
     }
