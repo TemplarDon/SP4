@@ -5,7 +5,7 @@ public class cameramove : MonoBehaviour {
 
     public float dragSpeed = 2;
     private Vector3 dragOrigin;
-    private Vector3 currentLoc;
+    public Vector3 currentLoc;
     private Vector3 pos;
     private Vector3 move;
     private Vector3 combinepos;
@@ -20,7 +20,8 @@ public class cameramove : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        currentLoc = new Vector3(7.99695f, -5.0f, -9.0f);
+        //currentLoc = new Vector3(7.99695f, -5.0f, -9.0f);
+        currentLoc = this.gameObject.transform.position;
         //pos = new Vector3(0.0f, 0.0f, 0.0f);
         specialTrigger2 = false;
         //Camera.main.orthographic = false;

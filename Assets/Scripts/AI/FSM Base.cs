@@ -19,6 +19,7 @@ public abstract class FSMBase : MonoBehaviour {
         {
             GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().GetComponent<FSMBase>().RunFSM();
             GameObject.Find("Main Camera").transform.position = GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position;
+            GameObject.Find("Main Camera").GetComponent<cameramove>().currentLoc = GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position;
         }
 	}
 

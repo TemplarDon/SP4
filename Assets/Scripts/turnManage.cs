@@ -92,6 +92,11 @@ public class turnManage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (Commander == null)
+        {
+            Commander = GameObject.Find("EnemyCommander");
+        }
+
         if(animDelay == true)
         {
             animTimer--;

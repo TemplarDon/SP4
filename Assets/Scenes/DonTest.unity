@@ -596,7 +596,6 @@ Transform:
   - {fileID: 1147761901}
   - {fileID: 4640092}
   - {fileID: 1215460898}
-  - {fileID: 1262054257}
   m_Father: {fileID: 0}
   m_RootOrder: 15
 --- !u!1 &85926518
@@ -1958,7 +1957,7 @@ MonoBehaviour:
   theWeapon: {fileID: 0}
   theArmour: {fileID: 0}
   theItem: {fileID: 0}
-  theSkill: {fileID: 1262054258}
+  theSkill: {fileID: 1831493281}
   restrictActions: 
   Name: Narancia
   BaseSpeed: 3
@@ -2208,7 +2207,7 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: theSkill
       value: 
-      objectReference: {fileID: 1262054258}
+      objectReference: {fileID: 1831493281}
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
