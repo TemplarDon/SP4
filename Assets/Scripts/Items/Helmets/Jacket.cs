@@ -10,6 +10,8 @@ public class Jacket : Armours
         this.s_ItemDisp = "Shinings Diamond";
         this.s_ItemDesc = "Has the name of the country's greatest biker gang leader embroidered on it.";
         ArmourAmount = 1;
+
+        this.m_ItemType = Items.ITEM_TYPE.ARMOUR;
     }
 
     // Update is called once per frame

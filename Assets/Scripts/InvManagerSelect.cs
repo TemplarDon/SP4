@@ -668,16 +668,18 @@ public class InvManagerSelect : MonoBehaviour {
             else
             {
                 discardedItem = (button.GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+
+                string findName = button.GetComponent<Image>().sprite.name.Replace("2", "");
                 switch(i)
                 {
                     case 0:
-                        PersistentData.m_Instance.char1Items.Add(discardedItem);
+                        PersistentData.m_Instance.char1Items.Add(findName);
                         break;
                     case 1:
-                        PersistentData.m_Instance.char2Items.Add(discardedItem);
+                        PersistentData.m_Instance.char2Items.Add(findName);
                         break;
                     case 2:
-                        PersistentData.m_Instance.char3Items.Add(discardedItem);
+                        PersistentData.m_Instance.char3Items.Add(findName);
                         break;
                 }
                
@@ -691,16 +693,18 @@ public class InvManagerSelect : MonoBehaviour {
             else
             {
                 discardedItem = (button.GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+                string findName = button.GetComponent<Image>().sprite.name.Replace("2", "");
+
                 switch (i)
                 {
                     case 0:
-                        PersistentData.m_Instance.char1Items.Add(discardedItem);
+                        PersistentData.m_Instance.char1Items.Add(findName);
                         break;
                     case 1:
-                        PersistentData.m_Instance.char2Items.Add(discardedItem);
+                        PersistentData.m_Instance.char2Items.Add(findName);
                         break;
                     case 2:
-                        PersistentData.m_Instance.char3Items.Add(discardedItem);
+                        PersistentData.m_Instance.char3Items.Add(findName);
                         break;
                 }
 
@@ -714,20 +718,24 @@ public class InvManagerSelect : MonoBehaviour {
             else
             {
                 discardedItem = (button.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                string findName = button.GetComponent<Image>().sprite.name.Replace("2", "");
+
                 switch (i)
                 {
                     case 0:
-                        PersistentData.m_Instance.char1Items.Add(discardedItem);
+                        PersistentData.m_Instance.char1Items.Add(findName);
                         break;
                     case 1:
-                        PersistentData.m_Instance.char2Items.Add(discardedItem);
+                        PersistentData.m_Instance.char2Items.Add(findName);
                         break;
                     case 2:
-                        PersistentData.m_Instance.char3Items.Add(discardedItem);
+                        PersistentData.m_Instance.char3Items.Add(findName);
                         break;
                 }
 
             }
         }
+
+        SceneManager.LoadScene("DonTest");
     }
 }

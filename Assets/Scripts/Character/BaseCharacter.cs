@@ -226,6 +226,7 @@ public class BaseCharacter : MonoBehaviour {
                 }
 
                 this.GetComponent<Pathfinder>().enabled = false;
+                this.GetComponent<BoxCollider2D>().enabled = false;
                 this.enabled = false;
                 GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().popPlayer(this.gameObject);
 
@@ -387,6 +388,7 @@ public class BaseCharacter : MonoBehaviour {
         {
             //Debug.Log("Died.");
 
+            IsDead = true;
             CurrentAnimState = ANIM_STATE.DIE;
         }
     }

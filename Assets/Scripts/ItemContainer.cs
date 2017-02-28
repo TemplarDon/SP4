@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Items : MonoBehaviour {
+public class ItemContainer {
 
     public enum ITEM_TYPE
     {
@@ -11,9 +11,12 @@ public class Items : MonoBehaviour {
     }
 
     public string s_ItemName;
-    public string s_ItemDisp;
-    public string s_ItemDesc;
     public ITEM_TYPE m_ItemType;
+
+	// Use this for initialization
+	void Start () {
+	
+	}
 	
 	// Update is called once per frame
 	void Update () {

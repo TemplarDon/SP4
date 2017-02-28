@@ -11,6 +11,8 @@ public class Bat : Weapons
         this.s_ItemDesc = "It's metal. It's hard.";
         WeaponDamage = 1;
         WeaponRange = 1;
+
+        this.m_ItemType = Items.ITEM_TYPE.WEAPONS;
     }
 
     // Update is called once per frame
