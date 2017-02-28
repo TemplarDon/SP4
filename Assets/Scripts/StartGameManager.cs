@@ -138,6 +138,7 @@ public class StartGameManager : MonoBehaviour
                     if (!aCharacter.IsEnemy && (go.name != PersistentData.m_Instance.char1Char && go.name != PersistentData.m_Instance.char2Char && go.name != PersistentData.m_Instance.char3Char))
                     {
                         aCharacter.GetComponent<BaseCharacter>().enabled = false;
+                        aCharacter.gameObject.SetActive(false);
                     }
                 }
 
