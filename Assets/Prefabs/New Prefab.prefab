@@ -10,6 +10,7 @@ GameObject:
   - 224: {fileID: 22451124}
   - 222: {fileID: 22298110}
   - 114: {fileID: 11476996}
+  - 114: {fileID: 11496922}
   m_Layer: 5
   m_Name: helmet_redcostume
   m_TagString: HelmetTemp
@@ -42,6 +43,7 @@ GameObject:
   - 224: {fileID: 22425266}
   - 222: {fileID: 22278882}
   - 114: {fileID: 11432676}
+  - 114: {fileID: 11433564}
   m_Layer: 5
   m_Name: helmet_jacket
   m_TagString: HelmetTemp
@@ -59,6 +61,7 @@ GameObject:
   - 224: {fileID: 22459352}
   - 222: {fileID: 22209386}
   - 114: {fileID: 11458374}
+  - 114: {fileID: 11445386}
   m_Layer: 5
   m_Name: helmet_rabbit
   m_TagString: HelmetTemp
@@ -76,6 +79,7 @@ GameObject:
   - 224: {fileID: 22421586}
   - 222: {fileID: 22255516}
   - 114: {fileID: 11493814}
+  - 114: {fileID: 11446800}
   m_Layer: 5
   m_Name: helmet_greencostume
   m_TagString: HelmetTemp
@@ -93,6 +97,7 @@ GameObject:
   - 224: {fileID: 22460868}
   - 222: {fileID: 22247138}
   - 114: {fileID: 11428462}
+  - 114: {fileID: 11420384}
   m_Layer: 5
   m_Name: helmet_robot
   m_TagString: HelmetTemp
@@ -100,6 +105,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &11420384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bd792af86b23e44a0340644fe953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_ItemName: 
+  s_ItemDisp: 
+  s_ItemDesc: 
+  m_ItemType: 0
+  ArmourAmount: 1
 --- !u!114 &11428462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +175,54 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11433564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e017fbfb3a399cb4bbd3e3870519c862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_ItemName: 
+  s_ItemDisp: 
+  s_ItemDesc: 
+  m_ItemType: 0
+  ArmourAmount: 1
+--- !u!114 &11445386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162ada78688e4b64e89f4c23cb5fa8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_ItemName: 
+  s_ItemDisp: 
+  s_ItemDesc: 
+  m_ItemType: 0
+  ArmourAmount: 1
+--- !u!114 &11446800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8fa65896943434cbd1d7171ec23c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_ItemName: 
+  s_ItemDisp: 
+  s_ItemDesc: 
+  m_ItemType: 0
+  ArmourAmount: 1
 --- !u!114 &11458374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,6 +304,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11496922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9628aac57c831104c928cee561d99722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_ItemName: 
+  s_ItemDisp: 
+  s_ItemDesc: 
+  m_ItemType: 0
+  ArmourAmount: 1
 --- !u!222 &22209386
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -10,6 +10,8 @@ public class Rabbit : Armours
         this.s_ItemDisp = "Bunny Earmuffs";
         this.s_ItemDesc = "One of the most popular items from gothic lolita designer Ina Bauer.";
         ArmourAmount = 1;
+
+        this.m_ItemType = Items.ITEM_TYPE.ARMOUR;
     }
 
     // Update is called once per frame
