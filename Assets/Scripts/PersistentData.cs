@@ -16,8 +16,15 @@ public class PersistentData : MonoBehaviour {
     public List<string> ItemList = new List<string>();
     public List<string> CharacterList = new List<string>();
 
-	// Use this for initialization
-	void Awake () {
+    public string char1Char = "";
+    public string char2Char = "";
+    public string char3Char = "";
+    public List<string> char1Items = new List<string>();
+    public List<string> char2Items = new List<string>();
+    public List<string> char3Items = new List<string>();
+
+    // Use this for initialization
+    void Awake () {
 
         DontDestroyOnLoad(gameObject);
 

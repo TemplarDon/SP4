@@ -594,4 +594,108 @@ public class InvManagerSelect : MonoBehaviour {
             text3.text = "";
         }
     }
+
+    public void startGame()
+    {
+        PersistentData.m_Instance.char1Char = text1.text;
+        PersistentData.m_Instance.char2Char = text2.text;
+        PersistentData.m_Instance.char3Char = text3.text;
+
+        PersistentData.m_Instance.char1Items.Clear();
+        PersistentData.m_Instance.char2Items.Clear();
+        PersistentData.m_Instance.char3Items.Clear();
+
+        if(text1.text == "")
+        {
+            clickSlot(GameObject.Find("Slot1_helmet").GetComponent<Button>());
+            clickSlot(GameObject.Find("Slot1_weapon").GetComponent<Button>());
+            clickSlot(GameObject.Find("Slot1_item").GetComponent<Button>());
+        }
+        if (text2.text == "")
+        {
+            clickSlot(GameObject.Find("Slot2_helmet").GetComponent<Button>());
+            clickSlot(GameObject.Find("Slot2_weapon").GetComponent<Button>());
+            clickSlot(GameObject.Find("Slot2_item").GetComponent<Button>());
+        }
+        if (text3.text == "")
+        {
+            clickSlot(GameObject.Find("Slot3_helmet").GetComponent<Button>());
+            clickSlot(GameObject.Find("Slot3_weapon").GetComponent<Button>());
+            clickSlot(GameObject.Find("Slot3_item").GetComponent<Button>());
+        }
+
+        GameObject button;
+        string discardedItem;
+        for (int i = 0; i < 3; i++)
+        {
+            button = GameObject.Find("Slot" + (i + 1).ToString() + "_helmet");
+            if (button.GetComponent<Image>().sprite.name.Contains("slot"))
+            {
+
+            }
+            else
+            {
+                discardedItem = (button.GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+                switch(i)
+                {
+                    case 0:
+                        PersistentData.m_Instance.char1Items.Add(discardedItem);
+                        break;
+                    case 1:
+                        PersistentData.m_Instance.char2Items.Add(discardedItem);
+                        break;
+                    case 2:
+                        PersistentData.m_Instance.char3Items.Add(discardedItem);
+                        break;
+                }
+               
+            }
+
+            button = GameObject.Find("Slot" + (i + 1).ToString() + "_weapon");
+            if (button.GetComponent<Image>().sprite.name.Contains("slot"))
+            {
+
+            }
+            else
+            {
+                discardedItem = (button.GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+                switch (i)
+                {
+                    case 0:
+                        PersistentData.m_Instance.char1Items.Add(discardedItem);
+                        break;
+                    case 1:
+                        PersistentData.m_Instance.char2Items.Add(discardedItem);
+                        break;
+                    case 2:
+                        PersistentData.m_Instance.char3Items.Add(discardedItem);
+                        break;
+                }
+
+            }
+
+            button = GameObject.Find("Slot" + (i + 1).ToString() + "_item");
+            if (button.GetComponent<Image>().sprite.name.Contains("slot"))
+            {
+
+            }
+            else
+            {
+                discardedItem = (button.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                switch (i)
+                {
+                    case 0:
+                        PersistentData.m_Instance.char1Items.Add(discardedItem);
+                        break;
+                    case 1:
+                        PersistentData.m_Instance.char2Items.Add(discardedItem);
+                        break;
+                    case 2:
+                        PersistentData.m_Instance.char3Items.Add(discardedItem);
+                        break;
+                }
+
+            }
+        }
+    }
 }

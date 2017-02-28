@@ -75,7 +75,11 @@ public class gachaManager : MonoBehaviour {
 
         currentMoney = PersistentData.m_Instance.PlayerMoney;
         moneyText.text = "\u00A5" + currentMoney;
-   }
+
+        prizeImage.color = new Color(prizeImage.color.r, prizeImage.color.g, prizeImage.color.b, 0);
+        prizeWhite.color = new Color(prizeWhite.color.r, prizeWhite.color.g, prizeWhite.color.b, 0);
+        prizeRays.color = new Color(prizeRays.color.r, prizeRays.color.g, prizeRays.color.b, 0);
+    }
 	
 	// Update is called once per frame
 	void Update () {
