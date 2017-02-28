@@ -507,4 +507,31 @@ public class InvManagerSelect : MonoBehaviour {
             }
         }
     }
+
+    public void Loadscene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        string discardedItem;
+
+        discardedItem = (GameObject.Find("Slot1_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        discardedItem = (GameObject.Find("Slot1_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        discardedItem = (GameObject.Find("Slot1_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+
+        discardedItem = (GameObject.Find("Slot2_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        discardedItem = (GameObject.Find("Slot2_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        discardedItem = (GameObject.Find("Slot2_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+
+        discardedItem = (GameObject.Find("Slot13_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        discardedItem = (GameObject.Find("Slot3_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        discardedItem = (GameObject.Find("Slot3_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+        PersistentData.m_Instance.ItemList.Add(discardedItem);
+    }
 }
