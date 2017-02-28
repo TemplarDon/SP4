@@ -562,17 +562,17 @@ public class InvManagerSelect : MonoBehaviour {
         if(char1.sprite == char4.sprite)
         {
             char1.sprite = image.sprite;
-            text1.text = image.name;
+            text1.text = image.sprite.name.Replace("_card", "");
         }
         else if (char2.sprite == char4.sprite)
         {
             char2.sprite = image.sprite;
-            text2.text = image.name;
+            text2.text = image.sprite.name.Replace("_card", "");
         }
         else if (char3.sprite == char4.sprite)
         {
             char3.sprite = image.sprite;
-            text3.text = image.name;
+            text3.text = image.sprite.name.Replace("_card", "");
         }
     }
 
