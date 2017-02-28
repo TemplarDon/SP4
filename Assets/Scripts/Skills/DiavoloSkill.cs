@@ -11,16 +11,24 @@ public class DiavoloSkill : BaseSkills
 
     public override void DoEffect(BaseCharacter user)
     {
-        LevelGenerate Map = GameObject.Find("MapGeneration").GetComponent<LevelGenerate>();
-
-        Vector3 mapPos = new Vector3(user.pos.x, user.pos.y, 0);
-
-        List<BaseCharacter> AffectedCharacters = Map.GetCharactersInRange(mapPos, Range);
-
-        foreach (BaseCharacter aCharacter in AffectedCharacters)
+        //LevelGenerate Map = GameObject.Find("MapGeneration").GetComponent<LevelGenerate>();
+        //
+        //Vector3 mapPos = new Vector3(user.pos.x, user.pos.y, 0);
+        //
+        //List<BaseCharacter> AffectedCharacters = Map.GetCharactersInRange(mapPos, Range);
+        //
+        //foreach (BaseCharacter aCharacter in AffectedCharacters)
+        //{
+        //    aCharacter.theSkill.UpdateCharge();
+        //    if(aCharacter.restrictActions[2] == false)
+        //    {
+        //        aCharacter.restrictActions[4] = false;
+        //    }
+        //}
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
+        foreach (GameObject obj in allObjects)
         {
-            aCharacter.theSkill.UpdateCharge();
+            //obj.GetComponent<BaseCharacter>().theSkill.UpdateCharge();
         }
-        GameObject.Find("TurnManager").GetComponent<turnManage>().actionSelection = 1;
     }
 }
