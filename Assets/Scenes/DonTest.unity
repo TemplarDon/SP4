@@ -4097,7 +4097,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: 
   SkillText: 
-  ChargeCost: 0
+  ChargeCost: 2
 --- !u!1 &1153439550
 GameObject:
   m_ObjectHideFlags: 0
