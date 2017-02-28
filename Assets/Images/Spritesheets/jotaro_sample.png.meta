@@ -1,9 +1,187 @@
 fileFormatVersion: 2
 guid: 5748cbdf3d026f64581dbe31384ac7c4
-timeCreated: 1488185940
-licenseType: Pro
+timeCreated: 1488247607
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: jotaro_sample_0
+    21300002: jotaro_sample_1
+    21300004: jotaro_sample_2
+    21300006: jotaro_sample_3
+    21300008: jotaro_sample_4
+    21300010: jotaro_sample_5
+    21300012: jotaro_sample_6
+    21300014: jotaro_sample_7
+    21300016: jotaro_sample_8
+    21300018: jotaro_sample_9
+    21300020: jotaro_sample_10
+    21300022: jotaro_sample_11
+    21300024: jotaro_sample_12
+    21300026: jotaro_sample_13
+    21300028: jotaro_sample_14
+    21300030: jotaro_sample_15
+    21300032: jotaro_sample_16
+    21300034: jotaro_sample_17
+    21300036: jotaro_sample_18
+    21300038: jotaro_sample_19
+    21300040: jotaro_sample_20
+    21300042: jotaro_sample_21
+    21300044: jotaro_sample_22
+    21300046: jotaro_sample_23
+    21300048: jotaro_sample_24
+    21300050: jotaro_sample_25
+    21300052: jotaro_sample_26
+    21300054: jotaro_sample_27
+    21300056: jotaro_sample_28
+    21300058: jotaro_sample_29
+    21300060: jotaro_sample_30
+    21300062: jotaro_sample_31
+    21300064: jotaro_sample_32
+    21300066: jotaro_sample_33
+    21300068: jotaro_sample_34
+    21300070: jotaro_sample_35
+    21300072: jotaro_sample_36
+    21300074: jotaro_sample_37
+    21300076: jotaro_sample_38
+    21300078: jotaro_sample_39
+    21300080: jotaro_sample_40
+    21300082: jotaro_sample_41
+    21300084: jotaro_sample_42
+    21300086: jotaro_sample_43
+    21300088: jotaro_sample_44
+    21300090: jotaro_sample_45
+    21300092: jotaro_sample_46
+    21300094: jotaro_sample_47
+    21300096: jotaro_sample_48
+    21300098: jotaro_sample_49
+    21300100: jotaro_sample_50
+    21300102: jotaro_sample_51
+    21300104: jotaro_sample_52
+    21300106: jotaro_sample_53
+    21300108: jotaro_sample_54
+    21300110: jotaro_sample_55
+    21300112: jotaro_sample_56
+    21300114: jotaro_sample_57
+    21300116: jotaro_sample_58
+    21300118: jotaro_sample_59
+    21300120: jotaro_sample_60
+    21300122: jotaro_sample_61
+    21300124: jotaro_sample_62
+    21300126: jotaro_sample_63
+    21300128: jotaro_sample_64
+    21300130: jotaro_sample_65
+    21300132: jotaro_sample_66
+    21300134: jotaro_sample_67
+    21300136: jotaro_sample_68
+    21300138: jotaro_sample_69
+    21300140: jotaro_sample_70
+    21300142: jotaro_sample_71
+    21300144: jotaro_sample_72
+    21300146: jotaro_sample_73
+    21300148: jotaro_sample_74
+    21300150: jotaro_sample_75
+    21300152: jotaro_sample_76
+    21300154: jotaro_sample_77
+    21300156: jotaro_sample_78
+    21300158: jotaro_sample_79
+    21300160: jotaro_sample_80
+    21300162: jotaro_sample_81
+    21300164: jotaro_sample_82
+    21300166: jotaro_sample_83
+    21300168: jotaro_sample_84
+    21300170: jotaro_sample_85
+    21300172: jotaro_sample_86
+    21300174: jotaro_sample_87
+    21300176: jotaro_sample_88
+    21300178: jotaro_sample_89
+    21300180: jotaro_sample_90
+    21300182: jotaro_sample_91
+    21300184: jotaro_sample_92
+    21300186: jotaro_sample_93
+    21300188: jotaro_sample_94
+    21300190: jotaro_sample_95
+    21300192: jotaro_sample_96
+    21300194: jotaro_sample_97
+    21300196: jotaro_sample_98
+    21300198: jotaro_sample_99
+    21300200: jotaro_sample_100
+    21300202: jotaro_sample_101
+    21300204: jotaro_sample_102
+    21300206: jotaro_sample_103
+    21300208: jotaro_sample_104
+    21300210: jotaro_sample_105
+    21300212: jotaro_sample_106
+    21300214: jotaro_sample_107
+    21300216: jotaro_sample_108
+    21300218: jotaro_sample_109
+    21300220: jotaro_sample_110
+    21300222: jotaro_sample_111
+    21300224: jotaro_sample_112
+    21300226: jotaro_sample_113
+    21300228: jotaro_sample_114
+    21300230: jotaro_sample_115
+    21300232: jotaro_sample_116
+    21300234: jotaro_sample_117
+    21300236: jotaro_sample_118
+    21300238: jotaro_sample_119
+    21300240: jotaro_sample_120
+    21300242: jotaro_sample_121
+    21300244: jotaro_sample_122
+    21300246: jotaro_sample_123
+    21300248: jotaro_sample_124
+    21300250: jotaro_sample_125
+    21300252: jotaro_sample_126
+    21300254: jotaro_sample_127
+    21300256: jotaro_sample_128
+    21300258: jotaro_sample_129
+    21300260: jotaro_sample_130
+    21300262: jotaro_sample_131
+    21300264: jotaro_sample_132
+    21300266: jotaro_sample_133
+    21300268: jotaro_sample_134
+    21300270: jotaro_sample_135
+    21300272: jotaro_sample_136
+    21300274: jotaro_sample_137
+    21300276: jotaro_sample_138
+    21300278: jotaro_sample_139
+    21300280: jotaro_sample_140
+    21300282: jotaro_sample_141
+    21300284: jotaro_sample_142
+    21300286: jotaro_sample_143
+    21300288: jotaro_sample_144
+    21300290: jotaro_sample_145
+    21300292: jotaro_sample_146
+    21300294: jotaro_sample_147
+    21300296: jotaro_sample_148
+    21300298: jotaro_sample_149
+    21300300: jotaro_sample_150
+    21300302: jotaro_sample_151
+    21300304: jotaro_sample_152
+    21300306: jotaro_sample_153
+    21300308: jotaro_sample_154
+    21300310: jotaro_sample_155
+    21300312: jotaro_sample_156
+    21300314: jotaro_sample_157
+    21300316: jotaro_sample_158
+    21300318: jotaro_sample_159
+    21300320: jotaro_sample_160
+    21300322: jotaro_sample_161
+    21300324: jotaro_sample_162
+    21300326: jotaro_sample_163
+    21300328: jotaro_sample_164
+    21300330: jotaro_sample_165
+    21300332: jotaro_sample_166
+    21300334: jotaro_sample_167
+    21300336: jotaro_sample_168
+    21300338: jotaro_sample_169
+    21300340: jotaro_sample_170
+    21300342: jotaro_sample_171
+    21300344: jotaro_sample_172
+    21300346: jotaro_sample_173
+    21300348: jotaro_sample_174
+    21300350: jotaro_sample_175
+    21300352: jotaro_sample_176
+    21300354: jotaro_sample_177
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +208,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +216,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +227,2695 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: jotaro_sample_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1282
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1282
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1282
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1282
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25}
+        - {x: -18, y: 20}
+        - {x: -18, y: -22}
+        - {x: -15, y: -25}
+        - {x: 18, y: -25}
+        - {x: 18, y: 25}
+    - name: jotaro_sample_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1282
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 25}
+        - {x: -25, y: 18}
+        - {x: -25, y: -20}
+        - {x: -24, y: -25}
+        - {x: 21, y: -25}
+        - {x: 25, y: -13}
+        - {x: 25, y: 15}
+        - {x: 7, y: 25}
+    - name: jotaro_sample_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1282
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 25}
+        - {x: -24, y: 21}
+        - {x: -24, y: -18}
+        - {x: -22, y: -25}
+        - {x: 24, y: -25}
+        - {x: 24, y: 25}
+    - name: jotaro_sample_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1282
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25}
+        - {x: -18, y: 20}
+        - {x: -18, y: -22}
+        - {x: -15, y: -25}
+        - {x: 18, y: -25}
+        - {x: 18, y: 25}
+    - name: jotaro_sample_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 8, y: -25.5}
+        - {x: 18, y: 6.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 25.5}
+        - {x: -11, y: 25.5}
+        - {x: -18, y: 24.5}
+        - {x: -18, y: -25.5}
+        - {x: 6, y: -25.5}
+        - {x: 7, y: -24.5}
+        - {x: 17, y: 9.5}
+        - {x: 18, y: 15.5}
+    - name: jotaro_sample_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 8, y: -25.5}
+        - {x: 15, y: -8.5}
+        - {x: 18, y: 10.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 25.5}
+        - {x: -18, y: 24.5}
+        - {x: -18, y: -25.5}
+        - {x: 11, y: -25.5}
+        - {x: 18, y: -0.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 18, y: -18.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_12
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 25.5}
+        - {x: -15, y: 25.5}
+        - {x: -18, y: 24.5}
+        - {x: -18, y: -25.5}
+        - {x: 5, y: -25.5}
+        - {x: 7, y: -24.5}
+        - {x: 18, y: 2.5}
+        - {x: 18, y: 24.5}
+    - name: jotaro_sample_13
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1218
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 25.5}
+        - {x: -18, y: 24.5}
+        - {x: -18, y: -25.5}
+        - {x: 11, y: -25.5}
+        - {x: 18, y: -18.5}
+        - {x: 18, y: 24.5}
+        - {x: 13, y: 25.5}
+    - name: jotaro_sample_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1154
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1154
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_16
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1154
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1154
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 28}
+        - {x: -17, y: 28}
+        - {x: -18, y: 22}
+        - {x: -18, y: -19}
+        - {x: -15, y: -28}
+        - {x: 15, y: -28}
+        - {x: 18, y: -22}
+        - {x: 18, y: 11}
+        - {x: 15, y: 26}
+    - name: jotaro_sample_18
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1154
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 28}
+        - {x: -25, y: 14}
+        - {x: -25, y: -27}
+        - {x: -23, y: -28}
+        - {x: 25, y: -28}
+        - {x: 25, y: 18}
+        - {x: 10, y: 28}
+    - name: jotaro_sample_19
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1154
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 28}
+        - {x: -24, y: 22}
+        - {x: -24, y: -13}
+        - {x: -16, y: -28}
+        - {x: 18, y: -28}
+        - {x: 24, y: -13}
+        - {x: 24, y: 12}
+        - {x: 16, y: 28}
+    - name: jotaro_sample_20
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1154
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 27}
+        - {x: -3, y: 28}
+        - {x: -17, y: 28}
+        - {x: -17, y: -28}
+        - {x: 17, y: -28}
+        - {x: 17, y: 16}
+        - {x: 16, y: 18}
+    - name: jotaro_sample_21
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 5.5}
+        - {x: -11, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -5.5}
+        - {x: 18, y: 21.5}
+    - name: jotaro_sample_22
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 2.5}
+        - {x: -15, y: -9.5}
+        - {x: -6, y: -25.5}
+        - {x: 18, y: -25.5}
+        - {x: 18, y: 22.5}
+        - {x: 13, y: 25.5}
+    - name: jotaro_sample_23
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 11.5}
+        - {x: -13, y: -9.5}
+        - {x: -6, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 15, y: -24.5}
+        - {x: 18, y: 0.5}
+        - {x: 18, y: 22.5}
+    - name: jotaro_sample_24
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: -13.5}
+        - {x: -16, y: -25.5}
+        - {x: 18, y: -25.5}
+        - {x: 18, y: 22.5}
+        - {x: 12, y: 25.5}
+    - name: jotaro_sample_25
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: -16.5}
+        - {x: -13, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -23.5}
+        - {x: 18, y: 22.5}
+    - name: jotaro_sample_26
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: -3.5}
+        - {x: -11, y: -25.5}
+        - {x: 13, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -15.5}
+        - {x: 18, y: 24.5}
+    - name: jotaro_sample_27
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1090
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 8.5}
+        - {x: -14, y: -5.5}
+        - {x: -7, y: -24.5}
+        - {x: -6, y: -25.5}
+        - {x: 18, y: -25.5}
+        - {x: 18, y: 21.5}
+        - {x: 12, y: 25.5}
+    - name: jotaro_sample_28
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1026
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1024
+        width: 26
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_30
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1024
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_31
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1024
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_32
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1024
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_33
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1024
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_34
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1024
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_35
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1024
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_36
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 962
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 8, y: -25.5}
+        - {x: 18, y: 6.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_37
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 962
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -19.5}
+        - {x: -16, y: -24.5}
+        - {x: -14, y: -25.5}
+        - {x: 9, y: -25.5}
+        - {x: 18, y: 3.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_38
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 962
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 25.5}
+        - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 7, y: -25.5}
+        - {x: 17, y: -9.5}
+        - {x: 18, y: -3.5}
+        - {x: 18, y: 24.5}
+    - name: jotaro_sample_39
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 962
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -7.5}
+        - {x: -15, y: -24.5}
+        - {x: -13, y: -25.5}
+        - {x: 11, y: -25.5}
+        - {x: 18, y: -7.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_40
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 962
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 25.5}
+        - {x: -15.5, y: 25.5}
+        - {x: -18.5, y: 22.5}
+        - {x: -18.5, y: -17.5}
+        - {x: -12.5, y: -25.5}
+        - {x: 10.5, y: -25.5}
+        - {x: 11.5, y: -20.5}
+        - {x: 18.5, y: 10.5}
+        - {x: 18.5, y: 23.5}
+    - name: jotaro_sample_41
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 962
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 25.5}
+        - {x: -20, y: -18.5}
+        - {x: -9, y: -25.5}
+        - {x: 12, y: -25.5}
+        - {x: 13, y: -20.5}
+        - {x: 20, y: 9.5}
+        - {x: 20, y: 25.5}
+    - name: jotaro_sample_42
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 962
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 25.5}
+        - {x: -15.5, y: 25.5}
+        - {x: -18.5, y: 22.5}
+        - {x: -18.5, y: -17.5}
+        - {x: -12.5, y: -25.5}
+        - {x: 10.5, y: -25.5}
+        - {x: 11.5, y: -20.5}
+        - {x: 18.5, y: 10.5}
+        - {x: 18.5, y: 23.5}
+    - name: jotaro_sample_43
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 962
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -11.5}
+        - {x: -16, y: -24.5}
+        - {x: -13, y: -25.5}
+        - {x: 12, y: -25.5}
+        - {x: 18, y: -7.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_44
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 898
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_45
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 899
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_46
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 899
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_47
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 899
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_48
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 899
+        width: 27
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_49
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 899
+        width: 27
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_50
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 899
+        width: 27
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_51
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 899
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_52
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 834
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 5.5}
+        - {x: -11, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -5.5}
+        - {x: 18, y: 21.5}
+    - name: jotaro_sample_53
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 834
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 7.5}
+        - {x: -5, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+        - {x: 13, y: 25.5}
+    - name: jotaro_sample_54
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 834
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 7.5}
+        - {x: -12, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 18, y: -19.5}
+        - {x: 18, y: 22.5}
+        - {x: 12, y: 25.5}
+    - name: jotaro_sample_55
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 834
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 5.5}
+        - {x: -10, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -3.5}
+        - {x: 18, y: 21.5}
+    - name: jotaro_sample_56
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 834
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 25.5}
+        - {x: -18.5, y: 24.5}
+        - {x: -18.5, y: 16.5}
+        - {x: -14.5, y: 10.5}
+        - {x: -11.5, y: -25.5}
+        - {x: 18.5, y: -25.5}
+        - {x: 18.5, y: 25.5}
+    - name: jotaro_sample_57
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 834
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 25.5}
+        - {x: -20, y: 6.5}
+        - {x: -13, y: -25.5}
+        - {x: 11, y: -25.5}
+        - {x: 20, y: -16.5}
+        - {x: 20, y: 20.5}
+        - {x: 10, y: 25.5}
+    - name: jotaro_sample_58
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 834
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 25.5}
+        - {x: -18.5, y: 24.5}
+        - {x: -18.5, y: 16.5}
+        - {x: -14.5, y: 10.5}
+        - {x: -11.5, y: -25.5}
+        - {x: 18.5, y: -25.5}
+        - {x: 18.5, y: 25.5}
+    - name: jotaro_sample_59
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 834
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 8.5}
+        - {x: -14, y: -7.5}
+        - {x: -8, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -3.5}
+        - {x: 18, y: 21.5}
+    - name: jotaro_sample_60
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 771
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_61
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 771
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_62
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 770
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_63
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 769
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_64
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 770
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_65
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 771
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_66
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 770
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_67
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 769
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_68
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 770
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_69
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 706
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 8, y: -25.5}
+        - {x: 18, y: 6.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_70
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 706
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 25}
+        - {x: -18, y: 23}
+        - {x: -18, y: -25}
+        - {x: 12, y: -25}
+        - {x: 18, y: -7}
+        - {x: 18, y: 24}
+        - {x: 17, y: 25}
+    - name: jotaro_sample_71
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 707
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 25}
+        - {x: -10, y: 25}
+        - {x: -18, y: 23}
+        - {x: -18, y: -25}
+        - {x: 4, y: -25}
+        - {x: 6, y: -23}
+        - {x: 14, y: -8}
+        - {x: 18, y: 12}
+    - name: jotaro_sample_72
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 707
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 25}
+        - {x: -18, y: 24}
+        - {x: -18, y: -1}
+        - {x: -14, y: -19}
+        - {x: -11, y: -25}
+        - {x: 9, y: -25}
+        - {x: 18, y: 5}
+        - {x: 18, y: 25}
+    - name: jotaro_sample_73
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 706
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 25.5}
+        - {x: -18, y: 22.5}
+        - {x: -18, y: -25.5}
+        - {x: 12, y: -25.5}
+        - {x: 18, y: 4.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_74
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 706
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25}
+        - {x: -18, y: 23}
+        - {x: -18, y: -25}
+        - {x: 7, y: -25}
+        - {x: 16, y: -14}
+        - {x: 18, y: 7}
+        - {x: 18, y: 25}
+    - name: jotaro_sample_75
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 706
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 25.5}
+        - {x: -18, y: 22.5}
+        - {x: -18, y: -5.5}
+        - {x: -16, y: -25.5}
+        - {x: 10, y: -25.5}
+        - {x: 18, y: -10.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_76
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 706
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 25.5}
+        - {x: -18, y: 24.5}
+        - {x: -18, y: -0.5}
+        - {x: -14, y: -15.5}
+        - {x: -11, y: -25.5}
+        - {x: 9, y: -25.5}
+        - {x: 18, y: 13.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_77
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 706
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 24.5}
+        - {x: -18, y: -4.5}
+        - {x: -13, y: -25.5}
+        - {x: 8, y: -25.5}
+        - {x: 13, y: -10.5}
+        - {x: 18, y: 11.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_78
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 642
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_79
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 642
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_80
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 641
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_81
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 641
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_82
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 641
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_83
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 642
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_84
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 641
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_85
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 641
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_86
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 641
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_87
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 578
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 5.5}
+        - {x: -11, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -5.5}
+        - {x: 18, y: 21.5}
+    - name: jotaro_sample_88
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 578
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25}
+        - {x: -18, y: 8}
+        - {x: -12, y: -23}
+        - {x: -11, y: -25}
+        - {x: 18, y: -25}
+        - {x: 18, y: 21}
+        - {x: 12, y: 25}
+    - name: jotaro_sample_89
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 579
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25}
+        - {x: -18, y: 2}
+        - {x: -7, y: -25}
+        - {x: 18, y: -25}
+        - {x: 18, y: 21}
+        - {x: 12, y: 25}
+    - name: jotaro_sample_90
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 579
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 25}
+        - {x: -18, y: 25}
+        - {x: -18, y: 9}
+        - {x: -13, y: -15}
+        - {x: -4, y: -25}
+        - {x: 12, y: -25}
+        - {x: 14, y: -19}
+        - {x: 18, y: 5}
+        - {x: 18, y: 23}
+    - name: jotaro_sample_91
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 578
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 3.5}
+        - {x: -15, y: -15.5}
+        - {x: -7, y: -25.5}
+        - {x: 18, y: -25.5}
+        - {x: 18, y: 23.5}
+        - {x: 14, y: 25.5}
+    - name: jotaro_sample_92
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 578
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25}
+        - {x: -18, y: -22}
+        - {x: -9, y: -25}
+        - {x: 18, y: -25}
+        - {x: 18, y: 23}
+        - {x: 17, y: 25}
+    - name: jotaro_sample_93
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 578
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: -2.5}
+        - {x: -9, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 18, y: -6.5}
+        - {x: 18, y: 23.5}
+        - {x: 14, y: 25.5}
+    - name: jotaro_sample_94
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 578
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 9.5}
+        - {x: -13, y: -10.5}
+        - {x: -4, y: -25.5}
+        - {x: 10, y: -25.5}
+        - {x: 15, y: -20.5}
+        - {x: 18, y: 1.5}
+        - {x: 18, y: 22.5}
+    - name: jotaro_sample_95
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 578
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: -13.5}
+        - {x: -8, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 18, y: 2.5}
+        - {x: 18, y: 23.5}
+        - {x: 14, y: 25.5}
+    - name: jotaro_sample_96
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 514
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_97
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 513
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_98
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 513
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_99
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 513
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_100
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 513
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 25.5}
+        - {x: -12, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 18, y: -20.5}
+        - {x: 18, y: 13.5}
+    - name: jotaro_sample_101
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 513
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 6.5}
+        - {x: 11.5, y: 20.5}
+        - {x: 3.5, y: 25.5}
+        - {x: -11.5, y: 25.5}
+        - {x: -17.5, y: 18.5}
+        - {x: -19.5, y: 7.5}
+        - {x: -19.5, y: -23.5}
+        - {x: -18.5, y: -25.5}
+        - {x: 12.5, y: -25.5}
+        - {x: 19.5, y: -6.5}
+        - {x: 19.5, y: 5.5}
+    - name: jotaro_sample_102
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 450
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -25.5}
+        - {x: 8, y: -25.5}
+        - {x: 18, y: 6.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_103
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 450
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 24.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -24.5}
+        - {x: 11, y: -24.5}
+        - {x: 18, y: 7.5}
+        - {x: 18, y: 24.5}
+    - name: jotaro_sample_104
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 450
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -14.5}
+        - {x: -17, y: -25.5}
+        - {x: 9, y: -25.5}
+        - {x: 15, y: -13.5}
+        - {x: 18, y: 5.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_105
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 450
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 25.5}
+        - {x: -20, y: -11.5}
+        - {x: -18, y: -13.5}
+        - {x: -13, y: -24.5}
+        - {x: -10, y: -25.5}
+        - {x: 18, y: -25.5}
+        - {x: 20, y: -19.5}
+        - {x: 20, y: 25.5}
+    - name: jotaro_sample_106
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 450
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 25.5}
+        - {x: -17, y: 22.5}
+        - {x: -21, y: 10.5}
+        - {x: -21, y: -8.5}
+        - {x: -10, y: -25.5}
+        - {x: 19, y: -25.5}
+        - {x: 21, y: -14.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_107
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 450
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 25.5}
+        - {x: -19.5, y: 22.5}
+        - {x: -19.5, y: -7.5}
+        - {x: -10.5, y: -25.5}
+        - {x: 17.5, y: -25.5}
+        - {x: 19.5, y: -14.5}
+        - {x: 19.5, y: 25.5}
+    - name: jotaro_sample_108
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 386
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_109
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 386
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_110
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 386
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_111
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 386
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_112
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 386
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 27}
+        - {x: -6.5, y: 28}
+        - {x: -17.5, y: 28}
+        - {x: -17.5, y: -28}
+        - {x: 17.5, y: -28}
+        - {x: 17.5, y: 7}
+        - {x: 13.5, y: 18}
+    - name: jotaro_sample_113
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 386
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 28}
+        - {x: -19.5, y: -28}
+        - {x: 14.5, y: -28}
+        - {x: 19.5, y: -22}
+        - {x: 19.5, y: 15}
+        - {x: 15.5, y: 28}
+    - name: jotaro_sample_114
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 322
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 25.5}
+        - {x: -18, y: 25.5}
+        - {x: -18, y: 5.5}
+        - {x: -11, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 17, y: -24.5}
+        - {x: 18, y: -5.5}
+        - {x: 18, y: 21.5}
+    - name: jotaro_sample_115
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 322
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 24.5}
+        - {x: -18, y: -5.5}
+        - {x: -14, y: -24.5}
+        - {x: 18, y: -24.5}
+        - {x: 18, y: 24.5}
+    - name: jotaro_sample_116
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 322
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 0.5}
+        - {x: -12, y: -25.5}
+        - {x: 17, y: -25.5}
+        - {x: 18, y: -14.5}
+        - {x: 18, y: 23.5}
+        - {x: 15, y: 25.5}
+    - name: jotaro_sample_117
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 322
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 25.5}
+        - {x: -14, y: 25.5}
+        - {x: -20, y: 24.5}
+        - {x: -20, y: -5.5}
+        - {x: -14, y: -25.5}
+        - {x: 12, y: -25.5}
+        - {x: 14, y: -24.5}
+        - {x: 20, y: -18.5}
+        - {x: 20, y: 20.5}
+    - name: jotaro_sample_118
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 322
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 21.5}
+        - {x: 8, y: 25.5}
+        - {x: -21, y: 25.5}
+        - {x: -21, y: -25.5}
+        - {x: 10, y: -25.5}
+        - {x: 11, y: -24.5}
+        - {x: 21, y: -9.5}
+        - {x: 21, y: 17.5}
+    - name: jotaro_sample_119
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 322
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: 25.5}
+        - {x: -19.5, y: 25.5}
+        - {x: -19.5, y: -25.5}
+        - {x: 11.5, y: -25.5}
+        - {x: 12.5, y: -24.5}
+        - {x: 19.5, y: -3.5}
+        - {x: 19.5, y: 20.5}
+    - name: jotaro_sample_120
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 258
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_121
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 256
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_122
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 256
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_123
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 256
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_124
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 256
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_125
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 256
+        width: 25
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_126
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 256
+        width: 26
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_127
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 256
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_128
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 256
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_129
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 256
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_130
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 256
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_131
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 256
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_132
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 256
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_133
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 194
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -17.5}
+        - {x: -17, y: -25.5}
+        - {x: 9, y: -25.5}
+        - {x: 18, y: 6.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_134
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 194
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 25.5}
+        - {x: -18, y: 23.5}
+        - {x: -18, y: -19.5}
+        - {x: -16, y: -24.5}
+        - {x: -14, y: -25.5}
+        - {x: 9, y: -25.5}
+        - {x: 18, y: 3.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_135
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 194
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 25.5}
+        - {x: -20, y: -20.5}
+        - {x: -18, y: -25.5}
+        - {x: 13, y: -25.5}
+        - {x: 20, y: -7.5}
+        - {x: 20, y: 25.5}
+    - name: jotaro_sample_136
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 25.5}
+        - {x: -21, y: 18.5}
+        - {x: -21, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 21, y: 13.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_137
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 25.5}
+        - {x: -21, y: 19.5}
+        - {x: -21, y: -18.5}
+        - {x: -14, y: -24.5}
+        - {x: -12, y: -25.5}
+        - {x: 13, y: -25.5}
+        - {x: 21, y: 12.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_138
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 194
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 25.5}
+        - {x: -21.5, y: 22.5}
+        - {x: -21.5, y: -9.5}
+        - {x: -13.5, y: -24.5}
+        - {x: -9.5, y: -25.5}
+        - {x: 12.5, y: -25.5}
+        - {x: 21.5, y: 10.5}
+        - {x: 21.5, y: 25.5}
+    - name: jotaro_sample_139
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 194
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 25.5}
+        - {x: -21.5, y: 17.5}
+        - {x: -21.5, y: -8.5}
+        - {x: -12.5, y: -25.5}
+        - {x: 15.5, y: -25.5}
+        - {x: 21.5, y: 4.5}
+        - {x: 21.5, y: 23.5}
+        - {x: 16.5, y: 25.5}
+    - name: jotaro_sample_140
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 25.5}
+        - {x: -21, y: 16.5}
+        - {x: -21, y: -13.5}
+        - {x: -16, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 21, y: 6.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_141
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 25.5}
+        - {x: -21, y: 22.5}
+        - {x: -21, y: -11.5}
+        - {x: -13, y: -25.5}
+        - {x: 11, y: -25.5}
+        - {x: 21, y: -0.5}
+        - {x: 21, y: 24.5}
+        - {x: 18, y: 25.5}
+    - name: jotaro_sample_142
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 25.5}
+        - {x: -21, y: 19.5}
+        - {x: -21, y: -18.5}
+        - {x: -14, y: -24.5}
+        - {x: -12, y: -25.5}
+        - {x: 13, y: -25.5}
+        - {x: 21, y: 12.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_143
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 25.5}
+        - {x: -21, y: 19.5}
+        - {x: -21, y: -18.5}
+        - {x: -14, y: -24.5}
+        - {x: -12, y: -25.5}
+        - {x: 12, y: -25.5}
+        - {x: 21, y: 11.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_144
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 25.5}
+        - {x: -16, y: 21.5}
+        - {x: -20, y: 14.5}
+        - {x: -21, y: 12.5}
+        - {x: -21, y: -17.5}
+        - {x: -13, y: -25.5}
+        - {x: 13, y: -25.5}
+        - {x: 21, y: 10.5}
+        - {x: 21, y: 23.5}
+        - {x: 13, y: 25.5}
+    - name: jotaro_sample_145
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 194
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 25.5}
+        - {x: -21, y: 19.5}
+        - {x: -21, y: -18.5}
+        - {x: -14, y: -24.5}
+        - {x: -12, y: -25.5}
+        - {x: 12, y: -25.5}
+        - {x: 21, y: 11.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_146
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 130
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_147
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 131
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_148
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 131
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_149
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_150
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_151
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_152
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_153
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_154
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_155
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_156
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_157
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_158
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_159
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 66
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 10.5}
+        - {x: -6, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 18, y: -11.5}
+        - {x: 18, y: 23.5}
+        - {x: 15, y: 25.5}
+    - name: jotaro_sample_160
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 66
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 25.5}
+        - {x: -18, y: 7.5}
+        - {x: -5, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+        - {x: 13, y: 25.5}
+    - name: jotaro_sample_161
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 66
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 25.5}
+        - {x: -20, y: 5.5}
+        - {x: -15, y: -25.5}
+        - {x: 15, y: -25.5}
+        - {x: 20, y: -19.5}
+        - {x: 20, y: 20.5}
+        - {x: 10, y: 25.5}
+    - name: jotaro_sample_162
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 25.5}
+        - {x: -15, y: 25.5}
+        - {x: -21, y: 24.5}
+        - {x: -21, y: 8.5}
+        - {x: -14, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 21, y: -19.5}
+        - {x: 21, y: 11.5}
+        - {x: 19, y: 19.5}
+    - name: jotaro_sample_163
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 25.5}
+        - {x: -21, y: -6.5}
+        - {x: -12, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 21, y: -16.5}
+        - {x: 21, y: 18.5}
+        - {x: 15, y: 25.5}
+    - name: jotaro_sample_164
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 66
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 25.5}
+        - {x: -15.5, y: 25.5}
+        - {x: -21.5, y: 24.5}
+        - {x: -21.5, y: 2.5}
+        - {x: -16.5, y: -25.5}
+        - {x: 16.5, y: -25.5}
+        - {x: 21.5, y: -11.5}
+        - {x: 21.5, y: 16.5}
+        - {x: 18.5, y: 19.5}
+    - name: jotaro_sample_165
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 66
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 25.5}
+        - {x: -19.5, y: 25.5}
+        - {x: -21.5, y: 24.5}
+        - {x: -21.5, y: -4.5}
+        - {x: -14.5, y: -25.5}
+        - {x: 12.5, y: -25.5}
+        - {x: 21.5, y: -3.5}
+        - {x: 21.5, y: 17.5}
+        - {x: 19.5, y: 21.5}
+    - name: jotaro_sample_166
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 25.5}
+        - {x: -21, y: 8.5}
+        - {x: -20, y: 1.5}
+        - {x: -11, y: -25.5}
+        - {x: 21, y: -25.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_167
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 25.5}
+        - {x: -21, y: -4.5}
+        - {x: -12, y: -25.5}
+        - {x: 21, y: -25.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_168
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 25.5}
+        - {x: -21, y: -6.5}
+        - {x: -12, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 21, y: -16.5}
+        - {x: 21, y: 18.5}
+        - {x: 15, y: 25.5}
+    - name: jotaro_sample_169
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 25.5}
+        - {x: -21, y: 25.5}
+        - {x: -21, y: 2.5}
+        - {x: -15, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 21, y: -13.5}
+        - {x: 21, y: 16.5}
+        - {x: 17, y: 22.5}
+    - name: jotaro_sample_170
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 25.5}
+        - {x: -21, y: 24.5}
+        - {x: -21, y: 10.5}
+        - {x: -12, y: -25.5}
+        - {x: 21, y: -25.5}
+        - {x: 21, y: 25.5}
+    - name: jotaro_sample_171
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 66
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 25.5}
+        - {x: -21, y: 25.5}
+        - {x: -21, y: 2.5}
+        - {x: -15, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 21, y: -13.5}
+        - {x: 21, y: 16.5}
+        - {x: 17, y: 22.5}
+    - name: jotaro_sample_172
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 2
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_173
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2
+        width: 31
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_174
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_175
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 3
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_176
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jotaro_sample_177
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 0
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 18}
+        - {x: -17, y: -18}
+        - {x: 17, y: -18}
+        - {x: 17, y: 18}
     outline: []
   spritePackingTag: 
   userData: 

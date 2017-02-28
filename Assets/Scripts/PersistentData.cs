@@ -16,6 +16,8 @@ public class PersistentData : MonoBehaviour {
     public List<string> ItemList = new List<string>();
     public List<string> CharacterList = new List<string>();
 
+    public List<BaseCharacter> IngameCharacterList = new List<BaseCharacter>(); // List to transfer characters from character select to ingame
+
 	// Use this for initialization
 	void Awake () {
 

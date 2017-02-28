@@ -24,7 +24,7 @@ public class teamManager : MonoBehaviour {
 
     private bool teamDone;
     private bool callOnce = false;
-    public bool resetStats = true;
+    public bool resetStats = false;
     public bool running = false;
 
     public List<BaseCharacter> teamList = new List<BaseCharacter>();
@@ -57,10 +57,13 @@ public class teamManager : MonoBehaviour {
 
                     if (teamList[i] != null)
                     {
-                        if (teamList[i].BaseMana > 0)
-                        {
-                            teamList[i].BaseMana--;
-                        }
+                        //if (teamList[i].BaseMana > 0)
+                        //{
+                        //    teamList[i].BaseMana--;
+                        //}
+
+                        if (teamList[i].theSkill != null)
+                        teamList[i].theSkill.UpdateCharge();
 
                         for (int j = 0; j < 5; j++)
                         {
@@ -74,9 +77,12 @@ public class teamManager : MonoBehaviour {
             teamDone = true;
             for (int i = 0; i < teamList.Count; i++)
             {
-                if (teamList[i].BaseMana > 0)
+                if (teamList[i].theSkill != null)
                 {
-                    teamList[i].restrictActions[4] = true;
+                    if (!teamList[i].theSkill.GetCanUse())
+                    {
+                        teamList[i].restrictActions[4] = true;
+                    }
                 }
 
                 string greenHighlight = "PlayerLoc" + (i + 1);

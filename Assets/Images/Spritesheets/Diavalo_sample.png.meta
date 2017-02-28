@@ -1,9 +1,187 @@
 fileFormatVersion: 2
 guid: 347bfb1e14538b04eae93b5c5fa438d9
-timeCreated: 1488188654
-licenseType: Pro
+timeCreated: 1488247576
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Diavalo_sample_0
+    21300002: Diavalo_sample_1
+    21300004: Diavalo_sample_2
+    21300006: Diavalo_sample_3
+    21300008: Diavalo_sample_4
+    21300010: Diavalo_sample_5
+    21300012: Diavalo_sample_6
+    21300014: Diavalo_sample_7
+    21300016: Diavalo_sample_8
+    21300018: Diavalo_sample_9
+    21300020: Diavalo_sample_10
+    21300022: Diavalo_sample_11
+    21300024: Diavalo_sample_12
+    21300026: Diavalo_sample_13
+    21300028: Diavalo_sample_14
+    21300030: Diavalo_sample_15
+    21300032: Diavalo_sample_16
+    21300034: Diavalo_sample_17
+    21300036: Diavalo_sample_18
+    21300038: Diavalo_sample_19
+    21300040: Diavalo_sample_20
+    21300042: Diavalo_sample_21
+    21300044: Diavalo_sample_22
+    21300046: Diavalo_sample_23
+    21300048: Diavalo_sample_24
+    21300050: Diavalo_sample_25
+    21300052: Diavalo_sample_26
+    21300054: Diavalo_sample_27
+    21300056: Diavalo_sample_28
+    21300058: Diavalo_sample_29
+    21300060: Diavalo_sample_30
+    21300062: Diavalo_sample_31
+    21300064: Diavalo_sample_32
+    21300066: Diavalo_sample_33
+    21300068: Diavalo_sample_34
+    21300070: Diavalo_sample_35
+    21300072: Diavalo_sample_36
+    21300074: Diavalo_sample_37
+    21300076: Diavalo_sample_38
+    21300078: Diavalo_sample_39
+    21300080: Diavalo_sample_40
+    21300082: Diavalo_sample_41
+    21300084: Diavalo_sample_42
+    21300086: Diavalo_sample_43
+    21300088: Diavalo_sample_44
+    21300090: Diavalo_sample_45
+    21300092: Diavalo_sample_46
+    21300094: Diavalo_sample_47
+    21300096: Diavalo_sample_48
+    21300098: Diavalo_sample_49
+    21300100: Diavalo_sample_50
+    21300102: Diavalo_sample_51
+    21300104: Diavalo_sample_52
+    21300106: Diavalo_sample_53
+    21300108: Diavalo_sample_54
+    21300110: Diavalo_sample_55
+    21300112: Diavalo_sample_56
+    21300114: Diavalo_sample_57
+    21300116: Diavalo_sample_58
+    21300118: Diavalo_sample_59
+    21300120: Diavalo_sample_60
+    21300122: Diavalo_sample_61
+    21300124: Diavalo_sample_62
+    21300126: Diavalo_sample_63
+    21300128: Diavalo_sample_64
+    21300130: Diavalo_sample_65
+    21300132: Diavalo_sample_66
+    21300134: Diavalo_sample_67
+    21300136: Diavalo_sample_68
+    21300138: Diavalo_sample_69
+    21300140: Diavalo_sample_70
+    21300142: Diavalo_sample_71
+    21300144: Diavalo_sample_72
+    21300146: Diavalo_sample_73
+    21300148: Diavalo_sample_74
+    21300150: Diavalo_sample_75
+    21300152: Diavalo_sample_76
+    21300154: Diavalo_sample_77
+    21300156: Diavalo_sample_78
+    21300158: Diavalo_sample_79
+    21300160: Diavalo_sample_80
+    21300162: Diavalo_sample_81
+    21300164: Diavalo_sample_82
+    21300166: Diavalo_sample_83
+    21300168: Diavalo_sample_84
+    21300170: Diavalo_sample_85
+    21300172: Diavalo_sample_86
+    21300174: Diavalo_sample_87
+    21300176: Diavalo_sample_88
+    21300178: Diavalo_sample_89
+    21300180: Diavalo_sample_90
+    21300182: Diavalo_sample_91
+    21300184: Diavalo_sample_92
+    21300186: Diavalo_sample_93
+    21300188: Diavalo_sample_94
+    21300190: Diavalo_sample_95
+    21300192: Diavalo_sample_96
+    21300194: Diavalo_sample_97
+    21300196: Diavalo_sample_98
+    21300198: Diavalo_sample_99
+    21300200: Diavalo_sample_100
+    21300202: Diavalo_sample_101
+    21300204: Diavalo_sample_102
+    21300206: Diavalo_sample_103
+    21300208: Diavalo_sample_104
+    21300210: Diavalo_sample_105
+    21300212: Diavalo_sample_106
+    21300214: Diavalo_sample_107
+    21300216: Diavalo_sample_108
+    21300218: Diavalo_sample_109
+    21300220: Diavalo_sample_110
+    21300222: Diavalo_sample_111
+    21300224: Diavalo_sample_112
+    21300226: Diavalo_sample_113
+    21300228: Diavalo_sample_114
+    21300230: Diavalo_sample_115
+    21300232: Diavalo_sample_116
+    21300234: Diavalo_sample_117
+    21300236: Diavalo_sample_118
+    21300238: Diavalo_sample_119
+    21300240: Diavalo_sample_120
+    21300242: Diavalo_sample_121
+    21300244: Diavalo_sample_122
+    21300246: Diavalo_sample_123
+    21300248: Diavalo_sample_124
+    21300250: Diavalo_sample_125
+    21300252: Diavalo_sample_126
+    21300254: Diavalo_sample_127
+    21300256: Diavalo_sample_128
+    21300258: Diavalo_sample_129
+    21300260: Diavalo_sample_130
+    21300262: Diavalo_sample_131
+    21300264: Diavalo_sample_132
+    21300266: Diavalo_sample_133
+    21300268: Diavalo_sample_134
+    21300270: Diavalo_sample_135
+    21300272: Diavalo_sample_136
+    21300274: Diavalo_sample_137
+    21300276: Diavalo_sample_138
+    21300278: Diavalo_sample_139
+    21300280: Diavalo_sample_140
+    21300282: Diavalo_sample_141
+    21300284: Diavalo_sample_142
+    21300286: Diavalo_sample_143
+    21300288: Diavalo_sample_144
+    21300290: Diavalo_sample_145
+    21300292: Diavalo_sample_146
+    21300294: Diavalo_sample_147
+    21300296: Diavalo_sample_148
+    21300298: Diavalo_sample_149
+    21300300: Diavalo_sample_150
+    21300302: Diavalo_sample_151
+    21300304: Diavalo_sample_152
+    21300306: Diavalo_sample_153
+    21300308: Diavalo_sample_154
+    21300310: Diavalo_sample_155
+    21300312: Diavalo_sample_156
+    21300314: Diavalo_sample_157
+    21300316: Diavalo_sample_158
+    21300318: Diavalo_sample_159
+    21300320: Diavalo_sample_160
+    21300322: Diavalo_sample_161
+    21300324: Diavalo_sample_162
+    21300326: Diavalo_sample_163
+    21300328: Diavalo_sample_164
+    21300330: Diavalo_sample_165
+    21300332: Diavalo_sample_166
+    21300334: Diavalo_sample_167
+    21300336: Diavalo_sample_168
+    21300338: Diavalo_sample_169
+    21300340: Diavalo_sample_170
+    21300342: Diavalo_sample_171
+    21300344: Diavalo_sample_172
+    21300346: Diavalo_sample_173
+    21300348: Diavalo_sample_174
+    21300350: Diavalo_sample_175
+    21300352: Diavalo_sample_176
+    21300354: Diavalo_sample_177
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +208,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +216,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +227,2313 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Diavalo_sample_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1282
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1282
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1282
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1282
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24}
+        - {x: -17, y: 21}
+        - {x: -17, y: -14}
+        - {x: -12, y: -24}
+        - {x: 11, y: -24}
+        - {x: 17, y: -14}
+        - {x: 17, y: 23}
+        - {x: 14, y: 24}
+    - name: Diavalo_sample_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1282
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 24}
+        - {x: -22, y: 22}
+        - {x: -22, y: -10}
+        - {x: -16, y: -24}
+        - {x: 11, y: -24}
+        - {x: 22, y: -12}
+        - {x: 22, y: 13}
+        - {x: 15, y: 24}
+    - name: Diavalo_sample_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1282
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 24}
+        - {x: -12, y: 24}
+        - {x: -22, y: 20}
+        - {x: -22, y: -14}
+        - {x: -18, y: -24}
+        - {x: 11, y: -24}
+        - {x: 22, y: -5}
+        - {x: 22, y: 17}
+        - {x: 21, y: 19}
+    - name: Diavalo_sample_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1282
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24}
+        - {x: -17, y: 21}
+        - {x: -17, y: -14}
+        - {x: -12, y: -24}
+        - {x: 11, y: -24}
+        - {x: 17, y: -14}
+        - {x: 17, y: 23}
+        - {x: 14, y: 24}
+    - name: Diavalo_sample_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1218
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_8
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1218
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1218
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1218
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1218
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 24.5}
+        - {x: -14, y: 24.5}
+        - {x: -16, y: 19.5}
+        - {x: -16, y: -24.5}
+        - {x: 12, y: -24.5}
+        - {x: 16, y: -14.5}
+        - {x: 16, y: 17.5}
+    - name: Diavalo_sample_12
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1218
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 24.5}
+        - {x: -16, y: 17.5}
+        - {x: -16, y: -14.5}
+        - {x: -15, y: -23.5}
+        - {x: -12, y: -24.5}
+        - {x: 11, y: -24.5}
+        - {x: 16, y: -13.5}
+        - {x: 16, y: 20.5}
+        - {x: 9, y: 24.5}
+    - name: Diavalo_sample_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1218
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1154
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_15
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1154
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_16
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1154
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1154
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 24.5}
+        - {x: -16, y: 23.5}
+        - {x: -16, y: -16.5}
+        - {x: -13, y: -24.5}
+        - {x: 13, y: -24.5}
+        - {x: 16, y: -21.5}
+        - {x: 16, y: 22.5}
+        - {x: 15, y: 24.5}
+    - name: Diavalo_sample_18
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1154
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24.5}
+        - {x: -22, y: 20.5}
+        - {x: -22, y: -18.5}
+        - {x: -19, y: -24.5}
+        - {x: 15, y: -24.5}
+        - {x: 22, y: -13.5}
+        - {x: 22, y: 17.5}
+        - {x: 19, y: 24.5}
+    - name: Diavalo_sample_19
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1154
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 23.5}
+        - {x: 15, y: 24.5}
+        - {x: -16, y: 24.5}
+        - {x: -22, y: 17.5}
+        - {x: -22, y: -5.5}
+        - {x: -11, y: -24.5}
+        - {x: 12, y: -24.5}
+        - {x: 16, y: -20.5}
+        - {x: 22, y: -1.5}
+        - {x: 22, y: 18.5}
+    - name: Diavalo_sample_20
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1154
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 24.5}
+        - {x: -16, y: 23.5}
+        - {x: -16, y: -16.5}
+        - {x: -13, y: -24.5}
+        - {x: 13, y: -24.5}
+        - {x: 16, y: -21.5}
+        - {x: 16, y: 22.5}
+        - {x: 15, y: 24.5}
+    - name: Diavalo_sample_21
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1090
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_22
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1090
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_23
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1090
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_24
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1090
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_25
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1090
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 24.5}
+        - {x: -16, y: -15.5}
+        - {x: -11, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 16, y: 17.5}
+        - {x: 11, y: 24.5}
+    - name: Diavalo_sample_26
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1090
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 24.5}
+        - {x: -16, y: 18.5}
+        - {x: -16, y: -20.5}
+        - {x: -15, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 16, y: 13.5}
+        - {x: 11, y: 24.5}
+    - name: Diavalo_sample_27
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1090
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_28
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1025
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_29
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1024
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_30
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1024
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_31
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1024
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_32
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1024
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_33
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1024
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_34
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1024
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_35
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1024
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_36
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 962
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_37
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 962
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_38
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 962
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_39
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 962
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_40
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 962
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_41
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 962
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_42
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 962
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_43
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 962
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_44
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 898
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_45
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 898
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_46
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 899
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_47
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 899
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_48
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 899
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_49
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 899
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_50
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 899
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_51
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 899
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_52
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 834
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_53
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 834
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_54
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 834
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_55
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 834
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_56
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 834
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_57
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 834
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_58
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 834
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_59
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 834
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_60
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 770
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_61
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 770
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_62
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 769
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_63
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 768
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_64
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 769
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_65
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 770
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_66
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 769
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_67
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 768
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_68
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 769
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_69
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 706
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_70
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 706
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_71
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 707
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_72
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 707
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_73
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 706
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_74
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 706
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_75
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 706
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_76
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 706
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_77
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 706
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_78
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 642
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_79
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 642
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_80
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 641
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_81
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 641
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_82
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 641
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_83
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 642
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_84
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 641
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_85
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 641
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_86
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 641
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_87
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 578
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_88
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 578
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_89
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 579
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_90
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 579
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_91
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 578
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_92
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 578
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_93
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 578
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_94
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 578
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_95
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 578
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_96
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 514
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_97
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 514
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_98
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 514
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_99
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 514
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_100
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 514
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 24.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 8.5, y: -24.5}
+        - {x: 16.5, y: -5.5}
+        - {x: 16.5, y: 17.5}
+        - {x: 10.5, y: 24.5}
+    - name: Diavalo_sample_101
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 514
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 24.5}
+        - {x: -18, y: 17.5}
+        - {x: -18, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 18, y: -16.5}
+        - {x: 18, y: 18.5}
+        - {x: 9, y: 24.5}
+    - name: Diavalo_sample_102
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 450
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_103
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 449
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_104
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 450
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_105
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 450
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 24.5}
+        - {x: -16, y: 21.5}
+        - {x: -16, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 16, y: 20.5}
+        - {x: 13, y: 24.5}
+    - name: Diavalo_sample_106
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 450
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 24.5}
+        - {x: -8.5, y: 24.5}
+        - {x: -16.5, y: 15.5}
+        - {x: -16.5, y: -5.5}
+        - {x: -6.5, y: -24.5}
+        - {x: 14.5, y: -24.5}
+        - {x: 16.5, y: -23.5}
+        - {x: 16.5, y: 23.5}
+    - name: Diavalo_sample_107
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 450
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 24.5}
+        - {x: -16, y: 11.5}
+        - {x: -16, y: -13.5}
+        - {x: -13, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 16, y: 20.5}
+        - {x: 13, y: 24.5}
+    - name: Diavalo_sample_108
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 386
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_109
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 385
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_110
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 386
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_111
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 386
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_112
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 386
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 24.5}
+        - {x: -14, y: 24.5}
+        - {x: -16, y: 22.5}
+        - {x: -16, y: -21.5}
+        - {x: -15, y: -24.5}
+        - {x: 12, y: -24.5}
+        - {x: 16, y: -13.5}
+        - {x: 16, y: 5.5}
+    - name: Diavalo_sample_113
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 386
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 24.5}
+        - {x: -17, y: -24.5}
+        - {x: 14, y: -24.5}
+        - {x: 17, y: -21.5}
+        - {x: 17, y: 24.5}
+    - name: Diavalo_sample_114
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 322
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_115
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 321
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_116
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 322
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_117
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 322
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 24.5}
+        - {x: -10, y: 24.5}
+        - {x: -14, y: 22.5}
+        - {x: -16, y: 14.5}
+        - {x: -16, y: -24.5}
+        - {x: 11, y: -24.5}
+        - {x: 16, y: -16.5}
+        - {x: 16, y: 12.5}
+    - name: Diavalo_sample_118
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 322
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 24.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 8.5, y: -24.5}
+        - {x: 16.5, y: -11.5}
+        - {x: 16.5, y: 21.5}
+        - {x: 7.5, y: 24.5}
+    - name: Diavalo_sample_119
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 322
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 10.5}
+        - {x: 7, y: 24.5}
+        - {x: -11, y: 24.5}
+        - {x: -16, y: 18.5}
+        - {x: -16, y: -24.5}
+        - {x: 7, y: -24.5}
+        - {x: 8, y: -22.5}
+        - {x: 16, y: -2.5}
+        - {x: 16, y: 8.5}
+    - name: Diavalo_sample_120
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 258
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_121
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 257
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_122
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 256
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_123
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 256
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_124
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 256
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_125
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 256
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_126
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 256
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_127
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 256
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_128
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 256
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_129
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 256
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_130
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 256
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_131
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 256
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_132
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 256
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_133
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 194
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_134
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 194
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_135
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 194
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 24.5}
+        - {x: -12, y: 23.5}
+        - {x: -16, y: 16.5}
+        - {x: -16, y: -21.5}
+        - {x: -15, y: -24.5}
+        - {x: 12, y: -24.5}
+        - {x: 16, y: -19.5}
+        - {x: 16, y: 24.5}
+    - name: Diavalo_sample_136
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 194
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 23.5}
+        - {x: -9.5, y: 23.5}
+        - {x: -11.5, y: 22.5}
+        - {x: -17.5, y: 9.5}
+        - {x: -17.5, y: -14.5}
+        - {x: -10.5, y: -23.5}
+        - {x: 17.5, y: -23.5}
+        - {x: 17.5, y: 19.5}
+        - {x: 16.5, y: 22.5}
+    - name: Diavalo_sample_137
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 194
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 24.5}
+        - {x: -17.5, y: 14.5}
+        - {x: -17.5, y: -11.5}
+        - {x: -12.5, y: -24.5}
+        - {x: 16.5, y: -24.5}
+        - {x: 17.5, y: -19.5}
+        - {x: 17.5, y: 22.5}
+        - {x: 14.5, y: 24.5}
+    - name: Diavalo_sample_138
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 194
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 24.5}
+        - {x: -16.5, y: 17.5}
+        - {x: -16.5, y: -7.5}
+        - {x: -7.5, y: -24.5}
+        - {x: 16.5, y: -24.5}
+        - {x: 16.5, y: 24.5}
+    - name: Diavalo_sample_139
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 194
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 24.5}
+        - {x: -17, y: 17.5}
+        - {x: -17, y: -12.5}
+        - {x: -12, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 17, y: -22.5}
+        - {x: 17, y: 24.5}
+    - name: Diavalo_sample_140
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 194
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 24.5}
+        - {x: -18, y: 15.5}
+        - {x: -18, y: -4.5}
+        - {x: -10, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 18, y: -20.5}
+        - {x: 18, y: 21.5}
+        - {x: 12, y: 24.5}
+    - name: Diavalo_sample_141
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 194
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 24.5}
+        - {x: -11, y: 24.5}
+        - {x: -19, y: 16.5}
+        - {x: -19, y: -6.5}
+        - {x: -10, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 19, y: -17.5}
+        - {x: 19, y: 16.5}
+        - {x: 16, y: 23.5}
+    - name: Diavalo_sample_142
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 194
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 24.5}
+        - {x: -17.5, y: 14.5}
+        - {x: -17.5, y: -11.5}
+        - {x: -12.5, y: -24.5}
+        - {x: 16.5, y: -24.5}
+        - {x: 17.5, y: -19.5}
+        - {x: 17.5, y: 22.5}
+        - {x: 14.5, y: 24.5}
+    - name: Diavalo_sample_143
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 194
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 24.5}
+        - {x: -17, y: 11.5}
+        - {x: -17, y: -15.5}
+        - {x: -9, y: -24.5}
+        - {x: 17, y: -24.5}
+        - {x: 17, y: 20.5}
+        - {x: 14, y: 24.5}
+    - name: Diavalo_sample_144
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 194
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 24.5}
+        - {x: -16.5, y: 20.5}
+        - {x: -17.5, y: 16.5}
+        - {x: -17.5, y: -14.5}
+        - {x: -10.5, y: -24.5}
+        - {x: 15.5, y: -24.5}
+        - {x: 17.5, y: -17.5}
+        - {x: 17.5, y: 18.5}
+        - {x: 15.5, y: 24.5}
+    - name: Diavalo_sample_145
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 194
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 24.5}
+        - {x: -13, y: 18.5}
+        - {x: -17, y: 10.5}
+        - {x: -17, y: -14.5}
+        - {x: -10, y: -24.5}
+        - {x: 17, y: -24.5}
+        - {x: 17, y: 20.5}
+        - {x: 14, y: 24.5}
+    - name: Diavalo_sample_146
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 130
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_147
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 129
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_148
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 131
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_149
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_150
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_151
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_152
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_153
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_154
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_155
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_156
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_157
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_158
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 130
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_159
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 66
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_160
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 66
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_161
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 66
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 24.5}
+        - {x: -13, y: 24.5}
+        - {x: -16, y: 22.5}
+        - {x: -16, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 16, y: 15.5}
+        - {x: 11, y: 23.5}
+    - name: Diavalo_sample_162
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 66
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 23.5}
+        - {x: -13.5, y: 23.5}
+        - {x: -17.5, y: 11.5}
+        - {x: -17.5, y: -19.5}
+        - {x: -14.5, y: -23.5}
+        - {x: 12.5, y: -23.5}
+        - {x: 17.5, y: -17.5}
+        - {x: 17.5, y: 3.5}
+        - {x: 10.5, y: 22.5}
+    - name: Diavalo_sample_163
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 66
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 24.5}
+        - {x: -12.5, y: 24.5}
+        - {x: -14.5, y: 21.5}
+        - {x: -17.5, y: 11.5}
+        - {x: -17.5, y: -14.5}
+        - {x: -14.5, y: -24.5}
+        - {x: 9.5, y: -24.5}
+        - {x: 15.5, y: -11.5}
+        - {x: 17.5, y: -7.5}
+        - {x: 17.5, y: 12.5}
+    - name: Diavalo_sample_164
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 66
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 24.5}
+        - {x: -14.5, y: 24.5}
+        - {x: -16.5, y: 23.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 5.5, y: -24.5}
+        - {x: 6.5, y: -23.5}
+        - {x: 16.5, y: -3.5}
+        - {x: 16.5, y: 12.5}
+    - name: Diavalo_sample_165
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 66
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 24.5}
+        - {x: -17, y: -24.5}
+        - {x: 7, y: -24.5}
+        - {x: 17, y: -1.5}
+        - {x: 17, y: 12.5}
+        - {x: 7, y: 24.5}
+    - name: Diavalo_sample_166
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 66
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 24.5}
+        - {x: -13, y: 24.5}
+        - {x: -18, y: 16.5}
+        - {x: -18, y: -8.5}
+        - {x: -15, y: -20.5}
+        - {x: -13, y: -24.5}
+        - {x: 10, y: -24.5}
+        - {x: 18, y: -6.5}
+        - {x: 18, y: 16.5}
+        - {x: 10, y: 23.5}
+    - name: Diavalo_sample_167
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 66
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 24.5}
+        - {x: -19, y: 8.5}
+        - {x: -19, y: -12.5}
+        - {x: -15, y: -24.5}
+        - {x: 12, y: -24.5}
+        - {x: 19, y: -12.5}
+        - {x: 19, y: 15.5}
+        - {x: 16, y: 24.5}
+    - name: Diavalo_sample_168
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 66
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 24.5}
+        - {x: -12.5, y: 24.5}
+        - {x: -14.5, y: 21.5}
+        - {x: -17.5, y: 11.5}
+        - {x: -17.5, y: -14.5}
+        - {x: -14.5, y: -24.5}
+        - {x: 9.5, y: -24.5}
+        - {x: 15.5, y: -11.5}
+        - {x: 17.5, y: -7.5}
+        - {x: 17.5, y: 12.5}
+    - name: Diavalo_sample_169
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 66
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 24.5}
+        - {x: -17, y: 19.5}
+        - {x: -17, y: -24.5}
+        - {x: 10, y: -24.5}
+        - {x: 17, y: -9.5}
+        - {x: 17, y: 14.5}
+        - {x: 6, y: 24.5}
+    - name: Diavalo_sample_170
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 66
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 7.5}
+        - {x: 6.5, y: 24.5}
+        - {x: -12.5, y: 24.5}
+        - {x: -17.5, y: 20.5}
+        - {x: -17.5, y: -24.5}
+        - {x: 7.5, y: -24.5}
+        - {x: 8.5, y: -23.5}
+        - {x: 17.5, y: -5.5}
+        - {x: 17.5, y: 5.5}
+    - name: Diavalo_sample_171
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 66
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24.5}
+        - {x: -17, y: 16.5}
+        - {x: -17, y: -24.5}
+        - {x: 10, y: -24.5}
+        - {x: 17, y: -9.5}
+        - {x: 17, y: 14.5}
+        - {x: 6, y: 24.5}
+    - name: Diavalo_sample_172
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_173
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_174
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_175
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 2
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_176
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 3
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Diavalo_sample_177
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 18.5}
+        - {x: -17, y: -18.5}
+        - {x: 17, y: -18.5}
+        - {x: 17, y: 18.5}
     outline: []
   spritePackingTag: 
   userData: 

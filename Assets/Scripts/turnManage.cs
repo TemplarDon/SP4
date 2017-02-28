@@ -56,8 +56,11 @@ public class turnManage : MonoBehaviour {
 	void Start () {
         turnNum.text = 1.ToString();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
+
+        characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
+
         nameDisplay.text = characNEW.Name;
-        chargeDisplay.text = characNEW.BaseMana.ToString();
+        chargeDisplay.text = characNEW.theSkill.ChargeCost.ToString();
         atkDisplay.text = characNEW.GetAttackDamage().ToString();
         ranDisplay.text = characNEW.GetAttackRange().ToString();
         defDisplay.text = characNEW.GetArmour().ToString();
@@ -123,8 +126,12 @@ public class turnManage : MonoBehaviour {
                     YourTurn.transform.localPosition = new Vector3(9999, 9999, 9999);
                     turnNumber++;
                     playerTeam.running = true;
-                    playerTeam.resetStats = true;
 
+                    if (turnNumber == 1)
+                        playerTeam.resetStats = false;
+                    else 
+                        playerTeam.resetStats = true;
+                        
                     foreach (BaseCharacter aCharacter in playerTeam.GetComponent<teamManager>().teamList)
                     {
                         aCharacter.UpdateModifiers();
@@ -161,7 +168,7 @@ public class turnManage : MonoBehaviour {
 
        turnNum.text = turnNumber.ToString();
         nameDisplay.text = characNEW.Name;
-        chargeDisplay.text = characNEW.BaseMana.ToString();
+        chargeDisplay.text = characNEW.theSkill.ChargeCost.ToString();
         atkDisplay.text = characNEW.GetAttackDamage().ToString();
         ranDisplay.text = characNEW.GetAttackRange().ToString();
         defDisplay.text = characNEW.GetArmour().ToString();
@@ -330,7 +337,8 @@ public class turnManage : MonoBehaviour {
                             //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                             GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
-                            characNEW.BaseMana = characNEW.GetMaxMana();
+                            //characNEW.BaseMana = characNEW.GetMaxMana();
+                            characNEW.theSkill.ResetCharge();
                             break;
                     }
 
@@ -544,7 +552,8 @@ public class turnManage : MonoBehaviour {
                     //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
-                    characNEW.BaseMana = characNEW.GetMaxMana();
+                    //characNEW.BaseMana = characNEW.GetMaxMana();
+                    characNEW.theSkill.ResetCharge();
                     break;
             }
 
