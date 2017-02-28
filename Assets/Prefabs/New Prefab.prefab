@@ -80,6 +80,7 @@ GameObject:
   - 222: {fileID: 22255516}
   - 114: {fileID: 11493814}
   - 114: {fileID: 11446800}
+  - 114: {fileID: 11469138}
   m_Layer: 5
   m_Name: helmet_greencostume
   m_TagString: HelmetTemp
@@ -250,6 +251,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11469138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8fa65896943434cbd1d7171ec23c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_ItemName: 
+  s_ItemDisp: 
+  s_ItemDesc: 
+  m_ItemType: 0
+  ArmourAmount: 1
 --- !u!114 &11476996
 MonoBehaviour:
   m_ObjectHideFlags: 1

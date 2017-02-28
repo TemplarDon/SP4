@@ -27,14 +27,32 @@ public class StartGameManager : MonoBehaviour
             bool Char2Found = false;
             bool Char3Found = false;
 
+            string tempWeapon;
+            string tempArmour;
+            string tempUseable;
 
             // Find Character(s)
             if (PersistentData.m_Instance.char1Char != "")
             {
                 GameObject.Find(PersistentData.m_Instance.char1Char).transform.position = SpawnPos_1.transform.position;
-                GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().theWeapon = GameObject.Find(GetWeaponName(1)).GetComponent<Weapons>();
-                GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().theArmour = GameObject.Find(GetArmourName(1)).GetComponent<Armours>();
-                GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().theItem = GameObject.Find(GetUseablesName(1)).GetComponent<Useables>();
+
+                GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().pos.x = (int)GameObject.Find(PersistentData.m_Instance.char1Char).transform.position.x;
+                GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().pos.y = (int)GameObject.Find(PersistentData.m_Instance.char1Char).transform.position.y;
+
+                if ((tempWeapon = GetWeaponName(1)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().theWeapon = GameObject.Find(tempWeapon).GetComponent<Weapons>();
+                }
+
+                if ((tempArmour = GetArmourName(1)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().theArmour = GameObject.Find(tempArmour).GetComponent<Armours>();
+                }
+
+                if ((tempUseable = GetUseablesName(1)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char1Char).GetComponent<BaseCharacter>().theItem = GameObject.Find(tempUseable).GetComponent<Useables>();
+                }
 
                 Char1Found = true;
             }
@@ -42,20 +60,49 @@ public class StartGameManager : MonoBehaviour
             if (PersistentData.m_Instance.char2Char != "")
             {
                 GameObject.Find(PersistentData.m_Instance.char2Char).transform.position = SpawnPos_2.transform.position;
-                GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().theWeapon = GameObject.Find(GetWeaponName(2)).GetComponent<Weapons>();
-                GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().theArmour = GameObject.Find(GetArmourName(2)).GetComponent<Armours>();
-                GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().theItem = GameObject.Find(GetUseablesName(2)).GetComponent<Useables>();
+
+                GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().pos.x = (int)GameObject.Find(PersistentData.m_Instance.char2Char).transform.position.x;
+                GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().pos.y = (int)GameObject.Find(PersistentData.m_Instance.char2Char).transform.position.y;
+
+                if ((tempWeapon = GetWeaponName(2)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().theWeapon = GameObject.Find(tempWeapon).GetComponent<Weapons>();
+                }
+
+                if ((tempArmour = GetArmourName(2)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().theArmour = GameObject.Find(tempArmour).GetComponent<Armours>();
+                }
+
+                if ((tempUseable = GetUseablesName(2)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char2Char).GetComponent<BaseCharacter>().theItem = GameObject.Find(tempUseable).GetComponent<Useables>();
+                }
 
                 Char2Found = true;
             }
 
             if (PersistentData.m_Instance.char3Char != "")
             {
-
                 GameObject.Find(PersistentData.m_Instance.char3Char).transform.position = SpawnPos_3.transform.position;
-                GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().theWeapon = GameObject.Find(GetWeaponName(3)).GetComponent<Weapons>();
-                GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().theArmour = GameObject.Find(GetArmourName(3)).GetComponent<Armours>();
-                GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().theItem = GameObject.Find(GetUseablesName(3)).GetComponent<Useables>();
+
+                GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().pos.x = (int)GameObject.Find(PersistentData.m_Instance.char3Char).transform.position.x;
+                GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().pos.y = (int)GameObject.Find(PersistentData.m_Instance.char3Char).transform.position.y;
+
+                if ((tempWeapon = GetWeaponName(3)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().theWeapon = GameObject.Find(tempWeapon).GetComponent<Weapons>();
+                }
+
+                if ((tempArmour = GetArmourName(3)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().theArmour = GameObject.Find(tempArmour).GetComponent<Armours>();
+                }
+
+                if ((tempUseable = GetUseablesName(3)) != "")
+                {
+                    GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>().theItem = GameObject.Find(tempUseable).GetComponent<Useables>();
+                }
 
                 Char3Found = true;
             }
@@ -70,6 +117,12 @@ public class StartGameManager : MonoBehaviour
                 
                 if (Char3Found)
                 GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList.Add(GameObject.Find(PersistentData.m_Instance.char3Char).GetComponent<BaseCharacter>());
+
+                GameObject.Find("TurnManager").GetComponent<turnManage>().characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
+
+                SpawnPos_1.active = false;
+                SpawnPos_2.active = false;
+                SpawnPos_3.active = false;
 
                 b_AssignedCharacters = true;
             }
@@ -102,7 +155,7 @@ public class StartGameManager : MonoBehaviour
 
             if (anItem.m_ItemType == Items.ITEM_TYPE.WEAPONS)
             {
-                return anItem.s_ItemName;
+                return name;
             }
         }
 
@@ -135,7 +188,7 @@ public class StartGameManager : MonoBehaviour
 
             if (anItem.m_ItemType == Items.ITEM_TYPE.ARMOUR)
             {
-                return anItem.s_ItemName;
+                return name;
             }
         }
 
@@ -168,7 +221,7 @@ public class StartGameManager : MonoBehaviour
 
             if (anItem.m_ItemType == Items.ITEM_TYPE.USEABLES)
             {
-                return anItem.s_ItemName;
+                return name;
             }
         }
 

@@ -129,17 +129,22 @@ public class InvManagerSelect : MonoBehaviour {
             {
                 draggingEquip.transform.position = new Vector3(9999, 9999, 9999);
                 dragging = false;
-                string discardedItem = (draggingEquip.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
-                PersistentData.m_Instance.ItemList.Add(discardedItem);
+                string discardedItem;
                 switch (currentTab)
                 {
                     case 1:
+                        discardedItem = (draggingEquip.GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+                        PersistentData.m_Instance.ItemList.Add(discardedItem);
                         fetchHelmetSprites();
                         break;
                     case 2:
+                        discardedItem = (draggingEquip.GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+                        PersistentData.m_Instance.ItemList.Add(discardedItem);
                         fetchWeaponSprites();
                         break;
                     case 3:
+                        discardedItem = (draggingEquip.GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+                        PersistentData.m_Instance.ItemList.Add(discardedItem);
                         fetchItemSprites();
                         break;
                 }
@@ -148,7 +153,7 @@ public class InvManagerSelect : MonoBehaviour {
             }
             else if((currentHov.name[6] == 'h' && currentTab == 1) || (currentHov.name[6] == 'w' && currentTab == 2) || (currentHov.name[6] == 'i' && currentTab == 3))
             {
-                if(currentHov.GetComponent<Image>().name.Contains("slot"))
+                if(currentHov.GetComponent<Image>().sprite.name.Contains("slot"))
                 {
                     
                 }
@@ -535,26 +540,53 @@ public class InvManagerSelect : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
         string discardedItem;
 
-        discardedItem = (GameObject.Find("Slot1_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
-        discardedItem = (GameObject.Find("Slot1_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
-        discardedItem = (GameObject.Find("Slot1_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        if (slot1_helmetBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot1_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
+        if (slot1_weaponBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot1_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
+        if (slot1_itemBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot1_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
 
-        discardedItem = (GameObject.Find("Slot2_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
-        discardedItem = (GameObject.Find("Slot2_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
-        discardedItem = (GameObject.Find("Slot2_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        if (slot2_helmetBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot2_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
+        if (slot2_weaponBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot2_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
+        if (slot2_itemBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot2_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
 
-        discardedItem = (GameObject.Find("Slot3_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
-        discardedItem = (GameObject.Find("Slot3_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
-        discardedItem = (GameObject.Find("Slot3_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
-        PersistentData.m_Instance.ItemList.Add(discardedItem);
+        if (slot3_helmetBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot3_helmet").GetComponent<Image>().sprite.name.Replace("helmet_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
+        if (slot3_weaponBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot3_weapon").GetComponent<Image>().sprite.name.Replace("weapon_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
+        if (slot3_itemBuff.text != "")
+        {
+            discardedItem = (GameObject.Find("Slot3_item").GetComponent<Image>().sprite.name.Replace("item_", "")).Replace("2", "");
+            PersistentData.m_Instance.ItemList.Add(discardedItem);
+        }
     }
 
     public void addChar(Image image)
