@@ -18,7 +18,7 @@ public class CSVLoader : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-
+        
         string[] records = csvFile.text.Split(lineSeperater);
         int i = 0;
         int j = 0;
