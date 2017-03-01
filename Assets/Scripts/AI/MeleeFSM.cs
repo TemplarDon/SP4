@@ -33,7 +33,7 @@ public class MeleeFSM : FSMBase {
         if (temp != null)
         {
             CurrentMessage = temp;
-            Debug.Log("Received a message.");
+            //Debug.Log("Received a message.");
         }
 
 
@@ -222,7 +222,7 @@ public class MeleeFSM : FSMBase {
                 if (CurrentMessage != null)
                     return (int)STATES.FOLLOW_ORDER;
 
-                if (b_NearEnemy)
+                if (b_NearEnemy && (this.GetComponent<BaseCharacter>().restrictActions[0] == false && this.GetComponent<BaseCharacter>().restrictActions[1] == false))
                 {
                     return (int)STATES.CHASE;
                 }
@@ -232,10 +232,17 @@ public class MeleeFSM : FSMBase {
 
             case STATES.FOLLOW_ORDER:
 
-                if (b_NearEnemy && this.GetComponent<Pathfinder>().b_CompletedPath)
-                {
+                //if (b_NearEnemy && this.GetComponent<Pathfinder>().b_CompletedPath)
+                //{
+                //    return (int)STATES.CHASE;
+                //}
+
+                if (this.GetComponent<Pathfinder>().b_CompletedPath)
+                    return (int)STATES.IDLE;
+
+                if (b_NearEnemy)
                     return (int)STATES.CHASE;
-                }
+                
 
                 return (int)STATES.FOLLOW_ORDER;
 
@@ -251,7 +258,7 @@ public class MeleeFSM : FSMBase {
                     return (int)STATES.ATTACK;
                 }
 
-                if (this.GetComponent<BaseCharacter>().restrictActions[0] == true)
+                if (this.GetComponent<BaseCharacter>().restrictActions[0] == true || this.GetComponent<BaseCharacter>().restrictActions[1] == true)
                     return (int)STATES.IDLE;
 
                 return (int)STATES.CHASE;
@@ -259,11 +266,11 @@ public class MeleeFSM : FSMBase {
 
             case STATES.ATTACK:
 
-                if (!b_NearEnemy && m_TargetedEnemy != null)
-                    return (int)STATES.CHASE;
-
                 if (m_TargetedEnemy == null || b_Attacked)
                     return (int)STATES.IDLE;
+
+                if (!b_NearEnemy && m_TargetedEnemy != null)
+                    return (int)STATES.CHASE;
 
                 return (int)STATES.ATTACK;
 
@@ -310,20 +317,21 @@ public class MeleeFSM : FSMBase {
     
     void DoIdle()
     {
-        //Debug.Log("Melee Idling");
+        Debug.Log( this.gameObject.name + " Idling");
+        this.GetComponent<BaseCharacter>().restrictActions[0] = true;
         this.GetComponent<BaseCharacter>().restrictActions[1] = true;
     }
 
     void DoFollowOrder()
     {
-        //Debug.Log("Melee Follow");
+        Debug.Log(this.gameObject.name + " Follow");
         ProcessMessage();
     }
 
 
     void DoChase()
     {
-        //Debug.Log("Melee Chase");
+        Debug.Log(this.gameObject.name + " Chase");
         //Debug.Log(this.GetComponent<BaseCharacter>().restrictActions[0].ToString() + " " + this.GetComponent<BaseCharacter>().restrictActions[1].ToString());
         if (this.GetComponent<BaseCharacter>().restrictActions[0] == false && this.GetComponent<BaseCharacter>().restrictActions[1] == false)
         {
@@ -336,12 +344,12 @@ public class MeleeFSM : FSMBase {
 
     void DoAttack()
     {
-        //Debug.Log("Melee Attack");
+        Debug.Log(this.gameObject.name + " Attack");
         this.GetComponent<Pathfinder>().Reset();
         if (m_TargetedEnemy != null && !b_Attacked)
         {
             this.GetComponent<BaseCharacter>().restrictActions[1] = true;
-            m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(1);
+            m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(this.GetComponent<BaseCharacter>().GetAttackDamage());
 
             int attacker_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
             int attacker_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
@@ -373,7 +381,7 @@ public class MeleeFSM : FSMBase {
 
             b_Attacked = true;
 
-            Debug.Log("Attacking!");
+            //Debug.Log("Attacking!");
         }
     }
 
@@ -403,6 +411,24 @@ public class MeleeFSM : FSMBase {
         switch (CurrentMessage.theMessageType)
         {
             case Message.MESSAGE_TYPE.ORDER_FRONTAL_ASSAULT:
+
+                //Vector3 EnemyAvgPos = CurrentMessage.theDestination;
+
+                //float ClosestDist = 99999;
+                //int ClosestIdx = 0;
+
+                //GameObject[] goList = GameObject.FindGameObjectsWithTag("Character");
+
+                //for (int i = 0; i < goList.Length; ++i)
+                //{
+                //    GameObject go = goList[i];
+                //    if (go.GetComponent<BaseCharacter>().IsEnemy || go.GetComponent<BaseCharacter>().IsDead)
+                //        continue;
+                    
+                //    if ( (go.GetComponent<BaseCharacter>().pos - this.GetComponent<) )
+
+                //}
+
                 this.GetComponent<BaseCharacter>().SetCharacterDestination(CurrentMessage.theDestination);
                 this.GetComponent<BaseCharacter>().SetToMove(true);
 
@@ -411,6 +437,9 @@ public class MeleeFSM : FSMBase {
 
             case Message.MESSAGE_TYPE.ORDER_SURROUND_TARGET:
                 this.GetComponent<BaseCharacter>().SetCharacterDestination(FindClosestSpot(CurrentMessage.theTarget.GetComponent<BaseCharacter>().pos));
+
+                Instantiate(GameObject.Find("PathTile"), CurrentMessage.theTarget.GetComponent<BaseCharacter>().pos, Quaternion.identity);
+
                 this.GetComponent<BaseCharacter>().SetToMove(true);
                 Debug.Log("Following Order: Surround Target");
            
@@ -441,7 +470,7 @@ public class MeleeFSM : FSMBase {
             Vector3 check = PossibleLocations[i];
             if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x - 1, (int)-check.y - 1) == -1 || this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(check) != null)
             {
-                Debug.Log("Found invalid closest spot.");
+                //Debug.Log("Found invalid closest spot.");
                 Marked[i] = true;
             }
         }

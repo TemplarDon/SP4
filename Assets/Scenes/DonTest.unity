@@ -127,7 +127,7 @@ MonoBehaviour:
   SkillType: 3
   SkillName: STARPLATINUMTHEWORLD
   SkillText: REFRESHES TURN
-  ChargeCost: 0
+  ChargeCost: 5
   Range: 1
 --- !u!1 &16540383
 GameObject:
@@ -320,11 +320,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseHealth
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseAttackRange
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseStrength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseArmour
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -560,7 +568,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 39
 --- !u!1 &83107155
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +1006,7 @@ Prefab:
     - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300156, guid: 6493bc4ac88358d4ab812a5e4930b380,
+      objectReference: {fileID: 21300000, guid: 6493bc4ac88358d4ab812a5e4930b380,
         type: 3}
     - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Controller
@@ -1014,7 +1022,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseHealth
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseAttackRange
@@ -1039,6 +1047,14 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseStrength
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseArmour
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1352,7 +1368,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300348, guid: 6493bc4ac88358d4ab812a5e4930b380, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6493bc4ac88358d4ab812a5e4930b380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1378,10 +1394,10 @@ MonoBehaviour:
   Name: Fugo
   BaseSpeed: 3
   BaseAttackRange: 1
-  BaseStrength: 2
+  BaseStrength: 30
   BaseMagic: 1
-  BaseHealth: 3
-  BaseArmour: 1
+  BaseHealth: 20
+  BaseArmour: 30
   IsEnemy: 0
   IsDead: 0
   profilePic: {fileID: 21300000, guid: c978fdb655c5bc142b7b5a3a85dcfcaf, type: 3}
@@ -1638,6 +1654,95 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188660711}
+--- !u!1 &237598218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 237598222}
+  - 212: {fileID: 237598221}
+  - 95: {fileID: 237598220}
+  - 114: {fileID: 237598219}
+  m_Layer: 0
+  m_Name: PolnareffAnimationControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &237598219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237598218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
+--- !u!95 &237598220
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237598218}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa21d587d35caf34fa652be6dc0b8527, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &237598221
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237598218}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b327d9a9f5c3b3445aff0acc19f8a297, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &237598222
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237598218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.572769, y: -0.5261059, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 47
 --- !u!1 &253267766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,10 +2067,10 @@ MonoBehaviour:
   Name: Narancia
   BaseSpeed: 3
   BaseAttackRange: 1
-  BaseStrength: 2
+  BaseStrength: 20
   BaseMagic: 1
-  BaseHealth: 3
-  BaseArmour: 1
+  BaseHealth: 30
+  BaseArmour: 30
   IsEnemy: 0
   IsDead: 0
   profilePic: {fileID: 21300000, guid: 8b60a2a626f2d8849a672988d5c8e0c7, type: 3}
@@ -2227,7 +2332,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseHealth
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: BaseAttackRange
@@ -2241,6 +2346,14 @@ Prefab:
     - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseStrength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseArmour
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -3826,6 +3939,177 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044539548}
+--- !u!1 &1082996123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1082996131}
+  - 114: {fileID: 1082996130}
+  - 212: {fileID: 1082996129}
+  - 61: {fileID: 1082996128}
+  - 114: {fileID: 1082996127}
+  - 95: {fileID: 1082996126}
+  - 114: {fileID: 1082996125}
+  - 114: {fileID: 1082996124}
+  m_Layer: 0
+  m_Name: Jotaro
+  m_TagString: Character
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1082996124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutTime: 1
+  StartFade: 0
+--- !u!114 &1082996125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
+--- !u!95 &1082996126
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2143068911}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59f500a59dd7bae468c219b04d3195e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1082996127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11471514, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2143068911}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715e677c2954e3c43959d103380f69d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theLevel: {fileID: 154135198}
+  m_Destination: {x: 0, y: 0, z: 0}
+  b_PathFound: 0
+  PathTile: {fileID: 490096121}
+  b_PathSpawned: 0
+  b_CompletedPath: 0
+--- !u!61 &1082996128
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6193390, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2143068911}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+--- !u!212 &1082996129
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2143068911}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 5748cbdf3d026f64581dbe31384ac7c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!114 &1082996130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2143068911}
+  m_GameObject: {fileID: 1082996123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1451e89eb0add4bbf6fa0e2b334b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theLevel: {fileID: 154135198}
+  pos: {x: 0, y: 0, z: 0}
+  theWeapon: {fileID: 0}
+  theArmour: {fileID: 0}
+  theItem: {fileID: 0}
+  theSkill: {fileID: 2073342009}
+  restrictActions: 
+  Name: Jotaro
+  BaseSpeed: 3
+  BaseAttackRange: 1
+  BaseStrength: 30
+  BaseMagic: 1
+  BaseHealth: 30
+  BaseArmour: 30
+  IsEnemy: 0
+  IsDead: 0
+  profilePic: {fileID: 21300000, guid: c978fdb655c5bc142b7b5a3a85dcfcaf, type: 3}
+  CurrentAnimState: 0
+--- !u!4 &1082996131
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+  m_PrefabInternal: {fileID: 2143068911}
+  m_GameObject: {fileID: 1082996123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.49, y: -6.29, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
 --- !u!1 &1088737271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,15 +4290,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 449872, guid: 6044ed02bdfb16d41908e4bbc9d0b4e2, type: 2}
       propertyPath: m_RootOrder
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 22437622, guid: 6044ed02bdfb16d41908e4bbc9d0b4e2, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 22437622, guid: 6044ed02bdfb16d41908e4bbc9d0b4e2, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 8.1
+      value: 41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6044ed02bdfb16d41908e4bbc9d0b4e2, type: 2}
@@ -4247,7 +4523,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: 
   SkillText: 
-  ChargeCost: 2
+  ChargeCost: 6
 --- !u!1 &1153439550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,7 +4767,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 26296983}
   m_GameObject: {fileID: 1187619582}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a3083b92ff8558e41a697fffdc39b8a1, type: 2}
   m_CullingMode: 0
@@ -4561,7 +4837,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300036, guid: c04b6ac53cece7c47b2feec53d785080, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c04b6ac53cece7c47b2feec53d785080, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4587,10 +4863,10 @@ MonoBehaviour:
   Name: Giorno
   BaseSpeed: 3
   BaseAttackRange: 1
-  BaseStrength: 2
+  BaseStrength: 20
   BaseMagic: 1
-  BaseHealth: 3
-  BaseArmour: 1
+  BaseHealth: 30
+  BaseArmour: 30
   IsEnemy: 0
   IsDead: 0
   profilePic: {fileID: 21300000, guid: c978fdb655c5bc142b7b5a3a85dcfcaf, type: 3}
@@ -4707,7 +4983,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: 
   SkillText: 
-  ChargeCost: 1
+  ChargeCost: 6
   Animation: {fileID: 1355225220}
   Range: 2
 --- !u!4 &1214097564
@@ -6567,7 +6843,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 44
 --- !u!1 &1285771006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7047,10 +7323,10 @@ MonoBehaviour:
   Name: Man
   BaseSpeed: 3
   BaseAttackRange: 1
-  BaseStrength: 1
+  BaseStrength: 40
   BaseMagic: 1
-  BaseHealth: 3
-  BaseArmour: 1
+  BaseHealth: 10
+  BaseArmour: 20
   IsEnemy: 1
   IsDead: 0
   profilePic: {fileID: 21300000, guid: 9629256c0b6d7df449762b34c700698d, type: 3}
@@ -7270,10 +7546,10 @@ MonoBehaviour:
   Name: Man
   BaseSpeed: 3
   BaseAttackRange: 1
-  BaseStrength: 1
+  BaseStrength: 40
   BaseMagic: 1
-  BaseHealth: 5
-  BaseArmour: 2
+  BaseHealth: 20
+  BaseArmour: 25
   IsEnemy: 1
   IsDead: 0
   profilePic: {fileID: 21300000, guid: 9629256c0b6d7df449762b34c700698d, type: 3}
@@ -7367,11 +7643,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theBoard: {fileID: 132447449}
-  AggroRange: 3
+  AggroRange: 4
   RecallHealthThreshold: 3
-  ActivaRange: 8
-  TacticsRange: 4
-  OrderFrequency: 2
+  ActivaRange: 10
+  TacticsRange: 5
+  OrderFrequency: 1
 --- !u!114 &1466040326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9147,10 +9423,10 @@ MonoBehaviour:
   Name: Man
   BaseSpeed: 3
   BaseAttackRange: 1
-  BaseStrength: 1
+  BaseStrength: 40
   BaseMagic: 1
-  BaseHealth: 3
-  BaseArmour: 1
+  BaseHealth: 10
+  BaseArmour: 20
   IsEnemy: 1
   IsDead: 0
   profilePic: {fileID: 21300000, guid: 9629256c0b6d7df449762b34c700698d, type: 3}
@@ -9850,7 +10126,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 46
 --- !u!1 &1716285485
 GameObject:
   m_ObjectHideFlags: 0
@@ -10058,7 +10334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 45
 --- !u!1 &1729302082
 GameObject:
   m_ObjectHideFlags: 0
@@ -10116,7 +10392,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 43
 --- !u!1 &1831493280
 GameObject:
   m_ObjectHideFlags: 0
@@ -10147,7 +10423,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: SHARPSIGHT
   SkillText: INCREASE ALLIES RANGE
-  ChargeCost: 1
+  ChargeCost: 4
   Range: 2
 --- !u!4 &1831493282
 Transform:
@@ -10468,6 +10744,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
+--- !u!1001 &1957578811
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: UseablesList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -13.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 112818, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Name
+      value: Test Character 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theLevel
+      value: 
+      objectReference: {fileID: 154135198}
+    - target: {fileID: 11412470, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 154135198}
+    - target: {fileID: 11471514, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theLevel
+      value: 
+      objectReference: {fileID: 154135198}
+    - target: {fileID: 11471514, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: PathTile
+      value: 
+      objectReference: {fileID: 490096121}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Name
+      value: Polnareff
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Armour
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Skill
+      value: 
+      objectReference: {fileID: 1215460899}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Item
+      value: 
+      objectReference: {fileID: 1582067856}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theWeapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theArmour
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theItem
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theSkill
+      value: 
+      objectReference: {fileID: 1147761902}
+    - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b327d9a9f5c3b3445aff0acc19f8a297,
+        type: 3}
+    - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fa21d587d35caf34fa652be6dc0b8527, type: 2}
+    - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseAttackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseStrength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseArmour
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_ParentPrefab: {fileID: 100100000, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1962079948
 Prefab:
   m_ObjectHideFlags: 0
@@ -10879,21 +11291,180 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 69.641106
-      objectReference: {fileID: 0}
-    - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 69.641106
-      objectReference: {fileID: 0}
-    - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.9065282
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2048717023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2048717031}
+  - 114: {fileID: 2048717030}
+  - 212: {fileID: 2048717029}
+  - 61: {fileID: 2048717028}
+  - 114: {fileID: 2048717027}
+  - 95: {fileID: 2048717026}
+  - 114: {fileID: 2048717025}
+  - 114: {fileID: 2048717024}
+  m_Layer: 0
+  m_Name: Polnareff
+  m_TagString: Character
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2048717024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198df3a4a26146b44bbb2810dbeb6eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeoutTime: 1
+  StartFade: 0
+--- !u!114 &2048717025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77c08fac57bd646ba4bf3fe5faff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_AnimationEnded: 0
+--- !u!95 &2048717026
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957578811}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa21d587d35caf34fa652be6dc0b8527, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2048717027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11471514, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957578811}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715e677c2954e3c43959d103380f69d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theLevel: {fileID: 154135198}
+  m_Destination: {x: 0, y: 0, z: 0}
+  b_PathFound: 0
+  PathTile: {fileID: 490096121}
+  b_PathSpawned: 0
+  b_CompletedPath: 0
+--- !u!61 &2048717028
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6193390, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957578811}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+--- !u!212 &2048717029
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957578811}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: b327d9a9f5c3b3445aff0acc19f8a297, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!114 &2048717030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957578811}
+  m_GameObject: {fileID: 2048717023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1451e89eb0add4bbf6fa0e2b334b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theLevel: {fileID: 154135198}
+  pos: {x: 0, y: 0, z: 0}
+  theWeapon: {fileID: 0}
+  theArmour: {fileID: 0}
+  theItem: {fileID: 0}
+  theSkill: {fileID: 1147761902}
+  restrictActions: 
+  Name: Polnareff
+  BaseSpeed: 3
+  BaseAttackRange: 1
+  BaseStrength: 20
+  BaseMagic: 1
+  BaseHealth: 20
+  BaseArmour: 30
+  IsEnemy: 0
+  IsDead: 0
+  profilePic: {fileID: 21300000, guid: c978fdb655c5bc142b7b5a3a85dcfcaf, type: 3}
+  CurrentAnimState: 0
+--- !u!4 &2048717031
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+  m_PrefabInternal: {fileID: 1957578811}
+  m_GameObject: {fileID: 2048717023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.65, y: -6.29, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
 --- !u!1 &2073342007
 GameObject:
   m_ObjectHideFlags: 0
@@ -10936,7 +11507,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: HEAL
   SkillText: HEALS ALLIES WITHIN 2 TILES
-  ChargeCost: 0
+  ChargeCost: 4
   Range: 2
 --- !u!1 &2127534623
 GameObject:
@@ -11022,4 +11593,140 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0015ace5afeee83439a9877872cace90, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2143068911
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: UseablesList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -12.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419336, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 112818, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Name
+      value: Test Character 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theLevel
+      value: 
+      objectReference: {fileID: 154135198}
+    - target: {fileID: 11412470, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 154135198}
+    - target: {fileID: 11471514, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theLevel
+      value: 
+      objectReference: {fileID: 154135198}
+    - target: {fileID: 11471514, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: PathTile
+      value: 
+      objectReference: {fileID: 490096121}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Name
+      value: Jotaro
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Armour
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Skill
+      value: 
+      objectReference: {fileID: 1215460899}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: Item
+      value: 
+      objectReference: {fileID: 1582067856}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theWeapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theArmour
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theItem
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: theSkill
+      value: 
+      objectReference: {fileID: 2073342009}
+    - target: {fileID: 21218656, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5748cbdf3d026f64581dbe31384ac7c4,
+        type: 3}
+    - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 59f500a59dd7bae468c219b04d3195e1, type: 2}
+    - target: {fileID: 9535376, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseAttackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseStrength
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442826, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
+      propertyPath: BaseArmour
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_ParentPrefab: {fileID: 100100000, guid: cc763a7fafa00ef4986aaaa6e0a1632a, type: 2}
   m_IsPrefabParent: 0

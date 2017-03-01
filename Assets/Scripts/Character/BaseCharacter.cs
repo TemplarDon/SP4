@@ -226,7 +226,10 @@ public class BaseCharacter : MonoBehaviour {
                 }
 
                 this.GetComponent<Pathfinder>().enabled = false;
-                this.GetComponent<BoxCollider2D>().enabled = false;
+                if (!IsEnemy)
+                {
+                    this.GetComponent<BoxCollider2D>().enabled = false;
+                }
                 this.enabled = false;
                 GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().popPlayer(this.gameObject);
 

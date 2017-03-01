@@ -136,7 +136,7 @@ public class CommanderFSM : FSMBase {
                 {
                     TurnCounter = 0;
 
-                    Debug.Log("Going into PLAN.");
+                    //Debug.Log("Going into PLAN.");
 
                     return (int)STATES.PLAN;
                 }
@@ -148,7 +148,7 @@ public class CommanderFSM : FSMBase {
 
                 if (b_PlanFound)
                 {
-                    Debug.Log("Going into SEND_ORDERS.");
+                    //Debug.Log("Going into SEND_ORDERS.");
                     return (int)STATES.SEND_ORDERS;
                 }
 
@@ -158,7 +158,7 @@ public class CommanderFSM : FSMBase {
 
                 if (b_OrderSent)
                 {
-                    Debug.Log("Going into IDLE.");
+                    //Debug.Log("Going into IDLE.");
                     return (int)STATES.IDLE;
                 }
 
@@ -171,7 +171,7 @@ public class CommanderFSM : FSMBase {
 
                 if (CanAttack() && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
-                    Debug.Log("Going into ATTACK.");
+                    //Debug.Log("Going into ATTACK.");
 
                     b_Attacked = false;
                     return (int)STATES.ATTACK;
@@ -327,7 +327,7 @@ public class CommanderFSM : FSMBase {
         foreach (Message aMessage in MessageBuffer)
         {
             theBoard.AddMessage(aMessage);
-            Debug.Log("Sending orders.");
+            //Debug.Log("Sending orders.");
         }
 
         b_PlanFound = false;

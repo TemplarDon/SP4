@@ -19,7 +19,7 @@ public class FugoSkill : BaseSkills
 
         foreach (BaseCharacter aCharacter in AffectedCharacters)
         {
-            GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().TakeDamage(1);
+            GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().TakeDamage(30);
             Debug.Log("Damage Taken!");
         }
 
