@@ -5055,6 +5055,10 @@ MonoBehaviour:
   InitList:
   - {fileID: 8300000, guid: 5d89ceaf6fa517f499afc6c9cbc6032e, type: 3}
   - {fileID: 8300000, guid: 8dc70e81194070d459198c9bd42f52e4, type: 3}
+  - {fileID: 8300000, guid: 50a0d0dc1afb49b4caafcce9b7b485bd, type: 3}
+  - {fileID: 8300000, guid: 6ece6a8e1caebfb4e831e67b233dcb0e, type: 3}
+  - {fileID: 8300000, guid: a025784c66196404abcd086a4fa22b6c, type: 3}
+  - {fileID: 8300000, guid: 70aa50f5b2206e74180b265755f22356, type: 3}
 --- !u!114 &1158132869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5076,7 +5080,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 70aa50f5b2206e74180b265755f22356, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5485,7 +5489,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: 
   SkillText: 
-  ChargeCost: 0
+  ChargeCost: 6
   Animation: {fileID: 1355225220}
   Range: 2
 --- !u!4 &1214097564
@@ -11045,7 +11049,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: SHARPSIGHT
   SkillText: INCREASE ALLIES RANGE
-  ChargeCost: 0
+  ChargeCost: 4
   Range: 2
 --- !u!4 &1831493282
 Transform:

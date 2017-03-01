@@ -22,6 +22,22 @@ public class SoundManager : MonoBehaviour {
                 case "fugo_blast":
                     AudioList.Add("FugoSkill", aClip);
                     break;
+
+                case "Defend":
+                    AudioList.Add("Defend", aClip);
+                    break;
+
+                case "Heal":
+                    AudioList.Add("Heal", aClip);
+                    break;
+
+                case "PowerUp":
+                    AudioList.Add("PowerUp", aClip);
+                    break;
+
+                case "Walk":
+                    AudioList.Add("Walk", aClip);
+                    break;
             }
         }
 

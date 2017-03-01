@@ -496,26 +496,38 @@ public class BaseCharacter : MonoBehaviour {
                         //GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
+                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Heal");
+
                         break;
 
                     case Modifier.MODIFY_TYPE.ATTACK:
                         this.ModifiedStrength = this.BaseStrength + aModifier.i_ModifierAmount;
+
+                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
 
                     case Modifier.MODIFY_TYPE.MAGIC:
                         this.ModifiedMagic = this.BaseMagic + aModifier.i_ModifierAmount;
+
+                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
 
                     case Modifier.MODIFY_TYPE.ARMOUR:
                         this.ModifiedArmour = this.BaseArmour + aModifier.i_ModifierAmount;
+
+                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Defend");
                         break;
 
                     case Modifier.MODIFY_TYPE.SPEED:
                         this.ModifiedSpeed = this.BaseSpeed + aModifier.i_ModifierAmount;
+
+                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
 
                     case Modifier.MODIFY_TYPE.RANGE:
                         this.ModifiedAttackRange = this.BaseAttackRange + aModifier.i_ModifierAmount;
+
+                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
                 }
             }
