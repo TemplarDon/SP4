@@ -152,7 +152,10 @@ public class teamManager : MonoBehaviour {
         if (ActiveMemberIdx + 1 < teamList.Count)
         {
             if (teamList[ActiveMemberIdx].restrictActions[1] == true)
+            {
+                teamList[ActiveMemberIdx].b_EnemyActive = false;
                 ++ActiveMemberIdx;
+            }
         }
     }
 

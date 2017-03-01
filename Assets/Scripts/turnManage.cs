@@ -476,7 +476,7 @@ public class turnManage : MonoBehaviour {
             menuOpen = false;
         }
 
-        if(controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING)
+        if (controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING || controller.GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.TARGET)
         {
             if(Input.GetMouseButtonDown(0) && cancelAction == true)
             {
@@ -563,13 +563,14 @@ public class turnManage : MonoBehaviour {
                     // Change CONTROL_TYPE to SELECTION
 
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.MOVING;
-
+                    menuOpen = false;
                     break;
                 case 2:
                     menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     menuOpen = false;
                     map.redGen = true;
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.ATTACKING;
+                    menuOpen = false;
                     break;
                 case 3:
                     menuObject.transform.position = new Vector3(-9999, -9999, 0);
@@ -581,35 +582,47 @@ public class turnManage : MonoBehaviour {
                     toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, 1, 1);
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().AddModifier(toAdd);
                     //GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseArmour++;
+                    menuOpen = false;
                     break;
                 case 4:
                     //menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseItem();
+                    menuOpen = false;
                     break;
                 case 5:
                     //menuObject.transform.position = new Vector3(-9999, -9999, 0);
-                    controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                     //characNEW.BaseMana = characNEW.GetMaxMana();
                     characNEW.theSkill.ResetCharge();
                     standEyes.sprite = GameObject.Find("StandEyesThing").GetComponent<StandEyesStore>().getSprite(characNEW.name);
                     Debug.Log(characNEW.name);
                     standAnim = true;
+
+                    if (controller.GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.TARGET)
+                    {
+                        controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
+                    }
+
+                    Debug.Log(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.name + " " + GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode.ToString());
+                    menuOpen = false;
                     break;
             }
 
-            if (actionSelection > 2)
+            if (controller.GetComponent<CharacterController>().CurrentMode != CharacterController.CONTROL_MODE.TARGET)
             {
-                characNEW.restrictActions[0] = restrictions[0] = true;
-                characNEW.restrictActions[1] = restrictions[1] = true;
-                characNEW.restrictActions[2] = restrictions[2] = true;
-                characNEW.restrictActions[3] = restrictions[3] = true;
-                characNEW.restrictActions[4] = restrictions[4] = true;
-            }
-            else
-            {
-                //characNEW.restrictActions[0] = restrictions[0] = true;
+                if (actionSelection > 2)
+                {
+                    characNEW.restrictActions[0] = restrictions[0] = true;
+                    characNEW.restrictActions[1] = restrictions[1] = true;
+                    characNEW.restrictActions[2] = restrictions[2] = true;
+                    characNEW.restrictActions[3] = restrictions[3] = true;
+                    characNEW.restrictActions[4] = restrictions[4] = true;
+                }
+                else
+                {
+                    //characNEW.restrictActions[0] = restrictions[0] = true;
+                }
             }
 
             actionSelection = 1;

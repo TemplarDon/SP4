@@ -19,6 +19,7 @@ public class BaseCharacter : MonoBehaviour {
     public BaseSkills theSkill;
 
   	public bool[] restrictActions;
+    public bool b_EnemyActive = false;
 
     // Character Stats
     public string Name = "Man";
@@ -76,7 +77,7 @@ public class BaseCharacter : MonoBehaviour {
     // Private Var
     private bool b_ShouldMove = false;
     private Vector3 m_Destination = new Vector3(0,1,0);
-
+    private bool b_Restricted = false;
 
 	// Use this for initialization
 	void Start () {
@@ -125,21 +126,45 @@ public class BaseCharacter : MonoBehaviour {
                 theLevel.mapposy = -((int)pos.y) - 1;
 
             }
+
+            if (b_Restricted)
+            {
+                restrictActions[0] = true;
+                restrictActions[1] = true;
+            }
+
+            if (b_ShouldMove)
+            {
+                //Debug.Log("Trying to follow path.");
+                this.GetComponent<Pathfinder>().FollowPath();
+            }
+
+            UpdateAnimState();
+            CheckIfDead();
         }
         else
         {
             // Do Enemy Updates
+            if (b_EnemyActive)
+            {
+                if (b_Restricted)
+                {
+                    restrictActions[0] = true;
+                    restrictActions[1] = true;
+                }
 
+                if (b_ShouldMove)
+                {
+                    //Debug.Log("Trying to follow path.");
+                    this.GetComponent<Pathfinder>().FollowPath();
+                }
+
+                UpdateAnimState();
+                CheckIfDead();
+            }
         }
 
-        if (b_ShouldMove)
-        {
-            //Debug.Log("Trying to follow path.");
-            this.GetComponent<Pathfinder>().FollowPath();
-        }
 
-        UpdateAnimState();
-        CheckIfDead();
         
 	}
 
@@ -204,6 +229,8 @@ public class BaseCharacter : MonoBehaviour {
     {
         Debug.Log("Using skill!");
         theSkill.GetComponent<BaseSkills>().DoEffect(this);
+
+        this.CurrentAnimState = ANIM_STATE.STAND_DOWN;
     }
 
     public void UseItem()
@@ -280,19 +307,19 @@ public class BaseCharacter : MonoBehaviour {
                 break;
 
             case ANIM_STATE.STAND_DOWN:
-                this.GetComponent<Animator>().Play("StandDown");
+                this.GetComponent<Animator>().Play("Stand");
                 break;
 
             case ANIM_STATE.STAND_LEFT:
-                this.GetComponent<Animator>().Play("StandLeft");
+                this.GetComponent<Animator>().Play("Stand");
                 break;
 
             case ANIM_STATE.STAND_RIGHT:
-                this.GetComponent<Animator>().Play("StandRight");
+                this.GetComponent<Animator>().Play("Stand");
                 break;
 
             case ANIM_STATE.STAND_UP:
-                this.GetComponent<Animator>().Play("StandUp");
+                this.GetComponent<Animator>().Play("Stand");
                 break;
 
             case ANIM_STATE.DIE:
@@ -462,6 +489,10 @@ public class BaseCharacter : MonoBehaviour {
                     case Modifier.MODIFY_TYPE.RANGE:
                         this.ModifiedAttackRange -= aModifier.i_ModifierAmount;
                         break;
+
+                    case Modifier.MODIFY_TYPE.RESTRICT:
+                        b_Restricted = false;
+                        break;
                 }
                 ToRemove[i] = true;
             }
@@ -528,6 +559,14 @@ public class BaseCharacter : MonoBehaviour {
                         this.ModifiedAttackRange = this.BaseAttackRange + aModifier.i_ModifierAmount;
 
                         GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        break;
+
+                    case Modifier.MODIFY_TYPE.RESTRICT:
+                        Vector3 spawn = pos + new Vector3(0, this.transform.localScale.y / 2, 0);
+
+                        go = Instantiate(GameObject.Find("Restrict Particle System"), spawn, GameObject.Find("Restrict Particle System").transform.rotation) as GameObject;
+                        go.GetComponent<CleanUp>().enabled = true;
+                        b_Restricted = true;
                         break;
                 }
             }

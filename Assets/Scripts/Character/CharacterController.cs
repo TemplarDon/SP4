@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour {
         SELECTION,
         MOVING,
         ATTACKING,
+        TARGET,     // FOR STANDS THAT NEED TO TARGET ANOTHER POSITION
     }
 
     public CONTROL_MODE CurrentMode;
@@ -56,6 +57,9 @@ public class CharacterController : MonoBehaviour {
             GameObject.Find("Main Camera").transform.position = this.CurrentControlledCharacter.transform.position;
             GameObject.Find("Main Camera").GetComponent<cameramove>().currentLoc = this.CurrentControlledCharacter.transform.position;
         }
+
+
+        //Debug.Log(CurrentControlledCharacter.name + " " + CurrentMode.ToString());
 
         // Temporary code
         //if (Input.GetKeyUp(KeyCode.T))

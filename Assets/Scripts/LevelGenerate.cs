@@ -206,7 +206,7 @@ public class LevelGenerate : MonoBehaviour {
 
         BaseCharacter theCharacter = GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>();
 
-        if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING)
+        if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.MOVING || GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.ATTACKING || GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.TARGET)
         {
             //checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseSpeed);
             if (redGen == false)

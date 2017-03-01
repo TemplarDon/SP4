@@ -48,40 +48,48 @@ public class MoveSelection : MonoBehaviour {
                 {
                     if ((int)obj.transform.position.x == (int)transform.position.x && (int)obj.transform.position.y == (int)transform.position.y)
                     {
-                        //int damageDealt = (int)(Mathf.Clamp(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength - obj.GetComponent<BaseCharacter>().BaseArmour, 1.0f, 999.0f));
-                        obj.GetComponent<BaseCharacter>().TakeDamage(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().GetAttackDamage());
-
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("MeleeAttack");
-                        
-                        playerPresent = true;  
-                        //GameObject.Find("DmgIndicator").GetComponent<dmgDisp>().dispAtk(damageDealt, obj.transform.position);
-
-                        int attacker_x = Mathf.RoundToInt(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().pos.x);
-                        int attacker_y = Mathf.RoundToInt(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().pos.y);
-
-                        int reciever_x = Mathf.RoundToInt(obj.GetComponent<BaseCharacter>().pos.x);
-                        int reciever_y = Mathf.RoundToInt(obj.GetComponent<BaseCharacter>().pos.y);
-
-
-                        if (reciever_x < attacker_x && reciever_y == attacker_y)
+                        if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.TARGET)
                         {
-                            //this.GetComponent<Animator>().Play("CharacterAnimationLeft");
-                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_LEFT;
+                            (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as KoichiSkill).SetTargetedObject(obj);
+                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                         }
-                        else if (reciever_x > attacker_x && reciever_y == attacker_y)
+                        else
                         {
-                            //this.GetComponent<Animator>().Play("CharacterAnimationRight");
-                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_RIGHT;
-                        }
-                        else if (reciever_y < attacker_y && reciever_x == attacker_x)
-                        {
-                            //this.GetComponent<Animator>().Play("CharacterAnimationDown");
-                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_DOWN;
-                        }
-                        else if (reciever_y > attacker_y && reciever_x == attacker_x)
-                        {
-                            //this.GetComponent<Animator>().Play("CharacterAnimationUp");
-                            GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_UP;
+                            //int damageDealt = (int)(Mathf.Clamp(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseStrength - obj.GetComponent<BaseCharacter>().BaseArmour, 1.0f, 999.0f));
+                            obj.GetComponent<BaseCharacter>().TakeDamage(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().GetAttackDamage());
+
+                            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("MeleeAttack");
+
+                            playerPresent = true;
+                            //GameObject.Find("DmgIndicator").GetComponent<dmgDisp>().dispAtk(damageDealt, obj.transform.position);
+
+                            int attacker_x = Mathf.RoundToInt(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().pos.x);
+                            int attacker_y = Mathf.RoundToInt(GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().pos.y);
+
+                            int reciever_x = Mathf.RoundToInt(obj.GetComponent<BaseCharacter>().pos.x);
+                            int reciever_y = Mathf.RoundToInt(obj.GetComponent<BaseCharacter>().pos.y);
+
+
+                            if (reciever_x < attacker_x && reciever_y == attacker_y)
+                            {
+                                //this.GetComponent<Animator>().Play("CharacterAnimationLeft");
+                                GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_LEFT;
+                            }
+                            else if (reciever_x > attacker_x && reciever_y == attacker_y)
+                            {
+                                //this.GetComponent<Animator>().Play("CharacterAnimationRight");
+                                GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_RIGHT;
+                            }
+                            else if (reciever_y < attacker_y && reciever_x == attacker_x)
+                            {
+                                //this.GetComponent<Animator>().Play("CharacterAnimationDown");
+                                GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_DOWN;
+                            }
+                            else if (reciever_y > attacker_y && reciever_x == attacker_x)
+                            {
+                                //this.GetComponent<Animator>().Play("CharacterAnimationUp");
+                                GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().CurrentAnimState = BaseCharacter.ANIM_STATE.ATTACK_UP;
+                            }
                         }
                     }
                 }
