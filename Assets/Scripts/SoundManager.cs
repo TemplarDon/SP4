@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour {
                     AudioList.Add("PowerUp", aClip);
                     break;
 
-                case "Walk2":
+                case "Walk":
                     AudioList.Add("Walk", aClip);
                     break;
             }

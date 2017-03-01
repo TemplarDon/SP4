@@ -5233,7 +5233,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: 
   SkillText: 
-  ChargeCost: 0
+  ChargeCost: 6
   Animation: {fileID: 1355225220}
   Range: 2
 --- !u!4 &1214097564
@@ -10791,7 +10791,7 @@ MonoBehaviour:
   SkillType: 0
   SkillName: SHARPSIGHT
   SkillText: INCREASE ALLIES RANGE
-  ChargeCost: 0
+  ChargeCost: 4
   Range: 2
 --- !u!4 &1831493282
 Transform:
