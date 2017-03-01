@@ -20,6 +20,9 @@ public class FugoSkill : BaseSkills
         foreach (BaseCharacter aCharacter in AffectedCharacters)
         {
             GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().TakeDamage(30);
+
+            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("FugoSkill");
+
             Debug.Log("Damage Taken!");
         }
 

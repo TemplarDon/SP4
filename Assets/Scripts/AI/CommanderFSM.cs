@@ -355,7 +355,9 @@ public class CommanderFSM : FSMBase {
         if (m_TargetedEnemy != null && !b_Attacked)
         {
             this.GetComponent<BaseCharacter>().restrictActions[1] = true;
-            m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(1);
+            m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(this.GetComponent<BaseCharacter>().GetAttackDamage());
+
+            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("MeleeAttack");
 
             int attacker_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
             int attacker_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);

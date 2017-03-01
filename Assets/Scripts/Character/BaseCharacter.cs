@@ -351,7 +351,7 @@ public class BaseCharacter : MonoBehaviour {
 
     public int GetAttackRange()
     {
-        return ModifiedSpeed;
+        return ModifiedAttackRange;
     }
 
     public int GetAttackDamage()
