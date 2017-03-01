@@ -56,10 +56,14 @@ public class turnManage : MonoBehaviour {
     public int standAnimTime = 100;
     private Image standEyes;
 
+    private bool descTextEnable = false;
+    private Image descText;
+
 	// Use this for initialization
 	void Start () {
         turnNum.text = 1.ToString();
         standEyes = GameObject.Find("StandActivate").GetComponent<Image>();
+        descText = GameObject.Find("DescBox").GetComponent<Image>();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
 
         //characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
@@ -96,6 +100,30 @@ public class turnManage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(descTextEnable == true)
+        {
+            Debug.Log(descText.transform.localPosition);
+            if (descText.transform.localPosition.x <= 340)
+            {
+                descText.transform.Translate(5, 0, 0);
+            }
+            else
+            {
+                descText.transform.localPosition = new Vector3(341, 0, 0);
+            }
+        }
+        else
+        {
+            if (descText.transform.localPosition.x > 0)
+            {
+                descText.transform.Translate(-5, 0, 0);
+            }
+            else
+            {
+                descText.transform.localPosition = new Vector3(0, 0, 0);
+            }
+        }
 
         if(standAnim == true)
         {
@@ -421,6 +449,30 @@ public class turnManage : MonoBehaviour {
                         }
                     }
                 }
+                if (actionSelection == 4)
+                {
+                    descTextEnable = true;
+                    if (characNEW.theItem != null)
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = characNEW.theItem.s_ItemDesc;
+                    }
+                    else
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = "No Item";
+                    }
+                }
+                else if (actionSelection == 5)
+                {
+                    descTextEnable = true;
+                    if (characNEW.theSkill != null)
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = characNEW.theSkill.SkillText;
+                    }
+                    else
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = "No Skill";
+                    }
+                }
                 //actionSelection--;
             }
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -439,6 +491,30 @@ public class turnManage : MonoBehaviour {
                             actionSelection = nextOption;
                             break;
                         }
+                    }
+                }
+                if (actionSelection == 4)
+                {
+                    descTextEnable = true;
+                    if (characNEW.theItem != null)
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = characNEW.theItem.s_ItemDesc;
+                    }
+                    else
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = "No Item";
+                    }
+                }
+                else if (actionSelection == 5)
+                {
+                    descTextEnable = true;
+                    if (characNEW.theSkill != null)
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = characNEW.theSkill.SkillText;
+                    }
+                    else
+                    {
+                        GameObject.Find("DescText").GetComponent<Text>().text = "No Skill";
                     }
                 }
             }
@@ -539,11 +615,40 @@ public class turnManage : MonoBehaviour {
     {
         mouseOnMenu = true;
         actionSelection = hoveringLoc;
+        if(hoveringLoc == 4)
+        {
+            descTextEnable = true;
+            if(characNEW.theItem != null)
+            {
+                GameObject.Find("DescText").GetComponent<Text>().text = characNEW.theItem.s_ItemDesc;
+            }
+            else
+            {
+                GameObject.Find("DescText").GetComponent<Text>().text = "No Item";
+            }
+        }
+        else if(hoveringLoc == 5)
+        {
+            descTextEnable = true;
+            if (characNEW.theSkill != null)
+            {
+                GameObject.Find("DescText").GetComponent<Text>().text = characNEW.theSkill.SkillText;
+            }
+            else
+            {
+                GameObject.Find("DescText").GetComponent<Text>().text = "No Skill";
+            }
+        }
+        else
+        {
+            descTextEnable = false;
+        }
     }
 
     public void mouseLeave()
     {
         mouseOnMenu = false;
+        descTextEnable = false;
     }
 
     public void mouseClick(int clickLoc)
@@ -626,7 +731,6 @@ public class turnManage : MonoBehaviour {
             }
 
             actionSelection = 1;
-
 
         }
         else
