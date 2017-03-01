@@ -24,7 +24,10 @@ public class EndGameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+        if (!GameObject.Find("StartGameManager").GetComponent<StartGameManager>().b_AssignedCharacters)
+            return;
+
         if (m_EnemyTeam.GetComponent<teamManager>().teamList.Count <= 0)
         {
             b_GameEnded = true;
@@ -35,11 +38,6 @@ public class EndGameManager : MonoBehaviour {
         {
             b_GameEnded = true;
             b_PlayerWon = false;
-        }
-
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            b_GameEnded = true;
         }
 
         if (b_GameEnded)
