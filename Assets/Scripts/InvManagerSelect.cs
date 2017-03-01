@@ -124,6 +124,9 @@ public class InvManagerSelect : MonoBehaviour {
             if (Input.GetMouseButton(0))
             {
                 draggingEquip.transform.position = Input.mousePosition;
+#if UNITY_ANDROID
+                draggingEquip.transform.position = Input.mousePosition;
+#endif
             }
             else if(currentHovState == false)
             {
