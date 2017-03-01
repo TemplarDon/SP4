@@ -363,7 +363,7 @@ public class Pathfinder : MonoBehaviour
 
             if (CheckCharacter != this.GetComponent<BaseCharacter>() && (checkx != m_Destination.x || checky != m_Destination.y))
             {
-                Debug.Log("Node Rejected. (Character on the spot) " + CheckCharacter.Name);
+                //Debug.Log("Node Rejected. (Character on the spot) " + CheckCharacter.Name);
                 return false;
             }
         }

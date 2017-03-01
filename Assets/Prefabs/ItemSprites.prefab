@@ -83,7 +83,6 @@ GameObject:
   - 222: {fileID: 22222324}
   - 114: {fileID: 11431986}
   - 114: {fileID: 11472316}
-  - 114: {fileID: 11428478}
   m_Layer: 5
   m_Name: item_coffee
   m_TagString: ItemTemp
@@ -423,7 +422,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 12
 --- !u!114 &11426518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,22 +450,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11428478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1698cf6df7d44a14481ad9f1f386c047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s_ItemName: 
-  s_ItemDisp: 
-  s_ItemDesc: 
-  m_ItemType: 0
-  BuffAmount: 1
 --- !u!114 &11431986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,7 +492,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 12
 --- !u!114 &11438792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -622,7 +605,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 15
 --- !u!114 &11455178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,7 +721,7 @@ MonoBehaviour:
   m_FillOrigin: 0
 --- !u!114 &11466110
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139940}
@@ -794,7 +777,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 10
 --- !u!114 &11470562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -869,7 +852,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 10
 --- !u!114 &11487488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -912,7 +895,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 10
 --- !u!114 &11494420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -928,7 +911,7 @@ MonoBehaviour:
   s_ItemDisp: 
   s_ItemDesc: 
   m_ItemType: 0
-  HealAmount: 1
+  HealAmount: 13
 --- !u!222 &22204012
 CanvasRenderer:
   m_ObjectHideFlags: 1
