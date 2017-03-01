@@ -59,7 +59,8 @@ public class MoveSelection : MonoBehaviour {
                         {
                             if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.name == "Koichi")
                                 (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as KoichiSkill).SetTargetedObject(obj);
-                               
+                            else if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.name == "Mista")
+                                (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as MistaSkill).SetTargetedObject(obj);
 
                             GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                         }
