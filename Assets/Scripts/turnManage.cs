@@ -52,9 +52,14 @@ public class turnManage : MonoBehaviour {
 
     GameObject Commander;   // Handle to the enemy commander
 
+    public bool standAnim = false;
+    public int standAnimTime = 100;
+    private Image standEyes;
+
 	// Use this for initialization
 	void Start () {
         turnNum.text = 1.ToString();
+        standEyes = GameObject.Find("StandActivate").GetComponent<Image>();
         //nameDisplay.text = charac.GetComponent<BaseCharacter>().Name;
 
         //characNEW = GameObject.Find("friendlyTeamManager").GetComponent<teamManager>().teamList[0];
@@ -91,6 +96,35 @@ public class turnManage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(standAnim == true)
+        {
+            standAnimTime--;
+            if(standEyes.transform.localPosition.x > 1037.5f)
+            {
+                standEyes.transform.Translate(-9, 0, 0);
+            }
+            else
+            {
+                standEyes.transform.localPosition = new Vector3(1037.5f, 423, 0);
+            }
+            if(standAnimTime <= 0)
+            {
+                standAnimTime = 100;
+                standAnim = false;
+            }
+        }
+        else
+        {
+            if(standEyes.transform.localPosition.x < 1522.5f)
+            {
+                standEyes.transform.Translate(6, 0, 0);
+            }
+            else
+            {
+                standEyes.transform.localPosition = new Vector3(1522.5f, 423, 0);
+            }
+        }
 
         if (Commander == null)
         {
@@ -343,6 +377,8 @@ public class turnManage : MonoBehaviour {
                             GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                             //characNEW.BaseMana = characNEW.GetMaxMana();
                             characNEW.theSkill.ResetCharge();
+                            standEyes.sprite = GameObject.Find("StandEyesThing").GetComponent<StandEyesStore>().getSprite(characNEW.name);
+                            standAnim = true;
                             break;
                     }
 
@@ -558,6 +594,9 @@ public class turnManage : MonoBehaviour {
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                     //characNEW.BaseMana = characNEW.GetMaxMana();
                     characNEW.theSkill.ResetCharge();
+                    standEyes.sprite = GameObject.Find("StandEyesThing").GetComponent<StandEyesStore>().getSprite(characNEW.name);
+                    Debug.Log(characNEW.name);
+                    standAnim = true;
                     break;
             }
 
