@@ -28,7 +28,8 @@ public class DiavoloSkill : BaseSkills
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
         foreach (GameObject obj in allObjects)
         {
-            //obj.GetComponent<BaseCharacter>().theSkill.UpdateCharge();
+            if (obj.GetComponent<BaseCharacter>() != user && !obj.GetComponent<BaseCharacter>().IsEnemy && !obj.GetComponent<BaseCharacter>().IsDead)
+                obj.GetComponent<BaseCharacter>().theSkill.UpdateCharge();
         }
     }
 }
