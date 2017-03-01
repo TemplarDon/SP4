@@ -226,7 +226,7 @@ public class LevelGenerate : MonoBehaviour {
             }
             else if(redGen == true)
             {
-                checkPossibleLoc(mapposx, mapposy, 6, theCharacter.BaseAttackRange);
+                checkPossibleLoc(mapposx, mapposy, 6, theCharacter.GetAttackRange());
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
                 foreach (GameObject obj in allObjects)
                 {

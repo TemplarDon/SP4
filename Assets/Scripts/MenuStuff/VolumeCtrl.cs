@@ -9,9 +9,11 @@ public class VolumeCtrl : MonoBehaviour
         //if there is a slider, set volume to slider
         if (volumeSlider)
         {
-            GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("CurVol");
-         volumeSlider.value = GetComponent<AudioSource>().volume;
+            //GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("CurVol");
+            volumeSlider.value = PlayerPrefs.GetFloat("CurVol");
         }
+
+        GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("CurVol");
     }
 	// Use this for initialization
 	void Start () 
@@ -22,7 +24,17 @@ public class VolumeCtrl : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        //if (Input.GetKeyUp(KeyCode.A))
+        //{
+        //    GetComponent<AudioSource>().volume += 10;
+        //    PlayerPrefs.SetFloat("CurVol", GetComponent<AudioSource>().volume);
+        //}
 
+        //if (Input.GetKeyUp(KeyCode.D))
+        //{
+        //    GetComponent<AudioSource>().volume -= 10;
+        //    PlayerPrefs.SetFloat("CurVol", GetComponent<AudioSource>().volume);
+        //}
 	}
     public void VolumeControl(float volumeControl)
     {

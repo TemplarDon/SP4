@@ -351,6 +351,8 @@ public class MeleeFSM : FSMBase {
             this.GetComponent<BaseCharacter>().restrictActions[1] = true;
             m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(this.GetComponent<BaseCharacter>().GetAttackDamage());
 
+            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("MeleeAttack");
+
             int attacker_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
             int attacker_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);
 
@@ -470,8 +472,11 @@ public class MeleeFSM : FSMBase {
             Vector3 check = PossibleLocations[i];
             if (this.GetComponent<BaseCharacter>().theLevel.GetTileCost((int)check.x - 1, (int)-check.y - 1) == -1 || this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(check) != null)
             {
-                //Debug.Log("Found invalid closest spot.");
-                Marked[i] = true;
+                if (this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(check) != this)
+                {                 
+                    //Debug.Log("Found invalid closest spot.");
+                    Marked[i] = true;
+                }
             }
         }
 
