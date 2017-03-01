@@ -11,6 +11,7 @@ public class Modifier {
         RANGE,
         SPEED,
         ARMOUR,
+        RESTRICT,
     }
 
     public bool b_Active = false;
