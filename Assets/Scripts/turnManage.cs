@@ -544,7 +544,6 @@ public class turnManage : MonoBehaviour {
                     Modifier toAdd = new Modifier();
                     toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, 1, 1);
                     GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().AddModifier(toAdd);
-
                     //GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().BaseArmour++;
                     break;
                 case 4:

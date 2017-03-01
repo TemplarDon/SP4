@@ -176,6 +176,8 @@ public class Pathfinder : MonoBehaviour
     {
         if (!b_CompletedPath && b_PathFound)
         {
+            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Walk");
+
             ////Debug.Log("Following path.");S
             // Use the last node to get the path
             Node endNode = ClosedList[ClosedList.Count - 1];
