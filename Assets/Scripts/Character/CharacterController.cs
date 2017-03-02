@@ -40,6 +40,10 @@ public class CharacterController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+#if UNITY_ANDROID
+            Touch myTouch = Input.GetTouch(0);
+            MousePos = Camera.main.ScreenToWorldPoint(new Vector3(myTouch.position.x, myTouch.position.y, 0));
+#endif
         }
 
         if (Input.GetMouseButtonUp(0) && CurrentMode == CONTROL_MODE.MOVING && b_CanMove && d_Timer > 0.5 && !b_CommandSent)

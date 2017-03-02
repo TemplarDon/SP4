@@ -46,6 +46,8 @@ public class InvManagerSelect : MonoBehaviour {
     private Text text3;
     private CharacterSelect charInfo;
 
+    Touch myTouch;
+
     // Use this for initialization
     void Start () {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("ItemTemp");
@@ -125,7 +127,8 @@ public class InvManagerSelect : MonoBehaviour {
             {
                 draggingEquip.transform.position = Input.mousePosition;
 #if UNITY_ANDROID
-                draggingEquip.transform.position = Input.mousePosition;
+                myTouch = Input.GetTouch(0);
+                draggingEquip.transform.position = new Vector3(myTouch.position.x, myTouch.position.y, 0);
 #endif
             }
             else if(currentHovState == false)
@@ -414,7 +417,11 @@ public class InvManagerSelect : MonoBehaviour {
 
                 dragging = true;
                 draggingEquip.transform.position = Input.mousePosition;
-                switch(currentTab)
+#if UNITY_ANDROID
+                myTouch = Input.GetTouch(0);
+                draggingEquip.transform.position = new Vector3(myTouch.position.x, myTouch.position.y, 0);
+#endif
+                switch (currentTab)
                 {
                     case 1:
                         string newerName = helmetSpriteList[i].name + 2.ToString();

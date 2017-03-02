@@ -17,6 +17,7 @@ public class cameramove : MonoBehaviour {
     private float extraBordersave;
 
     public LevelGenerate map;
+    Touch myTouch;
 
     // Use this for initialization
     void Start () {
@@ -66,6 +67,10 @@ public class cameramove : MonoBehaviour {
             {
                 //currentLoc = currentLoc + move;
                 dragOrigin = Input.mousePosition;
+#if UNITY_ANDROID
+                myTouch = Input.GetTouch(0);
+                dragOrigin = new Vector3(myTouch.position.x, myTouch.position.y, 1);
+#endif
                 return;
             }
 
@@ -75,6 +80,10 @@ public class cameramove : MonoBehaviour {
 
                 //Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
                 pos = Input.mousePosition - dragOrigin;
+#if UNITY_ANDROID
+                myTouch = Input.GetTouch(0);
+                pos = new Vector3(myTouch.position.x, myTouch.position.y, 0) - dragOrigin;
+#endif
                 //Vector3 move = new Vector3(-pos.x * dragSpeed, -pos.y * dragSpeed, 0);
                 move = new Vector3(-pos.x * 0.0285f, -pos.y * 0.0285f, 0);
                 combinepos = currentLoc + move;
@@ -121,6 +130,10 @@ public class cameramove : MonoBehaviour {
             if (!Input.GetMouseButton(0) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x > 0.99f || Camera.main.ScreenToViewportPoint(Input.mousePosition).x < 0.01f || Camera.main.ScreenToViewportPoint(Input.mousePosition).y > 0.99f || Camera.main.ScreenToViewportPoint(Input.mousePosition).y < 0.01f))
             {
                 pos = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2);
+#if UNITY_ANDROID
+                myTouch = Input.GetTouch(0);
+                pos = new Vector3(myTouch.position.x, myTouch.position.y) - new Vector3(Screen.width / 2, Screen.height / 2);
+#endif
                 move += new Vector3(pos.x * 0.0285f, pos.y * 0.0285f, 0) * 0.02f;
                 combinepos = currentLoc + move;
 
