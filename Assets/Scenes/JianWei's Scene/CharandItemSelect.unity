@@ -8356,7 +8356,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 764238933}
   m_Direction: 3
   m_Value: 1
-  m_Size: 0.54776084
+  m_Size: 0.5477608
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10684,11 +10684,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 6926.0005
+      value: 7876
       objectReference: {fileID: 0}
     - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 600.9999
+      value: 680
       objectReference: {fileID: 0}
     - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
       propertyPath: m_SizeDelta.x
@@ -10725,6 +10725,18 @@ Prefab:
     - target: {fileID: 121492, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
       propertyPath: m_Name
       value: HelmetSprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4.458804
+      objectReference: {fileID: 0}
+    - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4.458804
+      objectReference: {fileID: 0}
+    - target: {fileID: 22483818, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.058040883
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 933fb66852ce7774eb713422c2c813d1, type: 2}
@@ -12242,7 +12254,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2560, y: 1600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
