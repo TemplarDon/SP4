@@ -78,6 +78,15 @@ public class CharacterController : MonoBehaviour {
         //    CurrentControlledCharacter.GetComponent<BaseCharacter>().UseItem();
         //}
 
+
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill.UpdateCharge();
+
+            Vector3 spawn = CurrentControlledCharacter.GetComponent<BaseCharacter>().pos - new Vector3(0, CurrentControlledCharacter.transform.localScale.y / 4, 0);
+            GameObject go = Instantiate(GameObject.Find("Charge Particle System"), spawn, GameObject.Find("Charge Particle System").transform.rotation) as GameObject;
+            go.GetComponent<CleanUp>().enabled = true;
+        }
 	}
 
     public void SetCanMove(bool status)
