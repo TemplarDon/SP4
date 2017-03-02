@@ -116,6 +116,9 @@ public class InvManagerSelect : MonoBehaviour {
         text2.text = "";
         text3.text = "";
         charInfo = GameObject.Find("Main Camera").GetComponent<CharacterSelect>();
+
+        itemName.text = "";
+        itemDesc.text = "";
     }
 
     // Update is called once per frame
@@ -299,6 +302,7 @@ public class InvManagerSelect : MonoBehaviour {
             string newName = "InvButton" + i.ToString();
             GameObject.Find(newName).GetComponent<Image>().sprite = GameObject.Find("helmet_unknown").GetComponent<Image>().sprite;
             GameObject.Find(newName).GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            GameObject.Find(newName).GetComponent<Button>().enabled = false;
         }
 
         for (int j = 0; j < helmetSpriteList.Count; j++)
@@ -311,6 +315,7 @@ public class InvManagerSelect : MonoBehaviour {
                 if (helmetSpriteList[j].name.Contains(PersistentData.m_Instance.ItemList[k]))
                 {
                     GameObject.Find(newName).GetComponent<Image>().color = new Color(1, 1, 1);
+                    GameObject.Find(newName).GetComponent<Button>().enabled = true;
                     break;
                 }
             }
