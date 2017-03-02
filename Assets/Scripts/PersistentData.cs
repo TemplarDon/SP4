@@ -70,6 +70,18 @@ public class PersistentData : MonoBehaviour {
     //    LoadData();
     //}
 
+#if UNITY_ANDROID
+
+    void OnApplicationQuit() {
+        SaveDate();
+    }
+
+    void OnApplicationPause() {
+        SaveDate();
+    }
+
+#endif
+
     void OnDisable()
     {
         SaveDate();

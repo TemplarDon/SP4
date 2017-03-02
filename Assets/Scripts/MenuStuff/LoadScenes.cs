@@ -2,9 +2,6 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-using UnityEditor.SceneManagement;
-
-
 public class LoadScenes : MonoBehaviour 
 {
 	// Use this for initialization
