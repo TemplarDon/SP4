@@ -21,7 +21,8 @@ public class FugoSkill : BaseSkills
         {
             GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().TakeDamage(30);
 
-            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("FugoSkill");
+            //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("FugoSkill");
+            PersistentSoundManager.m_Instance.PlaySoundEffect("FugoSkill");
 
             Debug.Log("Damage Taken!");
         }

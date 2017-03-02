@@ -176,7 +176,8 @@ public class Pathfinder : MonoBehaviour
     {
         if (!b_CompletedPath && b_PathFound)
         {
-            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Walk");
+            //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Walk");
+            PersistentSoundManager.m_Instance.PlaySoundEffect("Walk");
 
             ////Debug.Log("Following path.");S
             // Use the last node to get the path
@@ -247,6 +248,8 @@ public class Pathfinder : MonoBehaviour
                     GameObject controller = GameObject.Find("Controller");
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
                     this.GetComponent<BaseCharacter>().restrictActions[0] = true;
+
+                    PersistentSoundManager.m_Instance.StopSound();
                 }
 
                 this.GetComponent<BaseCharacter>().pos.x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);

@@ -18,6 +18,9 @@ public class NaranciaSkill : BaseSkills {
 
         foreach (BaseCharacter aCharacter in AffectedCharacters)
         {
+            if (aCharacter.IsEnemy)
+                continue;
+
             Modifier toAdd = new Modifier();
             toAdd.Init(Modifier.MODIFY_TYPE.RANGE, 1, 1);
             GameObject.Find(aCharacter.name).GetComponent<BaseCharacter>().AddModifier(toAdd);

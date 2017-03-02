@@ -351,7 +351,8 @@ public class MeleeFSM : FSMBase {
             this.GetComponent<BaseCharacter>().restrictActions[1] = true;
             m_TargetedEnemy.GetComponent<BaseCharacter>().TakeDamage(this.GetComponent<BaseCharacter>().GetAttackDamage());
 
-            GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("MeleeAttack");
+            //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("MeleeAttack");
+            PersistentSoundManager.m_Instance.PlaySoundEffect("MeleeAttack");
 
             int attacker_x = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.x);
             int attacker_y = Mathf.RoundToInt(this.GetComponent<BaseCharacter>().pos.y);

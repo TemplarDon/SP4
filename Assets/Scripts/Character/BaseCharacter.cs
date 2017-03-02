@@ -527,7 +527,8 @@ public class BaseCharacter : MonoBehaviour {
                         //GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Heal");
+                        //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Heal");
+                        PersistentSoundManager.m_Instance.PlaySoundEffect("Heal");
 
                         break;
 
@@ -538,7 +539,9 @@ public class BaseCharacter : MonoBehaviour {
                         go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        PersistentSoundManager.m_Instance.PlaySoundEffect("PowerUp");
+
                         break;
 
                     case Modifier.MODIFY_TYPE.MAGIC:
@@ -548,13 +551,17 @@ public class BaseCharacter : MonoBehaviour {
                         go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        PersistentSoundManager.m_Instance.PlaySoundEffect("PowerUp");
+
                         break;
 
                     case Modifier.MODIFY_TYPE.ARMOUR:
                         this.ModifiedArmour = this.BaseArmour + aModifier.i_ModifierAmount;
 
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Defend");
+                        //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("Defend");
+                        PersistentSoundManager.m_Instance.PlaySoundEffect("Defend");
+
                         break;
 
                     case Modifier.MODIFY_TYPE.SPEED:
@@ -564,7 +571,9 @@ public class BaseCharacter : MonoBehaviour {
                         go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        PersistentSoundManager.m_Instance.PlaySoundEffect("PowerUp");
+                        
                         break;
 
                     case Modifier.MODIFY_TYPE.RANGE:
@@ -574,7 +583,9 @@ public class BaseCharacter : MonoBehaviour {
                         go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;
 
-                        GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        //GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
+                        PersistentSoundManager.m_Instance.PlaySoundEffect("PowerUp");
+
                         break;
 
                     case Modifier.MODIFY_TYPE.RESTRICT:

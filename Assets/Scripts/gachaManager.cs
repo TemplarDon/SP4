@@ -225,6 +225,8 @@ public class gachaManager : MonoBehaviour {
                 gachaCapsules.GetComponent<Animator>().SetTrigger("PlayGacha");
                 gachaPrize.GetComponent<Animator>().SetTrigger("PlayGacha");
                 playAnim = true;
+
+                PersistentSoundManager.m_Instance.PlaySoundEffect("GachaBGM");
             }
         }
     }

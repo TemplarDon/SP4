@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using UnityEngine.SceneManagement;
+
 public class PersistentSoundManager : MonoBehaviour {
 
     public static PersistentSoundManager m_Instance;
@@ -9,6 +11,8 @@ public class PersistentSoundManager : MonoBehaviour {
     bool b_InitialLoad = false;
     public List<AudioClip> InitList = new List<AudioClip>();
     public Dictionary<string, AudioClip> AudioList = new Dictionary<string, AudioClip>();
+
+    string CurrentScene;
 
     // Use this for initialization
     void Awake()
@@ -34,6 +38,17 @@ public class PersistentSoundManager : MonoBehaviour {
             {
                 switch (aClip.name)
                 {
+                    case "battletheme1":
+                        AudioList.Add("BattleTheme_1", aClip);
+                        break;
+
+                    case "battletheme2":
+                        AudioList.Add("BattleTheme_2", aClip);
+                        break;
+
+                    case "Free Battle":
+                        AudioList.Add("BattlePrepBGM", aClip);
+                        break;
 
                     case "gacha":
                         AudioList.Add("GachaBGM", aClip);
@@ -83,12 +98,68 @@ public class PersistentSoundManager : MonoBehaviour {
 
             b_InitialLoad = true;
         }
+
+
+        PlayBGM();
+
     }
 
-    public void PlaySound(string name)
+    void PlayBGM()
     {
-        this.GetComponent<AudioSource>().clip = AudioList[name];
-        this.GetComponent<AudioSource>().Play();
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "SplashScreen":
+                PlaySoundInBackground("TitleBGM");
+                break;
+
+            case "MainMenu":
+                PlaySoundInBackground("ModeSelectBGM");
+                break;
+
+            case "StorySelect":
+                PlaySoundInBackground("StoryBGM");
+                break;
+
+            case "Shop":
+                PlaySoundInBackground("ShopBGM");
+                break;
+
+            case "CharandItemSelect":
+                PlaySoundInBackground("BattlePrepBGM");
+                break;
+
+            case "FreeBattle_1":
+                PlaySoundInBackground("BattleTheme_1");
+                break;
+
+            case "Story_1":
+                PlaySoundInBackground("BattleTheme_2");
+                break;
+        }
+
+        CurrentScene = SceneManager.GetActiveScene().name;
     }
 
+    public void PlaySoundInBackground(string name)
+    {
+        if (GameObject.Find("BackgroundSoundPlayer").GetComponent<AudioSource>().isPlaying && SceneManager.GetActiveScene().name != CurrentScene)
+            GameObject.Find("BackgroundSoundPlayer").GetComponent<AudioSource>().Stop();
+
+        if (!GameObject.Find("BackgroundSoundPlayer").GetComponent<AudioSource>().isPlaying && SceneManager.GetActiveScene().name == CurrentScene)
+        {
+            GameObject.Find("BackgroundSoundPlayer").GetComponent<AudioSource>().clip = AudioList[name];
+            GameObject.Find("BackgroundSoundPlayer").GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void PlaySoundEffect(string name)
+    {
+        GameObject.Find("EffectSoundPlayer").GetComponent<AudioSource>().clip = AudioList[name];
+        GameObject.Find("EffectSoundPlayer").GetComponent<AudioSource>().Play();  
+    }
+
+    public void StopSound()
+    {
+        GameObject.Find("EffectSoundPlayer").GetComponent<AudioSource>().Stop();  
+    }
 }
