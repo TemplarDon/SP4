@@ -9,7 +9,7 @@ public class UI_Popup : MonoBehaviour
 
     public Image tut;
     public Image tutToShopButton;
-
+	public Text tutText;
     
 	// Use this for initialization
 	void Start () 
@@ -25,11 +25,13 @@ public class UI_Popup : MonoBehaviour
         {
             tut.enabled = true;
             tutToShopButton.enabled = true;
+			tutText.enabled = true;
         }
         if (PersistentData.m_Instance.firstTimeAtModeSelect == false)
         {
             tut.enabled = false;
             tutToShopButton.enabled = false;
+			tutText.enabled = false;
         }
 	}
 

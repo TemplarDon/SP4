@@ -22,6 +22,16 @@ public class playerMoney : MonoBehaviour {
 	public Image buyButton8;
 	public Image buyButton9;
 
+	public Text buyText;
+	public Text buyText2;
+	public Text buyText3;
+	public Text buyText4;
+	public Text buyText5;
+	public Text buyText6;
+	public Text buyText7;
+	public Text buyText8;
+	public Text buyText9;
+
     public int currentMoney;
     public Text moneyText;
 
@@ -75,47 +85,55 @@ public class playerMoney : MonoBehaviour {
             {
                 boughtImage.enabled = true;
                 buyButton.enabled = false;
-
+				buyText.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("SixBullets"))
             {
                 boughtImage2.enabled = true;
                 buyButton2.enabled = false;
+				buyText2.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("Zipperman"))
             {
                 boughtImage3.enabled = true;
                 buyButton3.enabled = false;
+				buyText3.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("SilverChariot"))
             {
                 boughtImage4.enabled = true;
                 buyButton4.enabled = false;
+				buyText4.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("StarPlatinum"))
             {
                 boughtImage5.enabled = true;
                 buyButton5.enabled = false;
+				buyText5.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("GoldenWind"))
             {
                 boughtImage6.enabled = true;
                 buyButton6.enabled = false;
+				buyText6.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("PurpleSmoke"))
             {
                 boughtImage7.enabled = true;
                 buyButton7.enabled = false;
+				buyText7.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("Reverb"))
             {
                 boughtImage8.enabled = true;
                 buyButton8.enabled = false;
+				buyText8.enabled = false;
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("EmperorCrimson"))
             {
                 boughtImage9.enabled = true;
                 buyButton9.enabled = false;
+				buyText9.enabled = false;
             }
         }
 
@@ -197,6 +215,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar1", "AeroSmith");
             boughtImage.enabled = true;
             buyButton.enabled =false;
+			buyText.enabled = false;
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("AeroSmith");
@@ -224,6 +243,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar2", "SixBullets");
             boughtImage2.enabled = true;
             buyButton2.enabled = false;
+			buyText2.enabled = false;
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("SixBullets");
@@ -276,6 +296,7 @@ public class playerMoney : MonoBehaviour {
            // PlayerPrefs.SetString("BoughtChar4", "SliverChariot");
             boughtImage4.enabled = true;
             buyButton4.enabled = false;
+			buyText4.enabled = false;
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("SilverChariot");
@@ -302,6 +323,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar5", "StarPlatinum");
             boughtImage5.enabled = true;
             buyButton5.enabled = false;
+			buyText5.enabled = false;
 
             subtractMoney(100000);
             PersistentData.m_Instance.CharacterList.Add("StarPlatinum");
@@ -314,6 +336,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar6", "GoldenWind");
             boughtImage6.enabled = true;
             buyButton6.enabled = false;
+			buyText6.enabled = false;
 
             subtractMoney(100000);
             PersistentData.m_Instance.CharacterList.Add("GoldenWind");
@@ -326,6 +349,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar7", "PurpleSmoke");
             boughtImage7.enabled = true;
             buyButton7.enabled = false;
+			buyText7.enabled = false;
 
             subtractMoney(100000);
             PersistentData.m_Instance.CharacterList.Add("PurpleSmoke");
@@ -338,6 +362,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar8", "Reverb");
             boughtImage8.enabled = true;
             buyButton8.enabled = false;
+			buyText8.enabled = false;
 
             subtractMoney(100000);
             PersistentData.m_Instance.CharacterList.Add("Reverb");
@@ -351,6 +376,7 @@ public class playerMoney : MonoBehaviour {
             //PlayerPrefs.SetString("BoughtChar9", "EmperorCrimson");
             boughtImage9.enabled = true;
             buyButton9.enabled = false;
+			buyText9.enabled = false;
 
             subtractMoney(200000);
             PersistentData.m_Instance.CharacterList.Add("EmperorCrimson");

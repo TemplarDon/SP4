@@ -2546,6 +2546,7 @@ MonoBehaviour:
   panelInfoCanvas: {fileID: 312086893}
   tut: {fileID: 1267821457}
   tutToShopButton: {fileID: 931168463}
+  tutText: {fileID: 1697606662}
 --- !u!4 &1757268784
 Transform:
   m_ObjectHideFlags: 0
