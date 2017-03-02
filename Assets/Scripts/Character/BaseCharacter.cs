@@ -394,7 +394,10 @@ public class BaseCharacter : MonoBehaviour {
 
     public int GetArmour()
     {
-        return ModifiedArmour;
+        if (theArmour != null)
+            return ModifiedArmour + theArmour.GetComponent<Armours>().ArmourAmount;
+        else
+            return ModifiedArmour;
     }
 
     public void TakeDamage(int damage)
