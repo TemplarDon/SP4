@@ -24,6 +24,10 @@ public class playerMoney : MonoBehaviour {
 
     public int currentMoney;
     public Text moneyText;
+
+    public Image tut2;
+    public Image tut2ToGachaButton;
+    public Text tut2ToGachaText;
 	// Use this for initialization
 	void Start () 
     {
@@ -41,13 +45,37 @@ public class playerMoney : MonoBehaviour {
         //moneyText.text = "\u00A5" + currentMoney;
         moneyText.text = "\u00A5" + PersistentData.m_Instance.PlayerMoney;
 
-
+        if (PersistentData.m_Instance.PlayerMoney < 50000)
+        {
+            buyButton.enabled = false;
+            buyButton2.enabled = false;
+            buyButton3.enabled = false;
+            buyButton4.enabled = false;
+            buyButton5.enabled = false;
+            buyButton6.enabled = false;
+            buyButton7.enabled = false;
+            buyButton8.enabled = false;
+            buyButton9.enabled = false;
+        }
+        if (PersistentData.m_Instance.PlayerMoney < 100000)
+        {
+            buyButton5.enabled = false;
+            buyButton6.enabled = false;
+            buyButton7.enabled = false;
+            buyButton8.enabled = false;
+            buyButton9.enabled = false;
+        }
+        if (PersistentData.m_Instance.PlayerMoney < 200000)
+        {
+            buyButton9.enabled = false;
+        }
         for (int i = 0; i < PersistentData.m_Instance.CharacterList.Count; ++i)
         {
             if (PersistentData.m_Instance.CharacterList[i].Equals("AeroSmith"))
             {
                 boughtImage.enabled = true;
                 buyButton.enabled = false;
+
             }
             if (PersistentData.m_Instance.CharacterList[i].Equals("SixBullets"))
             {
@@ -172,6 +200,20 @@ public class playerMoney : MonoBehaviour {
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("AeroSmith");
+            PersistentData.m_Instance.firstTimeAtModeSelect = false;
+
+            if (PersistentData.m_Instance.firstTimeAtShop == true)
+            {
+                tut2.enabled = true;
+                tut2ToGachaButton.enabled = true;
+                tut2ToGachaText.enabled = true;
+            }
+            if (PersistentData.m_Instance.firstTimeAtShop == false)
+            {
+                tut2.enabled = false;
+                tut2ToGachaButton.enabled = false;
+                tut2ToGachaText.enabled = false;
+            }
         }
     }
 
@@ -185,6 +227,20 @@ public class playerMoney : MonoBehaviour {
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("SixBullets");
+            PersistentData.m_Instance.firstTimeAtModeSelect = false;
+
+            if (PersistentData.m_Instance.firstTimeAtShop == true)
+            {
+                tut2.enabled = true;
+                tut2ToGachaButton.enabled = true;
+                tut2ToGachaText.enabled = true;
+            }
+            if (PersistentData.m_Instance.firstTimeAtShop == false)
+            {
+                tut2.enabled = false;
+                tut2ToGachaButton.enabled = false;
+                tut2ToGachaText.enabled = false;
+            }
         }
 	}
 	public void BoughtImage3()
@@ -197,6 +253,20 @@ public class playerMoney : MonoBehaviour {
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("Zipperman");
+            PersistentData.m_Instance.firstTimeAtModeSelect = false;
+
+            if (PersistentData.m_Instance.firstTimeAtShop == true)
+            {
+                tut2.enabled = true;
+                tut2ToGachaButton.enabled = true;
+                tut2ToGachaText.enabled = true;
+            }
+            if (PersistentData.m_Instance.firstTimeAtShop == false)
+            {
+                tut2.enabled = false;
+                tut2ToGachaButton.enabled = false;
+                tut2ToGachaText.enabled = false;
+            }
         }
 	}
 	public void BoughtImage4()
@@ -209,6 +279,20 @@ public class playerMoney : MonoBehaviour {
 
             subtractMoney(50000);
             PersistentData.m_Instance.CharacterList.Add("SilverChariot");
+            PersistentData.m_Instance.firstTimeAtModeSelect = false;
+
+            if (PersistentData.m_Instance.firstTimeAtShop == true)
+            {
+                tut2.enabled = true;
+                tut2ToGachaButton.enabled = true;
+                tut2ToGachaText.enabled = true;
+            }
+            if (PersistentData.m_Instance.firstTimeAtShop == false)
+            {
+                tut2.enabled = false;
+                tut2ToGachaButton.enabled = false;
+                tut2ToGachaText.enabled = false;
+            }
         }
 	}
 	public void BoughtImage5()

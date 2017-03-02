@@ -13,6 +13,9 @@ public class PersistentData : MonoBehaviour {
 
     // Stuff to store in persistent data
     public int PlayerMoney;
+    public bool firstTimeAtModeSelect = true;
+    public bool firstTimeAtShop = true;
+    public bool firstTimeAtGacha = true;
     public List<string> ItemList = new List<string>();
     public List<string> CharacterList = new List<string>();
 
@@ -54,12 +57,17 @@ public class PersistentData : MonoBehaviour {
             b_InitialLoad = true;
         }
 
+        //Debug.Log(firstTimeAtModeSelect.ToString());
+
         if (Input.GetKeyUp(KeyCode.X))
         {
             // Load whatever numbers here
             PlayerMoney = 2000000;
             ItemList.Clear();
             CharacterList.Clear();
+            firstTimeAtModeSelect = true;
+            firstTimeAtShop = true;
+            firstTimeAtGacha = true;
             Debug.Log("Data Cleared");
         }
 
@@ -92,8 +100,13 @@ public class PersistentData : MonoBehaviour {
         PlayerData returnData = new PlayerData();
 
         returnData.PlayerMoney = this.PlayerMoney;
+        returnData.firstTimeAtModeSelect = this.firstTimeAtModeSelect;
+        returnData.firstTimeAtShop = this.firstTimeAtShop;
+        returnData.firstTimeAtGacha = this.firstTimeAtGacha;
         returnData.ItemList = this.ItemList;
         returnData.CharacterList = this.CharacterList;
+
+       // Debug.Log(firstTimeAtModeSelect.ToString());
 
         return returnData;
     }
@@ -101,8 +114,14 @@ public class PersistentData : MonoBehaviour {
     void LoadData(PlayerData theData)
     {
         this.PlayerMoney = theData.PlayerMoney;
+        this.firstTimeAtModeSelect = theData.firstTimeAtModeSelect;
+        this.firstTimeAtShop = theData.firstTimeAtShop;
+        this.firstTimeAtGacha = theData.firstTimeAtGacha;
         this.ItemList = theData.ItemList;
         this.CharacterList = theData.CharacterList;
+
+        //Debug.Log(firstTimeAtModeSelect.ToString());
+
     }
 
     public void SaveDate()
@@ -138,6 +157,9 @@ public class PersistentData : MonoBehaviour {
 class PlayerData
 {
     public int PlayerMoney;
+    public bool firstTimeAtModeSelect;
+    public bool firstTimeAtShop;
+    public bool firstTimeAtGacha;
     public List<string> ItemList = new List<string>();
     public List<string> CharacterList = new List<string>();
 }
