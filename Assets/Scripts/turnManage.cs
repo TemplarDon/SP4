@@ -66,10 +66,15 @@ public class turnManage : MonoBehaviour {
     private Image android_item;
     private Image android_stand;
 
-    private bool androidMode = true;
+    private bool androidMode = false;
 
 	// Use this for initialization
 	void Start () {
+
+#if UNITY_ANDROID
+        androidMode = true;
+#endif
+
         restrictions = new bool[5];
         turnNum.text = 1.ToString();
         standEyes = GameObject.Find("StandActivate").GetComponent<Image>();
