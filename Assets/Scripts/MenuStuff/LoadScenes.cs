@@ -18,5 +18,14 @@ public class LoadScenes : MonoBehaviour
     public void Loadscene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+
+        if (SceneManager.GetActiveScene().name == "StorySelect")
+        {
+            PersistentData.m_Instance.CurrentGameMode = PersistentData.GAME_MODE.STORY;
+        }
+        else
+        {
+            PersistentData.m_Instance.CurrentGameMode = PersistentData.GAME_MODE.FREE_BATTLE;
+        }
     }
 }

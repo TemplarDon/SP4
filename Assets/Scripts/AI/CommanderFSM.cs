@@ -105,6 +105,8 @@ public class CommanderFSM : FSMBase {
         if (!b_Change)
         {
             b_NearEnemy = false;
+
+            Debug.Log("Lost enemy");
         }
 
         if (m_TargetedEnemy != null)
@@ -113,6 +115,8 @@ public class CommanderFSM : FSMBase {
             {
                 b_NearEnemy = false;
                 m_TargetedEnemy = null;
+
+                Debug.Log("Lost enemy");
             }
         }
     }
@@ -131,8 +135,7 @@ public class CommanderFSM : FSMBase {
                         return (int)STATES.CHASE;
                     }
                 }
-
-                if (TurnCounter >= OrderFrequency)
+                else if (TurnCounter >= OrderFrequency)
                 {
                     TurnCounter = 0;
 
@@ -164,6 +167,35 @@ public class CommanderFSM : FSMBase {
 
                 return (int)STATES.SEND_ORDERS;
 
+            //case STATES.CHASE:
+
+            //    if (m_TargetedEnemy == null)
+            //        return (int)STATES.IDLE;
+
+            //    if (CanAttack() && this.GetComponent<Pathfinder>().b_CompletedPath)
+            //    {
+            //        //Debug.Log("Going into ATTACK.");
+
+            //        b_Attacked = false;
+            //        return (int)STATES.ATTACK;
+            //    }
+
+            //    if (this.GetComponent<BaseCharacter>().restrictActions[0] == true)
+            //        return (int)STATES.IDLE;
+
+            //    return (int)STATES.CHASE;
+
+
+            //case STATES.ATTACK:
+
+            //    if (!b_NearEnemy && m_TargetedEnemy != null)
+            //        return (int)STATES.CHASE;
+
+            //    if (m_TargetedEnemy == null || b_Attacked)
+            //        return (int)STATES.IDLE;
+
+            //    return (int)STATES.ATTACK;
+
             case STATES.CHASE:
 
                 if (m_TargetedEnemy == null)
@@ -171,13 +203,11 @@ public class CommanderFSM : FSMBase {
 
                 if (CanAttack() && this.GetComponent<Pathfinder>().b_CompletedPath)
                 {
-                    //Debug.Log("Going into ATTACK.");
-
                     b_Attacked = false;
                     return (int)STATES.ATTACK;
                 }
 
-                if (this.GetComponent<BaseCharacter>().restrictActions[0] == true)
+                if (this.GetComponent<BaseCharacter>().restrictActions[0] == true || this.GetComponent<BaseCharacter>().restrictActions[1] == true)
                     return (int)STATES.IDLE;
 
                 return (int)STATES.CHASE;
@@ -185,11 +215,11 @@ public class CommanderFSM : FSMBase {
 
             case STATES.ATTACK:
 
-                if (!b_NearEnemy && m_TargetedEnemy != null)
-                    return (int)STATES.CHASE;
-
                 if (m_TargetedEnemy == null || b_Attacked)
                     return (int)STATES.IDLE;
+
+                if (!b_NearEnemy && m_TargetedEnemy != null)
+                    return (int)STATES.CHASE;
 
                 return (int)STATES.ATTACK;
         }
@@ -389,6 +419,9 @@ public class CommanderFSM : FSMBase {
 
             b_Attacked = true;
 
+            // Immediately go into IDLE
+            this.CurrentState = STATES.IDLE;
+
             Debug.Log("Attacking!");
         }
     }
@@ -490,7 +523,7 @@ public class CommanderFSM : FSMBase {
             return true;
         }
 
-        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-this.GetComponent<BaseCharacter>().BaseAttackRange, 0, 0));
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(this.GetComponent<BaseCharacter>().BaseAttackRange, 0, 0));
         if (checkGo == m_TargetedEnemy.GetComponent<BaseCharacter>())
         {
             return true;

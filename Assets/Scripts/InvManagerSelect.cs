@@ -46,6 +46,8 @@ public class InvManagerSelect : MonoBehaviour {
     private Text text3;
     private CharacterSelect charInfo;
 
+    Touch myTouch;
+
     // Use this for initialization
     void Start () {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("ItemTemp");
@@ -114,6 +116,9 @@ public class InvManagerSelect : MonoBehaviour {
         text2.text = "";
         text3.text = "";
         charInfo = GameObject.Find("Main Camera").GetComponent<CharacterSelect>();
+
+        itemName.text = "";
+        itemDesc.text = "";
     }
 
     // Update is called once per frame
@@ -125,7 +130,8 @@ public class InvManagerSelect : MonoBehaviour {
             {
                 draggingEquip.transform.position = Input.mousePosition;
 #if UNITY_ANDROID
-                draggingEquip.transform.position = Input.mousePosition;
+                myTouch = Input.GetTouch(0);
+                draggingEquip.transform.position = new Vector3(myTouch.position.x, myTouch.position.y, 0);
 #endif
             }
             else if(currentHovState == false)
@@ -296,6 +302,7 @@ public class InvManagerSelect : MonoBehaviour {
             string newName = "InvButton" + i.ToString();
             GameObject.Find(newName).GetComponent<Image>().sprite = GameObject.Find("helmet_unknown").GetComponent<Image>().sprite;
             GameObject.Find(newName).GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            GameObject.Find(newName).GetComponent<Button>().enabled = false;
         }
 
         for (int j = 0; j < helmetSpriteList.Count; j++)
@@ -308,6 +315,7 @@ public class InvManagerSelect : MonoBehaviour {
                 if (helmetSpriteList[j].name.Contains(PersistentData.m_Instance.ItemList[k]))
                 {
                     GameObject.Find(newName).GetComponent<Image>().color = new Color(1, 1, 1);
+                    GameObject.Find(newName).GetComponent<Button>().enabled = true;
                     break;
                 }
             }
@@ -414,7 +422,11 @@ public class InvManagerSelect : MonoBehaviour {
 
                 dragging = true;
                 draggingEquip.transform.position = Input.mousePosition;
-                switch(currentTab)
+#if UNITY_ANDROID
+                myTouch = Input.GetTouch(0);
+                draggingEquip.transform.position = new Vector3(myTouch.position.x, myTouch.position.y, 0);
+#endif
+                switch (currentTab)
                 {
                     case 1:
                         string newerName = helmetSpriteList[i].name + 2.ToString();
@@ -739,6 +751,16 @@ public class InvManagerSelect : MonoBehaviour {
             }
         }
 
-        SceneManager.LoadScene("FreeBattle_1");
+        //SceneManager.LoadScene("FreeBattle_1");
+        //SceneManager.LoadScene("DonTest");
+
+        if (PersistentData.m_Instance.CurrentGameMode == PersistentData.GAME_MODE.STORY)
+        {
+            SceneManager.LoadScene("Story_1");
+        }
+        else
+        {
+            SceneManager.LoadScene("FreeBattle_1");
+        }
     }
 }

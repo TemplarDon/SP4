@@ -26,6 +26,13 @@ public class PersistentData : MonoBehaviour {
     public List<string> char2Items = new List<string>();
     public List<string> char3Items = new List<string>();
 
+    public enum GAME_MODE
+    {
+        STORY,
+        FREE_BATTLE,
+    }
+    public GAME_MODE CurrentGameMode;
+
     // Use this for initialization
     void Awake () {
 
@@ -70,6 +77,18 @@ public class PersistentData : MonoBehaviour {
     //{
     //    LoadData();
     //}
+
+#if UNITY_ANDROID
+
+    void OnApplicationQuit() {
+        SaveDate();
+    }
+
+    void OnApplicationPause() {
+        SaveDate();
+    }
+
+#endif
 
     void OnDisable()
     {

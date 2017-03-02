@@ -40,6 +40,12 @@ public class EndGameManager : MonoBehaviour {
             b_PlayerWon = false;
         }
 
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            b_GameEnded = true;
+            b_PlayerWon = true;
+        }
+
         if (b_GameEnded)
             RunEndScreens();
 
@@ -59,7 +65,7 @@ public class EndGameManager : MonoBehaviour {
                 WinImage.transform.localPosition = new Vector3(9999, 9999, 9999);
 
                 GameObject.Find("SceneChanger").GetComponent<LoadScenes>().Loadscene("MainMenu");
-                PersistentData.m_Instance.PlayerMoney += 1000;
+                PersistentData.m_Instance.PlayerMoney += 50000;
 
                 Debug.Log("Back to mainmenu");
             }
