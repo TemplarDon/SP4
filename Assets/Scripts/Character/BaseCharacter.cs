@@ -139,7 +139,6 @@ public class BaseCharacter : MonoBehaviour {
                 this.GetComponent<Pathfinder>().FollowPath();
             }
 
-            UpdateAnimState();
             CheckIfDead();
         }
         else
@@ -159,12 +158,11 @@ public class BaseCharacter : MonoBehaviour {
                     this.GetComponent<Pathfinder>().FollowPath();
                 }
 
-                UpdateAnimState();
                 CheckIfDead();
             }
         }
 
-
+        UpdateAnimState();
         
 	}
 
@@ -405,6 +403,8 @@ public class BaseCharacter : MonoBehaviour {
         BaseHealth -= damageTaken;
         GameObject.Find("DmgIndiManager").GetComponent<dmgDisp>().dispNum(dmgDisp.DISPLAY_TYPE.DAMAGE, damageTaken, transform.position);
         CurrentAnimState = ANIM_STATE.TAKE_DAMAGE;
+
+        UpdateAnimState();
 
         GameObject go = Instantiate(GameObject.Find("Damage Particle System"), pos, Quaternion.identity) as GameObject;
         go.GetComponent<CleanUp>().enabled = true;
