@@ -740,6 +740,15 @@ public class InvManagerSelect : MonoBehaviour {
         }
 
         //SceneManager.LoadScene("FreeBattle_1");
-        SceneManager.LoadScene("DonTest");
+        //SceneManager.LoadScene("DonTest");
+
+        if (PersistentData.m_Instance.CurrentGameMode == PersistentData.GAME_MODE.STORY)
+        {
+            SceneManager.LoadScene("Story_1");
+        }
+        else
+        {
+            SceneManager.LoadScene("FreeBattle_1");
+        }
     }
 }
