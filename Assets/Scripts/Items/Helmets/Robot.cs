@@ -9,7 +9,7 @@ public class Robot : Armours
         this.s_ItemName = "robot";
         this.s_ItemDisp = "Robo Justice";
         this.s_ItemDesc = "The quality is so high, it's hard to imagine it was made with recycled materials";
-        ArmourAmount = 1;
+        ArmourAmount = 10;
 
         this.m_ItemType = Items.ITEM_TYPE.ARMOUR;
     }
