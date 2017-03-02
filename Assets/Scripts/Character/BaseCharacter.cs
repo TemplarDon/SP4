@@ -534,11 +534,19 @@ public class BaseCharacter : MonoBehaviour {
                     case Modifier.MODIFY_TYPE.ATTACK:
                         this.ModifiedStrength = this.BaseStrength + aModifier.i_ModifierAmount;
 
+                        Vector3 spawn = pos - new Vector3(0, this.transform.localScale.y / 4, 0);
+                        go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
+                        go.GetComponent<CleanUp>().enabled = true;
+
                         GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
 
                     case Modifier.MODIFY_TYPE.MAGIC:
                         this.ModifiedMagic = this.BaseMagic + aModifier.i_ModifierAmount;
+
+                        spawn = pos - new Vector3(0, this.transform.localScale.y / 4, 0);
+                        go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
+                        go.GetComponent<CleanUp>().enabled = true;
 
                         GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
@@ -552,17 +560,25 @@ public class BaseCharacter : MonoBehaviour {
                     case Modifier.MODIFY_TYPE.SPEED:
                         this.ModifiedSpeed = this.BaseSpeed + aModifier.i_ModifierAmount;
 
+                        spawn = pos - new Vector3(0, this.transform.localScale.y / 4, 0);
+                        go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
+                        go.GetComponent<CleanUp>().enabled = true;
+
                         GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
 
                     case Modifier.MODIFY_TYPE.RANGE:
                         this.ModifiedAttackRange = this.BaseAttackRange + aModifier.i_ModifierAmount;
 
+                        spawn = pos - new Vector3(0, this.transform.localScale.y / 4, 0);
+                        go = Instantiate(GameObject.Find("Buff Particle System"), spawn, GameObject.Find("Buff Particle System").transform.rotation) as GameObject;
+                        go.GetComponent<CleanUp>().enabled = true;
+
                         GameObject.Find("EffectsSoundPlayer").GetComponent<SoundManager>().PlaySound("PowerUp");
                         break;
 
                     case Modifier.MODIFY_TYPE.RESTRICT:
-                        Vector3 spawn = pos + new Vector3(0, this.transform.localScale.y / 2, 0);
+                        spawn = pos + new Vector3(0, this.transform.localScale.y / 2, 0);
 
                         go = Instantiate(GameObject.Find("Restrict Particle System"), spawn, GameObject.Find("Restrict Particle System").transform.rotation) as GameObject;
                         go.GetComponent<CleanUp>().enabled = true;

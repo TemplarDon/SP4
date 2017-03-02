@@ -34,10 +34,17 @@ public class MoveSelection : MonoBehaviour {
         switch(tag)
         {
             case "yellowSq":
-                // Set Controller to allow character to move
-                GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(true);
-                GameObject.Find("TurnManager").GetComponent<turnManage>().cancelAction = false;
-
+                if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.TARGET)
+                {
+                    (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as BrunoSkill).SetTargetedPosition(this.transform.position);
+                    GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
+                }
+                else
+                {
+                    // Set Controller to allow character to move
+                    GameObject.Find("Controller").GetComponent<CharacterController>().SetCanMove(true);
+                    GameObject.Find("TurnManager").GetComponent<turnManage>().cancelAction = false;
+                }
                 //Debug.Log("Set CanMove to true");
                 break;
             case "redSq":
@@ -50,7 +57,11 @@ public class MoveSelection : MonoBehaviour {
                     {
                         if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentMode == CharacterController.CONTROL_MODE.TARGET)
                         {
-                            (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as KoichiSkill).SetTargetedObject(obj);
+                            if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.name == "Koichi")
+                                (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as KoichiSkill).SetTargetedObject(obj);
+                            else if (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.name == "Mista")
+                                (GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().theSkill as MistaSkill).SetTargetedObject(obj);
+
                             GameObject.Find("Controller").GetComponent<CharacterController>().CurrentControlledCharacter.GetComponent<BaseCharacter>().UseSkill();
                         }
                         else

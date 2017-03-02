@@ -28,7 +28,14 @@ public class DiavoloSkill : BaseSkills
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Character");
         foreach (GameObject obj in allObjects)
         {
-            //obj.GetComponent<BaseCharacter>().theSkill.UpdateCharge();
+            if (obj.GetComponent<BaseCharacter>() != user && !obj.GetComponent<BaseCharacter>().IsEnemy && !obj.GetComponent<BaseCharacter>().IsDead)
+            {
+                obj.GetComponent<BaseCharacter>().theSkill.UpdateCharge();
+
+                Vector3 spawn = obj.GetComponent<BaseCharacter>().pos + new Vector3(0, obj.transform.localScale.y / 4, 0);
+                GameObject go = Instantiate(GameObject.Find("Charge Particle System"), spawn, GameObject.Find("Charge Particle System").transform.rotation) as GameObject;
+                go.GetComponent<CleanUp>().enabled = true;
+            }
         }
     }
 }

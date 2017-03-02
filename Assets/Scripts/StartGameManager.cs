@@ -10,7 +10,7 @@ public class StartGameManager : MonoBehaviour
     public GameObject SpawnPos_2;
     public GameObject SpawnPos_3;
 
-    bool b_AssignedCharacters = false;
+    public bool b_AssignedCharacters = false;
 
     // Use this for initialization
     void Start()

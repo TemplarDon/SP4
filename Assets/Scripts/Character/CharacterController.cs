@@ -54,8 +54,8 @@ public class CharacterController : MonoBehaviour {
 
         if (CurrentMode == CONTROL_MODE.MOVING || CurrentMode == CONTROL_MODE.ATTACKING)
         {
-            GameObject.Find("Main Camera").transform.position = this.CurrentControlledCharacter.transform.position;
-            GameObject.Find("Main Camera").GetComponent<cameramove>().currentLoc = this.CurrentControlledCharacter.transform.position;
+            GameObject.Find("Main Camera").transform.position = new Vector3(this.CurrentControlledCharacter.transform.position.x, this.CurrentControlledCharacter.transform.position.y, -9);
+            GameObject.Find("Main Camera").GetComponent<cameramove>().currentLoc = new Vector3(this.CurrentControlledCharacter.transform.position.x, this.CurrentControlledCharacter.transform.position.y, -9);
         }
 
 

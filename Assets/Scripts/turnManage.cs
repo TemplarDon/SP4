@@ -103,7 +103,7 @@ public class turnManage : MonoBehaviour {
 
         if(descTextEnable == true)
         {
-            Debug.Log(descText.transform.localPosition);
+            //Debug.Log(descText.transform.localPosition);
             if (descText.transform.localPosition.x <= 340)
             {
                 descText.transform.Translate(5, 0, 0);

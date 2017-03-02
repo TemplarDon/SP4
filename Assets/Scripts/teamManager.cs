@@ -83,6 +83,10 @@ public class teamManager : MonoBehaviour {
                     {
                         teamList[i].restrictActions[4] = true;
                     }
+                    else
+                    {
+                        teamList[i].restrictActions[4] = false;
+                    }
                 }
 
                 string greenHighlight = "PlayerLoc" + (i + 1);

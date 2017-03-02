@@ -18,8 +18,8 @@ public abstract class FSMBase : MonoBehaviour {
         if (GameObject.Find("TurnManager").GetComponent<turnManage>().teamTurn == 4)
         {
             GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().GetComponent<FSMBase>().RunFSM();
-            GameObject.Find("Main Camera").transform.position = GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position;
-            GameObject.Find("Main Camera").GetComponent<cameramove>().currentLoc = GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position;
+            GameObject.Find("Main Camera").transform.position = new Vector3(GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position.x, GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position.y, -9);
+            GameObject.Find("Main Camera").GetComponent<cameramove>().currentLoc = new Vector3(GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position.x, GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().transform.position.y, -9);
             GameObject.Find("EnemyTeamManager").GetComponent<teamManager>().GetCurrentActiveMember().b_EnemyActive = true;
         }
 	}

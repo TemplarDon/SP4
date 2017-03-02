@@ -739,6 +739,6 @@ public class InvManagerSelect : MonoBehaviour {
             }
         }
 
-        SceneManager.LoadScene("DonTest");
+        SceneManager.LoadScene("FreeBattle_1");
     }
 }
