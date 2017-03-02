@@ -866,6 +866,9 @@ public class LevelGenerate : MonoBehaviour {
     // Used by pathfinding
     public int GetTileCost(int x, int y)
     {
+        if (x >= xsize || x < 0 || y >= ysize || y < 0)
+            return 0;
+
         switch (mapgrid[x, y])
         {
             case 1: return 1;

@@ -80,6 +80,7 @@ public class Pathfinder : MonoBehaviour
             //Debug.Log("Invalid destination");
             return;
         }
+
         for (int row = 0; row < theLevel.ysize; ++row)
         {
             for (int col = 0; col < theLevel.xsize; ++col)
@@ -336,7 +337,7 @@ public class Pathfinder : MonoBehaviour
             return false;
         }
 
-        if (checkNode.TileCost == -1)
+        if (checkNode.TileCost == -1 || checkNode.TileCost == 0)
         {
             //Debug.Log("Node Rejected. (Obstacle Node)");
             return false;

@@ -1567,7 +1567,7 @@ MonoBehaviour:
   BaseArmour: 30
   IsEnemy: 0
   IsDead: 0
-  profilePic: {fileID: 21300000, guid: fa05c939348341a4e9cbf686a6da75b9, type: 3}
+  profilePic: {fileID: 21300000, guid: 14ed57d5dee351e4987ea86842b90f6e, type: 3}
   CurrentAnimState: 0
 --- !u!114 &11493948
 MonoBehaviour:
