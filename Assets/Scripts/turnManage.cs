@@ -31,7 +31,7 @@ public class turnManage : MonoBehaviour {
 
     public LevelGenerate map;
 
-    public bool[] restrictions = new bool[5];
+    public bool[] restrictions;
 
     private bool mouseOnMenu;
     public bool clickingNewChar;
@@ -59,8 +59,18 @@ public class turnManage : MonoBehaviour {
     private bool descTextEnable = false;
     private Image descText;
 
+    private Image androidMenu;
+    private Image android_move;
+    private Image android_attack;
+    private Image android_defend;
+    private Image android_item;
+    private Image android_stand;
+
+    private bool androidMode = true;
+
 	// Use this for initialization
 	void Start () {
+        restrictions = new bool[5];
         turnNum.text = 1.ToString();
         standEyes = GameObject.Find("StandActivate").GetComponent<Image>();
         descText = GameObject.Find("DescBox").GetComponent<Image>();
@@ -96,10 +106,40 @@ public class turnManage : MonoBehaviour {
         //EnemyTurn.fillAmount = 0.0f;
 
         Commander = GameObject.Find("EnemyCommander");
+
+        androidMenu = GameObject.Find("AndroidMenu").GetComponent<Image>();
+        android_move = GameObject.Find("android_move").GetComponent<Image>();
+        android_attack = GameObject.Find("android_attack").GetComponent<Image>();
+        android_defend = GameObject.Find("android_defend").GetComponent<Image>();
+        android_item = GameObject.Find("android_item").GetComponent<Image>();
+        android_stand = GameObject.Find("android_stand").GetComponent<Image>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(androidMode == true)
+        {
+            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+            if (menuOpen == true)
+            {
+                if (androidMenu.rectTransform.anchoredPosition.y < 0)
+                {
+                    androidMenu.rectTransform.anchoredPosition = new Vector3(0, androidMenu.rectTransform.anchoredPosition.y + 13, 0);
+                }
+                else
+                {
+                    androidMenu.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
+                }
+            }
+            else
+            {
+                if (androidMenu.rectTransform.anchoredPosition.y > -310)
+                {
+                    androidMenu.rectTransform.anchoredPosition = new Vector3(0, androidMenu.rectTransform.anchoredPosition.y - 13, 0);
+                }
+            }
+        }
 
         if(descTextEnable == true)
         {
@@ -322,47 +362,117 @@ public class turnManage : MonoBehaviour {
         {
             if(restrictions[0] == true)
             {
-                cancel1.transform.localPosition = new Vector3(-3, 155, 0);
+                if(androidMode == true)
+                {
+                    android_move.rectTransform.anchoredPosition = new Vector3(-1000, -999, 0);
+                }
+                else
+                {
+                    cancel1.transform.localPosition = new Vector3(-3, 155, 0);
+                }
             }
             else
             {
-                cancel1.transform.localPosition = new Vector3(9999, 155, 0);
+                if (androidMode == true)
+                {
+                    android_move.rectTransform.anchoredPosition = new Vector3(-1000, 0, 0);
+                }
+                else
+                {
+                    cancel1.transform.localPosition = new Vector3(9999, 155, 0);
+                }
             }
 
             if (restrictions[1] == true)
             {
-                cancel2.transform.localPosition = new Vector3(-3, 77.5f, 0);
+                if (androidMode == true)
+                {
+                    android_attack.rectTransform.anchoredPosition = new Vector3(-500, -999, 0);
+                }
+                else
+                {
+                    cancel2.transform.localPosition = new Vector3(-3, 77.5f, 0);
+                }
             }
             else
             {
-                cancel2.transform.localPosition = new Vector3(9999, 77.5f, 0);
+                if (androidMode == true)
+                {
+                    android_attack.rectTransform.anchoredPosition = new Vector3(-500, 0, 0);
+                }
+                else
+                {
+                    cancel2.transform.localPosition = new Vector3(9999, 77.5f, 0);
+                }
             }
 
             if (restrictions[2] == true)
             {
-                cancel3.transform.localPosition = new Vector3(-3, 0, 0);
+                if (androidMode == true)
+                {
+                    android_defend.rectTransform.anchoredPosition = new Vector3(0, -999, 0);
+                }
+                else
+                {
+                    cancel3.transform.localPosition = new Vector3(-3, 0, 0);
+                }
             }
             else
             {
-                cancel3.transform.localPosition = new Vector3(9999, 0, 0);
+                if (androidMode == true)
+                {
+                    android_defend.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    cancel3.transform.localPosition = new Vector3(9999, 0, 0);
+                }
             }
 
             if (restrictions[3] == true)
             {
-                cancel4.transform.localPosition = new Vector3(-3, -77.5f, 0);
+                if (androidMode == true)
+                {
+                    android_item.rectTransform.anchoredPosition = new Vector3(500, -999, 0);
+                }
+                else
+                {
+                    cancel4.transform.localPosition = new Vector3(-3, -77.5f, 0);
+                }
             }
             else
             {
-                cancel4.transform.localPosition = new Vector3(9999, -77.5f, 0);
+                if (androidMode == true)
+                {
+                    android_item.rectTransform.anchoredPosition = new Vector3(500, 0, 0);
+                }
+                else
+                {
+                    cancel4.transform.localPosition = new Vector3(9999, -77.5f, 0);
+                }
             }
 
             if (restrictions[4] == true)
             {
-                cancel5.transform.localPosition = new Vector3(-3, -155, 0);
+                if (androidMode == true)
+                {
+                    android_stand.rectTransform.anchoredPosition = new Vector3(1000, -999, 0);
+                }
+                else
+                {
+                    cancel5.transform.localPosition = new Vector3(-3, -155, 0);
+                }
             }
             else
             {
-                cancel5.transform.localPosition = new Vector3(9999, -155, 0);
+                if (androidMode == true)
+                {
+                    android_stand.rectTransform.anchoredPosition = new Vector3(1000, 0, 0);
+                }
+                else
+                {
+                    cancel5.transform.localPosition = new Vector3(9999, -155, 0);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
@@ -374,7 +484,8 @@ public class turnManage : MonoBehaviour {
                     switch (actionSelection)
                     {
                         case 1:
-                            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            if(androidMode == false)
+                                menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             menuOpen = false;
 
                             // Change CONTROL_TYPE to SELECTION
@@ -382,13 +493,15 @@ public class turnManage : MonoBehaviour {
                             
                             break;
                         case 2:
-                            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            if (androidMode == false)
+                                menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             menuOpen = false;
                             map.redGen = true;
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.ATTACKING;
                             break;
                         case 3:
-                            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                            if (androidMode == false)
+                                menuObject.transform.position = new Vector3(-9999, -9999, 0);
                             menuOpen = false;
                             shieldFade = true;
                             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
@@ -565,12 +678,14 @@ public class turnManage : MonoBehaviour {
         if (menuOpen == true)
         {
             controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.SELECTION;
-            menuObject.transform.position = camera2.WorldToScreenPoint(new Vector3(characNEW.pos.x + 2, characNEW.pos.y, 0));
+            if (androidMode == false)
+                menuObject.transform.position = camera2.WorldToScreenPoint(new Vector3(characNEW.pos.x + 2, characNEW.pos.y, 0));
         }
         else
         {
             //controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;
-            menuObject.transform.position = new Vector3(-9999, -9999, 0);
+            if (androidMode == false)
+                menuObject.transform.position = new Vector3(-9999, -9999, 0);
         }
 
     }
@@ -662,7 +777,8 @@ public class turnManage : MonoBehaviour {
             switch (actionSelection)
             {
                 case 1:
-                    menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    if (androidMode == false)
+                        menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     menuOpen = false;
 
                     // Change CONTROL_TYPE to SELECTION
@@ -671,14 +787,16 @@ public class turnManage : MonoBehaviour {
                     menuOpen = false;
                     break;
                 case 2:
-                    menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    if (androidMode == false)
+                        menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     menuOpen = false;
                     map.redGen = true;
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.ATTACKING;
                     menuOpen = false;
                     break;
                 case 3:
-                    menuObject.transform.position = new Vector3(-9999, -9999, 0);
+                    if (androidMode == false)
+                        menuObject.transform.position = new Vector3(-9999, -9999, 0);
                     menuOpen = false;
                     shieldFade = true;
                     controller.GetComponent<CharacterController>().CurrentMode = CharacterController.CONTROL_MODE.FREE_ROAM;

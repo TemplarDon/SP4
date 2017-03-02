@@ -80,12 +80,15 @@ public class teamManager : MonoBehaviour {
                 if (teamList[i].theSkill != null)
                 {
                     if (!teamList[i].theSkill.GetCanUse())
-                    {
+                    { 
                         teamList[i].restrictActions[4] = true;
                     }
                     else
                     {
-                        teamList[i].restrictActions[4] = false;
+                        if (teamList[i].restrictActions[2] == false)
+                        {
+                            teamList[i].restrictActions[4] = false;
+                        }
                     }
                 }
 
