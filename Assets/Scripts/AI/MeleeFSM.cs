@@ -383,6 +383,9 @@ public class MeleeFSM : FSMBase {
 
             b_Attacked = true;
 
+            // Immediately go into IDLE
+            this.CurrentState = STATES.IDLE;
+
             //Debug.Log("Attacking!");
         }
     }
@@ -552,7 +555,7 @@ public class MeleeFSM : FSMBase {
             return true;
         }
 
-        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(-this.GetComponent<BaseCharacter>().BaseAttackRange, 0, 0));
+        checkGo = this.GetComponent<BaseCharacter>().theLevel.GetCharacterInTile(this.GetComponent<BaseCharacter>().pos + new Vector3(this.GetComponent<BaseCharacter>().BaseAttackRange, 0, 0));
         if (checkGo == m_TargetedEnemy.GetComponent<BaseCharacter>())
         {
             return true;

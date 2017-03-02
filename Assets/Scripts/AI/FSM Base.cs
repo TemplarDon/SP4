@@ -43,6 +43,9 @@ public abstract class FSMBase : MonoBehaviour {
 
     public Message ReadFromMessageBoard()
     {
-        return theBoard.GetMessage(this.gameObject.GetInstanceID());
+        if (theBoard != null)
+            return theBoard.GetMessage(this.gameObject.GetInstanceID());
+        else
+            return null;
     }
 }
