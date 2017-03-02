@@ -13,11 +13,11 @@ public class PolneraffSkill :  BaseSkills {
         LevelGenerate Map = GameObject.Find("MapGeneration").GetComponent<LevelGenerate>();
 
         Modifier toAdd = new Modifier();
-        toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, -1, 1);
+        toAdd.Init(Modifier.MODIFY_TYPE.ARMOUR, -Amount, 1);
         GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
 
         toAdd = new Modifier();
-        toAdd.Init(Modifier.MODIFY_TYPE.SPEED, 1, 1);
+        toAdd.Init(Modifier.MODIFY_TYPE.SPEED, Amount, 1);
         GameObject.Find(user.name).GetComponent<BaseCharacter>().AddModifier(toAdd);
 
         
